@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patagonia — Wildliving</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F2F0EB;--rock:#EDEBE6;--night:#1E1E1A;
+  --stone:#6B6B60;--sand:#C8C4BC;--moss:#7C9A6E;
+  --moss-l:#B8C9A8;--white:#FAFAF7;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+  --ease:cubic-bezier(0.25,0,0.1,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--night);font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.7}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:24px 48px;background:rgba(242,240,235,0.96);backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(200,196,188,.15)}
+.nav-logo{font-family:var(--serif);font-weight:500;font-size:18px;letter-spacing:-.01em;color:var(--night);text-decoration:none}
+.nav-logo span{color:var(--moss)}
+.nav-links{display:flex;gap:36px;list-style:none;align-items:center}
+.nav-links a{font-family:var(--sans);font-weight:300;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--night);text-decoration:none;opacity:.7;transition:opacity .2s}
+.nav-links a:hover{opacity:1}
+.lang-selector{display:flex;align-items:center;gap:4px;margin-left:24px}
+.lang-btn{font-family:var(--sans);font-size:10px;font-weight:300;letter-spacing:.18em;text-transform:uppercase;background:none;border:none;cursor:pointer;padding:4px 6px;opacity:.45;color:var(--night)}
+.lang-btn.active{opacity:1;border-bottom:1px solid currentColor}
+.lang-sep{font-size:9px;opacity:.25;color:var(--night)}
+.hamburger-btn{display:none;background:none;border:none;cursor:pointer;font-size:24px;line-height:1;color:var(--night);padding:0}
+.mobile-overlay{position:fixed;inset:0;background:var(--night);z-index:10000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:32px;opacity:0;visibility:hidden;transition:opacity .3s var(--ease)}
+.mobile-overlay.open{opacity:1;visibility:visible}
+.mobile-overlay a{font-family:var(--sans);font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,250,247,.7);text-decoration:none}
+.mobile-overlay a:hover{color:var(--white)}
+.mobile-overlay-close{position:absolute;top:24px;right:24px;background:none;border:none;font-size:26px;color:var(--white);cursor:pointer}
+
+footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;border-top:1px solid rgba(200,196,188,.06)}
+.foot-logo{font-family:var(--serif);font-weight:500;font-size:18px;color:var(--white);text-decoration:none}
+.foot-logo span{color:var(--moss)}
+.foot-tagline{font-family:var(--sans);font-size:13px;font-weight:300;color:rgba(250,250,247,.25);line-height:1.7;margin-top:12px;max-width:200px}
+.foot-sust{font-family:var(--sans);font-size:10px;font-weight:300;color:rgba(250,250,247,.18);margin-top:20px;line-height:1.6;font-style:italic;max-width:200px}
+.foot-col h4{font-family:var(--sans);font-size:9px;font-weight:300;letter-spacing:.26em;text-transform:uppercase;color:var(--moss);margin-bottom:18px}
+.foot-col ul{list-style:none}
+.foot-col li{margin-bottom:9px}
+.foot-col a{font-family:var(--sans);font-size:13px;font-weight:300;color:rgba(250,250,247,.35);text-decoration:none}
+.foot-col a:hover{color:var(--white)}
+.newsletter-form{display:flex;gap:0;margin-top:4px}
+.newsletter-input{flex:1;background:rgba(200,196,188,.06);border:1px solid rgba(200,196,188,.1);border-right:none;padding:10px 14px;font-family:var(--sans);font-size:11px;color:var(--white);outline:none}
+.newsletter-input::placeholder{color:rgba(250,250,247,.25)}
+.newsletter-btn{background:var(--moss);border:none;padding:10px 16px;color:var(--white);font-family:var(--sans);font-size:9px;letter-spacing:.16em;text-transform:uppercase;cursor:pointer}
+.foot-bottom{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;padding-top:36px;border-top:1px solid rgba(200,196,188,.06);margin-top:8px}
+.foot-copy{font-family:var(--sans);font-size:10px;font-weight:300;letter-spacing:.1em;color:rgba(250,250,247,.16)}
+.foot-dot{width:4px;height:4px;background:var(--moss);border-radius:50%}
+
+/* PAGE */
+.dest-hero{padding:160px 80px 60px;background:var(--paper)}
+.dest-eyebrow{font-family:var(--sans);font-size:9px;font-weight:300;letter-spacing:.28em;text-transform:uppercase;color:var(--moss);margin-bottom:20px;display:block}
+.dest-h1{font-family:var(--serif);font-weight:300;font-size:clamp(36px,4vw,54px);line-height:1.08;letter-spacing:-.015em}
+.dest-h1 em{font-style:italic;color:var(--moss)}
+.filter-bar{font-family:var(--sans);font-size:12px;color:var(--stone);background:var(--rock);padding:12px 24px;border:1px solid var(--sand);margin:0 80px 32px;display:inline-block}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;background:var(--paper);padding:0 80px 100px}
+.card{background:var(--rock)}
+.card-img-wrap{position:relative;overflow:hidden;aspect-ratio:4/3}
+.card-img-wrap img{width:100%;height:100%;object-fit:cover;transform:scale(1.05);transition:transform .8s var(--ease)}
+.card:hover .card-img-wrap img{transform:scale(1)}
+.card-badge{position:absolute;top:0;left:0;font-family:var(--sans);font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--paper);padding:5px 12px}
+.badge-collection{background:var(--night)}
+.badge-selected{background:var(--moss)}
+.card-info{padding:40px 36px}
+.card-name{font-family:var(--serif);font-weight:400;font-style:italic;font-size:32px;color:var(--night);margin-bottom:6px}
+.card-location{font-family:var(--sans);font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:var(--stone);margin-bottom:16px}
+.card-price{font-family:var(--sans);font-weight:500;font-size:16px;color:var(--night);margin-bottom:22px}
+.card-cta{display:inline-block;font-family:var(--sans);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--paper);background:var(--moss);padding:12px 24px;border-radius:0;text-decoration:none}
+
+@media(max-width:900px){
+  nav{padding:20px 24px}.nav-links{display:none}.hamburger-btn{display:flex}
+  footer{grid-template-columns:1fr 1fr;padding:60px 24px 40px}
+  .dest-hero{padding:120px 24px 40px}
+  .filter-bar{margin:0 24px 24px}
+  .grid{grid-template-columns:1fr;padding:0 24px 60px;gap:16px}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="/" class="nav-logo" id="nav-logo">Wild<span>·</span>living</a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="/wildstays">Wildstays</a></li>
+    <li><a href="/wildhomes">Wildhomes</a></li>
+    <li><a href="/sobre">Sobre</a></li>
+    <li><a href="/contacto">Contacto</a></li>
+    <li class="lang-selector">
+      <button class="lang-btn active" data-lang="es">ES</button>
+      <span class="lang-sep">·</span>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </li>
+  </ul>
+  <button class="hamburger-btn" id="hamburger-btn" onclick="toggleMobileMenu(true)" aria-label="Abrir menú">☰</button>
+</nav>
+
+<div class="mobile-overlay" id="mobile-overlay">
+  <button class="mobile-overlay-close" onclick="toggleMobileMenu(false)" aria-label="Cerrar menú">✕</button>
+  <a href="/wildstays">Wildstays</a>
+  <a href="/wildhomes">Wildhomes</a>
+  <a href="/sobre">Sobre</a>
+  <a href="/contacto">Contacto</a>
+</div>
+
+<section class="dest-hero">
+  <span class="dest-eyebrow">Patagonia · Argentina</span>
+  <h1 class="dest-h1">Estancias en <em>Patagonia.</em></h1>
+</section>
+
+<div id="filter-bar-container"></div>
+<div class="grid" id="property-grid"></div>
+
+<footer>
+  <div class="foot-logo-col">
+    <a href="/" class="foot-logo">Wild<span>·</span>living</a>
+    <p class="foot-tagline"><span>Find your next home in nature.</span><br><span>Patagonia · España · Grecia</span></p>
+    <p class="foot-sust">"Wildliving cree en el turismo como forma de vida, no como consumo."</p>
+  </div>
+  <div class="foot-col">
+    <h4>Plataforma</h4>
+    <ul>
+      <li><a href="/wildstays">Wildstays</a></li>
+      <li><a href="/wildhomes">Wildhomes</a></li>
+      <li><a href="/sobre">Sobre Wildliving</a></li>
+      <li><a href="/contacto">Contacto</a></li>
+    </ul>
+  </div>
+  <div class="foot-col">
+    <h4>Propietarios</h4>
+    <ul>
+      <li><a href="/contacto#propietarios">Wildliving Selected</a></li>
+      <li><a href="/contacto#propietarios">Acuerdo de colaboración</a></li>
+      <li><a href="/wildstays">Ver Collection</a></li>
+    </ul>
+  </div>
+  <div class="foot-col">
+    <h4>Newsletter</h4>
+    <div class="newsletter-form">
+      <input type="email" class="newsletter-input" placeholder="tu@email.com">
+      <button class="newsletter-btn">→</button>
+    </div>
+    <ul style="margin-top:20px"><li><a href="#">Instagram</a></li><li><a href="#">WhatsApp</a></li></ul>
+  </div>
+  <div class="foot-bottom">
+    <span class="foot-copy">© 2026 Wildliving · wildliving.life · Todos los derechos reservados</span>
+    <div class="foot-dot"></div>
+    <span class="foot-copy">Turismo sustentable · Slow travel · Vivienda consciente</span>
+  </div>
+</footer>
+
+<script>
+function toggleMobileMenu(open){
+  document.getElementById('mobile-overlay').classList.toggle('open', open);
+}
+
+const params = new URLSearchParams(window.location.search);
+const checkin = params.get('checkin');
+const checkout = params.get('checkout');
+const guests = params.get('guests');
+if (checkin || checkout || guests) {
+  const bar = document.createElement('div');
+  bar.className = 'filter-bar';
+  bar.style.margin = '0 80px 32px';
+  let parts = [];
+  if (checkin) parts.push('Llegada: ' + checkin);
+  if (checkout) parts.push('Salida: ' + checkout);
+  if (guests) parts.push('Huéspedes: ' + guests);
+  bar.textContent = parts.join(' · ');
+  document.getElementById('filter-bar-container').appendChild(bar);
+}
+
+fetch('/data/patagonia.json')
+  .then(res => res.json())
+  .then(properties => {
+    const grid = document.getElementById('property-grid');
+    properties.forEach(p => {
+      const badgeClass = p.type === 'collection' ? 'badge-collection' : 'badge-selected';
+      const badgeLabel = p.type === 'collection' ? 'COLLECTION' : 'SELECTED';
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <div class="card-img-wrap">
+          <img src="${p.image_main}" alt="${p.name}">
+          <span class="card-badge ${badgeClass}">${badgeLabel}</span>
+        </div>
+        <div class="card-info">
+          <div class="card-name">${p.name}</div>
+          <div class="card-location">${p.location}</div>
+          <div class="card-price">desde $${p.price_from} / noche</div>
+          <a href="/stay/${p.slug}/" class="card-cta">Ver propiedad →</a>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  });
+</script>
+</body>
+</html>

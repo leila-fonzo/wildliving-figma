@@ -1,0 +1,36 @@
+[
+  {
+    "name": "Casa Calma",
+    "slug": "patagonia-casa-calma",
+    "type": "collection",
+    "source": "lodgify",
+    "lodgify_property_id": 803562,
+    "price_from": 120,
+    "currency": "USD",
+    "location": "Circuito Chico, Bariloche",
+    "region": "Patagonia · Argentina",
+    "description_es": "Un refugio entre bosque y lago en el Circuito Chico de Bariloche. Diseñado para quienes buscan silencio, naturaleza y un ritmo distinto. La mañana empieza con el lago.",
+    "description_en": "A refuge between forest and lake in Bariloche's Circuito Chico. For those seeking silence, nature, and a different pace. Mornings begin with the lake.",
+    "image_main": "https://lh3.googleusercontent.com/d/1yqFtDvMYfPiJZ5VhGQWZs6v5ZmBRSuD5",
+    "tags": ["Pareja", "Solo", "Naturaleza"],
+    "featured": true,
+    "affiliate_url": null
+  },
+  {
+    "name": "Casa Paz",
+    "slug": "patagonia-casa-paz",
+    "type": "collection",
+    "source": "lodgify",
+    "lodgify_property_id": 803563,
+    "price_from": 95,
+    "currency": "USD",
+    "location": "Centro, Bariloche",
+    "region": "Patagonia · Argentina",
+    "description_es": "Apartamento moderno y tranquilo en Bariloche. Para parejas, nómadas digitales y viajeros que buscan naturaleza con comodidad urbana.",
+    "description_en": "A modern, quiet apartment in Bariloche. For couples, digital nomads, and travelers who want nature with urban comfort.",
+    "image_main": "https://lh3.googleusercontent.com/d/1CIL4EKupWvtYI7dCYjVmQjVY8xvn2lk7",
+    "tags": ["Pareja", "Nómada digital"],
+    "featured": true,
+    "affiliate_url": null
+  }
+]

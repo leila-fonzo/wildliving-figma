@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casa Paz — Wildliving</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F2F0EB;--rock:#EDEBE6;--night:#1E1E1A;
+  --stone:#6B6B60;--sand:#C8C4BC;--moss:#7C9A6E;
+  --moss-l:#B8C9A8;--white:#FAFAF7;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+  --ease:cubic-bezier(0.25,0,0.1,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--night);font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.7}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:24px 48px}
+.nav-logo{font-family:var(--serif);font-weight:500;font-size:18px;letter-spacing:-.01em;color:var(--white);text-decoration:none}
+.nav-logo span{color:var(--moss-l)}
+.nav-links{display:flex;gap:36px;list-style:none;align-items:center}
+.nav-links a{font-family:var(--sans);font-weight:300;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--white);text-decoration:none;opacity:.7}
+.nav-links a:hover{opacity:1}
+.lang-selector{display:flex;align-items:center;gap:4px;margin-left:24px}
+.lang-btn{font-family:var(--sans);font-size:10px;font-weight:300;letter-spacing:.18em;text-transform:uppercase;background:none;border:none;cursor:pointer;padding:4px 6px;opacity:.45;color:var(--white)}
+.lang-btn.active{opacity:1;border-bottom:1px solid currentColor}
+.lang-sep{font-size:9px;opacity:.25;color:var(--white)}
+.hamburger-btn{display:none;background:none;border:none;cursor:pointer;font-size:24px;line-height:1;color:var(--white);padding:0}
+.mobile-overlay{position:fixed;inset:0;background:var(--night);z-index:10000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:32px;opacity:0;visibility:hidden;transition:opacity .3s var(--ease)}
+.mobile-overlay.open{opacity:1;visibility:visible}
+.mobile-overlay a{font-family:var(--sans);font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,250,247,.7);text-decoration:none}
+.mobile-overlay a:hover{color:var(--white)}
+.mobile-overlay-close{position:absolute;top:24px;right:24px;background:none;border:none;font-size:26px;color:var(--white);cursor:pointer}
+
+footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;border-top:1px solid rgba(200,196,188,.06)}
+.foot-logo{font-family:var(--serif);font-weight:500;font-size:18px;color:var(--white);text-decoration:none}
+.foot-logo span{color:var(--moss)}
+.foot-tagline{font-family:var(--sans);font-size:13px;font-weight:300;color:rgba(250,250,247,.25);line-height:1.7;margin-top:12px;max-width:200px}
+.foot-sust{font-family:var(--sans);font-size:10px;font-weight:300;color:rgba(250,250,247,.18);margin-top:20px;line-height:1.6;font-style:italic;max-width:200px}
+.foot-col h4{font-family:var(--sans);font-size:9px;font-weight:300;letter-spacing:.26em;text-transform:uppercase;color:var(--moss);margin-bottom:18px}
+.foot-col ul{list-style:none}
+.foot-col li{margin-bottom:9px}
+.foot-col a{font-family:var(--sans);font-size:13px;font-weight:300;color:rgba(250,250,247,.35);text-decoration:none}
+.foot-col a:hover{color:var(--white)}
+.newsletter-form{display:flex;gap:0;margin-top:4px}
+.newsletter-input{flex:1;background:rgba(200,196,188,.06);border:1px solid rgba(200,196,188,.1);border-right:none;padding:10px 14px;font-family:var(--sans);font-size:11px;color:var(--white);outline:none}
+.newsletter-input::placeholder{color:rgba(250,250,247,.25)}
+.newsletter-btn{background:var(--moss);border:none;padding:10px 16px;color:var(--white);font-family:var(--sans);font-size:9px;letter-spacing:.16em;text-transform:uppercase;cursor:pointer}
+.foot-bottom{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;padding-top:36px;border-top:1px solid rgba(200,196,188,.06);margin-top:8px}
+.foot-copy{font-family:var(--sans);font-size:10px;font-weight:300;letter-spacing:.1em;color:rgba(250,250,247,.16)}
+.foot-dot{width:4px;height:4px;background:var(--moss);border-radius:50%}
+
+/* HERO */
+.stay-hero{position:relative;height:100vh;min-height:600px;display:flex;align-items:flex-end;overflow:hidden}
+.stay-hero-img{position:absolute;inset:0;background-image:url('https://lh3.googleusercontent.com/d/1CIL4EKupWvtYI7dCYjVmQjVY8xvn2lk7');background-size:cover;background-position:center}
+.stay-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(30,30,26,.82) 0%,transparent 100%)}
+.stay-badge{position:absolute;top:100px;left:48px;z-index:2;font-family:var(--sans);font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--paper);background:var(--night);padding:5px 12px}
+.stay-hero-content{position:relative;z-index:2;padding:0 48px 64px}
+.stay-h1{font-family:var(--serif);font-weight:300;font-size:clamp(44px,6vw,76px);color:var(--paper);line-height:1.05;margin-bottom:12px}
+.stay-location{font-family:var(--sans);font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:var(--moss-l)}
+
+/* CONTENT */
+.stay-content{display:grid;grid-template-columns:60% 40%;gap:60px;padding:80px}
+.stay-desc{font-family:var(--serif);font-weight:300;font-size:20px;color:var(--stone);line-height:1.7;border-left:1px solid var(--sand);padding-left:20px;margin-bottom:24px}
+.stay-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.tag{font-family:var(--sans);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--stone);border:1px solid var(--sand);padding:4px 12px}
+.stay-price{font-family:var(--sans);font-weight:500;font-size:18px;color:var(--night);margin-top:32px}
+.cta-box{background:var(--rock);padding:40px 36px}
+.cta-meta{font-family:var(--sans);font-size:12px;color:var(--stone);margin-bottom:16px}
+.btn-reserve{display:block;width:100%;text-align:center;font-family:var(--sans);font-weight:400;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--paper);background:var(--moss);padding:14px 34px;border-radius:0;text-decoration:none;box-sizing:border-box}
+.cta-note{font-family:var(--sans);font-size:11px;color:var(--stone);margin-top:16px}
+
+@media(max-width:900px){
+  nav{padding:20px 24px}.nav-links{display:none}.hamburger-btn{display:flex}
+  footer{grid-template-columns:1fr 1fr;padding:60px 24px 40px}
+  .stay-content{grid-template-columns:1fr;padding:40px 24px;gap:32px}
+  .stay-hero-content,.stay-badge{padding-left:24px;left:24px}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="/" class="nav-logo" id="nav-logo">Wild<span>·</span>living</a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="/wildstays">Wildstays</a></li>
+    <li><a href="/wildhomes">Wildhomes</a></li>
+    <li><a href="/sobre">Sobre</a></li>
+    <li><a href="/contacto">Contacto</a></li>
+    <li class="lang-selector">
+      <button class="lang-btn active" data-lang="es">ES</button>
+      <span class="lang-sep">·</span>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </li>
+  </ul>
+  <button class="hamburger-btn" id="hamburger-btn" onclick="toggleMobileMenu(true)" aria-label="Abrir menú">☰</button>
+</nav>
+
+<div class="mobile-overlay" id="mobile-overlay">
+  <button class="mobile-overlay-close" onclick="toggleMobileMenu(false)" aria-label="Cerrar menú">✕</button>
+  <a href="/wildstays">Wildstays</a>
+  <a href="/wildhomes">Wildhomes</a>
+  <a href="/sobre">Sobre</a>
+  <a href="/contacto">Contacto</a>
+</div>
+
+<section class="stay-hero">
+  <div class="stay-hero-img"></div>
+  <div class="stay-hero-overlay"></div>
+  <span class="stay-badge">COLLECTION</span>
+  <div class="stay-hero-content">
+    <h1 class="stay-h1"><em>Casa Paz</em></h1>
+    <div class="stay-location">Centro, Bariloche</div>
+  </div>
+</section>
+
+<section class="stay-content">
+  <div>
+    <p class="stay-desc">Apartamento moderno y tranquilo en Bariloche. Para parejas, nómadas digitales y viajeros que buscan naturaleza con comodidad urbana.</p>
+    <div class="stay-tags">
+      <span class="tag">Pareja</span>
+      <span class="tag">Nómada digital</span>
+    </div>
+    <div class="stay-price">desde $95 / noche</div>
+  </div>
+  <div class="cta-box">
+    <div id="dates-meta"></div>
+    <a href="https://pay.lodgify.com/651630/803563" target="_blank" class="btn-reserve">Reservar →</a>
+    <p class="cta-note">Reserva directa · Sin intermediarios</p>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-logo-col">
+    <a href="/" class="foot-logo">Wild<span>·</span>living</a>
+    <p class="foot-tagline"><span>Find your next home in nature.</span><br><span>Patagonia · España · Grecia</span></p>
+    <p class="foot-sust">"Wildliving cree en el turismo como forma de vida, no como consumo."</p>
+  </div>
+  <div class="foot-col">
+    <h4>Plataforma</h4>
+    <ul>
+      <li><a href="/wildstays">Wildstays</a></li>
+      <li><a href="/wildhomes">Wildhomes</a></li>
+      <li><a href="/sobre">Sobre Wildliving</a></li>
+      <li><a href="/contacto">Contacto</a></li>
+    </ul>
+  </div>
+  <div class="foot-col">
+    <h4>Propietarios</h4>
+    <ul>
+      <li><a href="/contacto#propietarios">Wildliving Selected</a></li>
+      <li><a href="/contacto#propietarios">Acuerdo de colaboración</a></li>
+      <li><a href="/wildstays">Ver Collection</a></li>
+    </ul>
+  </div>
+  <div class="foot-col">
+    <h4>Newsletter</h4>
+    <div class="newsletter-form">
+      <input type="email" class="newsletter-input" placeholder="tu@email.com">
+      <button class="newsletter-btn">→</button>
+    </div>
+    <ul style="margin-top:20px"><li><a href="#">Instagram</a></li><li><a href="#">WhatsApp</a></li></ul>
+  </div>
+  <div class="foot-bottom">
+    <span class="foot-copy">© 2026 Wildliving · wildliving.life · Todos los derechos reservados</span>
+    <div class="foot-dot"></div>
+    <span class="foot-copy">Turismo sustentable · Slow travel · Vivienda consciente</span>
+  </div>
+</footer>
+
+<script>
+function toggleMobileMenu(open){
+  document.getElementById('mobile-overlay').classList.toggle('open', open);
+}
+const params = new URLSearchParams(window.location.search);
+const checkin = params.get('checkin');
+const checkout = params.get('checkout');
+const guests = params.get('guests');
+if (checkin && checkout) {
+  const meta = document.getElementById('dates-meta');
+  let html = `<p class="cta-meta">Fechas: ${checkin} → ${checkout}</p>`;
+  if (guests) html += `<p class="cta-meta">Huéspedes: ${guests}</p>`;
+  meta.innerHTML = html;
+}
+</script>
+</body>
+</html>
