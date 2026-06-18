@@ -11,7 +11,7 @@
 :root{
   --paper:#F2F0EB;--rock:#EDEBE6;--night:#1E1E1A;
   --stone:#6B6B60;--sand:#C8C4BC;--moss:#7C9A6E;
-  --moss-l:#B8C9A8;--white:#FAFAF7;
+  --moss-l:#B8C9A8;--moss-d:#6B8A5E;--white:#FAFAF7;
   --serif:'Cormorant Garamond',Georgia,serif;
   --sans:'DM Sans',system-ui,sans-serif;
   --ease:cubic-bezier(0.25,0,0.1,1);
@@ -20,7 +20,7 @@
 body{background:var(--paper);color:var(--night);font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.7}
 
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:24px 48px;background:rgba(242,240,235,0.96);backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(200,196,188,.15)}
-.nav-logo{font-family:var(--serif);font-weight:500;font-size:18px;letter-spacing:-.01em;color:var(--night);text-decoration:none}
+.nav-logo{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-weight:500;font-size:18px;letter-spacing:-.01em;color:var(--night);text-decoration:none}
 .nav-logo span{color:var(--moss)}
 .nav-links{display:flex;gap:36px;list-style:none;align-items:center}
 .nav-links a{font-family:var(--sans);font-weight:300;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--night);text-decoration:none;opacity:.7;transition:opacity .2s}
@@ -37,10 +37,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .mobile-overlay-close{position:absolute;top:24px;right:24px;background:none;border:none;font-size:26px;color:var(--white);cursor:pointer}
 
 footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;border-top:1px solid rgba(200,196,188,.06)}
-.foot-logo{font-family:var(--serif);font-weight:500;font-size:18px;color:var(--white);text-decoration:none}
+.foot-logo{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-weight:500;font-size:18px;color:var(--white);text-decoration:none}
 .foot-logo span{color:var(--moss)}
 .foot-tagline{font-family:var(--sans);font-size:13px;font-weight:300;color:rgba(250,250,247,.25);line-height:1.7;margin-top:12px;max-width:200px}
-.foot-sust{font-family:var(--sans);font-size:10px;font-weight:300;color:rgba(250,250,247,.18);margin-top:20px;line-height:1.6;font-style:italic;max-width:200px}
+.foot-sust{font-family:var(--sans);font-size:10px;font-weight:300;color:rgba(250,250,247,.18);margin-top:20px;line-height:1.6;font-style:normal;max-width:200px}
 .foot-col h4{font-family:var(--sans);font-size:9px;font-weight:300;letter-spacing:.26em;text-transform:uppercase;color:var(--moss);margin-bottom:18px}
 .foot-col ul{list-style:none}
 .foot-col li{margin-bottom:9px}
@@ -49,7 +49,8 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
 .newsletter-form{display:flex;gap:0;margin-top:4px}
 .newsletter-input{flex:1;background:rgba(200,196,188,.06);border:1px solid rgba(200,196,188,.1);border-right:none;padding:10px 14px;font-family:var(--sans);font-size:11px;color:var(--white);outline:none}
 .newsletter-input::placeholder{color:rgba(250,250,247,.25)}
-.newsletter-btn{background:var(--moss);border:none;padding:10px 16px;color:var(--white);font-family:var(--sans);font-size:9px;letter-spacing:.16em;text-transform:uppercase;cursor:pointer}
+.newsletter-btn{background:var(--moss);border:none;padding:10px 16px;color:var(--white);font-family:var(--sans);font-size:9px;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;min-height:44px}
+.newsletter-btn:hover{background:var(--moss-d)}
 .foot-bottom{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;padding-top:36px;border-top:1px solid rgba(200,196,188,.06);margin-top:8px}
 .foot-copy{font-family:var(--sans);font-size:10px;font-weight:300;letter-spacing:.1em;color:rgba(250,250,247,.16)}
 .foot-dot{width:4px;height:4px;background:var(--moss);border-radius:50%}
@@ -57,8 +58,8 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
 /* PAGE */
 .dest-hero{padding:160px 80px 60px;background:var(--paper)}
 .dest-eyebrow{font-family:var(--sans);font-size:9px;font-weight:300;letter-spacing:.28em;text-transform:uppercase;color:var(--moss);margin-bottom:20px;display:block}
-.dest-h1{font-family:var(--serif);font-weight:300;font-size:clamp(36px,4vw,54px);line-height:1.08;letter-spacing:-.015em}
-.dest-h1 em{font-style:italic;color:var(--moss)}
+.dest-h1{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-weight:300;font-size:clamp(36px,4vw,54px);line-height:1.08;letter-spacing:-.015em}
+.dest-h1 em{font-style:normal;color:var(--moss)}
 .filter-bar{font-family:var(--sans);font-size:12px;color:var(--stone);background:var(--rock);padding:12px 24px;border:1px solid var(--sand);margin:0 80px 32px;display:inline-block}
 .dest-sub{font-family:var(--sans);font-weight:300;font-size:16px;color:var(--stone);margin-top:20px;max-width:540px}
 .sticky-filter{display:none}
@@ -72,10 +73,11 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
 .badge-collection{background:var(--night)}
 .badge-selected{background:var(--moss)}
 .card-info{padding:40px 36px}
-.card-name{font-family:var(--serif);font-weight:400;font-style:italic;font-size:32px;color:var(--night);margin-bottom:6px}
+.card-name{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-weight:300;font-style:italic;font-size:32px;color:var(--night);margin-bottom:6px}
 .card-location{font-family:var(--sans);font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:var(--stone);margin-bottom:16px}
 .card-price{font-family:var(--sans);font-weight:500;font-size:16px;color:var(--night);margin-bottom:22px}
-.card-cta{display:inline-block;font-family:var(--sans);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--paper);background:var(--moss);padding:12px 24px;border-radius:0;text-decoration:none}
+.card-cta{display:inline-block;font-family:var(--sans);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--paper);background:var(--moss);padding:12px 24px;border-radius:0;text-decoration:none;min-height:44px;line-height:20px}
+.card-cta:hover{background:var(--moss-d)}
 
 @media(max-width:900px){
   nav{padding:20px 24px}.nav-links{display:none}.hamburger-btn{display:flex}

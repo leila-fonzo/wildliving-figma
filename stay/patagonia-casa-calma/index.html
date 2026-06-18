@@ -11,7 +11,7 @@
 :root{
   --paper:#F2F0EB;--rock:#EDEBE6;--night:#1E1E1A;
   --stone:#6B6B60;--sand:#C8C4BC;--moss:#7C9A6E;
-  --moss-l:#B8C9A8;--white:#FAFAF7;
+  --moss-l:#B8C9A8;--moss-d:#6B8A5E;--white:#FAFAF7;
   --serif:'Cormorant Garamond',Georgia,serif;
   --sans:'DM Sans',system-ui,sans-serif;
   --ease:cubic-bezier(0.25,0,0.1,1);
@@ -19,8 +19,12 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--paper);color:var(--night);font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.7}
 
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:24px 48px}
-.nav-logo{font-family:var(--serif);font-weight:500;font-size:18px;letter-spacing:-.01em;color:var(--white);text-decoration:none}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:24px 48px;transition:background 300ms ease}
+nav.scrolled{background:rgba(242,240,235,0.96);backdrop-filter:blur(12px)}
+nav.scrolled .nav-logo{color:var(--night)}
+nav.scrolled .nav-links a{color:var(--stone)}
+nav.scrolled .nav-links a:hover{color:var(--night)}
+.nav-logo{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-weight:500;font-size:18px;letter-spacing:-.01em;color:var(--white);text-decoration:none}
 .nav-logo span{color:var(--moss-l)}
 .nav-links{display:flex;gap:36px;list-style:none;align-items:center}
 .nav-links a{font-family:var(--sans);font-weight:300;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--white);text-decoration:none;opacity:.7}
@@ -37,10 +41,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .mobile-overlay-close{position:absolute;top:24px;right:24px;background:none;border:none;font-size:26px;color:var(--white);cursor:pointer}
 
 footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;border-top:1px solid rgba(200,196,188,.06)}
-.foot-logo{font-family:var(--serif);font-weight:500;font-size:18px;color:var(--white);text-decoration:none}
+.foot-logo{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-weight:500;font-size:18px;color:var(--white);text-decoration:none}
 .foot-logo span{color:var(--moss)}
 .foot-tagline{font-family:var(--sans);font-size:13px;font-weight:300;color:rgba(250,250,247,.25);line-height:1.7;margin-top:12px;max-width:200px}
-.foot-sust{font-family:var(--sans);font-size:10px;font-weight:300;color:rgba(250,250,247,.18);margin-top:20px;line-height:1.6;font-style:italic;max-width:200px}
+.foot-sust{font-family:var(--sans);font-size:10px;font-weight:300;color:rgba(250,250,247,.18);margin-top:20px;line-height:1.6;font-style:normal;max-width:200px}
 .foot-col h4{font-family:var(--sans);font-size:9px;font-weight:300;letter-spacing:.26em;text-transform:uppercase;color:var(--moss);margin-bottom:18px}
 .foot-col ul{list-style:none}
 .foot-col li{margin-bottom:9px}
@@ -49,7 +53,8 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
 .newsletter-form{display:flex;gap:0;margin-top:4px}
 .newsletter-input{flex:1;background:rgba(200,196,188,.06);border:1px solid rgba(200,196,188,.1);border-right:none;padding:10px 14px;font-family:var(--sans);font-size:11px;color:var(--white);outline:none}
 .newsletter-input::placeholder{color:rgba(250,250,247,.25)}
-.newsletter-btn{background:var(--moss);border:none;padding:10px 16px;color:var(--white);font-family:var(--sans);font-size:9px;letter-spacing:.16em;text-transform:uppercase;cursor:pointer}
+.newsletter-btn{background:var(--moss);border:none;padding:10px 16px;color:var(--white);font-family:var(--sans);font-size:9px;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;min-height:44px}
+.newsletter-btn:hover{background:var(--moss-d)}
 .foot-bottom{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;padding-top:36px;border-top:1px solid rgba(200,196,188,.06);margin-top:8px}
 .foot-copy{font-family:var(--sans);font-size:10px;font-weight:300;letter-spacing:.1em;color:rgba(250,250,247,.16)}
 .foot-dot{width:4px;height:4px;background:var(--moss);border-radius:50%}
@@ -60,7 +65,7 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
 .stay-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(30,30,26,.82) 0%,transparent 100%)}
 .stay-badge{position:absolute;top:100px;left:48px;z-index:2;font-family:var(--sans);font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--paper);background:var(--night);padding:5px 12px}
 .stay-hero-content{position:relative;z-index:2;padding:0 48px 64px}
-.stay-h1{font-family:var(--serif);font-weight:300;font-size:clamp(44px,6vw,76px);color:var(--paper);line-height:1.05;margin-bottom:12px}
+.stay-h1{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-weight:300;font-size:clamp(44px,6vw,76px);color:var(--paper);line-height:1.05;margin-bottom:12px}
 .stay-location{font-family:var(--sans);font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:var(--moss-l)}
 
 /* KEY DETAILS BAR */
@@ -70,32 +75,34 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
 
 /* CONTENT */
 .stay-content{display:grid;grid-template-columns:60% 40%;gap:60px;padding:80px}
-.stay-desc{font-family:var(--serif);font-weight:300;font-size:20px;color:var(--stone);line-height:1.7;border-left:1px solid var(--sand);padding-left:20px;margin-bottom:24px}
+.stay-desc{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-weight:300;font-size:20px;color:var(--stone);line-height:1.7;border-left:1px solid var(--sand);padding-left:20px;margin-bottom:24px}
 .stay-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
 .tag{font-family:var(--sans);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--stone);border:1px solid var(--sand);padding:4px 12px}
 .stay-price{font-family:var(--sans);font-weight:500;font-size:18px;color:var(--night);margin-top:32px}
 .cta-box{background:var(--rock);padding:40px 36px}
 .cta-meta{font-family:var(--sans);font-size:12px;color:var(--stone);margin-bottom:16px}
-.btn-reserve{display:block;width:100%;text-align:center;font-family:var(--sans);font-weight:400;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--paper);background:var(--moss);padding:14px 34px;border-radius:0;text-decoration:none;box-sizing:border-box}
+.btn-reserve{display:block;width:100%;text-align:center;font-family:var(--sans);font-weight:400;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--paper);background:var(--moss);padding:14px 34px;border-radius:0;text-decoration:none;box-sizing:border-box;min-height:44px}
+.btn-reserve:hover{background:var(--moss-d)}
 .cta-note{font-family:var(--sans);font-size:11px;color:var(--stone);margin-top:16px}
 
 /* STICKY BOOKING BAR */
 .sticky-bar{position:fixed;left:0;right:0;bottom:0;z-index:1000;background:rgba(242,240,235,0.97);backdrop-filter:blur(8px);border-top:1px solid var(--sand);padding:14px 24px;display:none;align-items:center;justify-content:space-between;gap:16px}
 .sticky-price{font-family:var(--sans);font-weight:500;font-size:15px;color:var(--night);white-space:nowrap}
 .sticky-actions{display:flex;gap:10px}
-.sticky-btn-reserve{font-family:var(--sans);font-weight:400;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--paper);background:var(--moss);padding:12px 24px;text-decoration:none;white-space:nowrap}
-.sticky-btn-consult{font-family:var(--sans);font-weight:400;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--night);background:transparent;border:1px solid var(--night);padding:12px 24px;text-decoration:none;white-space:nowrap}
+.sticky-btn-reserve{font-family:var(--sans);font-weight:400;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--paper);background:var(--moss);padding:12px 24px;text-decoration:none;white-space:nowrap;min-height:44px;display:inline-flex;align-items:center}
+.sticky-btn-reserve:hover{background:var(--moss-d)}
+.sticky-btn-consult{font-family:var(--sans);font-weight:400;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--night);background:transparent;border:1px solid var(--night);padding:12px 24px;text-decoration:none;white-space:nowrap;min-height:44px;display:inline-flex;align-items:center}
 
 /* SEGUÍ EXPLORANDO */
 .explore-section{background:var(--rock);padding:80px}
 .explore-eyebrow{font-family:var(--sans);font-size:9px;color:var(--moss);text-transform:uppercase;letter-spacing:.28em;margin-bottom:20px;display:block}
-.explore-title{font-family:var(--serif);font-weight:300;font-size:32px;color:var(--night);margin-bottom:40px}
+.explore-title{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-weight:300;font-size:32px;color:var(--night);margin-bottom:40px}
 .explore-card{display:grid;grid-template-columns:40% 60%;background:var(--paper);text-decoration:none;color:inherit;overflow:hidden}
 .explore-img{aspect-ratio:4/3;overflow:hidden}
 .explore-img img{width:100%;height:100%;object-fit:cover}
 .explore-content{padding:36px 40px;display:flex;flex-direction:column;justify-content:center}
 .explore-badge{font-family:var(--sans);font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--moss)}
-.explore-name{font-family:var(--serif);font-style:italic;font-weight:400;font-size:28px;color:var(--night);margin:6px 0 4px}
+.explore-name{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-style:italic;font-weight:300;font-size:28px;color:var(--night);margin:6px 0 4px}
 .explore-location{font-family:var(--sans);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);margin-bottom:14px}
 .explore-desc{font-family:var(--sans);font-weight:300;font-size:14px;color:var(--stone);line-height:1.7;margin-bottom:16px;max-width:420px}
 .explore-price{font-family:var(--sans);font-weight:500;font-size:14px;color:var(--night);margin-bottom:16px}
@@ -276,6 +283,15 @@ window.addEventListener('resize', () => {
   updateSticky();
 });
 updateSticky();
+</script>
+<script>
+window.addEventListener('scroll', function(){
+  if(window.scrollY > 80){
+    document.querySelector('#nav').classList.add('scrolled');
+  } else {
+    document.querySelector('#nav').classList.remove('scrolled');
+  }
+});
 </script>
 </body>
 </html>
