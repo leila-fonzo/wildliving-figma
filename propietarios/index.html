@@ -70,32 +70,33 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
 .type-title{font-family:var(--serif);font-weight:400;font-style:italic;font-size:30px;color:var(--night);margin-bottom:16px}
 .type-body{font-family:var(--sans);font-weight:300;font-size:15px;color:var(--stone);line-height:1.8}
 
-.how{background:var(--rock);padding:100px 80px}
-.how-title{font-family:var(--serif);font-weight:300;font-style:italic;font-size:clamp(28px,3vw,38px);color:var(--night);margin-bottom:56px;max-width:600px}
+.how{background:var(--paper);padding:80px}
+.how-eyebrow{font-family:var(--sans);font-size:9px;font-weight:300;letter-spacing:.28em;text-transform:uppercase;color:var(--moss);margin-bottom:32px;display:block}
 .how-steps{display:flex;flex-direction:column;max-width:760px}
-.how-step{display:flex;gap:32px;padding:28px 0;border-top:1px solid var(--sand)}
+.how-step{display:grid;grid-template-columns:80px 1fr;gap:24px;padding:28px 0;border-top:1px solid var(--sand)}
 .how-step:last-child{border-bottom:1px solid var(--sand)}
-.how-num{font-family:var(--serif);font-style:italic;font-size:28px;color:var(--moss);min-width:48px}
-.how-text-title{font-family:var(--sans);font-weight:500;font-size:13px;color:var(--night);text-transform:uppercase;letter-spacing:.14em;margin-bottom:8px}
+.how-num{font-family:var(--serif);font-weight:400;font-size:48px;color:var(--sand)}
+.how-text-title{font-family:var(--sans);font-weight:500;font-size:15px;color:var(--night);margin-bottom:8px}
 .how-text-body{font-family:var(--sans);font-weight:300;font-size:14px;color:var(--stone);line-height:1.7}
 
-.commission{background:var(--paper);padding:100px 80px}
-.commission-title{font-family:var(--serif);font-weight:300;font-style:italic;font-size:clamp(28px,3vw,38px);color:var(--night);margin-bottom:56px;text-align:center}
-.commission-grid{display:grid;grid-template-columns:1fr 1fr 1fr;max-width:900px;margin:0 auto}
-.commission-col{padding:0 40px;border-left:1px solid var(--sand);text-align:center}
-.commission-col:first-child{border-left:none}
-.commission-label{font-family:var(--sans);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--stone);margin-bottom:14px}
-.commission-value{font-family:var(--serif);font-weight:500;font-size:36px;color:var(--moss)}
+.commission{background:var(--rock);padding:60px 80px}
+.commission-title{font-family:var(--sans);font-weight:400;font-size:13px;color:var(--night);text-transform:uppercase;letter-spacing:.2em;margin-bottom:32px}
+.commission-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px}
+.commission-label{font-family:var(--sans);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--moss);margin-bottom:14px}
+.commission-value{font-family:var(--serif);font-weight:400;font-size:48px;color:var(--night);margin-bottom:8px}
+.commission-note{font-family:var(--sans);font-weight:300;font-size:13px;color:var(--stone)}
+.commission-foot{font-family:var(--sans);font-weight:300;font-size:12px;font-style:italic;color:var(--stone);margin-top:32px}
 
-.contact-sec{background:var(--rock);padding:100px 80px}
-.contact-title{font-family:var(--serif);font-weight:300;font-style:italic;font-size:clamp(28px,3vw,38px);color:var(--night);margin-bottom:48px;text-align:center}
-.contact-form{max-width:640px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.contact-sec{background:var(--paper);padding:80px}
+.contact-title{font-family:var(--serif);font-weight:300;font-style:italic;font-size:36px;color:var(--night);margin-bottom:8px}
+.contact-subline{font-family:var(--sans);font-weight:300;font-size:14px;color:var(--stone);margin-bottom:48px}
+.contact-form{max-width:640px;display:grid;grid-template-columns:1fr 1fr;gap:24px}
 .contact-form .full{grid-column:1/-1}
 .field label{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);margin-bottom:8px}
-.field input,.field select,.field textarea{width:100%;background:var(--paper);border:1px solid var(--sand);padding:12px 14px;font-family:var(--sans);font-size:14px;color:var(--night);outline:none}
-.field textarea{resize:vertical;min-height:100px}
-.btn-submit{font-family:var(--sans);font-weight:400;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--paper);background:var(--moss);padding:16px 34px;border:none;cursor:pointer;width:100%}
-.thank-you{display:none;text-align:center;font-family:var(--serif);font-style:italic;font-size:20px;color:var(--moss);padding:40px 0}
+.field input,.field select,.field textarea{width:100%;background:transparent;border:none;border-bottom:1px solid var(--sand);padding:14px 0;font-family:var(--sans);font-weight:300;font-size:15px;color:var(--night);outline:none}
+.field textarea{resize:vertical}
+.btn-submit{font-family:var(--sans);font-weight:400;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--paper);background:var(--moss);padding:14px 40px;border:none;border-radius:0;cursor:pointer;width:fit-content}
+.thank-you{display:none;font-family:var(--serif);font-style:italic;font-size:20px;color:var(--moss);padding:20px 0}
 
 @media(max-width:900px){
   nav{padding:20px 24px}.nav-links{display:none}.hamburger-btn{display:flex}
@@ -105,7 +106,6 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
   .how{padding:60px 24px}
   .commission{padding:60px 24px}
   .commission-grid{grid-template-columns:1fr;gap:32px}
-  .commission-col{border-left:none}
   .contact-sec{padding:60px 24px}
   .contact-form{grid-template-columns:1fr}
 }
@@ -138,78 +138,83 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
 </div>
 
 <section class="prop-hero">
-  <span class="prop-eyebrow">Para propietarios</span>
-  <h1 class="prop-h1">Tu propiedad, contada de la forma en que <em>merece ser vista.</em></h1>
-  <p class="prop-sub">Wildliving no es un portal más. Es una curaduría editorial para propiedades con carácter, pensada para conectar con quienes buscan vivir distinto.</p>
+  <span class="prop-eyebrow">¿Tenés una propiedad en naturaleza?</span>
+  <h1 class="prop-h1">Tu propiedad merece mejores huéspedes.</h1>
+  <p class="prop-sub">Si tiene entorno, criterio y autenticidad — puede ser parte de Wildliving. Sin exclusividad. Sin costo de entrada.</p>
 </section>
 
 <section class="types">
   <div class="type-card">
     <span class="type-badge badge-collection">COLLECTION</span>
     <div class="type-title">Wildliving Collection</div>
-    <p class="type-body">Propiedades operadas y gestionadas directamente por Wildliving. Cuidamos cada detalle de la experiencia del huésped, desde la reserva hasta el check-out.</p>
+    <p class="type-body">Propiedades propias de Wildliving. Control editorial total sobre fotos, precios, calendario y cobro. Gestión directa via Lodgify.</p>
   </div>
   <div class="type-card">
     <span class="type-badge badge-selected">SELECTED</span>
     <div class="type-title">Wildliving Selected</div>
-    <p class="type-body">Propiedades de terceros que cumplen nuestro criterio editorial. El propietario mantiene la operación; Wildliving aporta visibilidad y demanda calificada.</p>
+    <p class="type-body">Propiedades de terceros curadas editorialmente. Wildliving le da narrativa, visibilidad y los huéspedes correctos. El propietario mantiene el control de su propiedad.</p>
   </div>
 </section>
 
 <section class="how">
-  <h2 class="how-title">Cómo funciona el proceso, paso a paso.</h2>
+  <span class="how-eyebrow">Cómo funciona</span>
   <div class="how-steps">
     <div class="how-step">
       <div class="how-num">01</div>
       <div>
-        <div class="how-text-title">Conversación inicial</div>
-        <p class="how-text-body">Nos contás sobre tu propiedad: ubicación, estado, objetivo (alquiler corto, largo o venta).</p>
+        <div class="how-text-title">Nos contactás</div>
+        <p class="how-text-body">Contás sobre la propiedad, el entorno y el tipo de huéspedes que recibís.</p>
       </div>
     </div>
     <div class="how-step">
       <div class="how-num">02</div>
       <div>
-        <div class="how-text-title">Evaluación editorial</div>
-        <p class="how-text-body">Revisamos si la propiedad encaja con el criterio Wildliving: entorno, diseño, silencio, hospitalidad.</p>
+        <div class="how-text-title">Evaluamos juntos</div>
+        <p class="how-text-body">Revisamos si hay compatibilidad editorial y de estilo de vida con Wildliving.</p>
       </div>
     </div>
     <div class="how-step">
       <div class="how-num">03</div>
       <div>
-        <div class="how-text-title">Acuerdo de colaboración</div>
-        <p class="how-text-body">Definimos juntos el modelo correcto — Collection o Selected — y los términos de comisión.</p>
+        <div class="how-text-title">Firmamos el acuerdo</div>
+        <p class="how-text-body">Un acuerdo simple. Sin exclusividad. Sin costo de entrada. Comisión solo cuando se concreta.</p>
       </div>
     </div>
     <div class="how-step">
       <div class="how-num">04</div>
       <div>
-        <div class="how-text-title">Publicación y promoción</div>
-        <p class="how-text-body">Tu propiedad entra a la curaduría y comienza a recibir visibilidad ante nuestra comunidad.</p>
+        <div class="how-text-title">La propiedad empieza a recibir mejores huéspedes</div>
+        <p class="how-text-body">Con narrativa, criterio y visibilidad de Wildliving.</p>
       </div>
     </div>
   </div>
 </section>
 
 <section class="commission">
-  <h2 class="commission-title">Comisiones claras, sin sorpresas.</h2>
+  <div class="commission-title">Modelo de comisión</div>
   <div class="commission-grid">
     <div class="commission-col">
       <div class="commission-label">Estancias cortas</div>
       <div class="commission-value">8–12%</div>
+      <div class="commission-note">por reserva confirmada</div>
     </div>
     <div class="commission-col">
       <div class="commission-label">Alquiler largo</div>
       <div class="commission-value">1 mes</div>
+      <div class="commission-note">por contrato firmado</div>
     </div>
     <div class="commission-col">
       <div class="commission-label">Venta</div>
       <div class="commission-value">2–3%</div>
+      <div class="commission-note">del valor de la propiedad</div>
     </div>
   </div>
+  <p class="commission-foot">Las propiedades en Booking.com: la comisión la absorbe Booking, no el propietario.</p>
 </section>
 
 <section class="contact-sec">
   <h2 class="contact-title">Contanos sobre tu propiedad.</h2>
+  <p class="contact-subline">Respondemos en menos de 48 horas.</p>
   <form class="contact-form" id="propietarios-form" name="propietarios" method="POST" data-netlify="true" netlify>
     <input type="hidden" name="form-name" value="propietarios">
     <div class="field full">
@@ -222,29 +227,33 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
     </div>
     <div class="field">
       <label>Ubicación de la propiedad</label>
-      <input type="text" name="ubicacion" required>
+      <input type="text" name="ubicacion" placeholder="Ciudad, región, país" required>
     </div>
     <div class="field">
       <label>Tipo de propiedad</label>
       <select name="tipo">
-        <option value="alquiler-corto">Alquiler corto</option>
-        <option value="alquiler-largo">Alquiler largo</option>
-        <option value="venta">Venta</option>
+        <option value="casa">Casa</option>
+        <option value="apartamento">Apartamento</option>
+        <option value="cabana">Cabaña</option>
+        <option value="masia">Masía</option>
+        <option value="villa">Villa</option>
+        <option value="glamping">Glamping</option>
+        <option value="otro">Otro</option>
       </select>
     </div>
     <div class="field">
-      <label>Plataformas en las que ya está publicada</label>
-      <input type="text" name="plataformas">
+      <label>¿En qué plataformas está actualmente?</label>
+      <input type="text" name="plataformas" placeholder="Airbnb, Booking, directa...">
     </div>
     <div class="field full">
       <label>Mensaje</label>
-      <textarea name="mensaje"></textarea>
+      <textarea name="mensaje" rows="4" placeholder="Contanos sobre la propiedad y qué tipo de huéspedes recibís actualmente."></textarea>
     </div>
     <div class="full">
       <button type="submit" class="btn-submit">Enviar consulta</button>
     </div>
   </form>
-  <div class="thank-you" id="propietarios-thanks">Gracias. Nos pondremos en contacto pronto.</div>
+  <div class="thank-you" id="propietarios-thanks">Recibimos tu consulta. Te respondemos en menos de 48 horas.</div>
 </section>
 
 <footer>
