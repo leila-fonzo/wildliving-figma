@@ -2,7 +2,36 @@
   publish = "."
 
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
+  from = "/wildstays/patagonia"
+  to = "/wildstays/patagonia/index.html"
   status = 200
-  force = false
+
+[[redirects]]
+  from = "/stay/patagonia-casa-calma"
+  to = "/stay/patagonia-casa-calma/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/stay/patagonia-casa-paz"
+  to = "/stay/patagonia-casa-paz/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/sobre"
+  to = "/sobre/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/propietarios"
+  to = "/propietarios/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/contacto"
+  to = "/contacto/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/wildhomes"
+  to = "/wildhomes/index.html"
+  status = 200

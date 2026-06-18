@@ -63,6 +63,11 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
 .stay-h1{font-family:var(--serif);font-weight:300;font-size:clamp(44px,6vw,76px);color:var(--paper);line-height:1.05;margin-bottom:12px}
 .stay-location{font-family:var(--sans);font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:var(--moss-l)}
 
+/* KEY DETAILS BAR */
+.key-details{background:var(--rock);display:grid;grid-template-columns:repeat(4,1fr);padding:20px 48px;gap:20px}
+.key-item{display:flex;align-items:center;gap:10px}
+.key-item span{font-family:var(--sans);font-weight:300;font-size:13px;color:var(--stone)}
+
 /* CONTENT */
 .stay-content{display:grid;grid-template-columns:60% 40%;gap:60px;padding:80px}
 .stay-desc{font-family:var(--serif);font-weight:300;font-size:20px;color:var(--stone);line-height:1.7;border-left:1px solid var(--sand);padding-left:20px;margin-bottom:24px}
@@ -74,11 +79,37 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
 .btn-reserve{display:block;width:100%;text-align:center;font-family:var(--sans);font-weight:400;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--paper);background:var(--moss);padding:14px 34px;border-radius:0;text-decoration:none;box-sizing:border-box}
 .cta-note{font-family:var(--sans);font-size:11px;color:var(--stone);margin-top:16px}
 
+/* STICKY BOOKING BAR */
+.sticky-bar{position:fixed;left:0;right:0;bottom:0;z-index:1000;background:rgba(242,240,235,0.97);backdrop-filter:blur(8px);border-top:1px solid var(--sand);padding:14px 24px;display:none;align-items:center;justify-content:space-between;gap:16px}
+.sticky-price{font-family:var(--sans);font-weight:500;font-size:15px;color:var(--night);white-space:nowrap}
+.sticky-actions{display:flex;gap:10px}
+.sticky-btn-reserve{font-family:var(--sans);font-weight:400;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--paper);background:var(--moss);padding:12px 24px;text-decoration:none;white-space:nowrap}
+.sticky-btn-consult{font-family:var(--sans);font-weight:400;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--night);background:transparent;border:1px solid var(--night);padding:12px 24px;text-decoration:none;white-space:nowrap}
+
+/* SEGUÍ EXPLORANDO */
+.explore-section{background:var(--rock);padding:80px}
+.explore-eyebrow{font-family:var(--sans);font-size:9px;color:var(--moss);text-transform:uppercase;letter-spacing:.28em;margin-bottom:20px;display:block}
+.explore-title{font-family:var(--serif);font-weight:300;font-size:32px;color:var(--night);margin-bottom:40px}
+.explore-card{display:grid;grid-template-columns:40% 60%;background:var(--paper);text-decoration:none;color:inherit;overflow:hidden}
+.explore-img{aspect-ratio:4/3;overflow:hidden}
+.explore-img img{width:100%;height:100%;object-fit:cover}
+.explore-content{padding:36px 40px;display:flex;flex-direction:column;justify-content:center}
+.explore-badge{font-family:var(--sans);font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--moss)}
+.explore-name{font-family:var(--serif);font-style:italic;font-weight:400;font-size:28px;color:var(--night);margin:6px 0 4px}
+.explore-location{font-family:var(--sans);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);margin-bottom:14px}
+.explore-desc{font-family:var(--sans);font-weight:300;font-size:14px;color:var(--stone);line-height:1.7;margin-bottom:16px;max-width:420px}
+.explore-price{font-family:var(--sans);font-weight:500;font-size:14px;color:var(--night);margin-bottom:16px}
+.explore-cta{font-family:var(--sans);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--moss);border-bottom:1px solid var(--moss);padding-bottom:2px;align-self:flex-start}
+
 @media(max-width:900px){
   nav{padding:20px 24px}.nav-links{display:none}.hamburger-btn{display:flex}
   footer{grid-template-columns:1fr 1fr;padding:60px 24px 40px}
   .stay-content{grid-template-columns:1fr;padding:40px 24px;gap:32px}
   .stay-hero-content,.stay-badge{padding-left:24px;left:24px}
+  .key-details{grid-template-columns:1fr 1fr;padding:16px 24px;gap:14px}
+  .explore-section{padding:48px 24px}
+  .explore-card{grid-template-columns:1fr}
+  body{padding-bottom:64px}
 }
 </style>
 </head>
@@ -118,21 +149,52 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
   </div>
 </section>
 
+<div class="key-details">
+  <div class="key-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--moss)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v7"/><path d="M3 13h18"/><path d="M7 9V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/><path d="M3 18v2"/><path d="M21 18v2"/></svg><span>1 dormitorio · 38m²</span></div>
+  <div class="key-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--moss)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>Hasta 2 personas</span></div>
+  <div class="key-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--moss)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Centro Bariloche · lago a 10 min</span></div>
+  <div class="key-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--moss)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Reserva directa · sin comisiones</span></div>
+</div>
+
 <section class="stay-content">
   <div>
-    <p class="stay-desc">Apartamento moderno y tranquilo en Bariloche. Para parejas, nómadas digitales y viajeros que buscan naturaleza con comodidad urbana.</p>
+    <p class="stay-desc">Apartamento moderno de 38m², jardín privado y luz natural todo el día. Diseñado para trabajar bien y descansar mejor. A pasos del centro, con el lago a diez minutos a pie.</p>
     <div class="stay-tags">
       <span class="tag">Pareja</span>
       <span class="tag">Nómada digital</span>
     </div>
     <div class="stay-price">desde $95 / noche</div>
   </div>
-  <div class="cta-box">
+  <div class="cta-box" id="cta-box">
     <div id="dates-meta"></div>
     <a href="https://pay.lodgify.com/651630/803563" target="_blank" class="btn-reserve">Reservar →</a>
     <p class="cta-note">Reserva directa · Sin intermediarios</p>
   </div>
 </section>
+
+<section class="explore-section">
+  <span class="explore-eyebrow">Seguí explorando</span>
+  <h2 class="explore-title">Otras propiedades en Patagonia.</h2>
+  <a href="/stay/patagonia-casa-calma/" class="explore-card">
+    <div class="explore-img"><img src="https://lh3.googleusercontent.com/d/1yqFtDvMYfPiJZ5VhGQWZs6v5ZmBRSuD5" alt="Casa Calma"></div>
+    <div class="explore-content">
+      <span class="explore-badge">Collection</span>
+      <h3 class="explore-name"><em>Casa Calma</em></h3>
+      <div class="explore-location">Circuito Chico, Bariloche</div>
+      <p class="explore-desc">Tres dormitorios frente al lago Nahuel Huapi. Bosque, silencio, y una terraza donde el tiempo pasa diferente.</p>
+      <div class="explore-price">desde $120 / noche</div>
+      <span class="explore-cta">Ver propiedad →</span>
+    </div>
+  </a>
+</section>
+
+<div class="sticky-bar" id="sticky-bar">
+  <div class="sticky-price">desde $95 / noche</div>
+  <div class="sticky-actions">
+    <a href="/contacto/?prop=patagonia-casa-paz" class="sticky-btn-consult">Consultar</a>
+    <a href="https://pay.lodgify.com/651630/803563" target="_blank" class="sticky-btn-reserve">Reservar →</a>
+  </div>
+</div>
 
 <footer>
   <div class="foot-logo-col">
@@ -186,6 +248,33 @@ if (checkin && checkout) {
   if (guests) html += `<p class="cta-meta">Huéspedes: ${guests}</p>`;
   meta.innerHTML = html;
 }
+
+const stickyBar = document.getElementById('sticky-bar');
+const ctaBox = document.getElementById('cta-box');
+const footerEl = document.querySelector('footer');
+let pastCta = window.innerWidth <= 900;
+let atFooter = false;
+function updateSticky(){
+  stickyBar.style.display = (pastCta && !atFooter) ? 'flex' : 'none';
+}
+new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (window.innerWidth <= 900) return;
+    pastCta = entry.boundingClientRect.top < 0;
+    updateSticky();
+  });
+}, { threshold: 0 }).observe(ctaBox);
+new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    atFooter = entry.isIntersecting;
+    updateSticky();
+  });
+}, { threshold: 0 }).observe(footerEl);
+window.addEventListener('resize', () => {
+  if (window.innerWidth <= 900) pastCta = true;
+  updateSticky();
+});
+updateSticky();
 </script>
 </body>
 </html>
