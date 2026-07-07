@@ -90,6 +90,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .link-arrow:hover{color:var(--moss);border-color:var(--moss)}
 
 /* COMO FUNCIONA */
+.founder-teaser{padding:100px 80px 80px;background:var(--paper);max-width:760px;margin:0 auto}
+.founder-teaser-text{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-style:italic;font-weight:300;font-size:23px;line-height:1.55;color:var(--night);border-left:1px solid var(--sand);padding-left:28px;margin-bottom:18px}
+.founder-teaser-sign{display:block;font-family:var(--sans);font-weight:500;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--moss);padding-left:29px;margin-bottom:28px}
+.founder-teaser-link{margin-left:29px}
 .como-funciona{background:var(--rock);padding:100px 80px}
 .como-funciona>.eyebrow{margin-bottom:48px}
 .cf-grid{display:grid;grid-template-columns:1fr 1fr 1fr}
@@ -99,6 +103,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .cf-title{font-family:var(--sans);font-weight:400;font-size:16px;color:var(--night);margin-bottom:12px}
 .cf-body{font-family:var(--sans);font-weight:300;font-size:15px;color:var(--stone);line-height:1.8}
 @media(max-width:900px){
+  .founder-teaser{padding:64px 24px 48px}
   .como-funciona{padding:64px 24px}
   .cf-grid{grid-template-columns:1fr;gap:32px}
   .cf-col{padding:0;border-left:none}
@@ -468,13 +473,19 @@ nav.scrolled .hamburger-btn{color:var(--night)}
   <div class="destino-item"><span class="destino-nombre" data-i18n="strip_mas_nombre">+ destinos</span><span class="destino-sub" data-i18n="strip_mas_sub">Próximamente</span></div>
 </div>
 
+<section class="founder-teaser">
+  <p class="founder-teaser-text reveal" data-i18n="founder_teaser_body">"Creo que el espacio que habitamos es la base desde donde se construye todo lo demás, donde nos reconectamos, soñamos, aprendemos a convivir con otros. Wildliving nació el día que abrí las puertas de mi propia casa a otras personas, y entendí que un hogar se puede compartir sin dejar de serlo. Esa convicción es la base de todo lo que hacemos hoy."</p>
+  <span class="founder-teaser-sign" data-i18n="founder_teaser_sign">— Leila Fonzo, Founder de Wildliving</span>
+  <a href="/sobre/" class="link-arrow founder-teaser-link" data-i18n="founder_teaser_cta">Conocé mi visión →</a>
+</section>
+
 <section class="como-funciona">
   <span class="eyebrow">Cómo funciona</span>
   <div class="cf-grid">
     <div class="cf-col reveal">
       <div class="cf-num">01</div>
       <div class="cf-title">Encontrá tu lugar</div>
-      <p class="cf-body">Buscás por destino, entorno y fechas. Cada propiedad fue elegida por criterio editorial, no por disponibilidad.</p>
+      <p class="cf-body">Buscás por destino, entorno y fechas. Cada propiedad fue elegida por su entorno natural y criterio editorial, no por disponibilidad.</p>
     </div>
     <div class="cf-col reveal d1">
       <div class="cf-num">02</div>
@@ -578,8 +589,8 @@ nav.scrolled .hamburger-btn{color:var(--night)}
   <div class="selected-header reveal">
     <div class="sello" style="border-color:rgba(124,154,110,.4)"><div class="sello-dot"></div><span data-i18n="sel_sello">Wildliving Selected</span></div>
     <h2 class="selected-title"><span data-i18n="sel_title">Propiedades que elegimos</span><br><em data-i18n="sel_title_em">porque alguien ya estuvo ahí.</em></h2>
-    <p class="selected-desc" data-i18n="sel_desc">Propiedades que elegimos con criterio editorial, emocional y de lifestyle. No las operamos — las recomendamos porque las conocemos, o porque alguien de confianza las ha habitado.</p>
-    <p data-i18n="sel_note" style="font-family:var(--sans);font-size:14px;color:rgba(250,250,247,.5);margin:16px 0 24px;padding:14px 18px;border:1px solid rgba(200,196,188,.14);line-height:1.8">Cada propiedad Selected pasó por el mismo criterio: entorno natural predominante, diseño con intención, silencio y hospitalidad genuina. No es un listado — es una selección.</p>
+    <p class="selected-desc" data-i18n="sel_desc">Propiedades que elegimos con criterio editorial, de entorno natural y lifestyle. No las operamos — las recomendamos porque las conocemos, o porque alguien de confianza las ha habitado.</p>
+    <p data-i18n="sel_note" style="font-family:var(--sans);font-size:14px;color:rgba(250,250,247,.5);margin:16px 0 24px;padding:14px 18px;border:1px solid rgba(200,196,188,.14);line-height:1.8">Cada propiedad Selected pasó por el mismo criterio: naturaleza, diseño con intención y hospitalidad genuina. No es un listado — es una selección.</p>
     <div style="display:flex;gap:8px;margin-bottom:40px">
       <button class="sel-pill active" onclick="setSelMode('rent')" data-i18n="sel_pill_rent" style="font-family:var(--sans);font-size:10px;letter-spacing:.2em;text-transform:uppercase;padding:9px 22px;cursor:pointer;border:1px solid var(--moss);background:var(--moss);color:var(--white)">Alquiler temporal</button>
       <button class="sel-pill" onclick="setSelMode('buy')" data-i18n="sel_pill_buy" style="font-family:var(--sans);font-size:10px;letter-spacing:.2em;text-transform:uppercase;padding:9px 22px;cursor:pointer;border:1px solid rgba(200,196,188,.2);background:transparent;color:rgba(250,250,247,.45)">Venta</button>
@@ -849,7 +860,7 @@ const es = {
   coll_note_rent: "Reservá directamente — disponibilidad en tiempo real vía Lodgify.",
   coll_note_buy:  "Consultá sin compromiso — te respondemos con criterio, no con urgencia.",
   cta_consultar_compra: "Consultar compra →",
-  sel_note:       "Cada propiedad Selected pasó por el mismo criterio: entorno natural predominante, diseño con intención, silencio y hospitalidad genuina. No es un listado — es una selección.",
+  sel_note:       "Cada propiedad Selected pasó por el mismo criterio: naturaleza, diseño con intención y hospitalidad genuina. No es un listado — es una selección.",
   sel_pill_rent:  "Alquiler temporal",
   sel_pill_buy:   "Venta",
   own_eyebrow:    "¿Tenés una propiedad en naturaleza?",
@@ -866,6 +877,11 @@ const es = {
   strip_grecia_sub:       "Egeo y Jónico",
   strip_mas_nombre:       "+ destinos",
   strip_mas_sub:          "Próximamente",
+
+  /* ── FOUNDER TEASER ── */
+  founder_teaser_body: "\"Creo que el espacio que habitamos es la base desde donde se construye todo lo demás, donde nos reconectamos, soñamos, aprendemos a convivir con otros. Wildliving nació el día que abrí las puertas de mi propia casa a otras personas, y entendí que un hogar se puede compartir sin dejar de serlo. Esa convicción es la base de todo lo que hacemos hoy.\"",
+  founder_teaser_sign: "— Leila Fonzo, Founder de Wildliving",
+  founder_teaser_cta:  "Conocé mi visión →",
 
   /* ── DECLARACIÓN ── */
   decl_line1: "Cada vez más personas están eligiendo vivir cerca de la naturaleza.",
@@ -905,7 +921,7 @@ const es = {
   sel_sello:        "Wildliving Selected",
   sel_title:        "Propiedades que elegimos",
   sel_title_em:     "porque alguien ya estuvo ahí.",
-  sel_desc:         "Propiedades que elegimos con criterio editorial, emocional y de lifestyle. No las operamos — las recomendamos porque las conocemos, o porque alguien de confianza las ha habitado.",
+  sel_desc:         "Propiedades que elegimos con criterio editorial, de entorno natural y lifestyle. No las operamos — las recomendamos porque las conocemos, o porque alguien de confianza las ha habitado.",
 
   sel_pat_sello:    "Wildliving Selected · Patagonia",
   sel_pat_name:     "Patagonia",
@@ -931,7 +947,7 @@ const es = {
   sust_title:       "Turismo como",
   sust_title_em:    "forma de vida.",
   sust_body1:       "La naturaleza regula el sistema nervioso de formas que la ciudad no puede. El silencio no es la ausencia de sonido — es la presencia de todo lo demás. Un ritmo más lento no significa menos vida. Significa más claridad, más decisiones propias, más pertenencia a un lugar.",
-  sust_body2:       "Wildliving nació para acompañar ese movimiento. Lugares en entornos naturales, elegidos con criterio editorial, para quienes ya saben qué tipo de mañanas quieren tener.",
+  sust_body2:       "Ese es el movimiento que Wildliving acompaña. Lugares en entornos naturales, elegidos con criterio editorial, para quienes ya saben qué tipo de mañanas quieren tener.",
   sust_body3:       "Creemos que la forma en que elegimos vivir define el mundo que construimos. Cada propiedad en Wildliving es un lugar donde la naturaleza no es el fondo del paisaje — es la razón de estar ahí. No optimizamos para ocupación máxima. Optimizamos para experiencias que dejan algo. En la persona. En el lugar.",
 
   sust_v1_titulo:   "Entorno primero",
@@ -1094,7 +1110,7 @@ const en = {
   coll_note_rent: "Book directly — real-time availability via Lodgify.",
   coll_note_buy:  "Enquire without commitment — we respond with discernment, not urgency.",
   cta_consultar_compra: "Enquire about purchase →",
-  sel_note:       "Every Selected property passed the same criteria: predominant natural setting, intentional design, silence and genuine hospitality. It is not a listing — it is a selection.",
+  sel_note:       "Every Selected property passed the same criteria: nature, intentional design and genuine hospitality. It is not a listing — it is a selection.",
   sel_pill_rent:  "Short-term rental",
   sel_pill_buy:   "For sale",
   own_eyebrow:    "Do you own a property in nature?",
@@ -1111,6 +1127,11 @@ const en = {
   strip_grecia_sub:       "Aegean & Ionian",
   strip_mas_nombre:       "+ destinations",
   strip_mas_sub:          "Coming soon",
+
+  /* ── FOUNDER TEASER ── */
+  founder_teaser_body: "\"I believe the space we inhabit is the foundation everything else is built on, where we reconnect, dream, learn to live alongside others. Wildliving was born the day I opened the doors of my own home to other people, and understood that a home can be shared without ceasing to be one. That conviction is the foundation of everything we do today.\"",
+  founder_teaser_sign: "— Leila Fonzo, Founder of Wildliving",
+  founder_teaser_cta:  "See my vision →",
 
   /* ── DECLARACIÓN ── */
   decl_line1: "More and more people are choosing to live closer to nature.",
@@ -1150,7 +1171,7 @@ const en = {
   sel_sello:        "Wildliving Selected",
   sel_title:        "Properties we choose",
   sel_title_em:     "because someone has already been there.",
-  sel_desc:         "Properties we choose with editorial, emotional and lifestyle criteria. We don't operate them — we recommend them because we know them, or because someone we trust has lived in them.",
+  sel_desc:         "Properties we choose with editorial, natural-setting and lifestyle criteria. We don't operate them — we recommend them because we know them, or because someone we trust has lived in them.",
 
   sel_pat_sello:    "Wildliving Selected · Patagonia",
   sel_pat_name:     "Patagonia",
@@ -1176,7 +1197,7 @@ const en = {
   sust_title:       "Tourism as",
   sust_title_em:    "a way of life.",
   sust_body1:       "Nature regulates the nervous system in ways the city cannot. Silence is not the absence of sound — it's the presence of everything else. A slower pace doesn't mean less life. It means more clarity, more agency, more belonging to a place.",
-  sust_body2:       "Wildliving was born to accompany that movement. Properties in natural environments, chosen with editorial discernment, for those who already know what kind of mornings they want to have.",
+  sust_body2:       "That's the movement Wildliving accompanies. Properties in natural environments, chosen with editorial discernment, for those who already know what kind of mornings they want to have.",
   sust_body3:       "We believe the way we choose to live defines the world we build. Every property at Wildliving is a place where nature is not the backdrop — it's the reason to be there. We don't optimise for maximum occupancy. We optimise for experiences that leave something behind. In the person. In the place.",
 
   sust_v1_titulo:   "Environment first",
