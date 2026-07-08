@@ -262,6 +262,9 @@ Card description (max 160 chars)     (DM Sans 14px, rgba white .55)
 - CTA never names the origin platform (Booking.com, Airbnb) in the label — the label is generic ("Verificá disponibilidad →"); the destination platform is only visible after the click, at the affiliate URL.
 - Tabs above the grid: `Todas · Argentina · España · Grecia`, underline-Musgo style (see FilterBar note below — no pill backgrounds). A country with zero confirmed properties renders a ghost/disabled tab, or an empty-state message in place of cards — never a placeholder property.
 - Filtering is by `country`, a broader grouping than `destination` (e.g. "argentina" spans Patagonia and Mendoza/Cuyo, not just Bariloche).
+- A second, independent tab row sits above the country tabs — `Alquiler temporal | Venta`, same underline-Musgo style as the Collection rent/buy toggle. It does not filter which cards show; it swaps every card's CTA:
+  - **Alquiler temporal** (default): CTA = "Verificá disponibilidad →", links to `p.affiliate_url` (external, `target="_blank"`).
+  - **Venta**: CTA = "Consultar compra →", links to `/contacto/?prop=[slug]&tipo=venta` (internal, same tab) — mirrors the Collection sale-enquiry pattern rather than implying Wildliving brokers the sale directly.
 
 ### InlineActionLink *(new)*
 
