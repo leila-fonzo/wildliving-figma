@@ -242,6 +242,27 @@ Horizontal card used in the "Seguí explorando" section at the bottom of propert
 - Section headline: Cormorant 300 32px: "Otras propiedades en [Destination]."
 - Background: Roca
 
+### SelectedCard *(new — Julio 2026 delta)*
+
+Grid card for the home `Selected` module. Unlike PropertyCard, it lives on a Noche background and always exits to an external booking origin — never to a Wildliving-operated checkout.
+
+```
+[ Full-bleed image 4:3 — hover: scale(1) from 1.05, no gradient overlay ]
+[ Country tag: ARG | ESP | GRE — top-right, 16px inset, on-image ]
+Property Name (Cormorant, italic)
+Location · Region                    (DM Sans 10px, uppercase, rgba white .4)
+Card description (max 160 chars)     (DM Sans 14px, rgba white .55)
+"Verificá disponibilidad →"          (DM Sans 10px, --moss-l, text link — desktop)
+"Verificar →"                        (same link, shortened — mobile)
+```
+
+- Grid: 3 columns desktop (`repeat(3,1fr)`, gap 2px). Mobile: single full-width card in a horizontal `scroll-snap-type:x mandatory` track, with a prev/next arrow pair and dot indicators (no numbered pagination).
+- Card background: Noche (matches parent `.selected` section — this is the one place a card sits on Noche rather than Roca, since the section itself is dark).
+- Country tag is a Von Restorff accent: small, high-contrast, does not repeat the destination name already in the card body.
+- CTA never names the origin platform (Booking.com, Airbnb) in the label — the label is generic ("Verificá disponibilidad →"); the destination platform is only visible after the click, at the affiliate URL.
+- Tabs above the grid: `Todas · Argentina · España · Grecia`, underline-Musgo style (see FilterBar note below — no pill backgrounds). A country with zero confirmed properties renders a ghost/disabled tab, or an empty-state message in place of cards — never a placeholder property.
+- Filtering is by `country`, a broader grouping than `destination` (e.g. "argentina" spans Patagonia and Mendoza/Cuyo, not just Bariloche).
+
 ### InlineActionLink *(new)*
 
 Editorial footnote-style action. Used after manifesto paragraphs, not as buttons.
@@ -530,6 +551,31 @@ Internal names (never shown externally):
   "affiliate_url": null
 }
 ```
+
+### Selected property JSON schema (`/data/selected.json`) *(new — Julio 2026 delta)*
+
+Separate from the per-destination Collection files because Selected is scoped by **country** (a broader, cross-region grouping — "argentina" spans Patagonia and Mendoza/Cuyo) rather than by the narrower `destination` used for Wildstays/Collection listings.
+
+```json
+{
+  "name": "Casa Ejemplo",
+  "slug": "argentina-casa-ejemplo",
+  "country": "argentina",
+  "type": "selected",
+  "source": "booking",
+  "location": "Villa La Angostura, Neuquén",
+  "region": "Patagonia · Argentina",
+  "image_main": "https://lh3.googleusercontent.com/d/[FILE_ID]",
+  "description_card_es": "Máx. 160 caracteres. Detalle sensorial-corporal concreto, no lista de amenities.",
+  "description_card_en": "Max 160 characters. A concrete sensory-bodily detail, not an amenities list.",
+  "affiliate_url": "https://www.booking.com/hotel/...?aid=...",
+  "featured": true
+}
+```
+
+- `country`: `"argentina" | "espana" | "grecia"` — drives both the tab filter and the on-card country tag (ARG/ESP/GRE).
+- `description_card_es` / `description_card_en`: capped at 160 characters, truncated defensively by JS if exceeded. Same narrative rule as Section 7 property descriptions — lead with a concrete detail, never a bullet list.
+- File starts empty (`[]`) until Leila approves candidate properties through the `scoring_engine.py` visual-review process (see project brief, Section 0.1). The AI Creative Director role does not populate entries in this file — it only builds and maintains the component that renders them.
 
 ### URL structure
 
