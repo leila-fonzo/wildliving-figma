@@ -242,6 +242,35 @@ Horizontal card used in the "Seguí explorando" section at the bottom of propert
 - Section headline: Cormorant 300 32px: "Otras propiedades en [Destination]."
 - Background: Roca
 
+### SelectedCard *(Julio 2026 delta — spec cerrada)*
+
+Grid card for the home `Selected` module. Always exits to an external booking origin — never to a Wildliving-operated checkout.
+
+```
+[ Full-bleed image 4:3 — scale(1.05) at rest → scale(1) on hover, 800ms ]
+[ Badge "Selected" — Musgo, top-left, 16px inset ]
+[ Country tag: ARG | ESP | GRE — top-right, 16px inset, bg rgba(30,30,26,0.62) ]
+Property Name (Cormorant 300, italic — italic reserved for property names)
+Location · Region                    (DM Sans 10px, uppercase, --stone)
+Card description (max 160 chars)     (DM Sans 300 14px, --stone, line-clamp 3)
+――――――――――――――――                     (divider 0.5px --sand)
+desde $X / noche                     (DM Sans 500 16px, --night)
+"Verificá disponibilidad →"          (DM Sans 10px, --moss, text link — desktop)
+"Verificar →"                        (same link, shortened — mobile)
+```
+
+- Section background: **Papel** (never Noche — content sections are never dark, DESIGN.md v2 rule). Cards: **Roca**, hover shifts to `#E8E6E1` with max shadow `0 2px 12px rgba(30,30,26,0.08)`. Straight corners, no border-radius, no gradients.
+- Grid: 3 equal columns desktop (`repeat(3,1fr)`, gap 16px, no grid background). Mobile: single full-width card in a horizontal `scroll-snap-type:x mandatory` track, prev/next arrows (min 44×44px) + dot indicators.
+- Country tag is a Von Restorff accent: small, high-contrast, does not repeat the destination name already in the card body.
+- One Musgo accent per card: the badge + the CTA. CTA never names the origin platform (Booking.com, Airbnb) — the label is generic; the destination platform is only visible after the click, at the affiliate URL.
+- Tabs above the grid: `Todas · Argentina · España · Grecia`, underline-Musgo style (active: 2px Musgo underline + Noche text; inactive: Piedra; no pill backgrounds). Grecia is a non-clickable ghost — text "Grecia · próximamente", Piedra at 35% opacity.
+- Empty state when a filter has no results: "Estamos curando propiedades en este destino." (Cormorant italic) + link "Avisame cuando haya novedades →" to `/contacto/`. Never a fake property.
+- Module header: eyebrow "Wildliving Selected" (DM Sans uppercase Musgo) + title with "con criterio propio." emphasised in Musgo. Section close: link "Explorar todas las propiedades Selected →". No owner-recruitment block inside this module.
+- Filtering is by `tab` (country grouping, broader than `destination` — "argentina" spans Patagonia and Mendoza/Cuyo).
+- A second, independent tab row sits above the country tabs — `Alquiler temporal | Venta`, same underline-Musgo style as the Collection rent/buy toggle. It does not filter which cards show; it swaps every card's CTA:
+  - **Alquiler temporal** (default): CTA = "Verificá disponibilidad →", links to `p.affiliate_url` (external, `target="_blank"`).
+  - **Venta**: CTA = "Consultar compra →", links to `/contacto/?prop=[slug]&tipo=venta` (internal, same tab) — mirrors the Collection sale-enquiry pattern rather than implying Wildliving brokers the sale directly.
+
 ### InlineActionLink *(new)*
 
 Editorial footnote-style action. Used after manifesto paragraphs, not as buttons.
@@ -530,6 +559,31 @@ Internal names (never shown externally):
   "affiliate_url": null
 }
 ```
+
+### Selected property JSON schema (`/data/selected.json`) *(Julio 2026 delta — spec cerrada)*
+
+Separate from the per-destination Collection files because Selected is scoped by **country** (a broader, cross-region grouping — "argentina" spans Patagonia and Mendoza/Cuyo) rather than by the narrower `destination` used for Wildstays/Collection listings.
+
+```json
+{
+  "name": "Casa Ejemplo",
+  "slug": "argentina-casa-ejemplo",
+  "location": "Villa La Angostura · Patagonia",
+  "country": "ARG",
+  "tab": "argentina",
+  "description_card_es": "Máx. 160 caracteres. Detalle sensorial-corporal concreto, no lista de amenities.",
+  "description_card_en": "Max 160 characters. A concrete sensory-bodily detail, not an amenities list.",
+  "price": 140,
+  "image_main": "https://lh3.googleusercontent.com/d/[FILE_ID]",
+  "affiliate_url": "https://www.booking.com/hotel/...?aid=..."
+}
+```
+
+- `country`: `"ARG" | "ESP" | "GRE"` — rendered directly as the on-card country tag.
+- `tab`: `"argentina" | "espana" | "grecia"` — drives the country tab filter.
+- `price`: nightly rate in USD (number). Rendered as "desde $X / noche" (ES) / "from $X / night" (EN).
+- `description_card_es` / `description_card_en`: capped at 160 characters, truncated defensively by JS if exceeded, clamped to 3 visual lines by CSS. Same narrative rule as Section 7 property descriptions — lead with a concrete sensory detail, never a bullet list.
+- The file may hold **placeholder example cards** (marked `"placeholder": true`) while real properties are pending — Leila replaces them with approved properties and Awin deeplinks. The AI Creative Director role never adds *real* properties to this file; curation approval happens only through Leila's `scoring_engine.py` visual-review process (see project brief, Section 0.1).
 
 ### URL structure
 
