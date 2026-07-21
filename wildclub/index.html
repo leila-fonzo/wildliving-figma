@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wildclub · Wildliving</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --papel:#F2F0EB;--roca:#EDEBE6;--arena:#C8C4BC;--piedra:#6B6B60;
+  --noche:#1E1E1A;--musgo:#7C9A6E;--musgo-d:#6B8A5E;--musgo-suave:#B8C9A8;
+  --sol:#C8A15C;--white:#FAFAF7;
+  --display:'Cormorant Garamond', Georgia, serif;
+  --body:'DM Sans', -apple-system, sans-serif;
+  --ease:cubic-bezier(0.25,0,0.1,1);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation:none!important;transition:none!important;}
+}
+body{
+  background:var(--papel);
+  color:var(--noche);
+  font-family:var(--body);
+  font-weight:300;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:680px;margin:0 auto;padding:0 24px;position:relative;}
+
+/* NAV (shared site chrome) */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:24px 48px;background:rgba(242,240,235,0.96);backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(200,196,188,.15)}
+.nav-logo{font-family:var(--display);font-feature-settings:"liga" 1,"kern" 1;font-weight:500;font-size:18px;letter-spacing:-.01em;color:var(--noche);text-decoration:none}
+.nav-logo span{color:var(--musgo)}
+.nav-links{display:flex;gap:36px;list-style:none;align-items:center}
+.nav-links a{font-family:var(--body);font-weight:300;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--noche);text-decoration:none;opacity:.7}
+.nav-links a:hover{opacity:1}
+.lang-selector{display:flex;align-items:center;gap:4px;margin-left:24px}
+.lang-btn{font-family:var(--body);font-size:10px;font-weight:300;letter-spacing:.18em;text-transform:uppercase;background:none;border:none;cursor:pointer;padding:4px 6px;opacity:.45;color:var(--noche)}
+.lang-btn.active{opacity:1;border-bottom:1px solid currentColor}
+.lang-sep{font-size:9px;opacity:.25;color:var(--noche)}
+.hamburger-btn{display:none;background:none;border:none;cursor:pointer;font-size:24px;line-height:1;color:var(--noche);padding:0}
+.mobile-overlay{position:fixed;inset:0;background:var(--noche);z-index:10000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:32px;opacity:0;visibility:hidden;transition:opacity .3s var(--ease)}
+.mobile-overlay.open{opacity:1;visibility:visible}
+.mobile-overlay a{font-family:var(--body);font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,250,247,.7);text-decoration:none}
+.mobile-overlay a:hover{color:var(--white)}
+.mobile-overlay-close{position:absolute;top:24px;right:24px;background:none;border:none;font-size:26px;color:var(--white);cursor:pointer}
+
+/* FOOTER (shared site chrome) */
+footer{background:var(--noche);padding:72px 80px 48px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;border-top:1px solid rgba(200,196,188,.06)}
+.foot-logo{font-family:var(--display);font-feature-settings:"liga" 1,"kern" 1;font-weight:500;font-size:18px;color:var(--white);text-decoration:none}
+.foot-logo span{color:var(--musgo)}
+.foot-tagline{font-family:var(--body);font-size:13px;font-weight:300;color:rgba(250,250,247,.25);line-height:1.7;margin-top:12px;max-width:200px}
+.foot-sust{font-family:var(--body);font-size:10px;font-weight:300;color:rgba(250,250,247,.18);margin-top:20px;line-height:1.6;max-width:200px}
+.foot-col h4{font-family:var(--body);font-size:9px;font-weight:300;letter-spacing:.26em;text-transform:uppercase;color:var(--musgo);margin-bottom:18px}
+.foot-col ul{list-style:none}
+.foot-col li{margin-bottom:9px}
+.foot-col a{font-family:var(--body);font-size:13px;font-weight:300;color:rgba(250,250,247,.35);text-decoration:none}
+.foot-col a:hover{color:var(--white)}
+.foot-bottom{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;padding-top:36px;border-top:1px solid rgba(200,196,188,.06);margin-top:8px}
+.foot-copy{font-family:var(--body);font-size:10px;font-weight:300;letter-spacing:.1em;color:rgba(250,250,247,.16)}
+.foot-dot{width:4px;height:4px;background:var(--musgo);border-radius:50%}
+.newsletter-form{display:flex;gap:0;margin-top:4px}
+.newsletter-input{flex:1;background:rgba(200,196,188,.06);border:1px solid rgba(200,196,188,.1);border-right:none;padding:10px 14px;font-family:var(--body);font-size:11px;color:var(--white);outline:none}
+.newsletter-input::placeholder{color:rgba(250,250,247,.25)}
+.newsletter-btn{background:var(--musgo);border:none;padding:10px 16px;color:var(--white);font-family:var(--body);font-size:9px;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;min-height:44px}
+.newsletter-btn:hover{background:var(--musgo-d)}
+
+.en{display:none;}
+body.lang-en .es{display:none;}
+body.lang-en .en{display:inline;}
+body.lang-en .en.block{display:block;}
+.es.block{display:block;}
+
+.hero{padding:150px 0 48px;}
+.club-tag{
+  display:inline-block;
+  font-size:11px;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--papel);background:var(--musgo);
+  padding:6px 14px;border-radius:100px;
+  margin-bottom:26px;
+}
+.eyebrow{
+  font-size:11px;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--musgo);margin-bottom:22px;
+}
+h1{
+  font-family:var(--display);font-weight:500;
+  font-size:clamp(38px,7vw,54px);line-height:1.12;
+  letter-spacing:-0.01em;margin-bottom:24px;
+}
+h1 em{font-style:italic;font-weight:400;color:var(--musgo);}
+.hero p{font-size:17px;color:var(--noche);max-width:48ch;margin-bottom:40px;}
+.hero p strong{font-weight:500;}
+
+.code-tag{
+  display:inline-flex;flex-direction:column;gap:6px;
+  background:var(--noche);color:var(--papel);
+  padding:22px 28px;border-radius:4px;
+  position:relative;
+  box-shadow:0 18px 40px -18px rgba(30,30,26,.45);
+}
+.code-tag::before{
+  content:"";position:absolute;top:14px;left:-7px;
+  width:14px;height:14px;border-radius:50%;
+  background:var(--papel);
+}
+.code-tag .label{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--musgo-suave);}
+.code-tag .code{font-family:var(--body);font-weight:500;font-size:20px;letter-spacing:.12em;}
+.code-tag .code span{color:var(--sol);}
+.code-note{display:block;margin-top:14px;font-size:12.5px;color:var(--piedra);}
+
+.strip{
+  display:flex;gap:0;margin-top:48px;
+  border-top:1px solid var(--arena);border-bottom:1px solid var(--arena);
+}
+.strip div{flex:1;padding:18px 6px;text-align:center;}
+.strip div + div{border-left:1px solid var(--arena);}
+.strip .v{font-family:var(--display);font-weight:500;font-size:26px;color:var(--musgo);line-height:1.1;}
+.strip .k{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--piedra);margin-top:4px;}
+
+section{padding:56px 0;}
+section + section{border-top:1px solid var(--arena);}
+h2{
+  font-family:var(--display);font-weight:500;font-size:30px;
+  line-height:1.2;margin-bottom:36px;
+}
+h2 em{font-style:italic;font-weight:400;color:var(--musgo);}
+
+.step{display:grid;grid-template-columns:44px 1fr;gap:18px;padding:22px 0;}
+.step + .step{border-top:1px solid var(--arena);}
+.step-n{font-family:var(--display);font-style:italic;font-size:26px;color:var(--musgo);line-height:1.1;}
+.step h3{font-weight:500;font-size:15.5px;margin-bottom:6px;}
+.step p{font-size:14.5px;color:var(--piedra);max-width:52ch;}
+.step p b{color:var(--noche);font-weight:500;}
+
+.detail{background:var(--noche);color:var(--papel);border-radius:6px;padding:38px 32px;}
+.detail h2{font-size:26px;margin-bottom:26px;color:var(--papel);}
+.detail h2 em{color:var(--musgo-suave);}
+.d-row{display:flex;gap:14px;padding:14px 0;border-top:1px solid rgba(244,240,230,.14);}
+.d-row:first-of-type{border-top:none;padding-top:0;}
+.d-row .q{flex:0 0 36%;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--musgo-suave);padding-top:2px;}
+.d-row .a{flex:1;font-size:14.5px;color:rgba(244,240,230,.92);}
+.d-row .a b{color:var(--sol);font-weight:500;}
+
+.props{display:grid;gap:28px;}
+.prop{border:1px solid var(--arena);border-radius:6px;overflow:hidden;background:#fff;}
+.prop-ph{aspect-ratio:16/10;position:relative;overflow:hidden;}
+.prop-ph img{width:100%;height:100%;object-fit:cover;}
+.prop-ph-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(30,30,26,.55) 0%,transparent 55%);display:flex;align-items:flex-end;padding:22px;}
+.prop-name{
+  font-family:var(--display);font-style:italic;font-weight:500;
+  font-size:32px;color:var(--papel);text-shadow:0 1px 14px rgba(30,30,26,.35);
+}
+.prop-body{padding:22px;}
+.badge{display:inline-block;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;padding:5px 12px;border-radius:100px;margin-bottom:14px;}
+.badge.open{background:var(--musgo);color:var(--papel);}
+.badge.summer{background:var(--sol);color:var(--noche);}
+.prop-body p{font-size:14.5px;color:var(--piedra);margin-bottom:20px;max-width:50ch;}
+.prop-body p b{color:var(--noche);font-weight:500;}
+.btn{display:inline-block;font-family:var(--body);font-weight:500;font-size:14px;text-decoration:none;border-radius:100px;padding:13px 26px;transition:opacity .18s ease;min-height:44px;box-sizing:border-box;}
+.btn:hover{opacity:.85;}
+.btn.solid{background:var(--musgo);color:var(--papel);}
+.btn.night{background:var(--noche);color:var(--papel);}
+.btn.paper{background:var(--papel);color:var(--noche);}
+
+.final-frame{
+  margin:64px 0 0;
+  border-radius:6px;overflow:hidden;position:relative;
+  color:var(--papel);padding:64px 40px;
+}
+.final-frame-img{position:absolute;inset:0;background-size:cover;background-position:center;}
+.final-frame-overlay{position:absolute;inset:0;background:linear-gradient(155deg,rgba(30,30,26,.35) 0%,rgba(30,30,26,.88) 75%);}
+.final-frame h2,.final-frame p,.final-frame .btn{position:relative;z-index:1;}
+.final-frame h2{color:var(--papel);max-width:18ch;margin-bottom:18px;font-size:34px;}
+.final-frame h2 em{color:var(--sol);}
+.final-frame p{color:rgba(244,240,230,.9);font-size:15px;margin-bottom:32px;max-width:42ch;}
+
+.closing{padding:56px 24px 64px;text-align:center;}
+.closing p{
+  font-family:var(--display);font-style:italic;font-weight:500;
+  font-size:clamp(20px,3.4vw,26px);line-height:1.4;
+  color:var(--noche);max-width:34ch;margin:0 auto;
+}
+.closing .rule{width:40px;height:1px;background:var(--musgo);margin:0 auto 24px;}
+
+.fine{padding:0 0 90px;font-size:11px;color:var(--arena);max-width:60ch;line-height:1.7;}
+
+@media(max-width:900px){
+  nav{padding:20px 24px}.nav-links{display:none}.hamburger-btn{display:flex}
+  footer{grid-template-columns:1fr 1fr;padding:60px 24px 40px}
+}
+@media(max-width:480px){
+  .d-row{flex-direction:column;gap:4px;}
+  .d-row .q{flex:none;}
+  .strip .v{font-size:21px;}
+  .final-frame{padding:48px 26px;}
+  .hero{padding-top:130px;}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="/" class="nav-logo">Wild<span>·</span>living</a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="/wildstays/patagonia/">Wildstays</a></li>
+    <li><a href="/wildhomes/">Wildhomes</a></li>
+    <li><a href="/sobre/">Sobre</a></li>
+    <li><a href="/contacto/">Contacto</a></li>
+    <li class="lang-selector">
+      <button type="button" class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
+      <span class="lang-sep">·</span>
+      <button type="button" class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+    </li>
+  </ul>
+  <button class="hamburger-btn" id="hamburger-btn" onclick="toggleMobileMenu(true)" aria-label="Abrir menú">☰</button>
+</nav>
+
+<div class="mobile-overlay" id="mobile-overlay">
+  <button class="mobile-overlay-close" onclick="toggleMobileMenu(false)" aria-label="Cerrar menú">✕</button>
+  <a href="/wildstays/patagonia/">Wildstays</a>
+  <a href="/wildhomes/">Wildhomes</a>
+  <a href="/sobre/">Sobre</a>
+  <a href="/contacto/">Contacto</a>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <span class="club-tag">Wildclub</span>
+    <div class="eyebrow">
+      <span class="es">Para quienes ya lo vivieron</span><span class="en">For those who've already stayed</span>
+    </div>
+    <h1>
+      <span class="es">Los mejores huéspedes llegan <em>recomendados.</em></span>
+      <span class="en">The best guests arrive <em>recommended.</em></span>
+    </h1>
+    <p>
+      <span class="es">Wildclub es simple: si viviste una de nuestras casas y conocés a alguien que la amaría, te damos un código con tu nombre. <strong>Tu recomendado ahorra un 10%. Vos sumás un 10% para tu próxima estadía.</strong></span>
+      <span class="en">Wildclub is simple: if you've stayed in one of our houses and know someone who'd love it, we give you a code with your name on it. <strong>Your friend saves 10%. You earn 10% toward your next stay.</strong></span>
+    </p>
+    <div class="code-tag">
+      <span class="label"><span class="es">Tu código personal</span><span class="en">Your personal code</span></span>
+      <span class="code">WILDFRIEND-<span>SOFI</span></span>
+    </div>
+    <span class="code-note">
+      <span class="es">Así se ve, con tu nombre (no un número). Se pide por WhatsApp.</span>
+      <span class="en">This is what it looks like, with your name (not a number). Requested over WhatsApp.</span>
+    </span>
+
+    <div class="strip">
+      <div><div class="v">10%</div><div class="k"><span class="es">para tu recomendado</span><span class="en">for your friend</span></div></div>
+      <div><div class="v">10%</div><div class="k"><span class="es">para vos</span><span class="en">for you</span></div></div>
+      <div><div class="v">0</div><div class="k"><span class="es">registros ni apps</span><span class="en">sign-ups or apps</span></div></div>
+    </div>
+  </div>
+
+  <section>
+    <h2><span class="es">Cómo funciona</span><span class="en">How it works</span></h2>
+    <div class="step">
+      <div class="step-n">i.</div>
+      <div>
+        <h3><span class="es">Pedís tu código</span><span class="en">Request your code</span></h3>
+        <p>
+          <span class="es">Nos escribís por WhatsApp y te llega tu código personal en el día. Sin registro, sin app, sin contraseña.</span>
+          <span class="en">Message us on WhatsApp and your personal code arrives the same day. No sign-up, no app, no password.</span>
+        </p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">ii.</div>
+      <div>
+        <h3><span class="es">Lo compartís con criterio</span><span class="en">Share it with someone in mind</span></h3>
+        <p>
+          <span class="es">A esa persona que sabés que va a cuidar la casa como vos. Tu recomendado reserva directo en nuestra web con <b>10% de descuento</b>, aplicado en el momento.</span>
+          <span class="en">Someone you know will take care of the house the way you did. Your friend books directly on our site with <b>10% off</b>, applied right away.</span>
+        </p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-n">iii.</div>
+      <div>
+        <h3><span class="es">Tu próxima estadía se paga sola</span><span class="en">Your next stay pays for itself</span></h3>
+        <p>
+          <span class="es">Cuando tu recomendado completa su estadía, se acredita a tu nombre un <b>10% del valor de esa reserva</b> como crédito para tu próxima visita. Y si no podés volver, lo regalás.</span>
+          <span class="en">Once your friend completes their stay, <b>10% of that booking's value</b> is credited to your name for your next visit. And if you can't make it back, you can give it away.</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="detail">
+      <h2><span class="es">El detalle, <em>sin letra chica</em></span><span class="en">The details, <em>no fine print</em></span></h2>
+      <div class="d-row">
+        <div class="q"><span class="es">¿Cuándo se acredita?</span><span class="en">When is it credited?</span></div>
+        <div class="a"><span class="es">Al completarse la estadía de tu recomendado (no al reservar). Si cancela, tu código sigue activo.</span><span class="en">Once your friend's stay is completed (not when they book). If they cancel, your code stays active.</span></div>
+      </div>
+      <div class="d-row">
+        <div class="q"><span class="es">¿Cómo lo uso?</span><span class="en">How do I use it?</span></div>
+        <div class="a"><span class="es">Nos escribís al reservar tu próxima estadía y lo descontamos del total.</span><span class="en">Message us when booking your next stay and we'll deduct it from the total.</span></div>
+      </div>
+      <div class="d-row">
+        <div class="q"><span class="es">¿Y si no puedo volver?</span><span class="en">What if I can't come back?</span></div>
+        <div class="a"><span class="es"><b>Tu crédito se regala.</b> Se lo pasás a quien quieras (familia, amigos, otro viajero) y lo usa a tu nombre.</span><span class="en"><b>Your credit can be gifted.</b> Pass it on to anyone you like (family, friends, another traveler) and they use it under your name.</span></div>
+      </div>
+      <div class="d-row">
+        <div class="q"><span class="es">¿Qué vigencia tiene?</span><span class="en">How long is it valid?</span></div>
+        <div class="a"><span class="es">12 meses desde que se acredita.</span><span class="en">12 months from the day it's credited.</span></div>
+      </div>
+      <div class="d-row">
+        <div class="q"><span class="es">¿Hay límite?</span><span class="en">Is there a limit?</span></div>
+        <div class="a"><span class="es">No. Cada recomendado que completa su estadía suma, y los créditos se acumulan.</span><span class="en">No. Every friend who completes a stay adds up, and credits accumulate.</span></div>
+      </div>
+      <div class="d-row">
+        <div class="q"><span class="es">¿Quién puede usar mi código?</span><span class="en">Who can use my code?</span></div>
+        <div class="a"><span class="es">Cualquier persona que reserve por primera vez con nosotros, en reserva directa.</span><span class="en">Anyone booking with us for the first time, through direct booking.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="es">Las casas que podés recomendar</span><span class="en">The houses you can recommend</span></h2>
+    <div class="props">
+
+      <div class="prop">
+        <div class="prop-ph">
+          <img src="https://lh3.googleusercontent.com/d/1nQCYYx7dPf87K55JgswiJLIewaC9XT8e" alt="Casa Calma">
+          <div class="prop-ph-overlay"><div class="prop-name">Casa Calma</div></div>
+        </div>
+        <div class="prop-body">
+          <span class="badge open"><span class="es">Disponible desde septiembre</span><span class="en">Available from September</span></span>
+          <p>
+            <span class="es">La casa donde el tiempo se estira: bosque alrededor, silencio de verdad y ese ritmo lento que le da el nombre.</span>
+            <span class="en">The house where time stretches: forest all around, real quiet, and the slow rhythm that gave it its name.</span>
+          </p>
+          <a class="btn solid" href="/stay/argentina-casa-calma/"><span class="es">Ver fechas de Casa Calma</span><span class="en">See dates for Casa Calma</span></a>
+        </div>
+      </div>
+
+      <div class="prop">
+        <div class="prop-ph">
+          <img src="https://lh3.googleusercontent.com/d/1TEdEM8pyZldYLmPfAfslXr7ClqByprn4" alt="Casa Paz">
+          <div class="prop-ph-overlay"><div class="prop-name">Casa Paz</div></div>
+        </div>
+        <div class="prop-body">
+          <span class="badge summer"><span class="es">Disponible a partir del 6 de diciembre</span><span class="en">Available from December 6</span></span>
+          <p>
+            <span class="es">Este año se completó la agenda. Diciembre ya está abierto para reservar: <b>quien llega primero, elige primero.</b></span>
+            <span class="en">This year's calendar is fully booked. December is now open: <b>first to book, first to choose.</b></span>
+          </p>
+          <a class="btn night" href="https://pay.lodgify.com/651630/803563" target="_blank"><span class="es">Reservar diciembre en Casa Paz</span><span class="en">Book December at Casa Paz</span></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="final-frame">
+    <div class="final-frame-img" style="background-image:url('https://lh3.googleusercontent.com/d/1CaIFcMOdvwdgz_zX6LFmfwtQ10zYm1Yo')"></div>
+    <div class="final-frame-overlay"></div>
+    <h2><span class="es">¿Fuiste huésped? Tu código <em>ya existe.</em></span><span class="en">Have you stayed with us? Your code <em>already exists.</em></span></h2>
+    <p>
+      <span class="es">Solo falta ponerle tu nombre. Escribinos y en el día lo tenés listo para compartir.</span>
+      <span class="en">It just needs your name on it. Message us and it's ready to share the same day.</span>
+    </p>
+    <a class="btn paper" href="https://wa.me/541154605672?text=Hola!%20Quiero%20mi%20c%C3%B3digo%20Wildclub">
+      <span class="es">Pedir mi código por WhatsApp</span><span class="en">Request my code on WhatsApp</span>
+    </a>
+  </div>
+
+  <div class="closing">
+    <div class="rule"></div>
+    <p>
+      <span class="es">Wildclub es un programa entre amigos: nos reservamos el derecho de mantenerlo humano.</span>
+      <span class="en">Wildclub is a program between friends: we reserve the right to keep it human.</span>
+    </p>
+  </div>
+
+  <p class="fine">
+    <span class="es">El descuento del 10% aplica sobre reservas directas en wildliving.life. El crédito del recomendador se calcula sobre el valor de la reserva completada, se acumula sin límite, se puede transferir a otra persona y tiene una vigencia de 12 meses.</span>
+    <span class="en">The 10% discount applies to direct bookings on wildliving.life. The referrer's credit is calculated on the completed booking's value, accumulates without limit, can be transferred to another person, and is valid for 12 months.</span>
+  </p>
+
+</div>
+
+<footer>
+  <div class="foot-logo-col">
+    <a href="/" class="foot-logo">Wild<span>·</span>living</a>
+    <p class="foot-tagline"><span>Find your next home in nature.</span><br><span>Patagonia · España · Grecia</span></p>
+    <p class="foot-sust">"Wildliving cree en el turismo como forma de vida, no como consumo."</p>
+  </div>
+  <div class="foot-col">
+    <h4>Plataforma</h4>
+    <ul>
+      <li><a href="/wildstays/patagonia/">Wildstays</a></li>
+      <li><a href="/wildhomes/">Wildhomes</a></li>
+      <li><a href="/sobre/">Sobre Wildliving</a></li>
+      <li><a href="/contacto/">Contacto</a></li>
+    </ul>
+  </div>
+  <div class="foot-col">
+    <h4>Propietarios</h4>
+    <ul>
+      <li><a href="/propietarios/">Wildliving Selected</a></li>
+      <li><a href="/propietarios/">Acuerdo de colaboración</a></li>
+      <li><a href="/wildstays/patagonia/">Ver Collection</a></li>
+    </ul>
+  </div>
+  <div class="foot-col">
+    <h4>Newsletter</h4>
+    <div class="newsletter-form">
+      <input type="email" class="newsletter-input" placeholder="tu@email.com">
+      <button class="newsletter-btn">→</button>
+    </div>
+    <ul style="margin-top:20px"><li><a href="#">Instagram</a></li><li><a href="https://wa.me/541154605672">WhatsApp</a></li></ul>
+  </div>
+  <div class="foot-bottom">
+    <span class="foot-copy">© 2026 Wildliving · wildliving.life · Todos los derechos reservados</span>
+    <div class="foot-dot"></div>
+    <span class="foot-copy">Turismo sustentable · Slow travel · Vivienda consciente</span>
+  </div>
+</footer>
+
+<script>
+function toggleMobileMenu(open){
+  document.getElementById('mobile-overlay').classList.toggle('open', open);
+}
+function setLang(lang){
+  document.body.classList.toggle('lang-en', lang === 'en');
+  document.querySelectorAll('.lang-btn').forEach(function(btn){
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+}
+</script>
+</body>
+</html>
