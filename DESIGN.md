@@ -513,7 +513,7 @@ Internal names (never shown externally):
 ```json
 {
   "name": "Casa Calma",
-  "slug": "patagonia-casa-calma",
+  "slug": "argentina-casa-calma",
   "destination": "patagonia",
   "type": "collection",
   "source": "lodgify",

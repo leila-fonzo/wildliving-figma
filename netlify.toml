@@ -2,6 +2,12 @@
   publish = "."
 
 [[redirects]]
+  from = "/stay/patagonia-casa-calma/*"
+  to = "/stay/argentina-casa-calma/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/:splat/index.html"
   status = 200
