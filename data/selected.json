@@ -1,1 +1,41 @@
-[]
+[
+  {
+    "placeholder": true,
+    "name": "Refugio del Bosque",
+    "slug": "argentina-refugio-del-bosque",
+    "location": "Villa La Angostura · Patagonia",
+    "country": "ARG",
+    "tab": "argentina",
+    "description_card_es": "El sonido del viento entre coihues antes que cualquier otra cosa. Madera que guarda el calor de la tarde y ventanales que enmarcan el bosque, no lo interrumpen.",
+    "description_card_en": "The sound of wind through coihue trees before anything else. Wood that holds the afternoon's warmth, and windows that frame the forest rather than interrupt it.",
+    "price": 140,
+    "image_main": "https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?w=800&q=80",
+    "affiliate_url": "#"
+  },
+  {
+    "placeholder": true,
+    "name": "Casa entre Viñas",
+    "slug": "argentina-casa-entre-vinas",
+    "location": "Chacras de Coria · Mendoza",
+    "country": "ARG",
+    "tab": "argentina",
+    "description_card_es": "El aire seco de Mendoza al abrir la puerta a la mañana. Piedra fresca bajo los pies, una galería que mira a la viña y la cordillera detrás, siempre presente.",
+    "description_card_en": "Mendoza's dry air when you open the door in the morning. Cool stone underfoot, a veranda facing the vineyard, and the Andes behind it, always present.",
+    "price": 120,
+    "image_main": "https://images.unsplash.com/photo-1474968917434-8571ae2bcb54?w=800&q=80",
+    "affiliate_url": "#"
+  },
+  {
+    "placeholder": true,
+    "name": "Finca del Atlántico",
+    "slug": "espana-finca-del-atlantico",
+    "location": "Costa da Morte · Galicia",
+    "country": "ESP",
+    "tab": "espana",
+    "description_card_es": "La sal en el aire llega antes que la vista al mar. Muros gruesos que amortiguan el viento gallego y una luz que cambia el color de las paredes durante el día.",
+    "description_card_en": "The salt in the air arrives before the sea view does. Thick walls that soften the Galician wind, and a light that changes the colour of the walls through the day.",
+    "price": 160,
+    "image_main": "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=800&q=80",
+    "affiliate_url": "#"
+  }
+]
