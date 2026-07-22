@@ -211,27 +211,26 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .eco-future:hover{border-color:var(--stone)}
 
 /* BUYER PERSONAS */
-.personas{padding:120px 80px;background:var(--rock)}
+.personas{padding:120px 80px;background:var(--paper)}
 .personas-header{margin-bottom:64px}
-.personas-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--sand)}
-.persona-item{background:var(--rock);padding:36px 24px;transition:background .3s}
-.persona-item:hover{background:var(--paper)}
-.persona-num{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-size:10px;color:var(--moss);margin-bottom:20px;display:block}
-.persona-name{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-style:italic;font-size:20px;line-height:1.2;color:var(--night);margin-bottom:12px}
-.persona-intro{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-style:italic;font-size:15px;line-height:1.6;color:var(--ink);margin-bottom:8px}
-.persona-desc{font-family:var(--sans);font-weight:300;font-size:15px;line-height:1.75;color:var(--stone)}
 .personas-rows{display:flex;flex-direction:column;gap:0}
-.per-row{display:grid;align-items:stretch;border-top:1px solid var(--sand);background:var(--rock);transition:background .3s;cursor:default}
-.per-row:hover{background:var(--paper)}
-.per-img{overflow:hidden;height:140px}
-.per-img img{width:100%;height:100%;object-fit:cover;filter:grayscale(20%) brightness(.88);transition:filter .4s}
-.per-row:hover .per-img img{filter:grayscale(0%) brightness(.95)}
-.per-body{padding:28px 36px;display:flex;flex-direction:column;justify-content:center}
-.per-num{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-size:10px;color:var(--moss);margin-bottom:8px;display:block}
-.per-name{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-style:italic;font-size:20px;line-height:1.2;color:var(--ink);margin-bottom:8px}
-.per-intro{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-style:italic;font-size:18px;line-height:1.6;color:var(--stone);margin-bottom:6px}
-.per-desc{font-family:var(--sans);font-weight:300;font-size:14px;line-height:1.75;color:var(--stone)}
-@media(max-width:900px){.per-row,.per-row-inv{grid-template-columns:1fr !important}.per-img{height:180px}}
+.per-row{display:flex;border-top:1px solid var(--sand);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.per-row-inv{flex-direction:row-reverse}
+.per-img{position:relative;overflow:hidden;flex:0 0 58%;min-height:480px}
+.per-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.04);transition:transform .9s var(--ease)}
+.per-row:hover .per-img img{transform:scale(1)}
+.per-num-float{position:absolute;bottom:-20px;right:-16px;font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-weight:300;font-size:clamp(80px,10vw,128px);line-height:1;color:var(--paper);opacity:.18;letter-spacing:-.04em;pointer-events:none;user-select:none;z-index:2}
+.per-row-inv .per-num-float{left:-16px;right:auto}
+.per-body{flex:0 0 42%;background:var(--rock);padding:clamp(40px,5vw,72px) clamp(32px,4vw,60px);display:flex;flex-direction:column;justify-content:center}
+.per-num{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-size:12px;font-weight:300;color:var(--moss);letter-spacing:.10em;margin-bottom:20px;display:block}
+.per-name{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-weight:300;font-size:clamp(28px,3vw,40px);line-height:1.08;letter-spacing:-.015em;color:var(--night);margin-bottom:18px}
+.per-intro{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-weight:300;font-style:italic;font-size:17px;line-height:1.6;color:var(--stone);margin-bottom:20px;border-left:1px solid var(--sand);padding-left:16px}
+.per-desc{font-family:var(--sans);font-weight:300;font-size:14px;line-height:1.82;color:var(--stone)}
+@media(max-width:900px){
+  .per-row,.per-row-inv{flex-direction:column}
+  .per-img{flex:0 0 auto;min-height:280px;width:100%}
+  .per-body{flex:0 0 auto;width:100%;padding:36px 24px}
+}
 
 /* TESTIMONIOS */
 .testimonios{background:var(--paper);padding:140px 80px}
@@ -320,7 +319,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9998;o
   .selected-empty{padding:40px 24px}
   .sustentabilidad{padding:80px 24px}.sust-valores{grid-template-columns:1fr}
   .ecosystem{padding:80px 24px}.eco-grid{grid-template-columns:1fr 1fr}
-  .personas{padding:80px 24px}.personas-grid{grid-template-columns:1fr 1fr}
+  .personas{padding:80px 24px}
   .testimonios{padding:80px 24px}.test-grid{grid-template-columns:1fr;gap:36px}
   .propietarios{grid-template-columns:1fr;padding:80px 24px;gap:48px}
   .film-strip{grid-template-columns:repeat(3,1fr)}
@@ -368,7 +367,6 @@ nav.scrolled .hamburger-btn{color:var(--night)}
 .eco-desc{font-size:14px;line-height:1.8}
 .test-quote{font-size:17px}
 .sust-valor-desc{font-size:14px;line-height:1.8}
-.persona-desc{font-size:14px}
 .foot-tagline,.foot-col a,.foot-col li{font-size:13px}
 .declaracion-text{font-size:clamp(22px,2.6vw,32px)}
 .tag{font-size:10px}
@@ -673,24 +671,24 @@ nav.scrolled .hamburger-btn{color:var(--night)}
     <h2 class="h2"><span data-i18n="per_title">Para quienes entienden</span><br><em data-i18n="per_title_em">que el entorno define la vida.</em></h2>
   </div>
   <div class="personas-rows">
-    <div class="per-row reveal" style="grid-template-columns:200px 1fr">
-      <div class="per-img"><img src="https://lh3.googleusercontent.com/d/1jMTCY3HVy8bOUIWHjneD0yGI-VIdW8ca" alt="Ritmo Propio"></div>
+    <div class="per-row reveal">
+      <div class="per-img"><img src="https://lh3.googleusercontent.com/d/1jMTCY3HVy8bOUIWHjneD0yGI-VIdW8ca" alt="Ritmo Propio"><span class="per-num-float" aria-hidden="true">01</span></div>
       <div class="per-body"><span class="per-num">01</span><div class="per-name" data-i18n="per1_name">Ritmo Propio</div><p class="per-intro" data-i18n="per1_intro">No buscas una propiedad. Buscas un entorno donde descansar de verdad.</p><p class="per-desc" data-i18n="per1_desc">Necesitas silencio, diseño intencional y tiempo para desacelerar. Que tu ritmo encuentre su ritmo. Que el espacio te regule, no te demande.</p></div>
     </div>
-    <div class="per-row per-row-inv reveal" style="grid-template-columns:1fr 200px">
+    <div class="per-row per-row-inv reveal">
       <div class="per-body"><span class="per-num">02</span><div class="per-name" data-i18n="per2_name">Inversión Intencional</div><p class="per-intro" data-i18n="per2_intro">Viajas con criterio. Inviertes con intención. Quieres un activo que también sea un refugio donde tu familia quiere estar.</p><p class="per-desc" data-i18n="per2_desc">En WildLiving encuentras lugares que no compiten por ocupación máxima sino por resonancia. Rentan bien precisamente porque están bien elegidos. Y te enorgullece compartirlos.</p></div>
-      <div class="per-img"><img src="https://lh3.googleusercontent.com/d/1XJhnGVmwnx2mhR1qsEAYyeEiyUFSv13a" alt="Inversión Intencional"></div>
+      <div class="per-img"><img src="https://lh3.googleusercontent.com/d/1XJhnGVmwnx2mhR1qsEAYyeEiyUFSv13a" alt="Inversión Intencional"><span class="per-num-float" aria-hidden="true">02</span></div>
     </div>
-    <div class="per-row reveal" style="grid-template-columns:200px 1fr">
-      <div class="per-img"><img src="https://lh3.googleusercontent.com/d/1iSPgByb7Zpkk7w9ZayNzWgIwdNTKowJa" alt="Raíces nómades"></div>
+    <div class="per-row reveal">
+      <div class="per-img"><img src="https://lh3.googleusercontent.com/d/1iSPgByb7Zpkk7w9ZayNzWgIwdNTKowJa" alt="Raíces nómades"><span class="per-num-float" aria-hidden="true">03</span></div>
       <div class="per-body"><span class="per-num">03</span><div class="per-name" data-i18n="per3_name">Raíces nómades</div><p class="per-intro" data-i18n="per3_intro">Algunos llegan buscando conectividad. Se quedan buscando base, comunidad y naturaleza.</p><p class="per-desc" data-i18n="per3_desc">Necesitas una conexión estable pero elegiste naturaleza sobre comodidad estándar. WildLiving es para quien está construyendo una forma de vivir, no solo un itinerario. Donde encuentras gente que entiende ese movimiento.</p></div>
     </div>
-    <div class="per-row per-row-inv reveal" style="grid-template-columns:1fr 200px">
+    <div class="per-row per-row-inv reveal">
       <div class="per-body"><span class="per-num">04</span><div class="per-name" data-i18n="per4_name">Pertenencia Recuperada</div><p class="per-intro" data-i18n="per4_intro">Sabes qué tipo de vida quieres. Ahora quieres que sea aquí.</p><p class="per-desc" data-i18n="per4_desc">Necesitas a alguien que conozca realmente el territorio, no como venta, como acompañamiento. Que entienda por qué vuelves, o por qué nunca te fuiste del todo. Y que te ayude a elegir con certeza.</p></div>
-      <div class="per-img"><img src="https://lh3.googleusercontent.com/d/1bLk8m_O5AsAwvJa8nGKaxa82F6R1HmqU" alt="Pertenencia Recuperada"></div>
+      <div class="per-img"><img src="https://lh3.googleusercontent.com/d/1bLk8m_O5AsAwvJa8nGKaxa82F6R1HmqU" alt="Pertenencia Recuperada"><span class="per-num-float" aria-hidden="true">04</span></div>
     </div>
-    <div class="per-row reveal" style="grid-template-columns:200px 1fr">
-      <div class="per-img"><img src="https://lh3.googleusercontent.com/d/1bmgtCEfKdV0a5rp2kbWONO_77DaMO7EO" alt="Herencia Natural"></div>
+    <div class="per-row reveal">
+      <div class="per-img"><img src="https://lh3.googleusercontent.com/d/1bmgtCEfKdV0a5rp2kbWONO_77DaMO7EO" alt="Herencia Natural"><span class="per-num-float" aria-hidden="true">05</span></div>
       <div class="per-body"><span class="per-num">05</span><div class="per-name" data-i18n="per5_name">Herencia Natural</div><p class="per-intro" data-i18n="per5_intro">Estás eligiendo el entorno donde tus hijos van a crecer. No es una transacción. Es una decisión que pesa.</p><p class="per-desc" data-i18n="per5_desc">Necesitas criterio, claridad y alguien en quien confiar absolutamente. En WildLiving validamos cada lugar combinando tecnología y conocimiento real: sabemos dónde la naturaleza, el diseño y la calma funcionan para que la familia que tenés en mente prospere.</p></div>
     </div>
   </div>
