@@ -190,6 +190,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .sust-valores{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:64px}
 .sust-valor{border-top:1px solid rgba(200,196,188,.12);padding-top:24px}
 .sust-valor-titulo{font-family:var(--sans);font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--moss);margin-bottom:12px;display:block}
+.sust-body-head{font-family:var(--sans);font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--moss-l);margin-bottom:10px;display:block}
 .sust-valor-texto{font-family:var(--sans);font-weight:300;font-size:14px;line-height:1.8;color:rgba(250,250,247,.4)}
 
 /* ECOSYSTEM */
@@ -618,12 +619,12 @@ nav.scrolled .hamburger-btn{color:var(--night)}
 <section class="sustentabilidad">
   <div class="sust-bg"></div>
   <div class="sust-content reveal">
-    <span class="eyebrow eyebrow-light" data-i18n="sust_eyebrow">Wildliving · Propósito</span>
-    <h2 class="sust-title"><span data-i18n="sust_title">La naturaleza como</span><br><em data-i18n="sust_title_em">forma de vivir</em></h2>
+    <span class="eyebrow eyebrow-light" data-i18n="sust_eyebrow">Propósito</span>
+    <h2 class="sust-title"><span data-i18n="sust_title">La naturaleza como</span><br><em data-i18n="sust_title_em">forma de vivir.</em></h2>
     <div class="sust-body">
-      <p><span data-i18n="sust_body1">Creemos que la forma en que elegimos vivir define el mundo que construimos.</span></p>
-      <p><span data-i18n="sust_body2">La naturaleza regula el sistema nervioso de formas que la ciudad no puede. El silencio no es la ausencia de sonido, es la presencia de todo lo demás. Un ritmo más lento no significa menos vida: significa más claridad en las decisiones, más pertenencia a un lugar.</span></p>
-      <p><span data-i18n="sust_body3">En Wildliving, cada propiedad es seleccionada y editada bajo una premisa: la naturaleza no es el fondo del paisaje, es la razón de estar ahí. No optimizamos para ocupación. Optimizamos por compatibilidad: entre el lugar, quién sos y la vida que querés vivir.</span></p>
+      <p><span class="sust-body-head" data-i18n="sust_body1_head">Entorno primero</span><span data-i18n="sust_body1">Las propiedades Wildliving hablan el mismo idioma que el paisaje que las rodea. El mar, el bosque, la costa son los protagonistas — los espacios existen para honrarlos.</span></p>
+      <p><span class="sust-body-head" data-i18n="sust_body2_head">Hospitalidad consciente</span><span data-i18n="sust_body2">Preferimos una estadía que se recuerda, a diez que se olvidan. Nos esforzamos para que cada huésped se vaya con algo positivo, y que el lugar también reciba algo bueno de él.</span></p>
+      <p><span class="sust-body-head" data-i18n="sust_body3_head">Estilo de vida</span><span data-i18n="sust_body3">Las personas que pasan por Wildliving no son turistas. Saben que un lugar puede sentirse como propio aunque estén lejos de casa. Por eso buscan cercanía, trato personalizado y cuidado en cada detalle del espacio. Esa forma de mirar cambia todo.</span></p>
     </div>
   </div>
   <div class="sust-valores">
@@ -924,12 +925,15 @@ const es = {
   sel_desc:         "Propiedades que elegimos con criterio editorial, de entorno natural y lifestyle. Trabajamos con partners de confianza para acercarte más lugares con el mismo estándar.",
 
   /* ── SUSTENTABILIDAD ── */
-  sust_eyebrow:     "Wildliving · Propósito",
+  sust_eyebrow:     "Propósito",
   sust_title:       "La naturaleza como",
-  sust_title_em:    "forma de vivir",
-  sust_body1:       "Creemos que la forma en que elegimos vivir define el mundo que construimos.",
-  sust_body2:       "La naturaleza regula el sistema nervioso de formas que la ciudad no puede. El silencio no es la ausencia de sonido, es la presencia de todo lo demás. Un ritmo más lento no significa menos vida: significa más claridad en las decisiones, más pertenencia a un lugar.",
-  sust_body3:       "En Wildliving, cada propiedad es seleccionada y editada bajo una premisa: la naturaleza no es el fondo del paisaje, es la razón de estar ahí. No optimizamos para ocupación. Optimizamos por compatibilidad: entre el lugar, quién sos y la vida que querés vivir.",
+  sust_title_em:    "forma de vivir.",
+  sust_body1_head:  "Entorno primero",
+  sust_body1:       "Las propiedades Wildliving hablan el mismo idioma que el paisaje que las rodea. El mar, el bosque, la costa son los protagonistas — los espacios existen para honrarlos.",
+  sust_body2_head:  "Hospitalidad consciente",
+  sust_body2:       "Preferimos una estadía que se recuerda, a diez que se olvidan. Nos esforzamos para que cada huésped se vaya con algo positivo, y que el lugar también reciba algo bueno de él.",
+  sust_body3_head:  "Estilo de vida",
+  sust_body3:       "Las personas que pasan por Wildliving no son turistas. Saben que un lugar puede sentirse como propio aunque estén lejos de casa. Por eso buscan cercanía, trato personalizado y cuidado en cada detalle del espacio. Esa forma de mirar cambia todo.",
 
   sust_v1_titulo:   "Entorno primero",
   sust_v1_texto:    "Ninguna propiedad Wildliving compite con el paisaje que la rodea. El lago, el bosque, la costa — son la razón de estar ahí. El alojamiento es el marco, no el cuadro.",
