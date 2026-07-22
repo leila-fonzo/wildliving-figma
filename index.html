@@ -184,14 +184,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .sust-content{position:relative;z-index:1;max-width:720px}
 .sust-title{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-weight:300;font-size:clamp(38px,4.5vw,60px);line-height:1.08;color:var(--white);letter-spacing:-.015em;margin-bottom:40px;text-shadow:0 2px 10px rgba(0,0,0,.35)}
 .sust-title em{font-style:normal;color:var(--moss-l)}
-.sust-body{margin-bottom:48px;border-left:1px solid var(--moss);padding:32px 36px;background:rgba(242,240,235,.07)}
-.sust-body p{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-weight:400;font-size:20px;line-height:1.75;color:rgba(250,250,247,.9);text-shadow:0 1px 4px rgba(0,0,0,.4);margin-bottom:28px}
-.sust-body p:last-child{margin-bottom:0}
 .sust-valores{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:64px}
-.sust-valor{border-top:1px solid rgba(200,196,188,.12);padding-top:24px}
-.sust-valor-titulo{font-family:var(--sans);font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--moss);margin-bottom:12px;display:block}
-.sust-body-head{font-family:var(--sans);font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--moss-l);margin-bottom:10px;display:block}
-.sust-valor-texto{font-family:var(--sans);font-weight:300;font-size:14px;line-height:1.8;color:rgba(250,250,247,.4)}
+.sust-valor{border-top:1px solid rgba(200,196,188,.2);padding:24px 20px 20px;background:rgba(242,240,235,.06)}
+.sust-valor-titulo{font-family:var(--sans);font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--moss-l);margin-bottom:12px;display:block}
+.sust-valor-texto{font-family:var(--sans);font-weight:300;font-size:14px;line-height:1.8;color:rgba(250,250,247,.75);text-shadow:0 1px 3px rgba(0,0,0,.35)}
 
 /* ECOSYSTEM */
 .ecosystem{padding:140px 80px;background:var(--paper)}
@@ -621,24 +617,19 @@ nav.scrolled .hamburger-btn{color:var(--night)}
   <div class="sust-content reveal">
     <span class="eyebrow eyebrow-light" data-i18n="sust_eyebrow">Propósito</span>
     <h2 class="sust-title"><span data-i18n="sust_title">La naturaleza como</span><br><em data-i18n="sust_title_em">forma de vivir.</em></h2>
-    <div class="sust-body">
-      <p><span class="sust-body-head" data-i18n="sust_body1_head">Entorno primero</span><span data-i18n="sust_body1">Las propiedades Wildliving hablan el mismo idioma que el paisaje que las rodea. El mar, el bosque, la costa son los protagonistas — los espacios existen para honrarlos.</span></p>
-      <p><span class="sust-body-head" data-i18n="sust_body2_head">Hospitalidad consciente</span><span data-i18n="sust_body2">Preferimos una estadía que se recuerda, a diez que se olvidan. Nos esforzamos para que cada huésped se vaya con algo positivo, y que el lugar también reciba algo bueno de él.</span></p>
-      <p><span class="sust-body-head" data-i18n="sust_body3_head">Estilo de vida</span><span data-i18n="sust_body3">Las personas que pasan por Wildliving no son turistas. Saben que un lugar puede sentirse como propio aunque estén lejos de casa. Por eso buscan cercanía, trato personalizado y cuidado en cada detalle del espacio. Esa forma de mirar cambia todo.</span></p>
-    </div>
   </div>
   <div class="sust-valores">
     <div class="sust-valor reveal">
       <span class="sust-valor-titulo" data-i18n="sust_v1_titulo">Entorno primero</span>
-      <p class="sust-valor-texto" data-i18n="sust_v1_texto">Ninguna propiedad Wildliving compite con el paisaje que la rodea. El lago, el bosque, la costa — son la razón de estar ahí. El alojamiento es el marco, no el cuadro.</p>
+      <p class="sust-valor-texto" data-i18n="sust_v1_texto">Las propiedades Wildliving hablan el mismo idioma que el paisaje que las rodea. El mar, el bosque, la costa son los protagonistas — los espacios existen para honrarlos.</p>
     </div>
     <div class="sust-valor reveal d1">
       <span class="sust-valor-titulo" data-i18n="sust_v2_titulo">Hospitalidad consciente</span>
-      <p class="sust-valor-texto" data-i18n="sust_v2_texto">Elegimos la profundidad sobre el volumen. Una estadía que deja algo vale más que diez que no dejan nada. Para la persona y para el lugar que la recibe.</p>
+      <p class="sust-valor-texto" data-i18n="sust_v2_texto">Preferimos una estadía que se recuerda, a diez que se olvidan. Nos esforzamos para que cada huésped se vaya con algo positivo, y que el lugar también reciba algo bueno de él.</p>
     </div>
     <div class="sust-valor reveal d2">
-      <span class="sust-valor-titulo" data-i18n="sust_v3_titulo">Comunidad de vida</span>
-      <p class="sust-valor-texto" data-i18n="sust_v3_texto">Las personas que pasan por Wildliving no son turistas que visitan un lugar — son personas que están evaluando si quieren quedarse. Esa intención cambia todo.</p>
+      <span class="sust-valor-titulo" data-i18n="sust_v3_titulo">Estilo de vida</span>
+      <p class="sust-valor-texto" data-i18n="sust_v3_texto">Las personas que pasan por Wildliving no son turistas. Saben que un lugar puede sentirse como propio aunque estén lejos de casa. Por eso buscan cercanía, trato personalizado y cuidado en cada detalle del espacio. Esa forma de mirar cambia todo.</p>
     </div>
   </div>
 </section>
@@ -928,19 +919,12 @@ const es = {
   sust_eyebrow:     "Propósito",
   sust_title:       "La naturaleza como",
   sust_title_em:    "forma de vivir.",
-  sust_body1_head:  "Entorno primero",
-  sust_body1:       "Las propiedades Wildliving hablan el mismo idioma que el paisaje que las rodea. El mar, el bosque, la costa son los protagonistas — los espacios existen para honrarlos.",
-  sust_body2_head:  "Hospitalidad consciente",
-  sust_body2:       "Preferimos una estadía que se recuerda, a diez que se olvidan. Nos esforzamos para que cada huésped se vaya con algo positivo, y que el lugar también reciba algo bueno de él.",
-  sust_body3_head:  "Estilo de vida",
-  sust_body3:       "Las personas que pasan por Wildliving no son turistas. Saben que un lugar puede sentirse como propio aunque estén lejos de casa. Por eso buscan cercanía, trato personalizado y cuidado en cada detalle del espacio. Esa forma de mirar cambia todo.",
-
   sust_v1_titulo:   "Entorno primero",
-  sust_v1_texto:    "Ninguna propiedad Wildliving compite con el paisaje que la rodea. El lago, el bosque, la costa — son la razón de estar ahí. El alojamiento es el marco, no el cuadro.",
+  sust_v1_texto:    "Las propiedades Wildliving hablan el mismo idioma que el paisaje que las rodea. El mar, el bosque, la costa son los protagonistas — los espacios existen para honrarlos.",
   sust_v2_titulo:   "Hospitalidad consciente",
-  sust_v2_texto:    "Elegimos la profundidad sobre el volumen. Una estadía que deja algo vale más que diez que no dejan nada. Para la persona y para el lugar que la recibe.",
-  sust_v3_titulo:   "Comunidad de vida",
-  sust_v3_texto:    "Las personas que pasan por Wildliving no son turistas que visitan un lugar — son personas que están evaluando si quieren quedarse. Esa intención cambia todo.",
+  sust_v2_texto:    "Preferimos una estadía que se recuerda, a diez que se olvidan. Nos esforzamos para que cada huésped se vaya con algo positivo, y que el lugar también reciba algo bueno de él.",
+  sust_v3_titulo:   "Estilo de vida",
+  sust_v3_texto:    "Las personas que pasan por Wildliving no son turistas. Saben que un lugar puede sentirse como propio aunque estén lejos de casa. Por eso buscan cercanía, trato personalizado y cuidado en cada detalle del espacio. Esa forma de mirar cambia todo.",
 
   /* ── ECOSISTEMA ── */
   eco_eyebrow:      "El ecosistema",
