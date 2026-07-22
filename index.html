@@ -39,6 +39,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-links a{font-family:var(--sans);font-weight:300;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--white);text-decoration:none;opacity:.7;transition:opacity .2s}
 .nav-links.dark a{color:var(--night)}
 .nav-links a:hover{opacity:1}
+.hamburger-btn{display:none;background:none;border:none;cursor:pointer;font-size:24px;line-height:1;color:var(--white);padding:0;min-width:44px;min-height:44px;align-items:center;justify-content:center}
+nav.scrolled .hamburger-btn{color:var(--night)}
 
 /* HERO */
 .hero{position:relative;height:100vh;min-height:700px;overflow:hidden;display:flex;align-items:flex-end}
@@ -205,7 +207,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .eco-name em{font-style:normal;color:var(--moss)}
 .eco-badge{font-family:var(--sans);font-size:7px;letter-spacing:.18em;text-transform:uppercase;color:var(--stone);background:var(--rock);padding:3px 8px;display:inline-block;margin-bottom:9px}
 .eco-desc{font-family:var(--sans);font-weight:300;font-size:15px;line-height:1.82;color:var(--stone)}
-.eco-link{display:inline-block;margin-top:16px;font-family:var(--sans);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--moss);text-decoration:none;border-bottom:1px solid rgba(124,154,110,.3);padding-bottom:2px;transition:border-color .2s}
+.eco-link{display:inline-flex;align-items:flex-end;min-height:44px;margin-top:16px;font-family:var(--sans);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--moss);text-decoration:none;border-bottom:1px solid rgba(124,154,110,.3);padding-bottom:2px;transition:border-color .2s}
 .eco-link:hover{border-color:var(--moss)}
 .eco-future{color:var(--stone);border-color:rgba(107,107,96,.2)}
 .eco-future:hover{border-color:var(--stone)}
@@ -215,7 +217,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .personas-header{margin-bottom:64px}
 .personas-rows{display:flex;flex-direction:column;gap:0}
 .per-row{display:flex;border-top:1px solid var(--sand);transition:opacity .6s var(--ease),transform .6s var(--ease)}
-.per-row-inv{flex-direction:row-reverse}
+.per-row-inv{flex-direction:row}
 .per-img{position:relative;overflow:hidden;flex:0 0 58%;min-height:480px}
 .per-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.04);transition:transform .9s var(--ease)}
 .per-row:hover .per-img img{transform:scale(1)}
@@ -227,7 +229,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .per-intro{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-weight:300;font-style:italic;font-size:17px;line-height:1.6;color:var(--stone);margin-bottom:20px;border-left:1px solid var(--sand);padding-left:16px}
 .per-desc{font-family:var(--sans);font-weight:300;font-size:14px;line-height:1.82;color:var(--stone)}
 @media(max-width:900px){
-  .per-row,.per-row-inv{flex-direction:column}
+  .per-row{flex-direction:column}
+  .per-row-inv{flex-direction:column-reverse}
   .per-img{flex:0 0 auto;min-height:280px;width:100%}
   .per-body{flex:0 0 auto;width:100%;padding:36px 24px}
 }
@@ -242,20 +245,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .test-quote{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-weight:300;font-style:italic;font-size:22px;line-height:1.5;color:var(--night);margin-bottom:20px}
 .test-author{font-family:var(--sans);font-size:12px;font-weight:300;letter-spacing:.1em;color:var(--stone)}
 
-/* PROPIETARIOS CTA — nuevo */
-.propietarios{padding:120px 80px;background:var(--night);display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center}
-.prop-cta-eyebrow{font-family:var(--sans);font-size:9px;letter-spacing:.26em;text-transform:uppercase;color:var(--moss);margin-bottom:20px;display:block}
-.prop-cta-title{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-weight:300;font-size:clamp(34px,3.8vw,52px);line-height:1.08;color:var(--white);letter-spacing:-.015em;margin-bottom:20px}
-.prop-cta-title em{font-style:normal;color:var(--moss-l)}
-.prop-cta-desc{font-family:var(--sans);font-weight:300;font-size:14px;line-height:1.85;color:rgba(250,250,247,.45);margin-bottom:36px;max-width:400px}
-.prop-cta-note{font-family:var(--sans);font-size:11px;font-weight:300;color:rgba(250,250,247,.25);margin-top:16px;line-height:1.6}
-.prop-cta-rules{display:flex;flex-direction:column;gap:0}
-.prop-rule{display:flex;align-items:flex-start;gap:20px;padding:22px 28px;border-bottom:1px solid rgba(200,196,188,.07)}
-.prop-rule:first-child{border-top:1px solid rgba(200,196,188,.07)}
-.prop-rule-icon{width:24px;height:24px;border:1px solid var(--moss);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
-.prop-rule-icon::after{content:'';width:6px;height:6px;background:var(--moss);border-radius:50%}
-.prop-rule-text{font-family:var(--sans);font-weight:300;font-size:14px;color:rgba(250,250,247,.5);line-height:1.6}
-.prop-rule-text strong{color:rgba(250,250,247,.7);font-weight:400}
+/* PROPIETARIOS CTA */
+.propietarios{padding:64px 80px;background:var(--night);display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
+.propietarios-cta{display:inline-block;font-family:var(--sans);font-weight:300;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--white);text-decoration:none;border:1px solid rgba(250,250,247,.28);padding:15px 34px;white-space:nowrap;transition:background .3s;min-height:44px;box-sizing:border-box}
 
 /* FILM STRIP */
 .film-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:3px;background:var(--night)}
@@ -335,21 +327,15 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9998;o
 .lang-sep{font-size:9px;opacity:.25;color:var(--white)}
 nav.scrolled .lang-btn{color:var(--night)}
 
-/* HAMBURGER */
-.hamburger-btn{display:none;background:none;border:none;cursor:pointer;font-size:24px;line-height:1;color:var(--white);padding:0}
-nav.scrolled .hamburger-btn{color:var(--night)}
 .mobile-overlay{position:fixed;inset:0;background:var(--night);z-index:10000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:32px;opacity:0;visibility:hidden;transition:opacity .3s var(--ease)}
 .mobile-overlay.open{opacity:1;visibility:visible}
-.mobile-overlay a{font-family:var(--sans);font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,250,247,.7);text-decoration:none}
+.mobile-overlay a{font-family:var(--sans);font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,250,247,.7);text-decoration:none;min-height:44px;display:flex;align-items:center}
 .mobile-overlay a:hover{color:var(--white)}
-.mobile-overlay-close{position:absolute;top:24px;right:24px;background:none;border:none;font-size:26px;color:var(--white);cursor:pointer}
+.mobile-overlay-close{position:absolute;top:24px;right:24px;background:none;border:none;font-size:26px;color:var(--white);cursor:pointer;min-width:44px;min-height:44px}
+.mobile-overlay-lang{display:flex;align-items:center;gap:10px;margin-top:8px}
+.mobile-overlay-lang .lang-btn{padding:12px 14px;font-size:14px;min-height:44px}
+.mobile-overlay-lang .lang-sep{color:rgba(250,250,247,.25);font-size:11px}
 
-/* LANG SELECTOR */
-.lang-selector{display:flex;align-items:center;gap:4px;margin-left:24px}
-.lang-btn{font-family:var(--sans);font-size:10px;font-weight:300;letter-spacing:.18em;text-transform:uppercase;background:none;border:none;cursor:pointer;padding:4px 6px;opacity:.45;transition:opacity .2s;color:var(--white)}
-.lang-btn.active{opacity:1;border-bottom:1px solid currentColor}
-.lang-btn:hover{opacity:.8}
-.lang-sep{font-size:9px;opacity:.25;color:var(--white)}
 /* ── HERO MODE BUTTONS ── */
 .hero-mode-tabs{display:flex;gap:12px;margin-top:28px}
 .hero-mode-btn{font-family:var(--sans);font-weight:300;font-size:11px;letter-spacing:.22em;text-transform:uppercase;padding:15px 38px;cursor:pointer;border:1px solid rgba(250,250,247,.38);background:transparent;color:var(--white);transition:background .3s,border-color .3s;min-width:180px}
@@ -398,6 +384,11 @@ nav.scrolled .hamburger-btn{color:var(--night)}
   <a href="/wildhomes/" data-i18n="nav_wildhomes">Wildhomes</a>
   <a href="/sobre/" data-i18n="nav_sobre">Sobre</a>
   <a href="/contacto/" data-i18n="nav_contacto">Contacto</a>
+  <div class="mobile-overlay-lang">
+    <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
+    <span class="lang-sep">·</span>
+    <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+  </div>
 </div>
 
 <section class="hero">
@@ -727,7 +718,7 @@ nav.scrolled .hamburger-btn{color:var(--night)}
   </div>
 </section>
 
-<section class="propietarios" id="propietarios" style="padding:64px 80px;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center">
+<section class="propietarios" id="propietarios">
   <div>
     <span class="eyebrow" style="color:var(--moss);display:block;margin-bottom:12px" data-i18n="own_eyebrow">¿Tenés una propiedad en un entorno natural?</span>
     <h2 style="font-family:var(--serif);font-weight:300;font-size:clamp(34px,4vw,54px);line-height:1.1;color:var(--white);letter-spacing:-.02em;margin-bottom:14px" data-i18n="own_title">Tu propiedad merece los huéspedes correctos.</h2>
@@ -737,7 +728,7 @@ nav.scrolled .hamburger-btn{color:var(--night)}
       <p style="font-family:var(--sans);font-weight:300;font-size:15px;color:rgba(250,250,247,.5);line-height:1.8" data-i18n="own_desc3">Sin exclusividad. Sin costo de entrada.</p>
     </div>
   </div>
-  <a href="/propietarios/" style="display:inline-block;font-family:var(--sans);font-weight:300;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--white);text-decoration:none;border:1px solid rgba(250,250,247,.28);padding:15px 34px;white-space:nowrap;transition:background .3s" data-i18n="own_cta">Conocer el programa →</a>
+  <a href="/propietarios/" class="propietarios-cta" data-i18n="own_cta">Conocer el programa →</a>
 </section>
 
 <div class="film-strip">
