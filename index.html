@@ -375,11 +375,11 @@ nav.scrolled .lang-btn{color:var(--night)}
       <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
     </li>
   </ul>
-  <button class="hamburger-btn" id="hamburger-btn" onclick="toggleMobileMenu(true)" aria-label="Abrir menú">☰</button>
+  <button class="hamburger-btn" id="hamburger-btn" onclick="toggleMobileMenu(true)" aria-label="Abrir menú" data-i18n-aria="aria_open_menu">☰</button>
 </nav>
 
 <div class="mobile-overlay" id="mobile-overlay">
-  <button class="mobile-overlay-close" onclick="toggleMobileMenu(false)" aria-label="Cerrar menú">✕</button>
+  <button class="mobile-overlay-close" onclick="toggleMobileMenu(false)" aria-label="Cerrar menú" data-i18n-aria="aria_close_menu">✕</button>
   <a href="/wildstays/patagonia/" data-i18n="nav_wildstays">Wildstays</a>
   <a href="/wildhomes/" data-i18n="nav_wildhomes">Wildhomes</a>
   <a href="/sobre/" data-i18n="nav_sobre">Sobre</a>
@@ -407,26 +407,26 @@ nav.scrolled .lang-btn{color:var(--night)}
         <p style="font-family:var(--sans);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--moss-l);margin-bottom:14px" data-i18n="hero_search_label">Reservá directamente · disponibilidad en tiempo real</p>
         <form id="wl-search-form" onsubmit="return wlSubmitSearch(event)" style="display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end">
           <div style="flex:1;min-width:140px">
-            <label class="wl-search-label" for="wl-destination">Destino</label>
+            <label class="wl-search-label" for="wl-destination" data-i18n="wl_label_destino">Destino</label>
             <select id="wl-destination" required class="wl-search-input">
-              <option value="patagonia">Argentina</option>
-              <option value="grecia">Grecia</option>
-              <option value="espana">España</option>
+              <option value="patagonia" data-i18n="wl_opt_argentina">Argentina</option>
+              <option value="grecia" data-i18n="wl_opt_grecia">Grecia</option>
+              <option value="espana" data-i18n="wl_opt_espana">España</option>
             </select>
           </div>
           <div style="flex:1;min-width:130px">
-            <label class="wl-search-label" for="wl-checkin">Llegada</label>
+            <label class="wl-search-label" for="wl-checkin" data-i18n="wl_label_checkin">Llegada</label>
             <input type="date" id="wl-checkin" required class="wl-search-input">
           </div>
           <div style="flex:1;min-width:130px">
-            <label class="wl-search-label" for="wl-checkout">Salida</label>
+            <label class="wl-search-label" for="wl-checkout" data-i18n="wl_label_checkout">Salida</label>
             <input type="date" id="wl-checkout" required class="wl-search-input">
           </div>
           <div style="flex:0 0 100px;min-width:90px">
-            <label class="wl-search-label" for="wl-guests">Huéspedes</label>
+            <label class="wl-search-label" for="wl-guests" data-i18n="wl_label_guests">Huéspedes</label>
             <input type="number" id="wl-guests" min="1" value="2" required class="wl-search-input">
           </div>
-          <button type="submit" class="wl-search-submit">Buscar →</button>
+          <button type="submit" class="wl-search-submit" data-i18n="wl_search_submit">Buscar →</button>
         </form>
       </div>
     </div>
@@ -517,7 +517,7 @@ nav.scrolled .lang-btn{color:var(--night)}
         <span class="tag" data-i18n="calma_tag1">Lago</span><span class="tag" data-i18n="calma_tag2">Bosque</span>
         <span class="tag" data-i18n="calma_tag3">Silencio</span><span class="tag" data-i18n="calma_tag4">Alquiler · Venta</span>
       </div>
-      <div class="prop-price">desde $120 / noche</div>
+      <div class="prop-price"><span data-i18n="sel_price_from">desde</span> $120 <span data-i18n="sel_price_night">/ noche</span></div>
       <a href="/stay/argentina-casa-calma/" id="calma-cta-rent" class="btn-cta" data-i18n="calma_cta">Reservar estadía →</a>
       <a href="/contacto/?prop=casa-calma&tipo=venta" id="calma-cta-buy" class="btn-cta" style="display:none" data-i18n="cta_consultar_compra">Consultar compra →</a>
     </div>
@@ -542,7 +542,7 @@ nav.scrolled .lang-btn{color:var(--night)}
         <span class="tag" data-i18n="paz_tag1">Diseño</span><span class="tag" data-i18n="paz_tag2">Jardín</span>
         <span class="tag" data-i18n="paz_tag3">Conectividad</span><span class="tag" data-i18n="paz_tag4">Alquiler · Venta</span>
       </div>
-      <div class="prop-price">desde $95 / noche</div>
+      <div class="prop-price"><span data-i18n="sel_price_from">desde</span> $95 <span data-i18n="sel_price_night">/ noche</span></div>
       <a href="/stay/patagonia-casa-paz/" id="paz-cta-rent" class="btn-cta" data-i18n="paz_cta">Reservar estadía →</a>
       <a href="/contacto/?prop=casa-paz&tipo=venta" id="paz-cta-buy" class="btn-cta" style="display:none" data-i18n="cta_consultar_compra">Consultar compra →</a>
     </div>
@@ -663,23 +663,23 @@ nav.scrolled .lang-btn{color:var(--night)}
   </div>
   <div class="personas-rows">
     <div class="per-row reveal">
-      <div class="per-img"><img src="https://lh3.googleusercontent.com/d/1jMTCY3HVy8bOUIWHjneD0yGI-VIdW8ca" alt="Ritmo Propio"><span class="per-num-float" aria-hidden="true">01</span></div>
+      <div class="per-img"><img src="https://lh3.googleusercontent.com/d/1jMTCY3HVy8bOUIWHjneD0yGI-VIdW8ca" alt="Ritmo Propio" data-i18n-alt="per1_name"><span class="per-num-float" aria-hidden="true">01</span></div>
       <div class="per-body"><span class="per-num">01</span><div class="per-name" data-i18n="per1_name">Ritmo Propio</div><p class="per-intro" data-i18n="per1_intro">No buscas una propiedad. Buscas un entorno donde descansar de verdad.</p><p class="per-desc" data-i18n="per1_desc">Necesitas silencio, diseño intencional y tiempo para desacelerar. Que tu ritmo encuentre su ritmo. Que el espacio te regule, no te demande.</p></div>
     </div>
     <div class="per-row per-row-inv reveal">
       <div class="per-body"><span class="per-num">02</span><div class="per-name" data-i18n="per2_name">Inversión Intencional</div><p class="per-intro" data-i18n="per2_intro">Viajas con criterio. Inviertes con intención. Quieres un activo que también sea un refugio donde tu familia quiere estar.</p><p class="per-desc" data-i18n="per2_desc">En WildLiving encuentras lugares que no compiten por ocupación máxima sino por resonancia. Rentan bien precisamente porque están bien elegidos. Y te enorgullece compartirlos.</p></div>
-      <div class="per-img"><img src="https://lh3.googleusercontent.com/d/1XJhnGVmwnx2mhR1qsEAYyeEiyUFSv13a" alt="Inversión Intencional"><span class="per-num-float" aria-hidden="true">02</span></div>
+      <div class="per-img"><img src="https://lh3.googleusercontent.com/d/1XJhnGVmwnx2mhR1qsEAYyeEiyUFSv13a" alt="Inversión Intencional" data-i18n-alt="per2_name"><span class="per-num-float" aria-hidden="true">02</span></div>
     </div>
     <div class="per-row reveal">
-      <div class="per-img"><img src="https://lh3.googleusercontent.com/d/1iSPgByb7Zpkk7w9ZayNzWgIwdNTKowJa" alt="Raíces nómades"><span class="per-num-float" aria-hidden="true">03</span></div>
+      <div class="per-img"><img src="https://lh3.googleusercontent.com/d/1iSPgByb7Zpkk7w9ZayNzWgIwdNTKowJa" alt="Raíces nómades" data-i18n-alt="per3_name"><span class="per-num-float" aria-hidden="true">03</span></div>
       <div class="per-body"><span class="per-num">03</span><div class="per-name" data-i18n="per3_name">Raíces nómades</div><p class="per-intro" data-i18n="per3_intro">Algunos llegan buscando conectividad. Se quedan buscando base, comunidad y naturaleza.</p><p class="per-desc" data-i18n="per3_desc">Necesitas una conexión estable pero elegiste naturaleza sobre comodidad estándar. WildLiving es para quien está construyendo una forma de vivir, no solo un itinerario. Donde encuentras gente que entiende ese movimiento.</p></div>
     </div>
     <div class="per-row per-row-inv reveal">
       <div class="per-body"><span class="per-num">04</span><div class="per-name" data-i18n="per4_name">Pertenencia Recuperada</div><p class="per-intro" data-i18n="per4_intro">Sabes qué tipo de vida quieres. Ahora quieres que sea aquí.</p><p class="per-desc" data-i18n="per4_desc">Necesitas a alguien que conozca realmente el territorio, no como venta, como acompañamiento. Que entienda por qué vuelves, o por qué nunca te fuiste del todo. Y que te ayude a elegir con certeza.</p></div>
-      <div class="per-img"><img src="https://lh3.googleusercontent.com/d/1bLk8m_O5AsAwvJa8nGKaxa82F6R1HmqU" alt="Pertenencia Recuperada"><span class="per-num-float" aria-hidden="true">04</span></div>
+      <div class="per-img"><img src="https://lh3.googleusercontent.com/d/1bLk8m_O5AsAwvJa8nGKaxa82F6R1HmqU" alt="Pertenencia Recuperada" data-i18n-alt="per4_name"><span class="per-num-float" aria-hidden="true">04</span></div>
     </div>
     <div class="per-row reveal">
-      <div class="per-img"><img src="https://lh3.googleusercontent.com/d/1bmgtCEfKdV0a5rp2kbWONO_77DaMO7EO" alt="Herencia Natural"><span class="per-num-float" aria-hidden="true">05</span></div>
+      <div class="per-img"><img src="https://lh3.googleusercontent.com/d/1bmgtCEfKdV0a5rp2kbWONO_77DaMO7EO" alt="Herencia Natural" data-i18n-alt="per5_name"><span class="per-num-float" aria-hidden="true">05</span></div>
       <div class="per-body"><span class="per-num">05</span><div class="per-name" data-i18n="per5_name">Herencia Natural</div><p class="per-intro" data-i18n="per5_intro">Estás eligiendo el entorno donde tus hijos van a crecer. No es una transacción. Es una decisión que pesa.</p><p class="per-desc" data-i18n="per5_desc">Necesitas criterio, claridad y alguien en quien confiar absolutamente. En WildLiving validamos cada lugar combinando tecnología y conocimiento real: sabemos dónde la naturaleza, el diseño y la calma funcionan para que la familia que tenés en mente prospere.</p></div>
     </div>
   </div>
@@ -808,6 +808,16 @@ const es = {
   hero_mode_rent: "Quiero alquilar",
   hero_mode_buy:  "Quiero comprar",
   hero_search_label: "Reservá directamente · disponibilidad en tiempo real",
+  wl_label_destino:  "Destino",
+  wl_opt_argentina:  "Argentina",
+  wl_opt_grecia:     "Grecia",
+  wl_opt_espana:     "España",
+  wl_label_checkin:  "Llegada",
+  wl_label_checkout: "Salida",
+  wl_label_guests:   "Huéspedes",
+  wl_search_submit:  "Buscar →",
+  aria_open_menu:    "Abrir menú",
+  aria_close_menu:   "Cerrar menú",
   hero_buy_label: "Hablemos sobre lo que buscás",
   hero_buy_ph:    "¿Qué tipo de propiedad buscás? Contanos brevemente.",
   hero_buy_cta:   "Hablar con WildLiving →",
@@ -1030,6 +1040,16 @@ const en = {
   hero_mode_rent: "I want to rent",
   hero_mode_buy:  "I want to buy",
   hero_search_label: "Book directly · real-time availability",
+  wl_label_destino:  "Destination",
+  wl_opt_argentina:  "Argentina",
+  wl_opt_grecia:     "Greece",
+  wl_opt_espana:     "Spain",
+  wl_label_checkin:  "Check-in",
+  wl_label_checkout: "Check-out",
+  wl_label_guests:   "Guests",
+  wl_search_submit:  "Search →",
+  aria_open_menu:    "Open menu",
+  aria_close_menu:   "Close menu",
   hero_buy_label: "Tell us what you're looking for",
   hero_buy_ph:    "What kind of property are you looking for? Tell us briefly.",
   hero_buy_cta:   "Talk to WildLiving →",
@@ -1253,6 +1273,18 @@ function applyTranslations(lang) {
     const key = el.dataset.i18nPh;
     if (TRANSLATIONS[lang] && TRANSLATIONS[lang][key] !== undefined) {
       el.placeholder = TRANSLATIONS[lang][key];
+    }
+  });
+  document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+    const key = el.dataset.i18nAria;
+    if (TRANSLATIONS[lang] && TRANSLATIONS[lang][key] !== undefined) {
+      el.setAttribute('aria-label', TRANSLATIONS[lang][key]);
+    }
+  });
+  document.querySelectorAll('[data-i18n-alt]').forEach(el => {
+    const key = el.dataset.i18nAlt;
+    if (TRANSLATIONS[lang] && TRANSLATIONS[lang][key] !== undefined) {
+      el.setAttribute('alt', TRANSLATIONS[lang][key]);
     }
   });
   document.querySelectorAll('.lang-btn').forEach(btn => {
