@@ -61,7 +61,7 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
 
 /* HERO */
 .stay-hero{position:relative;height:100vh;min-height:600px;display:flex;align-items:flex-end;overflow:hidden}
-.stay-hero-img{position:absolute;inset:0;background-image:url('https://lh3.googleusercontent.com/d/1nQCYYx7dPf87K55JgswiJLIewaC9XT8e');background-size:cover;background-position:center}
+.stay-hero-img{position:absolute;inset:0;background-image:url('https://lh3.googleusercontent.com/d/13U4PzjaI9H5msG-xwt6e9Gt5VT8SK0D-');background-size:cover;background-position:center}
 .stay-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(30,30,26,.82) 0%,transparent 100%)}
 .stay-badge{position:absolute;top:100px;left:48px;z-index:2;font-family:var(--sans);font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--paper);background:var(--night);padding:5px 12px}
 .stay-hero-content{position:relative;z-index:2;padding:0 48px 64px}
@@ -114,6 +114,13 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
 .strip-item img{width:100%;height:100%;object-fit:cover;transform:scale(1.07);transition:transform .8s var(--ease),filter .4s;filter:brightness(.92)}
 .strip-item:hover img{transform:scale(1);filter:brightness(1)}
 
+/* FULL PHOTO GALLERY */
+.photo-gallery{padding:0 80px 80px}
+.photo-gallery-title{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-weight:300;font-size:32px;color:var(--night);margin-bottom:32px;text-align:center}
+.photo-gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.photo-gallery-grid img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:8px;cursor:pointer;transition:opacity .4s var(--ease)}
+.photo-gallery-grid img:hover{opacity:.85}
+
 @media(max-width:900px){
   nav{padding:20px 24px}.nav-links{display:none}.hamburger-btn{display:flex}
   footer{grid-template-columns:1fr 1fr;padding:60px 24px 40px}
@@ -123,6 +130,7 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
   .explore-section{padding:48px 24px}
   .explore-card{grid-template-columns:1fr}
   .img-strip{grid-template-columns:repeat(2,1fr);padding:0 24px 48px}
+  .photo-gallery{padding:0 24px 48px}
   body{padding-bottom:64px}
 }
 </style>
@@ -171,10 +179,10 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
 </div>
 
 <div class="img-strip">
-  <div class="strip-item"><img src="https://lh3.googleusercontent.com/d/1iTSjLaNT_AzF2jxRuj3fPwgBTdEllXyh" alt="Casa Calma — living con luz natural"></div>
-  <div class="strip-item"><img src="https://lh3.googleusercontent.com/d/1TTHJEtW_NPIDXSbDF6YQL1ChNO1TsXDm" alt="Casa Calma — jardín y entorno natural"></div>
-  <div class="strip-item"><img src="https://lh3.googleusercontent.com/d/1cTHhFE3hGjLWC4g8WkkOj3vpQO_csyUw" alt="Casa Calma — paso a la cocina"></div>
-  <div class="strip-item"><img src="https://lh3.googleusercontent.com/d/1Q4hMKyv4Zr0m5XhmAjmdbpplgNyNG8e6" alt="Casa Calma — detalle interior con lámparas de ratán"></div>
+  <div class="strip-item"><img src="https://lh3.googleusercontent.com/d/13U4PzjaI9H5msG-xwt6e9Gt5VT8SK0D-" alt="Casa Calma — vista exterior"></div>
+  <div class="strip-item"><img src="https://lh3.googleusercontent.com/d/1n43I2l9Dw5TgmsDahEcVQPAZzhCAuSCY" alt="Casa Calma — living"></div>
+  <div class="strip-item"><img src="https://lh3.googleusercontent.com/d/1GMy3dKLwNGUg201azpDWE7XWvimXZtfm" alt="Casa Calma — interior"></div>
+  <div class="strip-item"><img src="https://lh3.googleusercontent.com/d/1oUZoR_KQH4y9hlBq10-hR3Vhnmm63QLy" alt="Casa Calma — detalle"></div>
 </div>
 
 <section class="stay-content">
@@ -191,6 +199,35 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
     <div id="dates-meta"></div>
     <a href="https://pay.lodgify.com/651630/803562" target="_blank" class="btn-reserve">Reservar →</a>
     <p class="cta-note">Reserva directa · Sin intermediarios</p>
+  </div>
+</section>
+
+<section class="photo-gallery">
+  <h2 class="photo-gallery-title">Espacios de Casa Calma</h2>
+  <div class="photo-gallery-grid">
+    <img src="https://lh3.googleusercontent.com/d/1G-V9kVhpkNu4KQPfQlQzJguj-OV9YEOu" alt="Casa Calma">
+    <img src="https://lh3.googleusercontent.com/d/1-vJrOEpBi-7gKiAXq-km9vwjVEULequp" alt="Casa Calma">
+    <img src="https://lh3.googleusercontent.com/d/1VJSTvkPwiCvEZCnV9aDlwXWtCYhQm8dS" alt="Casa Calma">
+    <img src="https://lh3.googleusercontent.com/d/1L3waXYmAImwEURvEaLiqntX4_jeQiNj1" alt="Casa Calma">
+    <img src="https://lh3.googleusercontent.com/d/1nbhGPlU4Gpy2B9p-imZM-mvEcmJTwLh3" alt="Casa Calma">
+    <img src="https://lh3.googleusercontent.com/d/1dhpwsWWWem5H3bMRo84wlow6hJQrgUsv" alt="Casa Calma">
+    <img src="https://lh3.googleusercontent.com/d/1wx2-fsf2mfYGVJY3eklqhF9vXjHo0TaN" alt="Casa Calma">
+    <img src="https://lh3.googleusercontent.com/d/17JLWG5KQ9ZbPeNfOblod8szW57RHvlZH" alt="Casa Calma">
+    <img src="https://lh3.googleusercontent.com/d/1EAZHrWYIkhAwSGWqpEZR2doy2Gpd-ZAA" alt="Casa Calma">
+    <img src="https://lh3.googleusercontent.com/d/1M688iASnEV7fuJBtsVhQgj-_C_CiVgCy" alt="Casa Calma">
+    <img src="https://lh3.googleusercontent.com/d/1VAlj8I3WePsUDNLjAoLCeMZ5WOsaCvF2" alt="Casa Calma">
+    <img src="https://lh3.googleusercontent.com/d/1yq4hXKLZhrAtaFKLDwDs5_xX6xjtufVv" alt="Casa Calma">
+    <img src="https://lh3.googleusercontent.com/d/13p6ML7Q23r82uzFJc0ouiWSvUhlJgh3Y" alt="Casa Calma">
+    <img src="https://lh3.googleusercontent.com/d/1A3059VVUv_bT5J0gED8ByV0AxCKxBchk" alt="Casa Calma">
+    <img src="https://lh3.googleusercontent.com/d/1TTHJEtW_NPIDXSbDF6YQL1ChNO1TsXDm" alt="Casa Calma">
+    <img src="https://lh3.googleusercontent.com/d/17hG31_rjnRvCERwmcvnPjZJwjgdSw0gR" alt="Casa Calma">
+    <img src="https://lh3.googleusercontent.com/d/1npVWZLikCAfCOEomGNaQutaEviQxu9u6" alt="Casa Calma">
+    <img src="https://lh3.googleusercontent.com/d/1SVJWmHSbAyXqm1c4k-QuOCxslzDN8w3O" alt="Casa Calma">
+    <img src="https://lh3.googleusercontent.com/d/1mJ3TSKgi6Hs1ZVQqFnDFADT3lF1SegNJ" alt="Casa Calma">
+    <img src="https://lh3.googleusercontent.com/d/1Ry-WwRs8voESbpJqtBFr-YQqC-xhh_jc" alt="Casa Calma">
+    <img src="https://lh3.googleusercontent.com/d/1zPcqCXiw4Ek_DakspH-psPtaVVGF0une" alt="Casa Calma">
+    <img src="https://lh3.googleusercontent.com/d/1symPIeDird9stbfn-XppLKbwWQxYP9J4" alt="Casa Calma">
+    <img src="https://lh3.googleusercontent.com/d/1UlryNDF_L3eO__Ms-ThQwetTEYqxp4GS" alt="Casa Calma">
   </div>
 </section>
 
