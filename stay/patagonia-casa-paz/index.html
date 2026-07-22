@@ -21,14 +21,14 @@ body{background:var(--paper);color:var(--night);font-family:var(--sans);font-wei
 
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:24px 48px;transition:background 300ms ease}
 nav.scrolled{background:rgba(242,240,235,0.96);backdrop-filter:blur(12px)}
-.nav-logo{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-weight:500;font-size:18px;letter-spacing:-.01em;color:var(--white);text-decoration:none}
 nav.scrolled .nav-logo{color:var(--night)}
+nav.scrolled .nav-links a{color:var(--stone)}
+nav.scrolled .nav-links a:hover{color:var(--night)}
+.nav-logo{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-weight:500;font-size:18px;letter-spacing:-.01em;color:var(--white);text-decoration:none}
 .nav-logo span{color:var(--moss-l)}
 .nav-links{display:flex;gap:36px;list-style:none;align-items:center}
 .nav-links a{font-family:var(--sans);font-weight:300;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--white);text-decoration:none;opacity:.7}
 .nav-links a:hover{opacity:1}
-nav.scrolled .nav-links a{color:var(--stone)}
-nav.scrolled .nav-links a:hover{color:var(--night)}
 .lang-selector{display:flex;align-items:center;gap:4px;margin-left:24px}
 .lang-btn{font-family:var(--sans);font-size:10px;font-weight:300;letter-spacing:.18em;text-transform:uppercase;background:none;border:none;cursor:pointer;padding:4px 6px;opacity:.45;color:var(--white)}
 .lang-btn.active{opacity:1;border-bottom:1px solid currentColor}
@@ -53,14 +53,15 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
 .newsletter-form{display:flex;gap:0;margin-top:4px}
 .newsletter-input{flex:1;background:rgba(200,196,188,.06);border:1px solid rgba(200,196,188,.1);border-right:none;padding:10px 14px;font-family:var(--sans);font-size:11px;color:var(--white);outline:none}
 .newsletter-input::placeholder{color:rgba(250,250,247,.25)}
-.newsletter-btn{background:var(--moss);border:none;padding:10px 16px;color:var(--white);font-family:var(--sans);font-size:9px;letter-spacing:.16em;text-transform:uppercase;cursor:pointer}
+.newsletter-btn{background:var(--moss);border:none;padding:10px 16px;color:var(--white);font-family:var(--sans);font-size:9px;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;min-height:44px}
+.newsletter-btn:hover{background:var(--moss-d)}
 .foot-bottom{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;padding-top:36px;border-top:1px solid rgba(200,196,188,.06);margin-top:8px}
 .foot-copy{font-family:var(--sans);font-size:10px;font-weight:300;letter-spacing:.1em;color:rgba(250,250,247,.16)}
 .foot-dot{width:4px;height:4px;background:var(--moss);border-radius:50%}
 
 /* HERO */
 .stay-hero{position:relative;height:100vh;min-height:600px;display:flex;align-items:flex-end;overflow:hidden}
-.stay-hero-img{position:absolute;inset:0;background-image:url('https://lh3.googleusercontent.com/d/1CIL4EKupWvtYI7dCYjVmQjVY8xvn2lk7');background-size:cover;background-position:center}
+.stay-hero-img{position:absolute;inset:0;background-image:url('https://lh3.googleusercontent.com/d/1ifPnwuYrizr05xSpD0XAH5QXt4m-SkrU');background-size:cover;background-position:center}
 .stay-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(30,30,26,.82) 0%,transparent 100%)}
 .stay-badge{position:absolute;top:100px;left:48px;z-index:2;font-family:var(--sans);font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--paper);background:var(--night);padding:5px 12px}
 .stay-hero-content{position:relative;z-index:2;padding:0 48px 64px}
@@ -107,6 +108,19 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
 .explore-price{font-family:var(--sans);font-weight:500;font-size:14px;color:var(--night);margin-bottom:16px}
 .explore-cta{font-family:var(--sans);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--moss);border-bottom:1px solid var(--moss);padding-bottom:2px;align-self:flex-start}
 
+/* GALLERY */
+.img-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;padding:0 80px 80px}
+.strip-item{overflow:hidden;aspect-ratio:1}
+.strip-item img{width:100%;height:100%;object-fit:cover;transform:scale(1.07);transition:transform .8s var(--ease),filter .4s;filter:brightness(.92)}
+.strip-item:hover img{transform:scale(1);filter:brightness(1)}
+
+/* FULL PHOTO GALLERY */
+.photo-gallery{padding:0 80px 80px}
+.photo-gallery-title{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-weight:300;font-size:32px;color:var(--night);margin-bottom:32px;text-align:center}
+.photo-gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.photo-gallery-grid img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:8px;cursor:pointer;transition:opacity .4s var(--ease)}
+.photo-gallery-grid img:hover{opacity:.85}
+
 @media(max-width:900px){
   nav{padding:20px 24px}.nav-links{display:none}.hamburger-btn{display:flex}
   footer{grid-template-columns:1fr 1fr;padding:60px 24px 40px}
@@ -115,6 +129,8 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
   .key-details{grid-template-columns:1fr 1fr;padding:16px 24px;gap:14px}
   .explore-section{padding:48px 24px}
   .explore-card{grid-template-columns:1fr}
+  .img-strip{grid-template-columns:repeat(2,1fr);padding:0 24px 48px}
+  .photo-gallery{padding:0 24px 48px}
   body{padding-bottom:64px}
 }
 </style>
@@ -151,46 +167,22 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
   <span class="stay-badge">COLLECTION</span>
   <div class="stay-hero-content">
     <h1 class="stay-h1"><em>Casa Paz</em></h1>
-    <div class="stay-location">Centro, Bariloche</div>
-  </div>
-</section>
-
-<section class="photo-gallery" style="padding: 60px 20px; background: #F2F0EB;">
-  <div style="max-width: 1200px; margin: 0 auto;">
-    <h2 style="font-size: 24px; font-weight: 300; margin-bottom: 40px; font-family: 'Cormorant Garamond', serif; text-align: center;">Espacios de Casa Paz</h2>
-
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;">
-      <img src="https://lh3.googleusercontent.com/d/1qQ-I55Yie4CaG6vqiyIck8K9pIRKZUzf" alt="Living" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; cursor: pointer;" />
-      <img src="https://lh3.googleusercontent.com/d/1ifPnwuYrizr05xSpD0XAH5QXt4m-SkrU" alt="Living" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; cursor: pointer;" />
-      <img src="https://lh3.googleusercontent.com/d/1il5y0qRpWLyHiE69SaWVck_WM5LVz5aH" alt="Living" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; cursor: pointer;" />
-      <img src="https://lh3.googleusercontent.com/d/1Ks8PnHTRX6tNGsjhyhXhz0wjwSyLqMEH" alt="Comedor" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; cursor: pointer;" />
-      <img src="https://lh3.googleusercontent.com/d/1zxUfMJEDoyVkvXek5NMIZa3nEwzSBV8M" alt="Comedor" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; cursor: pointer;" />
-      <img src="https://lh3.googleusercontent.com/d/1OHfJu0hM8LUkJ4ARt4WIan7-hbh1Vjzr" alt="Comedor" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; cursor: pointer;" />
-      <img src="https://lh3.googleusercontent.com/d/1l7JHZOwzVur_Xo6jamWK8Hlzwn5URnZ7" alt="Comedor" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; cursor: pointer;" />
-      <img src="https://lh3.googleusercontent.com/d/1YkNOZEnaM0XY2SizSyqnEa6E6-X6Zh3L" alt="Baño" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; cursor: pointer;" />
-      <img src="https://lh3.googleusercontent.com/d/1Bi2Sg0zyVrMXaOJNJr-NFUt8RwQ4lhSx" alt="Baño" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; cursor: pointer;" />
-      <img src="https://lh3.googleusercontent.com/d/1QLDaBB6zKpPRDfLKC_7wfvSb_rfgUJxD" alt="Baño" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; cursor: pointer;" />
-      <img src="https://lh3.googleusercontent.com/d/1_1H1PlCT6LMcsojzYbpAuEUYd9VO-Ji8" alt="Cocina" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; cursor: pointer;" />
-      <img src="https://lh3.googleusercontent.com/d/1cHzK60bEr9UZCxHK-O5AsiFssXEta_-i" alt="Cocina" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; cursor: pointer;" />
-      <img src="https://lh3.googleusercontent.com/d/1hn6ILNE_ue856rEZKulFG7sWlA3WYHsb" alt="Jardín" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; cursor: pointer;" />
-      <img src="https://lh3.googleusercontent.com/d/1f0oDqVmKsM0bDqn624XehbI8-QK-4p66" alt="Jardín" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; cursor: pointer;" />
-      <img src="https://lh3.googleusercontent.com/d/1B2tbBfuofFk9gD4aMzzVwTU9narLE0G6" alt="Jardín" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; cursor: pointer;" />
-      <img src="https://lh3.googleusercontent.com/d/1ayiqgaPECF3jDDd6DtwW9EEYal-13139" alt="Dormitorio" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; cursor: pointer;" />
-      <img src="https://lh3.googleusercontent.com/d/1wxBBrxGfkBG5Ltg-m7cMmUfmXAnV6hMF" alt="Dormitorio" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; cursor: pointer;" />
-      <img src="https://lh3.googleusercontent.com/d/1jtQLDjnVpHKZ1w217mgS1I8-Aax-pciH" alt="Dormitorio" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; cursor: pointer;" />
-      <img src="https://lh3.googleusercontent.com/d/1QJw3OFXWNy0Xu9JLf8WatKwZz1tgkka5" alt="Dormitorio" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; cursor: pointer;" />
-      <img src="https://lh3.googleusercontent.com/d/1OKlUwMlUPQjdL6V4gx-jGrX0ZFsQKEkc" alt="Dormitorio" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; cursor: pointer;" />
-      <img src="https://lh3.googleusercontent.com/d/17gVvq5OQpfaYgN88mwOebO6ozCYpYIOr" alt="Exterior" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; cursor: pointer;" />
-      <img src="https://lh3.googleusercontent.com/d/1Wfjth1cJYNnf8NOP_NDLRDKC3AbZbOvP" alt="Exterior" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; cursor: pointer;" />
-    </div>
+    <div class="stay-location">Tineo 387, Bariloche</div>
   </div>
 </section>
 
 <div class="key-details">
-  <div class="key-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--moss)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v7"/><path d="M3 13h18"/><path d="M7 9V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/><path d="M3 18v2"/><path d="M21 18v2"/></svg><span>1 dormitorio · 38m²</span></div>
-  <div class="key-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--moss)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>Hasta 2 personas</span></div>
-  <div class="key-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--moss)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Centro Bariloche · lago a 10 min</span></div>
+  <div class="key-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--moss)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v7"/><path d="M3 13h18"/><path d="M7 9V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/><path d="M3 18v2"/><path d="M21 18v2"/></svg><span>2 dormitorios</span></div>
+  <div class="key-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--moss)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>Hasta 4 personas</span></div>
+  <div class="key-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--moss)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Circuito Chico · 15 min centro</span></div>
   <div class="key-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--moss)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Reserva directa · sin comisiones</span></div>
+</div>
+
+<div class="img-strip">
+  <div class="strip-item"><img src="https://lh3.googleusercontent.com/d/1ifPnwuYrizr05xSpD0XAH5QXt4m-SkrU" alt="Casa Paz — living"></div>
+  <div class="strip-item"><img src="https://lh3.googleusercontent.com/d/1qQ-I55Yie4CaG6vqiyIck8K9pIRKZUzf" alt="Casa Paz — living con luz natural"></div>
+  <div class="strip-item"><img src="https://lh3.googleusercontent.com/d/1Ks8PnHTRX6tNGsjhyhXhz0wjwSyLqMEH" alt="Casa Paz — comedor"></div>
+  <div class="strip-item"><img src="https://lh3.googleusercontent.com/d/1hn6ILNE_ue856rEZKulFG7sWlA3WYHsb" alt="Casa Paz — jardín"></div>
 </div>
 
 <section class="stay-content">
@@ -206,6 +198,34 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
     <div id="dates-meta"></div>
     <a href="https://pay.lodgify.com/651630/803563" target="_blank" class="btn-reserve">Reservar →</a>
     <p class="cta-note">Reserva directa · Sin intermediarios</p>
+  </div>
+</section>
+
+<section class="photo-gallery">
+  <h2 class="photo-gallery-title">Espacios de Casa Paz</h2>
+  <div class="photo-gallery-grid">
+    <img src="https://lh3.googleusercontent.com/d/1qQ-I55Yie4CaG6vqiyIck8K9pIRKZUzf" alt="Living">
+    <img src="https://lh3.googleusercontent.com/d/1ifPnwuYrizr05xSpD0XAH5QXt4m-SkrU" alt="Living">
+    <img src="https://lh3.googleusercontent.com/d/1il5y0qRpWLyHiE69SaWVck_WM5LVz5aH" alt="Living">
+    <img src="https://lh3.googleusercontent.com/d/1Ks8PnHTRX6tNGsjhyhXhz0wjwSyLqMEH" alt="Comedor">
+    <img src="https://lh3.googleusercontent.com/d/1zxUfMJEDoyVkvXek5NMIZa3nEwzSBV8M" alt="Comedor">
+    <img src="https://lh3.googleusercontent.com/d/1OHfJu0hM8LUkJ4ARt4WIan7-hbh1Vjzr" alt="Comedor">
+    <img src="https://lh3.googleusercontent.com/d/1l7JHZOwzVur_Xo6jamWK8Hlzwn5URnZ7" alt="Comedor">
+    <img src="https://lh3.googleusercontent.com/d/1YkNOZEnaM0XY2SizSyqnEa6E6-X6Zh3L" alt="Baño">
+    <img src="https://lh3.googleusercontent.com/d/1Bi2Sg0zyVrMXaOJNJr-NFUt8RwQ4lhSx" alt="Baño">
+    <img src="https://lh3.googleusercontent.com/d/1QLDaBB6zKpPRDfLKC_7wfvSb_rfgUJxD" alt="Baño">
+    <img src="https://lh3.googleusercontent.com/d/1_1H1PlCT6LMcsojzYbpAuEUYd9VO-Ji8" alt="Cocina">
+    <img src="https://lh3.googleusercontent.com/d/1cHzK60bEr9UZCxHK-O5AsiFssXEta_-i" alt="Cocina">
+    <img src="https://lh3.googleusercontent.com/d/1hn6ILNE_ue856rEZKulFG7sWlA3WYHsb" alt="Jardín">
+    <img src="https://lh3.googleusercontent.com/d/1f0oDqVmKsM0bDqn624XehbI8-QK-4p66" alt="Jardín">
+    <img src="https://lh3.googleusercontent.com/d/1B2tbBfuofFk9gD4aMzzVwTU9narLE0G6" alt="Jardín">
+    <img src="https://lh3.googleusercontent.com/d/1ayiqgaPECF3jDDd6DtwW9EEYal-13139" alt="Dormitorio">
+    <img src="https://lh3.googleusercontent.com/d/1wxBBrxGfkBG5Ltg-m7cMmUfmXAnV6hMF" alt="Dormitorio">
+    <img src="https://lh3.googleusercontent.com/d/1jtQLDjnVpHKZ1w217mgS1I8-Aax-pciH" alt="Dormitorio">
+    <img src="https://lh3.googleusercontent.com/d/1QJw3OFXWNy0Xu9JLf8WatKwZz1tgkka5" alt="Dormitorio">
+    <img src="https://lh3.googleusercontent.com/d/1OKlUwMlUPQjdL6V4gx-jGrX0ZFsQKEkc" alt="Dormitorio">
+    <img src="https://lh3.googleusercontent.com/d/17gVvq5OQpfaYgN88mwOebO6ozCYpYIOr" alt="Exterior">
+    <img src="https://lh3.googleusercontent.com/d/1Wfjth1cJYNnf8NOP_NDLRDKC3AbZbOvP" alt="Exterior">
   </div>
 </section>
 
