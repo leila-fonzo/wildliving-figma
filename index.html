@@ -180,11 +180,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 
 /* SUSTENTABILIDAD */
 .sustentabilidad{padding:140px 80px;background:var(--night);position:relative;overflow:hidden}
-.sust-bg{position:absolute;inset:0;background-image:url('https://lh3.googleusercontent.com/d/1xOk9ZeJg7roq7kJ1T7TGi2EFA_7XOT7z');background-size:cover;background-position:center;filter:brightness(.38) saturate(.6);z-index:0}
+.sust-bg{position:absolute;inset:0;background-image:url('https://lh3.googleusercontent.com/d/1xOk9ZeJg7roq7kJ1T7TGi2EFA_7XOT7z');background-size:cover;background-position:center;filter:brightness(.24) saturate(.6);z-index:0}
 .sust-content{position:relative;z-index:1;max-width:720px}
-.sust-title{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-weight:300;font-size:clamp(38px,4.5vw,60px);line-height:1.08;color:var(--white);letter-spacing:-.015em;margin-bottom:40px}
+.sust-title{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-weight:300;font-size:clamp(38px,4.5vw,60px);line-height:1.08;color:var(--white);letter-spacing:-.015em;margin-bottom:40px;text-shadow:0 2px 10px rgba(0,0,0,.35)}
 .sust-title em{font-style:normal;color:var(--moss-l)}
-.sust-body{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-weight:300;font-size:20px;line-height:1.7;color:rgba(250,250,247,.6);margin-bottom:48px;border-left:1px solid var(--moss);padding-left:28px}
+.sust-body{margin-bottom:48px;border-left:1px solid var(--moss);padding:32px 36px;background:rgba(242,240,235,.07)}
+.sust-body p{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-weight:400;font-size:20px;line-height:1.75;color:rgba(250,250,247,.9);text-shadow:0 1px 4px rgba(0,0,0,.4);margin-bottom:28px}
+.sust-body p:last-child{margin-bottom:0}
 .sust-valores{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:64px}
 .sust-valor{border-top:1px solid rgba(200,196,188,.12);padding-top:24px}
 .sust-valor-titulo{font-family:var(--sans);font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--moss);margin-bottom:12px;display:block}
@@ -230,7 +232,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .per-body{padding:28px 36px;display:flex;flex-direction:column;justify-content:center}
 .per-num{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-size:10px;color:var(--moss);margin-bottom:8px;display:block}
 .per-name{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-style:italic;font-size:20px;line-height:1.2;color:var(--ink);margin-bottom:8px}
-.per-intro{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-style:italic;font-size:14px;line-height:1.6;color:var(--stone);margin-bottom:6px}
+.per-intro{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-style:italic;font-size:18px;line-height:1.6;color:var(--stone);margin-bottom:6px}
 .per-desc{font-family:var(--sans);font-weight:300;font-size:14px;line-height:1.75;color:var(--stone)}
 @media(max-width:900px){.per-row,.per-row-inv{grid-template-columns:1fr !important}.per-img{height:180px}}
 
@@ -419,7 +421,7 @@ nav.scrolled .hamburger-btn{color:var(--night)}
   <div class="hero-content">
     <p class="hero-eyebrow" data-i18n="hero_eyebrow">Argentina · España · Grecia · Entornos que cambian el ritmo</p>
     <h1 class="hero-title"><span data-i18n="hero_title">Find your next</span><br><em data-i18n="hero_title_em">home in nature.</em></h1>
-    <p class="hero-sub" data-i18n="hero_sub">Estancias propias y curadas en Argentina, España y Grecia.</p>
+    <p class="hero-sub" data-i18n="hero_sub">Lugares elegidos por su diseño, funcionalidad y entorno.</p>
     <div class="hero-mode-tabs">
       <button id="btn-rent" class="hero-mode-btn active" onclick="setHeroMode('rent')" data-i18n="hero_mode_rent">Quiero alquilar</button>
       <button id="btn-buy"  class="hero-mode-btn"        onclick="setHeroMode('buy')" data-i18n="hero_mode_buy">Quiero comprar</button>
@@ -533,8 +535,8 @@ nav.scrolled .hamburger-btn{color:var(--night)}
     <div class="property-info">
       <p class="prop-eyebrow" data-i18n="calma_eyebrow">Bariloche · Circuito Chico · Patagonia</p>
       <h3 class="prop-name" data-i18n="calma_name">Casa Calma</h3>
-      <p class="prop-location" data-i18n="calma_location">Lago Nahuel Huapi · Argentina</p>
-      <p class="prop-desc" data-i18n="calma_desc">Una casa que enseña a ir más despacio. Construida frente al lago, con materiales que envejecen bien. Para quien ya sabe qué tipo de mañanas quiere tener.</p>
+      <p class="prop-location" data-i18n="calma_location">Bariloche · Argentina</p>
+      <p class="prop-desc" data-i18n="calma_desc">Una casa que enseña a ir más despacio. Construida en un bosque de árboles nativos, con materiales que envejecen bien. Para quienes eligen tener mañanas que duran horas.</p>
       <div class="prop-tags">
         <span class="tag" data-i18n="calma_tag1">Lago</span><span class="tag" data-i18n="calma_tag2">Bosque</span>
         <span class="tag" data-i18n="calma_tag3">Silencio</span><span class="tag" data-i18n="calma_tag4">Alquiler · Venta</span>
@@ -618,11 +620,11 @@ nav.scrolled .hamburger-btn{color:var(--night)}
   <div class="sust-content reveal">
     <span class="eyebrow eyebrow-light" data-i18n="sust_eyebrow">Wildliving · Propósito</span>
     <h2 class="sust-title"><span data-i18n="sust_title">La naturaleza como</span><br><em data-i18n="sust_title_em">forma de vivir</em></h2>
-    <p class="sust-body">
-      <span data-i18n="sust_body1">Creemos que la forma en que elegimos vivir define el mundo que construimos.</span><br><br>
-      <span data-i18n="sust_body2">La naturaleza regula el sistema nervioso de formas que la ciudad no puede. El silencio no es la ausencia de sonido, es la presencia de todo lo demás. Un ritmo más lento no significa menos vida: significa más claridad en las decisiones, más pertenencia a un lugar.</span><br><br>
-      <span data-i18n="sust_body3">En Wildliving, cada propiedad es seleccionada y editada bajo una premisa: la naturaleza no es el fondo del paisaje, es la razón de estar ahí. No optimizamos para ocupación. Optimizamos por compatibilidad: entre el lugar, quién sos y la vida que querés vivir.</span>
-    </p>
+    <div class="sust-body">
+      <p><span data-i18n="sust_body1">Creemos que la forma en que elegimos vivir define el mundo que construimos.</span></p>
+      <p><span data-i18n="sust_body2">La naturaleza regula el sistema nervioso de formas que la ciudad no puede. El silencio no es la ausencia de sonido, es la presencia de todo lo demás. Un ritmo más lento no significa menos vida: significa más claridad en las decisiones, más pertenencia a un lugar.</span></p>
+      <p><span data-i18n="sust_body3">En Wildliving, cada propiedad es seleccionada y editada bajo una premisa: la naturaleza no es el fondo del paisaje, es la razón de estar ahí. No optimizamos para ocupación. Optimizamos por compatibilidad: entre el lugar, quién sos y la vida que querés vivir.</span></p>
+    </div>
   </div>
   <div class="sust-valores">
     <div class="sust-valor reveal">
@@ -690,25 +692,34 @@ nav.scrolled .hamburger-btn{color:var(--night)}
   </div>
   <div class="personas-rows">
     <div class="per-row reveal" style="grid-template-columns:200px 1fr">
-      <div class="per-img"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=600&fit=crop&auto=format" alt="Ritmo Propio"></div>
+      <div class="per-img"><img src="https://lh3.googleusercontent.com/d/1jMTCY3HVy8bOUIWHjneD0yGI-VIdW8ca" alt="Ritmo Propio"></div>
       <div class="per-body"><span class="per-num">01</span><div class="per-name" data-i18n="per1_name">Ritmo Propio</div><p class="per-intro" data-i18n="per1_intro">No buscas una propiedad. Buscas un entorno donde descansar de verdad.</p><p class="per-desc" data-i18n="per1_desc">Necesitas silencio, diseño intencional y tiempo para desacelerar. Que tu ritmo encuentre su ritmo. Que el espacio te regule, no te demande.</p></div>
     </div>
     <div class="per-row per-row-inv reveal" style="grid-template-columns:1fr 200px">
       <div class="per-body"><span class="per-num">02</span><div class="per-name" data-i18n="per2_name">Inversión Intencional</div><p class="per-intro" data-i18n="per2_intro">Viajas con criterio. Inviertes con intención. Quieres un activo que también sea un refugio donde tu familia quiere estar.</p><p class="per-desc" data-i18n="per2_desc">En Wildliving encuentras lugares que no compiten por ocupación máxima sino por resonancia. Rentan bien precisamente porque están bien elegidos. Y te enorgullece compartirlos.</p></div>
-      <div class="per-img"><img src="https://images.unsplash.com/photo-1499856871958-5b9627976b82?w=500&h=600&fit=crop&auto=format" alt="Inversión Intencional"></div>
+      <div class="per-img"><img src="https://lh3.googleusercontent.com/d/1XJhnGVmwnx2mhR1qsEAYyeEiyUFSv13a" alt="Inversión Intencional"></div>
     </div>
     <div class="per-row reveal" style="grid-template-columns:200px 1fr">
-      <div class="per-img"><img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=500&h=600&fit=crop&auto=format" alt="Raíces nómades"></div>
+      <div class="per-img"><img src="https://lh3.googleusercontent.com/d/1iSPgByb7Zpkk7w9ZayNzWgIwdNTKowJa" alt="Raíces nómades"></div>
       <div class="per-body"><span class="per-num">03</span><div class="per-name" data-i18n="per3_name">Raíces nómades</div><p class="per-intro" data-i18n="per3_intro">Algunos llegan buscando conectividad. Se quedan buscando base, comunidad y naturaleza.</p><p class="per-desc" data-i18n="per3_desc">Necesitas una conexión estable pero elegiste naturaleza sobre comodidad estándar. Wildliving es para quien está construyendo una forma de vivir, no solo un itinerario. Donde encuentras gente que entiende ese movimiento.</p></div>
     </div>
     <div class="per-row per-row-inv reveal" style="grid-template-columns:1fr 200px">
       <div class="per-body"><span class="per-num">04</span><div class="per-name" data-i18n="per4_name">Pertenencia Recuperada</div><p class="per-intro" data-i18n="per4_intro">Sabes qué tipo de vida quieres. Ahora quieres que sea aquí.</p><p class="per-desc" data-i18n="per4_desc">Necesitas a alguien que conozca realmente el territorio, no como venta, como acompañamiento. Que entienda por qué vuelves, o por qué nunca te fuiste del todo. Y que te ayude a elegir con certeza.</p></div>
-      <div class="per-img"><img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=500&h=600&fit=crop&auto=format" alt="Pertenencia Recuperada"></div>
+      <div class="per-img"><img src="https://lh3.googleusercontent.com/d/1bLk8m_O5AsAwvJa8nGKaxa82F6R1HmqU" alt="Pertenencia Recuperada"></div>
     </div>
     <div class="per-row reveal" style="grid-template-columns:200px 1fr">
-      <div class="per-img"><img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=500&h=600&fit=crop&auto=format" alt="Herencia Natural"></div>
+      <div class="per-img"><img src="https://lh3.googleusercontent.com/d/1bmgtCEfKdV0a5rp2kbWONO_77DaMO7EO" alt="Herencia Natural"></div>
       <div class="per-body"><span class="per-num">05</span><div class="per-name" data-i18n="per5_name">Herencia Natural</div><p class="per-intro" data-i18n="per5_intro">Estás eligiendo el entorno donde tus hijos van a crecer. No es una transacción. Es una decisión que pesa.</p><p class="per-desc" data-i18n="per5_desc">Necesitas criterio, claridad y alguien en quien confiar absolutamente. En Wildliving validamos cada lugar combinando tecnología y conocimiento real: sabemos dónde la naturaleza, el diseño y la calma funcionan para que la familia que tenés en mente prospere.</p></div>
     </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="final-img"></div>
+  <div class="final-content reveal">
+    <h2 class="final-title"><span data-i18n="final_title">El entorno correcto</span><br><em data-i18n="final_title_em">ya existe.</em></h2>
+    <p class="final-sub" data-i18n="final_sub">Solo falta encontrarlo</p>
+    <a href="/wildstays/patagonia/" class="btn-outline" data-i18n="final_cta">Explorar propiedades →</a>
   </div>
 </section>
 
@@ -740,28 +751,23 @@ nav.scrolled .hamburger-btn{color:var(--night)}
   <div>
     <span class="eyebrow" style="color:var(--moss);display:block;margin-bottom:12px" data-i18n="own_eyebrow">¿Tenés una propiedad en naturaleza?</span>
     <h2 style="font-family:var(--serif);font-weight:300;font-size:clamp(34px,4vw,54px);line-height:1.1;color:var(--white);letter-spacing:-.02em;margin-bottom:14px" data-i18n="own_title">Tu propiedad merece mejores huéspedes.</h2>
-    <p style="font-family:var(--sans);font-weight:300;font-size:15px;color:rgba(250,250,247,.5);max-width:520px;line-height:1.8" data-i18n="own_desc">Si tiene entorno, criterio y autenticidad — puede ser parte de Wildliving. Sin exclusividad. Sin costo de entrada.</p>
+    <div style="max-width:560px">
+      <p style="font-family:var(--sans);font-weight:300;font-size:15px;color:rgba(250,250,247,.5);line-height:1.8;margin-bottom:16px" data-i18n="own_desc1">La naturaleza, el diseño y el carácter de tu espacio tienen un público especial. En Wildliving conectamos lugares con personas que buscan exactamente eso: compatibilidad.</p>
+      <p style="font-family:var(--sans);font-weight:300;font-size:15px;color:rgba(250,250,247,.5);line-height:1.8;margin-bottom:16px" data-i18n="own_desc2">Si tu propiedad tiene potencial de autenticidad pero necesita un reenfoque de comunicación, la editamos, la posicionamos y la compartimos con quienes realmente resuena. Con identidad de marca. Con historias que importan. Con criterio.</p>
+      <p style="font-family:var(--sans);font-weight:300;font-size:15px;color:rgba(250,250,247,.5);line-height:1.8" data-i18n="own_desc3">Sin exclusividad. Sin costo de entrada.</p>
+    </div>
   </div>
   <a href="/propietarios/" style="display:inline-block;font-family:var(--sans);font-weight:300;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--white);text-decoration:none;border:1px solid rgba(250,250,247,.28);padding:15px 34px;white-space:nowrap;transition:background .3s" data-i18n="own_cta">Conocer el programa →</a>
 </section>
 
 <div class="film-strip">
-  <div class="film-item"><img src="https://lh3.googleusercontent.com/d/1jMTCY3HVy8bOUIWHjneD0yGI-VIdW8ca" alt="Patagonia"><span class="film-caption" data-i18n="film1">Grecia · Islas</span></div>
-  <div class="film-item"><img src="https://lh3.googleusercontent.com/d/11roT06kOdGkpuanAaY92u2hKl9h2wCUS" alt="España"><span class="film-caption" data-i18n="film2">España · Atlántico</span></div>
-  <div class="film-item"><img src="https://lh3.googleusercontent.com/d/1pEtsmHEhaGxiX0X5Si_ZiPbdnFPqx5ZU" alt="Familia disfrutando del bosque patagónico"><span class="film-caption" data-i18n="film3">Familia · Naturaleza</span></div>
-  <div class="film-item"><img src="https://lh3.googleusercontent.com/d/1FDiKSzCSfz_kiUXgSCyCvdLQI70pwtc6" alt="Grecia"><span class="film-caption" data-i18n="film4">Grecia · Egeo</span></div>
-  <div class="film-item"><img src="https://lh3.googleusercontent.com/d/1C2PjOrznboRo4qrlffbCnEBM22atssAC" alt="Casa Paz"><span class="film-caption" data-i18n="film5">Casa Paz · Bariloche</span></div>
-  <div class="film-item"><img src="https://lh3.googleusercontent.com/d/1k7fwUgxM_CH_-2B4gQYgOh7XJr2xaIDT" alt="Lago"><span class="film-caption" data-i18n="film6">Naturaleza · Encuentro</span></div>
+  <div class="film-item"><img src="https://lh3.googleusercontent.com/d/1r3vsRVBaPSfhE6NbhdBHHT2DsCpEZRLl" alt="Patagonia"><span class="film-caption" data-i18n="film1">Grecia · Islas</span></div>
+  <div class="film-item"><img src="https://lh3.googleusercontent.com/d/1vTzJxtPRfv4Kg1G5dfPSW7YXM8yPW0jL" alt="España"><span class="film-caption" data-i18n="film2">España · Atlántico</span></div>
+  <div class="film-item"><img src="https://lh3.googleusercontent.com/d/11roT06kOdGkpuanAaY92u2hKl9h2wCUS" alt="Familia disfrutando del bosque patagónico"><span class="film-caption" data-i18n="film3">Familia · Naturaleza</span></div>
+  <div class="film-item"><img src="https://lh3.googleusercontent.com/d/1L5w_VKyD38f68oTpJWfqinvVttoEdOlE" alt="Grecia"><span class="film-caption" data-i18n="film4">Grecia · Egeo</span></div>
+  <div class="film-item"><img src="https://lh3.googleusercontent.com/d/1FDiKSzCSfz_kiUXgSCyCvdLQI70pwtc6" alt="Casa Paz"><span class="film-caption" data-i18n="film5">Casa Paz · Bariloche</span></div>
+  <div class="film-item"><img src="https://lh3.googleusercontent.com/d/1w26jNe25BzudAj1SyObmcvhJYgWXSFH5" alt="Lago"><span class="film-caption" data-i18n="film6">Naturaleza · Encuentro</span></div>
 </div>
-
-<section class="final-cta">
-  <div class="final-img"></div>
-  <div class="final-content reveal">
-    <h2 class="final-title"><span data-i18n="final_title">El entorno correcto</span><br><em data-i18n="final_title_em">ya existe.</em></h2>
-    <p class="final-sub" data-i18n="final_sub">Solo falta encontrarlo</p>
-    <a href="/wildstays/patagonia/" class="btn-outline" data-i18n="final_cta">Explorar propiedades →</a>
-  </div>
-</section>
 
 <footer>
   <div class="foot-logo-col">
@@ -820,7 +826,7 @@ const es = {
   hero_eyebrow:   "Argentina · España · Grecia · Entornos que cambian el ritmo",
   hero_title:     "Find your next",
   hero_title_em:  "home in nature.",
-  hero_sub:       "Estancias propias y curadas en Argentina, España y Grecia.",
+  hero_sub:       "Lugares elegidos por su diseño, funcionalidad y entorno.",
   inquire_eyebrow: "Patagonia · Bariloche",
   inquire_text:   "¿Necesitás varias semanas?",
   inquire_sub:    "Coordinamos estadías a medida.",
@@ -857,7 +863,9 @@ const es = {
   sel_price_night:"/ noche",
   own_eyebrow:    "¿Tenés una propiedad en naturaleza?",
   own_title:      "Tu propiedad merece mejores huéspedes.",
-  own_desc:       "Si tiene entorno, criterio y autenticidad — puede ser parte de Wildliving. Sin exclusividad. Sin costo de entrada.",
+  own_desc1:      "La naturaleza, el diseño y el carácter de tu espacio tienen un público especial. En Wildliving conectamos lugares con personas que buscan exactamente eso: compatibilidad.",
+  own_desc2:      "Si tu propiedad tiene potencial de autenticidad pero necesita un reenfoque de comunicación, la editamos, la posicionamos y la compartimos con quienes realmente resuena. Con identidad de marca. Con historias que importan. Con criterio.",
+  own_desc3:      "Sin exclusividad. Sin costo de entrada.",
   own_cta:        "Conocer el programa →",
 
   /* ── DESTINOS STRIP ── */
@@ -887,8 +895,8 @@ const es = {
 
   calma_eyebrow:    "Bariloche · Circuito Chico · Patagonia",
   calma_name:       "Casa Calma",
-  calma_location:   "Lago Nahuel Huapi · Argentina",
-  calma_desc:       "Una casa que enseña a ir más despacio. Construida frente al lago, con materiales que envejecen bien. Para quien ya sabe qué tipo de mañanas quiere tener.",
+  calma_location:   "Bariloche · Argentina",
+  calma_desc:       "Una casa que enseña a ir más despacio. Construida en un bosque de árboles nativos, con materiales que envejecen bien. Para quienes eligen tener mañanas que duran horas.",
   calma_tag1:       "Lago",
   calma_tag2:       "Bosque",
   calma_tag3:       "Silencio",
