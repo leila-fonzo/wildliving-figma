@@ -115,13 +115,14 @@ h1 em{font-style:italic;font-weight:400;color:var(--musgo);}
 .code-note{display:block;margin-top:14px;font-size:12.5px;color:var(--piedra);}
 
 .strip{
-  display:flex;gap:0;margin-top:48px;
+  display:flex;gap:0;margin-top:56px;
   border-top:1px solid var(--arena);border-bottom:1px solid var(--arena);
 }
-.strip div{flex:1;padding:18px 6px;text-align:center;}
+.strip div{flex:1;padding:30px 10px;text-align:center;}
 .strip div + div{border-left:1px solid var(--arena);}
-.strip .v{font-family:var(--display);font-weight:500;font-size:26px;color:var(--musgo);line-height:1.1;}
-.strip .k{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--piedra);margin-top:4px;}
+.strip .v{font-family:var(--display);font-weight:500;font-size:20px;color:var(--noche);line-height:1.1;}
+.strip .v.big{font-size:42px;color:var(--musgo);}
+.strip .k{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--piedra);margin-top:6px;}
 
 section{padding:56px 0;}
 section + section{border-top:1px solid var(--arena);}
@@ -189,6 +190,7 @@ h2 em{font-style:italic;font-weight:400;color:var(--musgo);}
 .closing .rule{width:40px;height:1px;background:var(--musgo);margin:0 auto 24px;}
 
 .fine{padding:0 0 90px;font-size:11px;color:var(--arena);max-width:60ch;line-height:1.7;}
+.fine b{color:var(--musgo);font-weight:500;}
 
 @media(max-width:900px){
   nav{padding:20px 24px}.nav-links{display:none}.hamburger-btn{display:flex}
@@ -200,7 +202,7 @@ h2 em{font-style:italic;font-weight:400;color:var(--musgo);}
 @media(max-width:480px){
   .d-row{flex-direction:column;gap:4px;}
   .d-row .q{flex:none;}
-  .strip .v{font-size:21px;}
+  .strip .v.big{font-size:32px;}
   .final-frame{padding:48px 26px;}
 }
 </style>
@@ -256,8 +258,8 @@ h2 em{font-style:italic;font-weight:400;color:var(--musgo);}
     </span>
 
     <div class="strip">
-      <div><div class="v">10%</div><div class="k"><span class="es">para tu recomendado</span><span class="en">for your friend</span></div></div>
-      <div><div class="v">10%</div><div class="k"><span class="es">para vos</span><span class="en">for you</span></div></div>
+      <div><div class="v big">10%</div><div class="k"><span class="es">para tu recomendado</span><span class="en">for your friend</span></div></div>
+      <div><div class="v big">10%</div><div class="k"><span class="es">para vos</span><span class="en">for you</span></div></div>
       <div><div class="v">0</div><div class="k"><span class="es">registros ni apps</span><span class="en">sign-ups or apps</span></div></div>
     </div>
   </div>
@@ -332,7 +334,7 @@ h2 em{font-style:italic;font-weight:400;color:var(--musgo);}
 
       <div class="prop">
         <div class="prop-ph">
-          <img src="https://lh3.googleusercontent.com/d/1nQCYYx7dPf87K55JgswiJLIewaC9XT8e" alt="Casa Calma">
+          <img src="https://lh3.googleusercontent.com/d/1-vJrOEpBi-7gKiAXq-km9vwjVEULequp" alt="Casa Calma">
           <div class="prop-ph-overlay"><div class="prop-name">Casa Calma</div></div>
         </div>
         <div class="prop-body">
@@ -347,7 +349,7 @@ h2 em{font-style:italic;font-weight:400;color:var(--musgo);}
 
       <div class="prop">
         <div class="prop-ph">
-          <img src="https://lh3.googleusercontent.com/d/1TEdEM8pyZldYLmPfAfslXr7ClqByprn4" alt="Casa Paz">
+          <img src="https://lh3.googleusercontent.com/d/144_6SvSXNSb4qIUgkLb7V_7bNbnpGAev" alt="Casa Paz">
           <div class="prop-ph-overlay"><div class="prop-name">Casa Paz</div></div>
         </div>
         <div class="prop-body">
@@ -364,7 +366,7 @@ h2 em{font-style:italic;font-weight:400;color:var(--musgo);}
   </section>
 
   <div class="final-frame">
-    <div class="final-frame-img" style="background-image:url('https://lh3.googleusercontent.com/d/1CaIFcMOdvwdgz_zX6LFmfwtQ10zYm1Yo')"></div>
+    <div class="final-frame-img" style="background-image:url('https://lh3.googleusercontent.com/d/1MRJuuGBGiMYDbnJS2IuOV6vVa2KJgR6Y')"></div>
     <div class="final-frame-overlay"></div>
     <h2><span class="es">¿Fuiste huésped? Tu código <em>ya existe.</em></span><span class="en">Have you stayed with us? Your code <em>already exists.</em></span></h2>
     <p>
@@ -385,8 +387,8 @@ h2 em{font-style:italic;font-weight:400;color:var(--musgo);}
   </div>
 
   <p class="fine">
-    <span class="es">El descuento del 10% aplica sobre reservas directas en wildliving.life. El crédito del recomendador se calcula sobre el valor de la reserva completada, se acumula sin límite, se puede transferir a otra persona y tiene una vigencia de 12 meses.</span>
-    <span class="en">The 10% discount applies to direct bookings on wildliving.life. The referrer's credit is calculated on the completed booking's value, accumulates without limit, can be transferred to another person, and is valid for 12 months.</span>
+    <span class="es">El descuento del <b>10%</b> aplica sobre reservas directas en wildliving.life. El crédito del recomendador se calcula sobre el valor de la reserva completada, <b>se acumula sin límite</b>, <b>se puede transferir a otra persona</b> y tiene una vigencia de <b>12 meses</b>.</span>
+    <span class="en">The <b>10%</b> discount applies to direct bookings on wildliving.life. The referrer's credit is calculated on the completed booking's value, <b>accumulates without limit</b>, <b>can be transferred to another person</b>, and is valid for <b>12 months</b>.</span>
   </p>
 
 </div>
