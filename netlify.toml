@@ -8,6 +8,12 @@
   force = true
 
 [[redirects]]
+  from = "/stay/patagonia-casa-paz/*"
+  to = "/stay/argentina-casa-paz/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/:splat/index.html"
   status = 200
