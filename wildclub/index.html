@@ -30,7 +30,7 @@ body{
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
 }
-.wrap{max-width:680px;margin:0 auto;padding:0 24px;position:relative;}
+.wrap{max-width:1200px;margin:0 auto;padding:0 80px;position:relative;}
 
 /* NAV (shared site chrome) */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:24px 48px;background:rgba(242,240,235,0.96);backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(200,196,188,.15)}
@@ -193,13 +193,15 @@ h2 em{font-style:italic;font-weight:400;color:var(--musgo);}
 @media(max-width:900px){
   nav{padding:20px 24px}.nav-links{display:none}.hamburger-btn{display:flex}
   footer{grid-template-columns:1fr 1fr;padding:60px 24px 40px}
+  .wrap{padding:0 24px}
+  .hero{padding:130px 0 40px}
+  section{padding:40px 0}
 }
 @media(max-width:480px){
   .d-row{flex-direction:column;gap:4px;}
   .d-row .q{flex:none;}
   .strip .v{font-size:21px;}
   .final-frame{padding:48px 26px;}
-  .hero{padding-top:130px;}
 }
 </style>
 </head>
