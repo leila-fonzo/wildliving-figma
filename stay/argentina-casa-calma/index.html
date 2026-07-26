@@ -123,6 +123,22 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
 .photo-gallery-grid img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:8px;cursor:pointer;transition:opacity .4s var(--ease)}
 .photo-gallery-grid img:hover{opacity:.85}
 
+/* TRUST BADGE */
+.trust-badge{padding:48px 80px;background:var(--paper);text-align:center}
+.trust-badge .rule{width:40px;height:1px;background:var(--moss);margin:0 auto 20px}
+.trust-badge p{font-family:var(--sans);font-weight:300;font-size:15px;color:var(--stone);max-width:560px;margin:0 auto;line-height:1.7}
+
+/* NATURE RESERVE SECTION ("Somos bosque") — reusable block, content per property */
+.forest-section{padding:80px;background:var(--paper)}
+.forest-title{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-weight:300;font-size:32px;color:var(--night);margin-bottom:20px}
+.forest-title .accent{color:var(--moss)}
+.forest-intro{font-family:var(--sans);font-weight:300;font-size:16px;color:var(--stone);max-width:640px;line-height:1.8;margin-bottom:48px}
+.forest-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px 48px}
+.forest-item{display:flex;gap:16px}
+.forest-item svg{flex-shrink:0;margin-top:2px}
+.forest-item h3{font-family:var(--sans);font-weight:500;font-size:15px;color:var(--night);margin-bottom:6px}
+.forest-item p{font-family:var(--sans);font-weight:300;font-size:14px;color:var(--stone);line-height:1.7}
+
 @media(max-width:900px){
   nav{padding:20px 24px}.nav-links{display:none}.hamburger-btn{display:flex}
   footer{grid-template-columns:1fr 1fr;padding:60px 24px 40px}
@@ -133,6 +149,9 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
   .explore-card{grid-template-columns:1fr}
   .img-strip{grid-template-columns:repeat(2,1fr);padding:0 24px 48px}
   .photo-gallery{padding:0 24px 48px}
+  .forest-section{padding:48px 24px}
+  .forest-grid{grid-template-columns:1fr;gap:28px}
+  .trust-badge{padding:40px 24px}
   body{padding-bottom:64px}
 }
 </style>
@@ -174,9 +193,9 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
 </section>
 
 <div class="key-details">
-  <div class="key-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--moss)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v7"/><path d="M3 13h18"/><path d="M7 9V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/><path d="M3 18v2"/><path d="M21 18v2"/></svg><span>3 dormitorios</span></div>
-  <div class="key-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--moss)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>Hasta 6 personas</span></div>
-  <div class="key-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--moss)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Circuito Chico · 15 min centro</span></div>
+  <div class="key-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--moss)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Circuito Chico, Bariloche</span></div>
+  <div class="key-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--moss)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v7"/><path d="M3 13h18"/><path d="M7 9V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/><path d="M3 18v2"/><path d="M21 18v2"/></svg><span>1 dormitorio + sofás cama</span></div>
+  <div class="key-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--moss)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>Hasta 5 personas</span></div>
   <div class="key-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--moss)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Reserva directa · sin comisiones</span></div>
 </div>
 
@@ -189,11 +208,11 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
 
 <section class="stay-content">
   <div>
-    <p class="stay-desc">Tres dormitorios frente al lago Nahuel Huapi. Bosque, silencio, y una terraza donde el tiempo pasa diferente. A 15 minutos del centro de Bariloche — lo suficientemente lejos para desconectarse, lo suficientemente cerca para no perderse nada.</p>
+    <p class="stay-desc">Casa Calma está en el área de Lago Moreno, Circuito Chico, dentro de una reserva natural de bosque nativo. La casa tiene, además, su propio bosque: los ventanales lo enmarcan desde cada ambiente. Una chimenea real y calefacción central completan un refugio pensado para quedarse — mañanas junto al fuego, tardes leyendo con los árboles como fondo. Un dormitorio principal y dos sofás cama en el living, hasta 5 personas.</p>
     <div class="stay-tags">
-      <span class="tag">Pareja</span>
-      <span class="tag">Solo</span>
-      <span class="tag">Naturaleza</span>
+      <span class="tag">Silencio real</span>
+      <span class="tag">Regulación del sistema nervioso</span>
+      <span class="tag">Descanso profundo</span>
     </div>
     <div class="stay-price">desde $120 / noche</div>
   </div>
@@ -293,6 +312,46 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
     <img src="https://lh3.googleusercontent.com/d/1UlryNDF_L3eO__Ms-ThQwetTEYqxp4GS" alt="Casa Calma">
   </div>
 </section>
+
+<section class="forest-section">
+  <h2 class="forest-title">Somos <span class="accent">bosque</span>.</h2>
+  <p class="forest-intro">Casa Calma no está cerca de la naturaleza — está dentro de ella. La casa se encuentra en una reserva natural protegida en el área de Lago Moreno, Circuito Chico, donde conviven lagos cristalinos, bosque nativo y fauna silvestre.</p>
+  <div class="forest-grid">
+    <div class="forest-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--moss)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 7h.01"/><path d="M3.4 18H12a8 8 0 0 0 8-8V7a4 4 0 0 0-7.28-2.3L2 20"/><path d="m20 7 2 .5-2 .5"/><path d="M10 18v3"/><path d="M14 17.75V21"/><path d="M7 18a6 6 0 0 0 3.84-10.61"/></svg>
+      <div>
+        <h3>Fauna nativa</h3>
+        <p>Zorzales, carpinteros patagónicos, cauquenes y, en la región, huillines: nutrias nativas en peligro de extinción.</p>
+      </div>
+    </div>
+    <div class="forest-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--moss)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 7 10h3l-4 6h4l-3 5h10l-3-5h4l-4-6h3z"/><line x1="12" y1="21" x2="12" y2="24"/></svg>
+      <div>
+        <h3>Flora nativa</h3>
+        <p>Coihues, lengas, ñires, cipreses y arrayanes dan forma al bosque propio de la casa.</p>
+      </div>
+    </div>
+    <div class="forest-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--moss)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+      <div>
+        <h3>Lago Moreno</h3>
+        <p>Aguas cristalinas, dentro de la misma reserva.</p>
+      </div>
+    </div>
+    <div class="forest-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--moss)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="3"/><circle cx="18" cy="5" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/></svg>
+      <div>
+        <h3>Turismo responsable</h3>
+        <p>Cuidamos los senderos y la fauna que nos rodea.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust-badge">
+  <div class="rule"></div>
+  <p>Huéspedes de más de veinte países — de Kirguistán a Costa Rica, de Noruega a Sri Lanka. Un refugio en el bosque que se volvió, sin buscarlo, un punto de encuentro global.</p>
+</div>
 
 <section class="explore-section">
   <span class="explore-eyebrow">Seguí explorando</span>
