@@ -31,6 +31,8 @@
     "type": "collection",
     "source": "lodgify",
     "lodgify_property_id": 803563,
+    "audience_profile": ["Pareja", "Nómada digital"],
+    "benefit_tags": ["Diseño", "Jardín propio", "Descanso"],
     "price_from": 95,
     "currency": "USD",
     "location": "Playa Bonita, Bariloche",
