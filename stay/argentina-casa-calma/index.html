@@ -123,6 +123,11 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
 .photo-gallery-grid img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:8px;cursor:pointer;transition:opacity .4s var(--ease)}
 .photo-gallery-grid img:hover{opacity:.85}
 
+/* TRUST BADGE */
+.trust-badge{padding:48px 80px;background:var(--paper);text-align:center}
+.trust-badge .rule{width:40px;height:1px;background:var(--moss);margin:0 auto 20px}
+.trust-badge p{font-family:var(--sans);font-weight:300;font-size:15px;color:var(--stone);max-width:560px;margin:0 auto;line-height:1.7}
+
 /* NATURE RESERVE SECTION ("Somos bosque") — reusable block, content per property */
 .forest-section{padding:80px;background:var(--paper)}
 .forest-title{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-weight:300;font-size:32px;color:var(--night);margin-bottom:20px}
@@ -146,6 +151,7 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
   .photo-gallery{padding:0 24px 48px}
   .forest-section{padding:48px 24px}
   .forest-grid{grid-template-columns:1fr;gap:28px}
+  .trust-badge{padding:40px 24px}
   body{padding-bottom:64px}
 }
 </style>
@@ -341,6 +347,11 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
     </div>
   </div>
 </section>
+
+<div class="trust-badge">
+  <div class="rule"></div>
+  <p>Huéspedes de más de veinte países — de Kirguistán a Costa Rica, de Noruega a Sri Lanka. Un refugio en el bosque que se volvió, sin buscarlo, un punto de encuentro global.</p>
+</div>
 
 <section class="explore-section">
   <span class="explore-eyebrow">Seguí explorando</span>
