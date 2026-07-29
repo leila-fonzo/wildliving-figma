@@ -83,7 +83,7 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
 .cta-meta{font-family:var(--sans);font-size:12px;color:var(--stone);margin-bottom:16px}
 .btn-reserve{display:block;width:100%;text-align:center;font-family:var(--sans);font-weight:400;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--paper);background:var(--moss);padding:14px 34px;border-radius:0;text-decoration:none;box-sizing:border-box;min-height:44px}
 .btn-reserve:hover{background:var(--moss-d)}
-.cta-note{font-family:var(--sans);font-size:11px;color:var(--stone);margin-top:16px}
+.cta-note{font-family:var(--sans);font-size:13px;color:var(--stone);line-height:1.6;margin-top:16px}
 
 /* STICKY BOOKING BAR */
 .sticky-bar{position:fixed;left:0;right:0;bottom:0;z-index:1000;background:rgba(242,240,235,0.97);backdrop-filter:blur(8px);border-top:1px solid var(--sand);padding:14px 24px;display:none;align-items:center;justify-content:space-between;gap:16px}
@@ -197,8 +197,66 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
   </div>
   <div class="cta-box" id="cta-box">
     <div id="dates-meta"></div>
-    <a href="https://pay.lodgify.com/651630/803563" target="_blank" class="btn-reserve">Reservar →</a>
-    <p class="cta-note">Reserva directa · Sin intermediarios</p>
+    <a href="#lodgify-book-now-box" class="btn-reserve">Reservar →</a>
+    <style>
+      :root {
+        --ldg-bnb-background: #EDEBE6;
+        --ldg-bnb-border-radius: 0.3em;
+        --ldg-bnb-box-shadow: 0px 24px 54px 0px rgba(30, 30, 26, 0.08);
+        --ldg-bnb-padding: 14px;
+        --ldg-bnb-input-background: #F2F0EB;
+        --ldg-bnb-button-border-radius: 0.3em;
+
+        --ldg-bnb-color-primary: #7C9A6E;
+        --ldg-bnb-color-primary-lighter: #A9C09E;
+        --ldg-bnb-color-primary-darker: #6B8A5E;
+        --ldg-bnb-color-primary-contrast: #F2F0EB;
+
+        --ldg-component-calendar-cell-selection-bg-color: #7C9A6E;
+        --ldg-component-calendar-cell-selection-color: #F2F0EB;
+        --ldg-component-calendar-cell-selected-bg-color: #D8E2D2;
+        --ldg-component-calendar-cell-selected-color: #1E1E1A;
+
+        --ldg-bnb-font-family: inherit;
+      }
+      #lodgify-book-now-box {
+        width: 100%;
+      }
+    </style>
+    <div
+      id="lodgify-book-now-box"
+      data-rental-id="803563"
+      data-website-id="651630"
+      data-slug="wildliving"
+      data-language-code="es"
+      data-new-tab="false"
+      data-version="stable"
+      data-has-guests-breakdown
+      data-check-in-label='Llegada'
+      data-check-out-label='Salida'
+      data-guests-label='Huéspedes'
+      data-guests-singular-label='{{NumberOfGuests}} huésped'
+      data-guests-plural-label='{{NumberOfGuests}} huéspedes'
+      data-location-input-label='Ubicación'
+      data-total-price-label='Precio total:'
+      data-select-dates-to-see-price-label='Seleccione las fechas para ver el precio total'
+      data-minimum-price-per-night-first-label='Desde'
+      data-minimum-price-per-night-second-label='por noche'
+      data-book-button-label='Consultar disponibilidad'
+      data-guests-breakdown-label='Huéspedes'
+      data-adults-label='{"one":"adulto","other":"adultos"}'
+      data-adults-description='Edades {minAge} o mayores'
+      data-children-label='{"one":"niño","other":"niños"}'
+      data-children-description='Edades {minAge} - {maxAge}'
+      data-children-not-allowed-label='No adaptado para niños'
+      data-infants-label='{"one":"bebé","other":"bebés"}'
+      data-infants-not-allowed-label='No adaptado para bebés'
+      data-pets-label='{"one":"mascota","other":"mascotas"}'
+      data-pets-not-allowed-label='No permitido'
+      data-done-label='Hecho'
+    ></div>
+    <script src="https://app.lodgify.com/book-now-box/stable/renderBookNowBox.js" defer></script>
+    <p class="cta-note">Tu solicitud queda pendiente hasta que la confirmamos personalmente — normalmente en menos de 24 horas. El pago se procesa recién cuando tu estadía está confirmada.</p>
   </div>
 </section>
 
@@ -250,7 +308,7 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
   <div class="sticky-price">desde $95 / noche</div>
   <div class="sticky-actions">
     <a href="/contacto/?prop=argentina-casa-paz" class="sticky-btn-consult">Consultar</a>
-    <a href="https://pay.lodgify.com/651630/803563" target="_blank" class="sticky-btn-reserve">Reservar →</a>
+    <a href="#lodgify-book-now-box" class="sticky-btn-reserve">Reservar →</a>
   </div>
 </div>
 
