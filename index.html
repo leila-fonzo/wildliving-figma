@@ -1414,7 +1414,8 @@ function renderSelected() {
   var grid = document.getElementById('selected-grid');
   if (!grid) return;
   var lang = window.__wl_lang || 'es';
-  var items = selectedTab === 'all' ? SELECTED_DATA : SELECTED_DATA.filter(function(p){ return p.tab === selectedTab; });
+  var featured = SELECTED_DATA.filter(function(p){ return p.featured_home; });
+  var items = selectedTab === 'all' ? featured : featured.filter(function(p){ return p.tab === selectedTab; });
   if (!items.length) {
     grid.innerHTML = '<div class="selected-empty"><p>' + t('sel_empty') + '</p>'
       + '<a href="/contacto/" class="link-arrow">' + t('sel_empty_cta') + '</a></div>';
@@ -1437,7 +1438,7 @@ function renderSelected() {
       + '<div class="selected-card-name">' + p.name + '</div>'
       + '<div class="selected-card-loc">' + loc + '</div>'
       + '<p class="selected-card-desc">' + desc + '</p>'
-      + '<div class="selected-card-price">' + t('sel_price_from') + ' $' + p.price + ' ' + t('sel_price_night') + '</div>'
+      + (p.price ? ('<div class="selected-card-price">' + t('sel_price_from') + ' $' + p.price + ' ' + t('sel_price_night') + '</div>') : '')
       + '<a href="' + ctaHref + '" class="selected-card-cta"' + ctaTarget + '>'
       + '<span class="cta-full">' + ctaFull + '</span>'
       + '<span class="cta-short">' + ctaShort + '</span></a>'
