@@ -77,7 +77,8 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
 .selected-card:hover .selected-card-img img{transform:scale(1)}
 .selected-card-body{padding:28px 28px 32px;display:flex;flex-direction:column;flex:1}
 .selected-card-name{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-style:italic;font-weight:300;font-size:24px;color:var(--night);margin-bottom:6px}
-.selected-card-loc{font-family:var(--sans);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--stone);margin-bottom:14px}
+.selected-card-loc{font-family:var(--sans);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--stone);margin-bottom:10px}
+.selected-card-province{display:inline-block;font-family:var(--sans);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--moss);border:1px solid var(--moss);padding:3px 9px;margin-bottom:14px}
 .selected-card-desc{font-family:var(--sans);font-weight:300;font-size:14px;line-height:1.75;color:var(--stone);margin-bottom:22px;flex:1;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .selected-card-cta{font-family:var(--sans);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--moss);text-decoration:none;border-bottom:1px solid rgba(124,154,110,.35);padding-bottom:3px;align-self:flex-start;transition:color .2s,border-color .2s;min-height:44px;display:inline-flex;align-items:center;margin-top:auto;padding-top:16px}
 .selected-card-cta:hover{color:var(--moss-d);border-color:var(--moss-d)}
@@ -203,6 +204,7 @@ function renderSelectedList() {
       + '<div class="selected-card-body">'
       + '<div class="selected-card-name">' + p.name + '</div>'
       + '<div class="selected-card-loc">' + (p.location || '') + '</div>'
+      + (p.province ? ('<span class="selected-card-province">' + p.province + '</span>') : '')
       + '<p class="selected-card-desc">' + desc + '</p>'
       + '<a href="' + p.affiliate_url + '" class="selected-card-cta" target="_blank" rel="noopener">Verificá disponibilidad →</a>'
       + '</div></div>';
