@@ -77,6 +77,8 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
 .ficha-h1{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-style:italic;font-weight:300;font-size:clamp(32px,4vw,48px);line-height:1.1;margin-bottom:14px}
 .ficha-loc{font-family:var(--sans);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--stone);margin-bottom:14px}
 .ficha-province{display:inline-block;font-family:var(--sans);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--moss);border:1px solid var(--moss);padding:3px 9px;margin-bottom:24px}
+.ficha-practical{display:flex;align-items:center;gap:8px;margin-bottom:20px}
+.ficha-practical span{font-family:var(--sans);font-weight:300;font-size:13px;color:var(--stone)}
 .ficha-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
 .tag{font-family:var(--sans);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--stone);border:1px solid var(--sand);padding:4px 12px}
 .ficha-desc{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-weight:300;font-size:19px;color:var(--night);line-height:1.75;border-left:1px solid var(--sand);padding-left:24px;max-width:620px}
@@ -86,6 +88,21 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
 .btn-cta:hover{background:var(--moss-d)}
 .ficha-cta-note{font-family:var(--sans);font-size:12px;color:var(--stone);line-height:1.6;margin-top:16px}
 
+/* EXPLORE / RELATED */
+.explore-section{background:var(--rock);padding:80px}
+.explore-eyebrow{font-family:var(--sans);font-size:9px;color:var(--moss);text-transform:uppercase;letter-spacing:.28em;margin-bottom:20px;display:block}
+.explore-title{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-weight:300;font-size:32px;color:var(--night);margin-bottom:40px}
+.explore-cards{display:flex;flex-direction:column;gap:20px}
+.explore-card{display:grid;grid-template-columns:40% 60%;background:var(--paper);text-decoration:none;color:inherit;overflow:hidden}
+.explore-img{aspect-ratio:4/3;overflow:hidden}
+.explore-img img{width:100%;height:100%;object-fit:cover}
+.explore-content{padding:36px 40px;display:flex;flex-direction:column;justify-content:center}
+.explore-badge{font-family:var(--sans);font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--moss)}
+.explore-name{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-style:italic;font-weight:300;font-size:28px;color:var(--night);margin:6px 0 4px}
+.explore-location{font-family:var(--sans);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);margin-bottom:14px}
+.explore-desc{font-family:var(--sans);font-weight:300;font-size:14px;color:var(--stone);line-height:1.7;margin-bottom:16px;max-width:420px}
+.explore-cta{font-family:var(--sans);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--moss);border-bottom:1px solid var(--moss);padding-bottom:2px;align-self:flex-start}
+
 @media(max-width:900px){
   nav{padding:20px 24px}.nav-links{display:none}.hamburger-btn{display:flex}
   footer{grid-template-columns:1fr 1fr;padding:60px 24px 40px}
@@ -93,6 +110,8 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
   .ficha-hero{padding:20px 24px 0}
   .ficha-body{grid-template-columns:1fr;padding:32px 24px 60px;gap:32px}
   .ficha-cta-box{position:static}
+  .explore-section{padding:48px 24px}
+  .explore-card{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -136,6 +155,7 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
     <h1 class="ficha-h1">Modo Villa - Cabaña</h1>
     <div class="ficha-loc">Villa La Angostura</div>
     <span class="ficha-province">Neuquén</span>
+    <div class="ficha-practical"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--moss)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v7"/><path d="M3 13h18"/><path d="M7 9V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/><path d="M3 18v2"/><path d="M21 18v2"/></svg><span>2 dormitorios</span></div>
     <div class="ficha-tags">
       <span class="tag">Descanso profundo</span>
           <span class="tag">Reconexión en pareja</span>
@@ -148,6 +168,43 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
     <p class="ficha-cta-note">Wildliving Selected: propiedades de partners que cumplen nuestro criterio editorial.</p>
   </div>
 </div>
+
+<section class="explore-section">
+  <span class="explore-eyebrow">Seguí explorando</span>
+  <h2 class="explore-title">Otras propiedades en Patagonia.</h2>
+  <div class="explore-cards">
+  <a href="/selected/patagonia-casa-gallareta/" class="explore-card">
+    <div class="explore-img"><img src="https://lh3.googleusercontent.com/d/1PZWAzKjvP94EEAKueJcDEN3XBK2gKp0n" alt="Casa Gallareta"></div>
+    <div class="explore-content">
+      <span class="explore-badge">Selected</span>
+      <h3 class="explore-name"><em>Casa Gallareta</em></h3>
+      <div class="explore-location">Villa La Angostura, Lago Correntoso</div>
+      <p class="explore-desc">Cabañas de madera quemada junto al Lago Correntoso, diseño de autor nacido como encargo familiar, no como desarrollo comercial.</p>
+      <span class="explore-cta">Ver propiedad →</span>
+    </div>
+  </a>
+  <a href="/selected/patagonia-ventanas-al-lago/" class="explore-card">
+    <div class="explore-img"><img src="https://lh3.googleusercontent.com/d/19CFyF69PU2fCgTjqBe58lGu7uC6RIhN4" alt="Ventanas Al Lago"></div>
+    <div class="explore-content">
+      <span class="explore-badge">Selected</span>
+      <h3 class="explore-name"><em>Ventanas Al Lago</em></h3>
+      <div class="explore-location">Circuito Chico, Bariloche</div>
+      <p class="explore-desc">Casa completa en Circuito Chico, vista al lago desde todos los ambientes. Jardín, parrilla propia, hasta 6 personas.</p>
+      <span class="explore-cta">Ver propiedad →</span>
+    </div>
+  </a>
+  <a href="/selected/patagonia-casa-de-montana-con-vista-al-lago/" class="explore-card">
+    <div class="explore-img"><img src="https://lh3.googleusercontent.com/d/1kDCE_hansakMODtusdoIZLjnf3YBmDJL" alt="Casa de Montaña con Vista al Lago"></div>
+    <div class="explore-content">
+      <span class="explore-badge">Selected</span>
+      <h3 class="explore-name"><em>Casa de Montaña con Vista al Lago</em></h3>
+      <div class="explore-location">Bariloche</div>
+      <p class="explore-desc">Casa en Bariloche con vista a lago y montaña, jacuzzi, tres dormitorios. Hasta 6 personas, sin lógica de hotel.</p>
+      <span class="explore-cta">Ver propiedad →</span>
+    </div>
+  </a>
+  </div>
+</section>
 
 <footer>
   <div class="foot-logo-col">
