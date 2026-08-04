@@ -209,19 +209,19 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
 
 <section class="stay-content">
   <div>
-    <p class="stay-desc">Apartamento moderno de 38m² en Playa Bonita, con jardín privado y luz natural todo el día. Diseñado para trabajar bien y descansar mejor — a cinco minutos a pie del lago Nahuel Huapi, y a quince minutos en auto del centro de Bariloche.</p>
+    <p class="stay-desc" data-i18n="stay_desc">Apartamento moderno de 38m² en Playa Bonita, con jardín privado y luz natural todo el día. Diseñado para trabajar bien y descansar mejor — a cinco minutos a pie del lago Nahuel Huapi, y a quince minutos en auto del centro de Bariloche.</p>
     <div class="stay-tags">
-      <span class="tag">Diseño</span>
-      <span class="tag">Jardín propio</span>
-      <span class="tag">Descanso</span>
+      <span class="tag" data-i18n="tag1">Diseño</span>
+      <span class="tag" data-i18n="tag2">Jardín propio</span>
+      <span class="tag" data-i18n="tag3">Descanso</span>
     </div>
-    <div class="stay-price">desde $95 / noche</div>
+    <div class="stay-price"><span data-i18n="price_from">desde</span> $95 <span data-i18n="price_night">/ noche</span></div>
   </div>
   <div class="cta-box" id="cta-box">
     <div id="dates-meta"></div>
     <div class="stay-ctas">
-      <a href="#lodgify-book-now-box" class="btn-reserve">Reservar →</a>
-      <a href="https://wa.me/?text=Quiero%20recomendarte%20Casa%20Paz%2C%20un%20departamento%20con%20jard%C3%ADn%20en%20Bariloche%20que%20hizo%20que%20mi%20viaje%20fuera%20todav%C3%ADa%20m%C3%A1s%20especial.%0AEs%20parte%20de%20Wildclub%2C%20un%20programa%20entre%20hu%C3%A9spedes%20para%20recomendarnos%20los%20lugares%20que%20ya%20vivimos.%0A%0ASi%20eleg%C3%ADs%20reservar%20ah%C3%AD%2C%20con%20mi%20c%C3%B3digo%20ten%C3%A9s%2010%25%20de%20descuento%20en%20tu%20estad%C3%ADa.%0APed%C3%ADmelo%20cuando%20est%C3%A9s%20por%20pagar.%0Awildliving.life%2Fstay%2Fargentina-casa-paz%3Fref%3Dwildclub" target="_blank" class="btn-recommend">Recomendar →</a>
+      <a href="#lodgify-book-now-box" class="btn-reserve" data-i18n="cta_reserve">Reservar →</a>
+      <a id="whatsapp-recommend" href="https://wa.me/?text=Quiero%20recomendarte%20Casa%20Paz%2C%20un%20departamento%20con%20jard%C3%ADn%20en%20Bariloche%20que%20hizo%20que%20mi%20viaje%20fuera%20todav%C3%ADa%20m%C3%A1s%20especial.%0AEs%20parte%20de%20Wildclub%2C%20un%20programa%20entre%20hu%C3%A9spedes%20para%20recomendarnos%20los%20lugares%20que%20ya%20vivimos.%0A%0ASi%20eleg%C3%ADs%20reservar%20ah%C3%AD%2C%20con%20mi%20c%C3%B3digo%20ten%C3%A9s%2010%25%20de%20descuento%20en%20tu%20estad%C3%ADa.%0APed%C3%ADmelo%20cuando%20est%C3%A9s%20por%20pagar.%0Awildliving.life%2Fstay%2Fargentina-casa-paz%3Fref%3Dwildclub" target="_blank" class="btn-recommend" data-i18n="cta_recommend">Recomendar →</a>
     </div>
     <style>
       :root {
@@ -280,8 +280,41 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
       data-pets-not-allowed-label='No permitido'
       data-done-label='Hecho'
     ></div>
+    <script>
+      (function(){
+        try{
+          var lang = localStorage.getItem('wl_lang');
+          if (lang === 'en') {
+            var box = document.getElementById('lodgify-book-now-box');
+            box.setAttribute('data-language-code', 'en');
+            box.setAttribute('data-check-in-label', 'Check-in');
+            box.setAttribute('data-check-out-label', 'Check-out');
+            box.setAttribute('data-guests-label', 'Guests');
+            box.setAttribute('data-guests-singular-label', '{{NumberOfGuests}} guest');
+            box.setAttribute('data-guests-plural-label', '{{NumberOfGuests}} guests');
+            box.setAttribute('data-location-input-label', 'Location');
+            box.setAttribute('data-total-price-label', 'Total price:');
+            box.setAttribute('data-select-dates-to-see-price-label', 'Select dates to see total price');
+            box.setAttribute('data-minimum-price-per-night-first-label', 'From');
+            box.setAttribute('data-minimum-price-per-night-second-label', 'per night');
+            box.setAttribute('data-book-button-label', 'Check availability');
+            box.setAttribute('data-guests-breakdown-label', 'Guests');
+            box.setAttribute('data-adults-label', '{"one":"adult","other":"adults"}');
+            box.setAttribute('data-adults-description', 'Ages {minAge} or above');
+            box.setAttribute('data-children-label', '{"one":"child","other":"children"}');
+            box.setAttribute('data-children-description', 'Ages {minAge} - {maxAge}');
+            box.setAttribute('data-children-not-allowed-label', 'Not suitable for children');
+            box.setAttribute('data-infants-label', '{"one":"infant","other":"infants"}');
+            box.setAttribute('data-infants-not-allowed-label', 'Not suitable for infants');
+            box.setAttribute('data-pets-label', '{"one":"pet","other":"pets"}');
+            box.setAttribute('data-pets-not-allowed-label', 'Not allowed');
+            box.setAttribute('data-done-label', 'Done');
+          }
+        }catch(e){}
+      })();
+    </script>
     <script src="https://app.lodgify.com/book-now-box/stable/renderBookNowBox.js" defer></script>
-    <p class="cta-note">Tu solicitud queda pendiente hasta que la confirmamos personalmente — normalmente en menos de 24 horas. El pago se procesa recién cuando tu estadía está confirmada.</p>
+    <p class="cta-note" data-i18n="cta_note">Tu solicitud queda pendiente hasta que la confirmamos personalmente — normalmente en menos de 24 horas. El pago se procesa recién cuando tu estadía está confirmada.</p>
   </div>
 </section>
 
