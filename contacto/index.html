@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contacto — Wildliving</title>
+<meta name="description" content="Escribinos por una estadía, una consulta sobre tu propiedad, o para saber más sobre Wildliving.">
+<meta property="og:title" content="Contacto — Wildliving">
+<meta property="og:description" content="Escribinos por una estadía, una consulta sobre tu propiedad, o para saber más sobre Wildliving.">
+<meta name="twitter:title" content="Contacto — Wildliving">
+<meta name="twitter:description" content="Escribinos por una estadía, una consulta sobre tu propiedad, o para saber más sobre Wildliving.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
@@ -93,108 +98,147 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
 <nav id="nav">
   <a href="/" class="nav-logo" id="nav-logo">Wild<span>·</span>living</a>
   <ul class="nav-links" id="nav-links">
-    <li><a href="/wildstays/patagonia/">Wildstays</a></li>
-    <li><a href="/wildhomes/">Wildhomes</a></li>
-    <li><a href="/sobre/">Sobre</a></li>
-    <li><a href="/contacto/">Contacto</a></li>
+    <li><a href="/wildstays/patagonia/" data-i18n="nav_wildstays">Wildstays</a></li>
+    <li><a href="/wildhomes/" data-i18n="nav_wildhomes">Wildhomes</a></li>
+    <li><a href="/sobre/" data-i18n="nav_sobre">Sobre</a></li>
+    <li><a href="/contacto/" data-i18n="nav_contacto">Contacto</a></li>
     <li class="lang-selector">
-      <button class="lang-btn active" data-lang="es">ES</button>
+      <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
       <span class="lang-sep">·</span>
-      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
     </li>
   </ul>
-  <button class="hamburger-btn" id="hamburger-btn" onclick="toggleMobileMenu(true)" aria-label="Abrir menú">☰</button>
+  <button class="hamburger-btn" id="hamburger-btn" onclick="toggleMobileMenu(true)" aria-label="Abrir menú" data-i18n-aria="aria_open_menu">☰</button>
 </nav>
 
 <div class="mobile-overlay" id="mobile-overlay">
-  <button class="mobile-overlay-close" onclick="toggleMobileMenu(false)" aria-label="Cerrar menú">✕</button>
-  <a href="/wildstays/patagonia/">Wildstays</a>
-  <a href="/wildhomes/">Wildhomes</a>
-  <a href="/sobre/">Sobre</a>
-  <a href="/contacto/">Contacto</a>
+  <button class="mobile-overlay-close" onclick="toggleMobileMenu(false)" aria-label="Cerrar menú" data-i18n-aria="aria_close_menu">✕</button>
+  <a href="/wildstays/patagonia/" data-i18n="nav_wildstays">Wildstays</a>
+  <a href="/wildhomes/" data-i18n="nav_wildhomes">Wildhomes</a>
+  <a href="/sobre/" data-i18n="nav_sobre">Sobre</a>
+  <a href="/contacto/" data-i18n="nav_contacto">Contacto</a>
 </div>
 
 <section class="contacto-hero">
-  <span class="eyebrow">Contacto</span>
-  <h1 class="contacto-h1">Hablemos.</h1>
-  <p class="contacto-sub">Si tenés una propiedad, una consulta sobre una estadía, o querés saber más sobre Wildliving — escribinos.</p>
+  <span class="eyebrow" data-i18n="nav_contacto">Contacto</span>
+  <h1 class="contacto-h1" data-i18n="contacto_h1">Hablemos.</h1>
+  <p class="contacto-sub" data-i18n="contacto_sub">Si tenés una propiedad, una consulta sobre una estadía, o querés saber más sobre Wildliving — escribinos.</p>
 </section>
 
 <section class="contacto-body">
   <div>
     <div class="info-item">
-      <div class="info-label">Email</div>
+      <div class="info-label" data-i18n="contacto_label_email">Email</div>
       <div class="info-value">hola@wildliving.life</div>
     </div>
     <div class="info-item">
-      <div class="info-label">Instagram</div>
+      <div class="info-label" data-i18n="contacto_label_instagram">Instagram</div>
       <div class="info-value">@wildliving.life</div>
     </div>
     <div class="info-item">
-      <div class="info-label">Propietarios</div>
-      <div class="info-value"><a href="/propietarios/" class="moss-link">Ver programa →</a></div>
+      <div class="info-label" data-i18n="contacto_label_propietarios">Propietarios</div>
+      <div class="info-value"><a href="/propietarios/" class="moss-link" data-i18n="contacto_ver_programa">Ver programa →</a></div>
     </div>
   </div>
   <div>
     <form class="contacto-form" id="contacto-form" name="contacto" method="POST" data-netlify="true" netlify>
       <input type="hidden" name="form-name" value="contacto">
       <div class="field">
-        <label>Nombre</label>
+        <label data-i18n="contacto_label_nombre">Nombre</label>
         <input type="text" name="nombre" required>
       </div>
       <div class="field">
-        <label>Email</label>
+        <label data-i18n="contacto_label_email">Email</label>
         <input type="email" name="email" required>
       </div>
       <div class="field">
-        <label>Mensaje</label>
+        <label data-i18n="contacto_label_mensaje">Mensaje</label>
         <textarea name="mensaje" rows="5" required></textarea>
       </div>
-      <button type="submit" class="btn-submit">Enviar</button>
+      <button type="submit" class="btn-submit" data-i18n="contacto_enviar">Enviar</button>
     </form>
-    <div class="thank-you" id="contacto-thanks">Gracias por escribirnos. Te responderemos pronto.</div>
+    <div class="thank-you" id="contacto-thanks" data-i18n="contacto_gracias">Gracias por escribirnos. Te responderemos pronto.</div>
   </div>
 </section>
 
 <footer>
   <div class="foot-logo-col">
     <a href="/" class="foot-logo">Wild<span>·</span>living</a>
-    <p class="foot-tagline"><span>Find your next home in nature.</span><br><span>Patagonia · España · Grecia</span></p>
-    <p class="foot-sust">"Wildliving cree en el turismo como forma de vida, no como consumo."</p>
+    <p class="foot-tagline"><span data-i18n="foot_tagline">Find your next home in nature.</span><br><span data-i18n="foot_destinos">Argentina · España · Grecia</span></p>
+    <p class="foot-sust" data-i18n="foot_sust">"Wildliving cree en el turismo como forma de vida, no como consumo."</p>
   </div>
   <div class="foot-col">
-    <h4>Plataforma</h4>
+    <h4 data-i18n="foot_h_plataforma">Plataforma</h4>
     <ul>
-      <li><a href="/wildstays/patagonia/">Wildstays</a></li>
-      <li><a href="/wildhomes/">Wildhomes</a></li>
-      <li><a href="/sobre/">Sobre Wildliving</a></li>
-      <li><a href="/contacto/">Contacto</a></li>
+      <li><a href="/wildstays/patagonia/" data-i18n="nav_wildstays">Wildstays</a></li>
+      <li><a href="/wildhomes/" data-i18n="nav_wildhomes">Wildhomes</a></li>
+      <li><a href="/sobre/" data-i18n="foot_sobre">Sobre Wildliving</a></li>
+      <li><a href="/contacto/" data-i18n="foot_contacto">Contacto</a></li>
     </ul>
   </div>
   <div class="foot-col">
-    <h4>Propietarios</h4>
+    <h4 data-i18n="foot_h_propiet">Propietarios</h4>
     <ul>
-      <li><a href="/propietarios/">Wildliving Selected</a></li>
-      <li><a href="/propietarios/">Acuerdo de colaboración</a></li>
-      <li><a href="/wildstays/patagonia/">Ver Collection</a></li>
+      <li><a href="/propietarios/" data-i18n="foot_selected">Wildliving Selected</a></li>
+      <li><a href="/propietarios/" data-i18n="foot_acuerdo">Acuerdo de colaboración</a></li>
+      <li><a href="/wildstays/patagonia/" data-i18n="foot_ver_coll">Ver Collection</a></li>
     </ul>
   </div>
   <div class="foot-col">
-    <h4>Newsletter</h4>
+    <h4 data-i18n="foot_h_news">Newsletter</h4>
     <div class="newsletter-form">
-      <input type="email" class="newsletter-input" placeholder="tu@email.com">
+      <input type="email" class="newsletter-input" data-i18n-ph="foot_news_ph" placeholder="tu@email.com">
       <button class="newsletter-btn">→</button>
     </div>
     <ul style="margin-top:20px"><li><a href="#">Instagram</a></li><li><a href="#">WhatsApp</a></li></ul>
   </div>
   <div class="foot-bottom">
-    <span class="foot-copy">© 2026 Wildliving · wildliving.life · Todos los derechos reservados</span>
+    <span class="foot-copy" data-i18n="foot_copy">© 2026 Wildliving · wildliving.life · Todos los derechos reservados</span>
     <div class="foot-dot"></div>
-    <span class="foot-copy">Turismo sustentable · Slow travel · Vivienda consciente</span>
+    <span class="foot-copy" data-i18n="foot_keywords">Turismo sustentable · Slow travel · Vivienda consciente</span>
   </div>
 </footer>
 
+<script src="/js/i18n.js"></script>
 <script>
+
+const es = {
+  meta_title:       "Contacto — Wildliving",
+  meta_description: "Escribinos por una estadía, una consulta sobre tu propiedad, o para saber más sobre Wildliving.",
+
+  contacto_h1:       "Hablemos.",
+  contacto_sub:       "Si tenés una propiedad, una consulta sobre una estadía, o querés saber más sobre Wildliving — escribinos.",
+  contacto_label_email:        "Email",
+  contacto_label_instagram:    "Instagram",
+  contacto_label_propietarios: "Propietarios",
+  contacto_ver_programa:       "Ver programa →",
+  contacto_label_nombre:       "Nombre",
+  contacto_label_mensaje:      "Mensaje",
+  contacto_enviar:             "Enviar",
+  contacto_gracias:            "Gracias por escribirnos. Te responderemos pronto.",
+};
+
+
+const en = {
+  meta_title:       "Contact — Wildliving",
+  meta_description: "Write to us about a property, a question about a stay, or to learn more about Wildliving.",
+
+  contacto_h1:       "Let's talk.",
+  contacto_sub:       "If you have a property, a question about a stay, or want to know more about Wildliving — write to us.",
+  contacto_label_email:        "Email",
+  contacto_label_instagram:    "Instagram",
+  contacto_label_propietarios: "Property owners",
+  contacto_ver_programa:       "View programme →",
+  contacto_label_nombre:       "Name",
+  contacto_label_mensaje:      "Message",
+  contacto_enviar:             "Send",
+  contacto_gracias:            "Thanks for writing to us. We'll get back to you soon.",
+};
+
+wlInitI18n(es, en, {
+  onReady: function () {}
+});
+
 function toggleMobileMenu(open){
   document.getElementById('mobile-overlay').classList.toggle('open', open);
 }
