@@ -120,98 +120,138 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
 <nav id="nav">
   <a href="/" class="nav-logo" id="nav-logo">Wild<span>·</span>living</a>
   <ul class="nav-links" id="nav-links">
-    <li><a href="/wildstays/patagonia/">Wildstays</a></li>
-    <li><a href="/wildhomes/">Wildhomes</a></li>
-    <li><a href="/sobre/">Sobre</a></li>
-    <li><a href="/contacto/">Contacto</a></li>
+    <li><a href="/wildstays/patagonia/" data-i18n="nav_wildstays">Wildstays</a></li>
+    <li><a href="/wildhomes/" data-i18n="nav_wildhomes">Wildhomes</a></li>
+    <li><a href="/sobre/" data-i18n="nav_sobre">Sobre</a></li>
+    <li><a href="/contacto/" data-i18n="nav_contacto">Contacto</a></li>
     <li class="lang-selector">
-      <button class="lang-btn active" data-lang="es">ES</button>
+      <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
       <span class="lang-sep">·</span>
-      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
     </li>
   </ul>
-  <button class="hamburger-btn" id="hamburger-btn" onclick="toggleMobileMenu(true)" aria-label="Abrir menú">☰</button>
+  <button class="hamburger-btn" id="hamburger-btn" onclick="toggleMobileMenu(true)" aria-label="Abrir menú" data-i18n-aria="aria_open_menu">☰</button>
 </nav>
 
 <div class="mobile-overlay" id="mobile-overlay">
-  <button class="mobile-overlay-close" onclick="toggleMobileMenu(false)" aria-label="Cerrar menú">✕</button>
-  <a href="/wildstays/patagonia/">Wildstays</a>
-  <a href="/wildhomes/">Wildhomes</a>
-  <a href="/sobre/">Sobre</a>
-  <a href="/contacto/">Contacto</a>
+  <button class="mobile-overlay-close" onclick="toggleMobileMenu(false)" aria-label="Cerrar menú" data-i18n-aria="aria_close_menu">✕</button>
+  <a href="/wildstays/patagonia/" data-i18n="nav_wildstays">Wildstays</a>
+  <a href="/wildhomes/" data-i18n="nav_wildhomes">Wildhomes</a>
+  <a href="/sobre/" data-i18n="nav_sobre">Sobre</a>
+  <a href="/contacto/" data-i18n="nav_contacto">Contacto</a>
+  <div class="mobile-overlay-lang">
+    <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
+    <span class="lang-sep">·</span>
+    <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+  </div>
 </div>
 
 <div class="ficha-back">
-  <a href="/selected/">← Volver a Wildliving Selected</a>
+  <a href="/selected/" data-i18n="ficha_back">← Volver a Wildliving Selected</a>
 </div>
 
 <div class="ficha-hero">
-  <img class="ficha-hero-img" src="https://lh3.googleusercontent.com/d/17lHy-vx8Jax2GblbbefloEoM5FRqBCxj" alt="Casa de Piedra Viladellops">
+  <img class="ficha-hero-img" src="https://lh3.googleusercontent.com/d/17lHy-vx8Jax2GblbbefloEoM5FRqBCxj" alt="Casa de Piedra Viladellops" data-i18n-alt="ficha_img_alt">
 </div>
 
 <div class="ficha-body">
   <div>
-    <span class="ficha-eyebrow">Wildliving Selected</span>
+    <span class="ficha-eyebrow" data-i18n="ficha_eyebrow">Wildliving Selected</span>
     <h1 class="ficha-h1">Casa de Piedra Viladellops</h1>
     <div class="ficha-loc">Viladellops, Alt Penedès</div>
     <span class="ficha-province">Barcelona</span>
-    <div class="ficha-practical"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--moss)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v7"/><path d="M3 13h18"/><path d="M7 9V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/><path d="M3 18v2"/><path d="M21 18v2"/></svg><span>5 dormitorios</span></div>
+    <div class="ficha-practical"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--moss)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v7"/><path d="M3 13h18"/><path d="M7 9V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/><path d="M3 18v2"/><path d="M21 18v2"/></svg><span data-i18n="ficha_bedrooms">5 dormitorios</span></div>
     <div class="ficha-tags">
-      <span class="tag">Silencio real</span>
-          <span class="tag">Ritmo lento</span>
-          <span class="tag">Reconexión en pareja</span>
+      <span class="tag" data-i18n="tag_silencio_real">Silencio real</span>
+          <span class="tag" data-i18n="tag_ritmo_lento">Ritmo lento</span>
+          <span class="tag" data-i18n="tag_reconexion_pareja">Reconexión en pareja</span>
     </div>
-    <p class="ficha-desc">Viladellops es uno de esos pueblos que parecen existir solo para el vino — y ahí, dentro de esa quietud, esta masía catalana restaurada abre su piscina infinita hacia el bosque. Cinco habitaciones dobles, cocina totalmente equipada, y el tipo de silencio que solo dan los pueblos vinícolas chicos.</p>
+    <p class="ficha-desc" data-i18n="ficha_desc">Viladellops es uno de esos pueblos que parecen existir solo para el vino — y ahí, dentro de esa quietud, esta masía catalana restaurada abre su piscina infinita hacia el bosque. Cinco habitaciones dobles, cocina totalmente equipada, y el tipo de silencio que solo dan los pueblos vinícolas chicos.</p>
   </div>
   <div class="ficha-cta-box">
-    <p class="ficha-cta-label">Esta propiedad se reserva directo en la plataforma de origen — nosotros la seleccionamos, no la administramos.</p>
-    <a href="https://www.dpbolvw.net/click-101809986-17293137?sid=espana-Casa-de-piedra-Viladellops&amp;url=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fes%2Fcasa-de-piedra-ubicada-en-el-exclusivo-wine-village-de-viladellops-te-ofrece-una.es.html" class="btn-cta" target="_blank" rel="noopener">Verificá disponibilidad →</a>
-    <p class="ficha-cta-note">Wildliving Selected: propiedades de partners que cumplen nuestro criterio editorial.</p>
+    <p class="ficha-cta-label" data-i18n="ficha_cta_label">Esta propiedad se reserva directo en la plataforma de origen — nosotros la seleccionamos, no la administramos.</p>
+    <a href="https://www.dpbolvw.net/click-101809986-17293137?sid=espana-Casa-de-piedra-Viladellops&amp;url=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fes%2Fcasa-de-piedra-ubicada-en-el-exclusivo-wine-village-de-viladellops-te-ofrece-una.es.html" class="btn-cta" target="_blank" rel="noopener" data-i18n="ficha_cta_btn">Verificá disponibilidad →</a>
+    <p class="ficha-cta-note" data-i18n="ficha_cta_note">Wildliving Selected: propiedades de partners que cumplen nuestro criterio editorial.</p>
   </div>
 </div>
 
 <footer>
   <div class="foot-logo-col">
     <a href="/" class="foot-logo">Wild<span>·</span>living</a>
-    <p class="foot-tagline"><span>Find your next home in nature.</span><br><span>Patagonia · España · Grecia</span></p>
-    <p class="foot-sust">"Wildliving cree en el turismo como forma de vida, no como consumo."</p>
+    <p class="foot-tagline"><span data-i18n="foot_tagline">Find your next home in nature.</span><br><span data-i18n="foot_destinos">Patagonia · España · Grecia</span></p>
+    <p class="foot-sust" data-i18n="foot_sust">"Wildliving cree en el turismo como forma de vida, no como consumo."</p>
   </div>
   <div class="foot-col">
-    <h4>Plataforma</h4>
+    <h4 data-i18n="foot_h_plataforma">Plataforma</h4>
     <ul>
-      <li><a href="/wildstays/patagonia/">Wildstays</a></li>
-      <li><a href="/wildhomes/">Wildhomes</a></li>
-      <li><a href="/sobre/">Sobre Wildliving</a></li>
-      <li><a href="/contacto/">Contacto</a></li>
+      <li><a href="/wildstays/patagonia/" data-i18n="nav_wildstays">Wildstays</a></li>
+      <li><a href="/wildhomes/" data-i18n="nav_wildhomes">Wildhomes</a></li>
+      <li><a href="/sobre/" data-i18n="foot_sobre">Sobre Wildliving</a></li>
+      <li><a href="/contacto/" data-i18n="foot_contacto">Contacto</a></li>
     </ul>
   </div>
   <div class="foot-col">
-    <h4>Propietarios</h4>
+    <h4 data-i18n="foot_h_propiet">Propietarios</h4>
     <ul>
-      <li><a href="/propietarios/">Wildliving Selected</a></li>
-      <li><a href="/propietarios/">Acuerdo de colaboración</a></li>
-      <li><a href="/wildstays/patagonia/">Ver Collection</a></li>
+      <li><a href="/propietarios/" data-i18n="foot_selected">Wildliving Selected</a></li>
+      <li><a href="/propietarios/" data-i18n="foot_acuerdo">Acuerdo de colaboración</a></li>
+      <li><a href="/wildstays/patagonia/" data-i18n="foot_ver_coll">Ver Collection</a></li>
     </ul>
   </div>
   <div class="foot-col">
-    <h4>Newsletter</h4>
+    <h4 data-i18n="foot_h_news">Newsletter</h4>
     <div class="newsletter-form">
-      <input type="email" class="newsletter-input" placeholder="tu@email.com">
+      <input type="email" class="newsletter-input" data-i18n-ph="foot_news_ph" placeholder="tu@email.com">
       <button class="newsletter-btn">→</button>
     </div>
     <ul style="margin-top:20px"><li><a href="#">Instagram</a></li><li><a href="#">WhatsApp</a></li></ul>
   </div>
   <div class="foot-bottom">
-    <span class="foot-copy">© 2026 Wildliving · wildliving.life · Todos los derechos reservados</span>
+    <span class="foot-copy" data-i18n="foot_copy">© 2026 Wildliving · wildliving.life · Todos los derechos reservados</span>
     <div class="foot-dot"></div>
-    <span class="foot-copy">Turismo sustentable · Slow travel · Vivienda consciente</span>
+    <span class="foot-copy" data-i18n="foot_keywords">Turismo sustentable · Slow travel · Vivienda consciente</span>
   </div>
 </footer>
 
+<script src="/js/i18n.js"></script>
 <script>
 function toggleMobileMenu(open){
   document.getElementById('mobile-overlay').classList.toggle('open', open);
 }
+
+var es = {
+  meta_title: "Casa de Piedra Viladellops — Viladellops, Alt Penedès, Barcelona | Wildliving Selected",
+  meta_description: "Masía catalana en Viladellops, piscina infinita con vista al bosque, cinco habitaciones dobles, cocina completa.",
+  ficha_back: "← Volver a Wildliving Selected",
+  ficha_img_alt: "Casa de Piedra Viladellops",
+  ficha_eyebrow: "Wildliving Selected",
+  ficha_bedrooms: "5 dormitorios",
+  tag_silencio_real: "Silencio real",
+  tag_ritmo_lento: "Ritmo lento",
+  tag_reconexion_pareja: "Reconexión en pareja",
+  ficha_desc: "Viladellops es uno de esos pueblos que parecen existir solo para el vino — y ahí, dentro de esa quietud, esta masía catalana restaurada abre su piscina infinita hacia el bosque. Cinco habitaciones dobles, cocina totalmente equipada, y el tipo de silencio que solo dan los pueblos vinícolas chicos.",
+  ficha_cta_label: "Esta propiedad se reserva directo en la plataforma de origen — nosotros la seleccionamos, no la administramos.",
+  ficha_cta_btn: "Verificá disponibilidad →",
+  ficha_cta_note: "Wildliving Selected: propiedades de partners que cumplen nuestro criterio editorial."
+};
+
+var en = {
+  meta_title: "Casa de Piedra Viladellops — Viladellops, Alt Penedès, Barcelona | Wildliving Selected",
+  meta_description: "Catalan masía in Viladellops, infinity pool facing the forest, five double rooms, full kitchen.",
+  ficha_back: "← Back to Wildliving Selected",
+  ficha_img_alt: "Casa de Piedra Viladellops",
+  ficha_eyebrow: "Wildliving Selected",
+  ficha_bedrooms: "5 bedrooms",
+  tag_silencio_real: "True silence",
+  tag_ritmo_lento: "Slow rhythm",
+  tag_reconexion_pareja: "Couples' reconnection",
+  ficha_desc: "Viladellops is one of those villages that seem to exist only for wine — and there, inside that stillness, this restored Catalan masía opens its infinity pool toward the forest. Five double rooms, a fully equipped kitchen, and the kind of quiet only small wine villages give you.",
+  ficha_cta_label: "This property is booked directly on the original platform — we curate it, we don't manage it.",
+  ficha_cta_btn: "Check availability →",
+  ficha_cta_note: "Wildliving Selected: partner properties that meet our editorial criteria."
+};
+
+wlInitI18n(es, en);
 </script>
 </body>
 </html>

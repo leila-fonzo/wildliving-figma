@@ -129,188 +129,311 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
 <nav id="nav">
   <a href="/" class="nav-logo" id="nav-logo">Wild<span>·</span>living</a>
   <ul class="nav-links" id="nav-links">
-    <li><a href="/wildstays/patagonia/">Wildstays</a></li>
-    <li><a href="/wildhomes/">Wildhomes</a></li>
-    <li><a href="/sobre/">Sobre</a></li>
-    <li><a href="/contacto/">Contacto</a></li>
+    <li><a href="/wildstays/patagonia/" data-i18n="nav_wildstays">Wildstays</a></li>
+    <li><a href="/wildhomes/" data-i18n="nav_wildhomes">Wildhomes</a></li>
+    <li><a href="/sobre/" data-i18n="nav_sobre">Sobre</a></li>
+    <li><a href="/contacto/" data-i18n="nav_contacto">Contacto</a></li>
     <li class="lang-selector">
-      <button class="lang-btn active" data-lang="es">ES</button>
+      <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
       <span class="lang-sep">·</span>
-      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
     </li>
   </ul>
-  <button class="hamburger-btn" id="hamburger-btn" onclick="toggleMobileMenu(true)" aria-label="Abrir menú">☰</button>
+  <button class="hamburger-btn" id="hamburger-btn" onclick="toggleMobileMenu(true)" aria-label="Abrir menú" data-i18n-aria="aria_open_menu">☰</button>
 </nav>
 
 <div class="mobile-overlay" id="mobile-overlay">
-  <button class="mobile-overlay-close" onclick="toggleMobileMenu(false)" aria-label="Cerrar menú">✕</button>
-  <a href="/wildstays/patagonia/">Wildstays</a>
-  <a href="/wildhomes/">Wildhomes</a>
-  <a href="/sobre/">Sobre</a>
-  <a href="/contacto/">Contacto</a>
+  <button class="mobile-overlay-close" onclick="toggleMobileMenu(false)" aria-label="Cerrar menú" data-i18n-aria="aria_close_menu">✕</button>
+  <a href="/wildstays/patagonia/" data-i18n="nav_wildstays">Wildstays</a>
+  <a href="/wildhomes/" data-i18n="nav_wildhomes">Wildhomes</a>
+  <a href="/sobre/" data-i18n="nav_sobre">Sobre</a>
+  <a href="/contacto/" data-i18n="nav_contacto">Contacto</a>
 </div>
 
 <section class="prop-hero">
-  <span class="prop-eyebrow">¿Tenés una propiedad en naturaleza?</span>
-  <h1 class="prop-h1">Tu propiedad merece mejores huéspedes.</h1>
-  <p class="prop-sub">Si tiene entorno, criterio y autenticidad — puede ser parte de Wildliving. Sin exclusividad. Sin costo de entrada.</p>
+  <span class="prop-eyebrow" data-i18n="prop_hero_eyebrow">¿Tenés una propiedad en naturaleza?</span>
+  <h1 class="prop-h1" data-i18n="prop_hero_h1">Tu propiedad merece mejores huéspedes.</h1>
+  <p class="prop-sub" data-i18n="prop_hero_sub">Si tiene entorno, criterio y autenticidad — puede ser parte de Wildliving. Sin exclusividad. Sin costo de entrada.</p>
 </section>
 
 <section class="types">
   <div class="type-card">
-    <span class="type-badge badge-collection">COLLECTION</span>
+    <span class="type-badge badge-collection" data-i18n="prop_badge_collection">COLLECTION</span>
     <div class="type-title">Wildliving Collection</div>
-    <p class="type-body">Propiedades propias de Wildliving. Control editorial total sobre fotos, precios, calendario y cobro. Gestión directa via Lodgify.</p>
+    <p class="type-body" data-i18n="prop_collection_body">Propiedades propias de Wildliving. Control editorial total sobre fotos, precios, calendario y cobro. Gestión directa via Lodgify.</p>
   </div>
   <div class="type-card">
-    <span class="type-badge badge-selected">SELECTED</span>
+    <span class="type-badge badge-selected" data-i18n="prop_badge_selected">SELECTED</span>
     <div class="type-title">Wildliving Selected</div>
-    <p class="type-body">Propiedades de terceros curadas editorialmente. Wildliving le da narrativa, visibilidad y los huéspedes correctos. El propietario mantiene el control de su propiedad.</p>
+    <p class="type-body" data-i18n="prop_selected_body">Propiedades de terceros curadas editorialmente. Wildliving le da narrativa, visibilidad y los huéspedes correctos. El propietario mantiene el control de su propiedad.</p>
   </div>
 </section>
 
 <section class="how">
-  <span class="how-eyebrow">Cómo funciona</span>
+  <span class="how-eyebrow" data-i18n="prop_how_eyebrow">Cómo funciona</span>
   <div class="how-steps">
     <div class="how-step">
       <div class="how-num">01</div>
       <div>
-        <div class="how-text-title">Nos contactás</div>
-        <p class="how-text-body">Contás sobre la propiedad, el entorno y el tipo de huéspedes que recibís.</p>
+        <div class="how-text-title" data-i18n="prop_step1_title">Nos contactás</div>
+        <p class="how-text-body" data-i18n="prop_step1_body">Contás sobre la propiedad, el entorno y el tipo de huéspedes que recibís.</p>
       </div>
     </div>
     <div class="how-step">
       <div class="how-num">02</div>
       <div>
-        <div class="how-text-title">Evaluamos juntos</div>
-        <p class="how-text-body">Revisamos si hay compatibilidad editorial y de estilo de vida con Wildliving.</p>
+        <div class="how-text-title" data-i18n="prop_step2_title">Evaluamos juntos</div>
+        <p class="how-text-body" data-i18n="prop_step2_body">Revisamos si hay compatibilidad editorial y de estilo de vida con Wildliving.</p>
       </div>
     </div>
     <div class="how-step">
       <div class="how-num">03</div>
       <div>
-        <div class="how-text-title">Firmamos el acuerdo</div>
-        <p class="how-text-body">Un acuerdo simple. Sin exclusividad. Sin costo de entrada. Comisión solo cuando se concreta.</p>
+        <div class="how-text-title" data-i18n="prop_step3_title">Firmamos el acuerdo</div>
+        <p class="how-text-body" data-i18n="prop_step3_body">Un acuerdo simple. Sin exclusividad. Sin costo de entrada. Comisión solo cuando se concreta.</p>
       </div>
     </div>
     <div class="how-step">
       <div class="how-num">04</div>
       <div>
-        <div class="how-text-title">La propiedad empieza a recibir mejores huéspedes</div>
-        <p class="how-text-body">Con narrativa, criterio y visibilidad de Wildliving.</p>
+        <div class="how-text-title" data-i18n="prop_step4_title">La propiedad empieza a recibir mejores huéspedes</div>
+        <p class="how-text-body" data-i18n="prop_step4_body">Con narrativa, criterio y visibilidad de Wildliving.</p>
       </div>
     </div>
   </div>
-  <a href="/wildstays/patagonia/" class="commission-cta">→ Ver propiedades de la colección</a>
+  <a href="/wildstays/patagonia/" class="commission-cta" data-i18n="prop_ver_coleccion">→ Ver propiedades de la colección</a>
 </section>
 
 <section class="commission">
-  <div class="commission-title">Modelo de comisión</div>
+  <div class="commission-title" data-i18n="prop_commission_title">Modelo de comisión</div>
   <div class="commission-grid">
     <div class="commission-col">
-      <div class="commission-label">Estancias cortas</div>
+      <div class="commission-label" data-i18n="prop_commission_short_label">Estancias cortas</div>
       <div class="commission-value">8–12%</div>
-      <div class="commission-note">por reserva confirmada</div>
+      <div class="commission-note" data-i18n="prop_commission_short_note">por reserva confirmada</div>
     </div>
     <div class="commission-col">
-      <div class="commission-label">Alquiler largo</div>
-      <div class="commission-value">1 mes</div>
-      <div class="commission-note">por contrato firmado</div>
+      <div class="commission-label" data-i18n="prop_commission_long_label">Alquiler largo</div>
+      <div class="commission-value" data-i18n="prop_commission_long_value">1 mes</div>
+      <div class="commission-note" data-i18n="prop_commission_long_note">por contrato firmado</div>
     </div>
     <div class="commission-col">
-      <div class="commission-label">Venta</div>
+      <div class="commission-label" data-i18n="prop_commission_sale_label">Venta</div>
       <div class="commission-value">2–3%</div>
-      <div class="commission-note">del valor de la propiedad</div>
+      <div class="commission-note" data-i18n="prop_commission_sale_note">del valor de la propiedad</div>
     </div>
   </div>
-  <p class="commission-foot">Las propiedades en Booking.com: la comisión la absorbe Booking, no el propietario.</p>
-  <p class="commission-affiliate">Wildliving opera como afiliado verificado de Booking.com a través de Awin.</p>
-  <a href="/contacto/?tipo=propietario" class="commission-cta">→ Consultar sin compromiso</a>
+  <p class="commission-foot" data-i18n="prop_commission_foot">Las propiedades en Booking.com: la comisión la absorbe Booking, no el propietario.</p>
+  <p class="commission-affiliate" data-i18n="prop_commission_affiliate">Wildliving opera como afiliado verificado de Booking.com a través de Awin.</p>
+  <a href="/contacto/?tipo=propietario" class="commission-cta" data-i18n="prop_consultar">→ Consultar sin compromiso</a>
 </section>
 
 <section class="contact-sec">
-  <h2 class="contact-title">Contanos sobre tu propiedad.</h2>
-  <p class="contact-subline">Respondemos en menos de 48 horas.</p>
+  <h2 class="contact-title" data-i18n="prop_contact_title">Contanos sobre tu propiedad.</h2>
+  <p class="contact-subline" data-i18n="prop_contact_subline">Respondemos en menos de 48 horas.</p>
   <form class="contact-form" id="propietarios-form" name="propietarios" method="POST" data-netlify="true" netlify>
     <input type="hidden" name="form-name" value="propietarios">
     <div class="field full">
-      <label>Nombre completo</label>
+      <label data-i18n="prop_label_nombre">Nombre completo</label>
       <input type="text" name="nombre" required>
     </div>
     <div class="field">
-      <label>Email</label>
+      <label data-i18n="contacto_label_email">Email</label>
       <input type="email" name="email" required>
     </div>
     <div class="field">
-      <label>Ubicación de la propiedad</label>
-      <input type="text" name="ubicacion" placeholder="Ciudad, región, país" required>
+      <label data-i18n="prop_label_ubicacion">Ubicación de la propiedad</label>
+      <input type="text" name="ubicacion" data-i18n-ph="prop_ph_ubicacion" placeholder="Ciudad, región, país" required>
     </div>
     <div class="field">
-      <label>Tipo de propiedad</label>
+      <label data-i18n="prop_label_tipo">Tipo de propiedad</label>
       <select name="tipo">
-        <option value="casa">Casa</option>
-        <option value="apartamento">Apartamento</option>
-        <option value="cabana">Cabaña</option>
-        <option value="masia">Masía</option>
-        <option value="villa">Villa</option>
-        <option value="glamping">Glamping</option>
-        <option value="otro">Otro</option>
+        <option value="casa" data-i18n="prop_opt_casa">Casa</option>
+        <option value="apartamento" data-i18n="prop_opt_apartamento">Apartamento</option>
+        <option value="cabana" data-i18n="prop_opt_cabana">Cabaña</option>
+        <option value="masia" data-i18n="prop_opt_masia">Masía</option>
+        <option value="villa" data-i18n="prop_opt_villa">Villa</option>
+        <option value="glamping" data-i18n="prop_opt_glamping">Glamping</option>
+        <option value="otro" data-i18n="prop_opt_otro">Otro</option>
       </select>
     </div>
     <div class="field">
-      <label>¿En qué plataformas está actualmente?</label>
-      <input type="text" name="plataformas" placeholder="Airbnb, Booking, directa...">
+      <label data-i18n="prop_label_plataformas">¿En qué plataformas está actualmente?</label>
+      <input type="text" name="plataformas" data-i18n-ph="prop_ph_plataformas" placeholder="Airbnb, Booking, directa...">
     </div>
     <div class="field full">
-      <label>Mensaje</label>
-      <textarea name="mensaje" rows="4" placeholder="Contanos sobre la propiedad y qué tipo de huéspedes recibís actualmente."></textarea>
+      <label data-i18n="contacto_label_mensaje">Mensaje</label>
+      <textarea name="mensaje" rows="4" data-i18n-ph="prop_ph_mensaje" placeholder="Contanos sobre la propiedad y qué tipo de huéspedes recibís actualmente."></textarea>
     </div>
     <div class="full">
-      <button type="submit" class="btn-submit">Enviar consulta</button>
+      <button type="submit" class="btn-submit" data-i18n="prop_enviar_consulta">Enviar consulta</button>
     </div>
   </form>
-  <div class="thank-you" id="propietarios-thanks">Recibimos tu consulta. Te respondemos en menos de 48 horas.</div>
+  <div class="thank-you" id="propietarios-thanks" data-i18n="prop_gracias">Recibimos tu consulta. Te respondemos en menos de 48 horas.</div>
 </section>
 
 <footer>
   <div class="foot-logo-col">
     <a href="/" class="foot-logo">Wild<span>·</span>living</a>
-    <p class="foot-tagline"><span>Find your next home in nature.</span><br><span>Patagonia · España · Grecia</span></p>
-    <p class="foot-sust">"Wildliving cree en el turismo como forma de vida, no como consumo."</p>
+    <p class="foot-tagline"><span data-i18n="foot_tagline">Find your next home in nature.</span><br><span data-i18n="foot_destinos">Argentina · España · Grecia</span></p>
+    <p class="foot-sust" data-i18n="foot_sust">"Wildliving cree en el turismo como forma de vida, no como consumo."</p>
   </div>
   <div class="foot-col">
-    <h4>Plataforma</h4>
+    <h4 data-i18n="foot_h_plataforma">Plataforma</h4>
     <ul>
-      <li><a href="/wildstays/patagonia/">Wildstays</a></li>
-      <li><a href="/wildhomes/">Wildhomes</a></li>
-      <li><a href="/sobre/">Sobre Wildliving</a></li>
-      <li><a href="/contacto/">Contacto</a></li>
+      <li><a href="/wildstays/patagonia/" data-i18n="nav_wildstays">Wildstays</a></li>
+      <li><a href="/wildhomes/" data-i18n="nav_wildhomes">Wildhomes</a></li>
+      <li><a href="/sobre/" data-i18n="foot_sobre">Sobre Wildliving</a></li>
+      <li><a href="/contacto/" data-i18n="foot_contacto">Contacto</a></li>
     </ul>
   </div>
   <div class="foot-col">
-    <h4>Propietarios</h4>
+    <h4 data-i18n="foot_h_propiet">Propietarios</h4>
     <ul>
-      <li><a href="/propietarios/">Wildliving Selected</a></li>
-      <li><a href="/propietarios/">Acuerdo de colaboración</a></li>
-      <li><a href="/wildstays/patagonia/">Ver Collection</a></li>
+      <li><a href="/propietarios/" data-i18n="foot_selected">Wildliving Selected</a></li>
+      <li><a href="/propietarios/" data-i18n="foot_acuerdo">Acuerdo de colaboración</a></li>
+      <li><a href="/wildstays/patagonia/" data-i18n="foot_ver_coll">Ver Collection</a></li>
     </ul>
   </div>
   <div class="foot-col">
-    <h4>Newsletter</h4>
+    <h4 data-i18n="foot_h_news">Newsletter</h4>
     <div class="newsletter-form">
-      <input type="email" class="newsletter-input" placeholder="tu@email.com">
+      <input type="email" class="newsletter-input" data-i18n-ph="foot_news_ph" placeholder="tu@email.com">
       <button class="newsletter-btn">→</button>
     </div>
     <ul style="margin-top:20px"><li><a href="#">Instagram</a></li><li><a href="#">WhatsApp</a></li></ul>
   </div>
   <div class="foot-bottom">
-    <span class="foot-copy">© 2026 Wildliving · wildliving.life · Todos los derechos reservados</span>
+    <span class="foot-copy" data-i18n="foot_copy">© 2026 Wildliving · wildliving.life · Todos los derechos reservados</span>
     <div class="foot-dot"></div>
-    <span class="foot-copy">Turismo sustentable · Slow travel · Vivienda consciente</span>
+    <span class="foot-copy" data-i18n="foot_keywords">Turismo sustentable · Slow travel · Vivienda consciente</span>
   </div>
 </footer>
 
+<script src="/js/i18n.js"></script>
 <script>
+
+const es = {
+  meta_title:       "Propietarios — Wildliving",
+  meta_description: "Si tu propiedad tiene entorno, criterio y autenticidad, puede ser parte de Wildliving. Sin exclusividad. Sin costo de entrada.",
+
+  prop_hero_eyebrow: "¿Tenés una propiedad en naturaleza?",
+  prop_hero_h1:      "Tu propiedad merece mejores huéspedes.",
+  prop_hero_sub:     "Si tiene entorno, criterio y autenticidad — puede ser parte de Wildliving. Sin exclusividad. Sin costo de entrada.",
+
+  prop_badge_collection: "COLLECTION",
+  prop_collection_body:  "Propiedades propias de Wildliving. Control editorial total sobre fotos, precios, calendario y cobro. Gestión directa via Lodgify.",
+  prop_badge_selected:   "SELECTED",
+  prop_selected_body:    "Propiedades de terceros curadas editorialmente. Wildliving le da narrativa, visibilidad y los huéspedes correctos. El propietario mantiene el control de su propiedad.",
+
+  prop_how_eyebrow: "Cómo funciona",
+  prop_step1_title: "Nos contactás",
+  prop_step1_body:  "Contás sobre la propiedad, el entorno y el tipo de huéspedes que recibís.",
+  prop_step2_title: "Evaluamos juntos",
+  prop_step2_body:  "Revisamos si hay compatibilidad editorial y de estilo de vida con Wildliving.",
+  prop_step3_title: "Firmamos el acuerdo",
+  prop_step3_body:  "Un acuerdo simple. Sin exclusividad. Sin costo de entrada. Comisión solo cuando se concreta.",
+  prop_step4_title: "La propiedad empieza a recibir mejores huéspedes",
+  prop_step4_body:  "Con narrativa, criterio y visibilidad de Wildliving.",
+  prop_ver_coleccion: "→ Ver propiedades de la colección",
+
+  prop_commission_title:       "Modelo de comisión",
+  prop_commission_short_label: "Estancias cortas",
+  prop_commission_short_note:  "por reserva confirmada",
+  prop_commission_long_label:  "Alquiler largo",
+  prop_commission_long_value:  "1 mes",
+  prop_commission_long_note:   "por contrato firmado",
+  prop_commission_sale_label:  "Venta",
+  prop_commission_sale_note:   "del valor de la propiedad",
+  prop_commission_foot:        "Las propiedades en Booking.com: la comisión la absorbe Booking, no el propietario.",
+  prop_commission_affiliate:   "Wildliving opera como afiliado verificado de Booking.com a través de Awin.",
+  prop_consultar:              "→ Consultar sin compromiso",
+
+  prop_contact_title:    "Contanos sobre tu propiedad.",
+  prop_contact_subline:  "Respondemos en menos de 48 horas.",
+  prop_label_nombre:     "Nombre completo",
+  contacto_label_email:  "Email",
+  prop_label_ubicacion:  "Ubicación de la propiedad",
+  prop_ph_ubicacion:     "Ciudad, región, país",
+  prop_label_tipo:       "Tipo de propiedad",
+  prop_opt_casa:         "Casa",
+  prop_opt_apartamento:  "Apartamento",
+  prop_opt_cabana:       "Cabaña",
+  prop_opt_masia:        "Masía",
+  prop_opt_villa:        "Villa",
+  prop_opt_glamping:     "Glamping",
+  prop_opt_otro:         "Otro",
+  prop_label_plataformas:"¿En qué plataformas está actualmente?",
+  prop_ph_plataformas:   "Airbnb, Booking, directa...",
+  contacto_label_mensaje:"Mensaje",
+  prop_ph_mensaje:       "Contanos sobre la propiedad y qué tipo de huéspedes recibís actualmente.",
+  prop_enviar_consulta:  "Enviar consulta",
+  prop_gracias:          "Recibimos tu consulta. Te respondemos en menos de 48 horas.",
+};
+
+
+const en = {
+  meta_title:       "Property Owners — Wildliving",
+  meta_description: "If your property has natural surroundings, character, and authenticity, it can be part of Wildliving. No exclusivity. No entry fee.",
+
+  prop_hero_eyebrow: "Do you have a property in nature?",
+  prop_hero_h1:      "Your property deserves better guests.",
+  prop_hero_sub:     "If it has setting, character, and authenticity — it can be part of Wildliving. No exclusivity. No entry fee.",
+
+  prop_badge_collection: "COLLECTION",
+  prop_collection_body:  "Properties owned by Wildliving. Full editorial control over photos, pricing, calendar, and payments. Managed directly via Lodgify.",
+  prop_badge_selected:   "SELECTED",
+  prop_selected_body:    "Third-party properties curated editorially. Wildliving gives them narrative, visibility, and the right guests. The owner keeps full control of their property.",
+
+  prop_how_eyebrow: "How it works",
+  prop_step1_title: "You reach out",
+  prop_step1_body:  "Tell us about the property, its setting, and the kind of guests you host.",
+  prop_step2_title: "We evaluate together",
+  prop_step2_body:  "We check whether there's editorial and lifestyle compatibility with Wildliving.",
+  prop_step3_title: "We sign the agreement",
+  prop_step3_body:  "A simple agreement. No exclusivity. No entry fee. Commission only when a booking happens.",
+  prop_step4_title: "Your property starts receiving better guests",
+  prop_step4_body:  "With Wildliving's narrative, curation, and visibility.",
+  prop_ver_coleccion: "→ View properties in the collection",
+
+  prop_commission_title:       "Commission model",
+  prop_commission_short_label: "Short stays",
+  prop_commission_short_note:  "per confirmed booking",
+  prop_commission_long_label:  "Long-term rental",
+  prop_commission_long_value:  "1 month",
+  prop_commission_long_note:   "per signed contract",
+  prop_commission_sale_label:  "Sale",
+  prop_commission_sale_note:   "of the property's value",
+  prop_commission_foot:        "Properties on Booking.com: the commission is absorbed by Booking, not the owner.",
+  prop_commission_affiliate:   "Wildliving operates as a verified Booking.com affiliate through Awin.",
+  prop_consultar:              "→ Enquire, no commitment",
+
+  prop_contact_title:    "Tell us about your property.",
+  prop_contact_subline:  "We respond within 48 hours.",
+  prop_label_nombre:     "Full name",
+  contacto_label_email:  "Email",
+  prop_label_ubicacion:  "Property location",
+  prop_ph_ubicacion:     "City, region, country",
+  prop_label_tipo:       "Property type",
+  prop_opt_casa:         "House",
+  prop_opt_apartamento:  "Apartment",
+  prop_opt_cabana:       "Cabin",
+  prop_opt_masia:        "Farmhouse",
+  prop_opt_villa:        "Villa",
+  prop_opt_glamping:     "Glamping",
+  prop_opt_otro:         "Other",
+  prop_label_plataformas:"Which platforms is it on currently?",
+  prop_ph_plataformas:   "Airbnb, Booking, direct...",
+  contacto_label_mensaje:"Message",
+  prop_ph_mensaje:       "Tell us about the property and the kind of guests you currently host.",
+  prop_enviar_consulta:  "Send enquiry",
+  prop_gracias:          "We've received your enquiry. We'll respond within 48 hours.",
+};
+
+wlInitI18n(es, en, {
+  onReady: function () {}
+});
+
 function toggleMobileMenu(open){
   document.getElementById('mobile-overlay').classList.toggle('open', open);
 }
