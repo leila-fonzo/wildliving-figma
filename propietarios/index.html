@@ -91,6 +91,25 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
 .commission-cta{display:block;margin-top:24px;color:var(--moss);font-family:var(--sans);font-weight:300;font-size:14px;text-decoration:none;transition:color 150ms ease}
 .commission-cta:hover{color:var(--night)}
 
+.trust{background:var(--paper);padding:56px 80px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;border-top:1px solid var(--sand);border-bottom:1px solid var(--sand)}
+.trust-item{display:flex;flex-direction:column;gap:8px}
+.trust-value{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-weight:300;font-size:30px;color:var(--night)}
+.trust-label{font-family:var(--sans);font-weight:300;font-size:13px;color:var(--stone);line-height:1.5}
+
+.selected-note{background:var(--rock);padding:60px 80px}
+.selected-note-text{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-style:italic;font-weight:300;font-size:22px;line-height:1.55;color:var(--night);max-width:700px;margin-top:16px}
+
+.faq{background:var(--paper);padding:80px}
+.faq-eyebrow{font-family:var(--sans);font-size:9px;font-weight:300;letter-spacing:.28em;text-transform:uppercase;color:var(--moss);margin-bottom:32px;display:block}
+.faq-list{max-width:760px}
+.faq-item{border-top:1px solid var(--sand)}
+.faq-item:last-child{border-bottom:1px solid var(--sand)}
+.faq-item summary{cursor:pointer;padding:24px 0;font-family:var(--sans);font-weight:500;font-size:15px;color:var(--night);list-style:none;display:flex;justify-content:space-between;align-items:center;gap:24px}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";font-family:var(--serif);font-weight:300;font-size:22px;color:var(--moss);flex-shrink:0}
+.faq-item[open] summary::after{content:"–"}
+.faq-answer{font-family:var(--sans);font-weight:300;font-size:14px;color:var(--stone);line-height:1.7;padding-bottom:24px;max-width:680px}
+
 .contact-sec{background:var(--paper);padding:80px}
 .contact-title{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-weight:300;font-style:italic;font-size:36px;color:var(--night);margin-bottom:8px}
 .contact-subline{font-family:var(--sans);font-weight:300;font-size:14px;color:var(--stone);margin-bottom:48px}
@@ -113,6 +132,9 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
   .how{padding:60px 24px}
   .commission{padding:60px 24px}
   .commission-grid{grid-template-columns:1fr;gap:32px}
+  .trust{grid-template-columns:1fr;gap:24px;padding:40px 24px}
+  .selected-note{padding:40px 24px}
+  .faq{padding:60px 24px}
   .contact-sec{padding:60px 24px}
   .contact-form{grid-template-columns:1fr}
   .btn-submit{width:100%}
@@ -219,8 +241,50 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
     </div>
   </div>
   <p class="commission-foot">Las propiedades en Booking.com: la comisión la absorbe Booking, no el propietario.</p>
-  <p class="commission-affiliate">Wildliving opera como afiliado verificado de Booking.com a través de Awin.</p>
+  <p class="commission-affiliate">Wildliving opera como afiliado verificado de Booking.com a través de CJ.</p>
   <a href="/contacto/?tipo=propietario" class="commission-cta">→ Consultar sin compromiso</a>
+</section>
+
+<section class="trust">
+  <div class="trust-item">
+    <span class="trust-value">+20</span>
+    <span class="trust-label">países de origen de nuestros huéspedes</span>
+  </div>
+  <div class="trust-item">
+    <span class="trust-value">3</span>
+    <span class="trust-label">geografías — Argentina · España · Grecia</span>
+  </div>
+  <div class="trust-item">
+    <span class="trust-value">100%</span>
+    <span class="trust-label">criterio editorial — ninguna propiedad entra por listado automático</span>
+  </div>
+</section>
+
+<section class="selected-note">
+  <span class="type-badge badge-selected">SELECTED</span>
+  <p class="selected-note-text">Si tu propiedad ya está en Booking.com, no cambia nada de tu operación: no hay otro calendario que sincronizar, no hay riesgo de overbooking. Wildliving suma visibilidad y huéspedes nuevos sobre lo que ya tenés, no un sistema más para gestionar.</p>
+</section>
+
+<section class="faq">
+  <span class="faq-eyebrow">Preguntas frecuentes</span>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary>¿Hay costo de entrada o exclusividad?</summary>
+      <p class="faq-answer">No, ninguna de las dos. Comisión solo cuando se concreta una reserva o venta.</p>
+    </details>
+    <details class="faq-item">
+      <summary>¿Pierdo control sobre mi calendario o precios?</summary>
+      <p class="faq-answer">No — en Collection vos administrás directo; en Selected, tu propiedad sigue operando exactamente igual que hoy, Wildliving solo suma visibilidad.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Mi propiedad está en Booking.com — ¿cómo llegan los huéspedes de Wildliving?</summary>
+      <p class="faq-answer">A través de un link de afiliado a tu mismo listing de Booking — no se crea nada nuevo, el proceso de reserva es el que ya conocés.</p>
+    </details>
+    <details class="faq-item">
+      <summary>¿Puedo salir del acuerdo si no me sirve?</summary>
+      <p class="faq-answer">Sí, sin problema. No pedimos permanencia mínima ni cobramos penalidad por dejar la colaboración, tal como tampoco pedimos exclusividad ni cobramos entrada. Solo necesitamos que nos avises por email con 30 días de anticipación. Las reservas que ya estén confirmadas al momento del aviso se respetan hasta que termine esa estadía, y a partir de ahí tu propiedad deja de aparecer en Wildliving.</p>
+    </details>
+  </div>
 </section>
 
 <section class="contact-sec">
