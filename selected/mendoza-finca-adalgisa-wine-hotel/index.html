@@ -120,58 +120,63 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
 <nav id="nav">
   <a href="/" class="nav-logo" id="nav-logo">Wild<span>·</span>living</a>
   <ul class="nav-links" id="nav-links">
-    <li><a href="/wildstays/patagonia/">Wildstays</a></li>
-    <li><a href="/wildhomes/">Wildhomes</a></li>
-    <li><a href="/sobre/">Sobre</a></li>
-    <li><a href="/contacto/">Contacto</a></li>
+    <li><a href="/wildstays/patagonia/" data-i18n="nav_wildstays">Wildstays</a></li>
+    <li><a href="/wildhomes/" data-i18n="nav_wildhomes">Wildhomes</a></li>
+    <li><a href="/sobre/" data-i18n="nav_sobre">Sobre</a></li>
+    <li><a href="/contacto/" data-i18n="nav_contacto">Contacto</a></li>
     <li class="lang-selector">
-      <button class="lang-btn active" data-lang="es">ES</button>
+      <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
       <span class="lang-sep">·</span>
-      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
     </li>
   </ul>
-  <button class="hamburger-btn" id="hamburger-btn" onclick="toggleMobileMenu(true)" aria-label="Abrir menú">☰</button>
+  <button class="hamburger-btn" id="hamburger-btn" onclick="toggleMobileMenu(true)" aria-label="Abrir menú" data-i18n-aria="aria_open_menu">☰</button>
 </nav>
 
 <div class="mobile-overlay" id="mobile-overlay">
-  <button class="mobile-overlay-close" onclick="toggleMobileMenu(false)" aria-label="Cerrar menú">✕</button>
-  <a href="/wildstays/patagonia/">Wildstays</a>
-  <a href="/wildhomes/">Wildhomes</a>
-  <a href="/sobre/">Sobre</a>
-  <a href="/contacto/">Contacto</a>
+  <button class="mobile-overlay-close" onclick="toggleMobileMenu(false)" aria-label="Cerrar menú" data-i18n-aria="aria_close_menu">✕</button>
+  <a href="/wildstays/patagonia/" data-i18n="nav_wildstays">Wildstays</a>
+  <a href="/wildhomes/" data-i18n="nav_wildhomes">Wildhomes</a>
+  <a href="/sobre/" data-i18n="nav_sobre">Sobre</a>
+  <a href="/contacto/" data-i18n="nav_contacto">Contacto</a>
+  <div class="mobile-overlay-lang">
+    <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
+    <span class="lang-sep">·</span>
+    <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+  </div>
 </div>
 
 <div class="ficha-back">
-  <a href="/selected/">← Volver a Wildliving Selected</a>
+  <a href="/selected/" data-i18n="ficha_back">← Volver a Wildliving Selected</a>
 </div>
 
 <div class="ficha-hero">
-  <img class="ficha-hero-img" src="https://lh3.googleusercontent.com/d/1SCk4-XWbJJC7aQd5584TMFo8xRT1rqUy" alt="Finca Adalgisa Wine Hotel">
+  <img class="ficha-hero-img" src="https://lh3.googleusercontent.com/d/1SCk4-XWbJJC7aQd5584TMFo8xRT1rqUy" alt="Finca Adalgisa Wine Hotel" data-i18n-alt="ficha_img_alt">
 </div>
 
 <div class="ficha-body">
   <div>
-    <span class="ficha-eyebrow">Wildliving Selected</span>
+    <span class="ficha-eyebrow" data-i18n="ficha_eyebrow">Wildliving Selected</span>
     <h1 class="ficha-h1">Finca Adalgisa Wine Hotel</h1>
     <div class="ficha-loc">Chacras de Coria</div>
     <span class="ficha-province">Mendoza</span>
-    <div class="ficha-practical"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--moss)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v7"/><path d="M3 13h18"/><path d="M7 9V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/><path d="M3 18v2"/><path d="M21 18v2"/></svg><span>11 dormitorios</span></div>
+    <div class="ficha-practical"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--moss)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v7"/><path d="M3 13h18"/><path d="M7 9V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/><path d="M3 18v2"/><path d="M21 18v2"/></svg><span data-i18n="ficha_bedrooms">11 dormitorios</span></div>
     <div class="ficha-tags">
-      <span class="tag">Ritmo lento</span>
-          <span class="tag">Claridad mental</span>
+      <span class="tag" data-i18n="tag_ritmo_lento">Ritmo lento</span>
+          <span class="tag" data-i18n="tag_claridad_mental">Claridad mental</span>
     </div>
-    <p class="ficha-desc">En Chacras de Coria, Finca Adalgisa administra sus propios viñedos centenarios y su huerta desde hace generaciones de la misma familia — no es una bodega que además tiene habitaciones, es una finca que decidió recibir gente. Reconocida en la Guía Michelin, con once habitaciones que miran al viñedo y toda la propuesta gastronómica resuelta en el restaurante de la finca — no hay cocina propia por habitación, la experiencia es de finca con comida servida, no de autogestión. La elegimos por esa relación real entre quien cultiva la tierra y quien recibe al huésped.</p>
+    <p class="ficha-desc" data-i18n="ficha_desc">En Chacras de Coria, Finca Adalgisa administra sus propios viñedos centenarios y su huerta desde hace generaciones de la misma familia — no es una bodega que además tiene habitaciones, es una finca que decidió recibir gente. Reconocida en la Guía Michelin, con once habitaciones que miran al viñedo y toda la propuesta gastronómica resuelta en el restaurante de la finca — no hay cocina propia por habitación, la experiencia es de finca con comida servida, no de autogestión. La elegimos por esa relación real entre quien cultiva la tierra y quien recibe al huésped.</p>
   </div>
   <div class="ficha-cta-box">
-    <p class="ficha-cta-label">Esta propiedad se reserva directo en la plataforma de origen — nosotros la seleccionamos, no la administramos.</p>
-    <a href="https://www.jdoqocy.com/click-101809986-17293137?sid=mendoza-finca+adalgisa+wine+hotel&amp;url=https%3A%2F%2Fwww.booking.com%2Fhotel%2Far%2Ffinca-adalgisa.html" class="btn-cta" target="_blank" rel="noopener">Verificá disponibilidad →</a>
-    <p class="ficha-cta-note">Wildliving Selected: propiedades de partners que cumplen nuestro criterio editorial.</p>
+    <p class="ficha-cta-label" data-i18n="ficha_cta_label">Esta propiedad se reserva directo en la plataforma de origen — nosotros la seleccionamos, no la administramos.</p>
+    <a href="https://www.jdoqocy.com/click-101809986-17293137?sid=mendoza-finca+adalgisa+wine+hotel&amp;url=https%3A%2F%2Fwww.booking.com%2Fhotel%2Far%2Ffinca-adalgisa.html" class="btn-cta" target="_blank" rel="noopener" data-i18n="ficha_cta_btn">Verificá disponibilidad →</a>
+    <p class="ficha-cta-note" data-i18n="ficha_cta_note">Wildliving Selected: propiedades de partners que cumplen nuestro criterio editorial.</p>
   </div>
 </div>
 
 <section class="explore-section">
-  <span class="explore-eyebrow">Seguí explorando</span>
-  <h2 class="explore-title">Otras propiedades en Mendoza.</h2>
+  <span class="explore-eyebrow" data-i18n="explore_eyebrow">Seguí explorando</span>
+  <h2 class="explore-title" data-i18n="explore_title">Otras propiedades en Mendoza.</h2>
   <div class="explore-cards">
   <a href="/selected/mendoza-finca-la-saucina-casa-de-campo/" class="explore-card">
     <div class="explore-img"><img src="https://lh3.googleusercontent.com/d/1O8d1DPfTWgTyGGH8ZE41mfSWXJq7PPim" alt="Finca La Saucina Casa de Campo"></div>
@@ -179,8 +184,8 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
       <span class="explore-badge">Selected</span>
       <h3 class="explore-name"><em>Finca La Saucina Casa de Campo</em></h3>
       <div class="explore-location">Tunuyán, Valle de Uco</div>
-      <p class="explore-desc">Casa de campo en Tunuyán, Valle de Uco. Patio, parrilla, jardín, cocinero gourmet a pedido.</p>
-      <span class="explore-cta">Ver propiedad →</span>
+      <p class="explore-desc" data-i18n="explore_desc_saucina">Casa de campo en Tunuyán, Valle de Uco. Patio, parrilla, jardín, cocinero gourmet a pedido.</p>
+      <span class="explore-cta" data-i18n="explore_cta">Ver propiedad →</span>
     </div>
   </a>
   <a href="/selected/mendoza-posada-finca-garciarena/" class="explore-card">
@@ -189,8 +194,8 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
       <span class="explore-badge">Selected</span>
       <h3 class="explore-name"><em>Posada Finca Garciarena</em></h3>
       <div class="explore-location">Agrelo</div>
-      <p class="explore-desc">Posada de cuatro habitaciones en Agrelo, viñedo propio. Gastronomía a cargo del chef Alfredo Morales, sin cocina propia.</p>
-      <span class="explore-cta">Ver propiedad →</span>
+      <p class="explore-desc" data-i18n="explore_desc_garciarena">Posada de cuatro habitaciones en Agrelo, viñedo propio. Gastronomía a cargo del chef Alfredo Morales, sin cocina propia.</p>
+      <span class="explore-cta" data-i18n="explore_cta">Ver propiedad →</span>
     </div>
   </a>
   </div>
@@ -199,45 +204,88 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
 <footer>
   <div class="foot-logo-col">
     <a href="/" class="foot-logo">Wild<span>·</span>living</a>
-    <p class="foot-tagline"><span>Find your next home in nature.</span><br><span>Patagonia · España · Grecia</span></p>
-    <p class="foot-sust">"Wildliving cree en el turismo como forma de vida, no como consumo."</p>
+    <p class="foot-tagline"><span data-i18n="foot_tagline">Find your next home in nature.</span><br><span data-i18n="foot_destinos">Patagonia · España · Grecia</span></p>
+    <p class="foot-sust" data-i18n="foot_sust">"Wildliving cree en el turismo como forma de vida, no como consumo."</p>
   </div>
   <div class="foot-col">
-    <h4>Plataforma</h4>
+    <h4 data-i18n="foot_h_plataforma">Plataforma</h4>
     <ul>
-      <li><a href="/wildstays/patagonia/">Wildstays</a></li>
-      <li><a href="/wildhomes/">Wildhomes</a></li>
-      <li><a href="/sobre/">Sobre Wildliving</a></li>
-      <li><a href="/contacto/">Contacto</a></li>
+      <li><a href="/wildstays/patagonia/" data-i18n="nav_wildstays">Wildstays</a></li>
+      <li><a href="/wildhomes/" data-i18n="nav_wildhomes">Wildhomes</a></li>
+      <li><a href="/sobre/" data-i18n="foot_sobre">Sobre Wildliving</a></li>
+      <li><a href="/contacto/" data-i18n="foot_contacto">Contacto</a></li>
     </ul>
   </div>
   <div class="foot-col">
-    <h4>Propietarios</h4>
+    <h4 data-i18n="foot_h_propiet">Propietarios</h4>
     <ul>
-      <li><a href="/propietarios/">Wildliving Selected</a></li>
-      <li><a href="/propietarios/">Acuerdo de colaboración</a></li>
-      <li><a href="/wildstays/patagonia/">Ver Collection</a></li>
+      <li><a href="/propietarios/" data-i18n="foot_selected">Wildliving Selected</a></li>
+      <li><a href="/propietarios/" data-i18n="foot_acuerdo">Acuerdo de colaboración</a></li>
+      <li><a href="/wildstays/patagonia/" data-i18n="foot_ver_coll">Ver Collection</a></li>
     </ul>
   </div>
   <div class="foot-col">
-    <h4>Newsletter</h4>
+    <h4 data-i18n="foot_h_news">Newsletter</h4>
     <div class="newsletter-form">
-      <input type="email" class="newsletter-input" placeholder="tu@email.com">
+      <input type="email" class="newsletter-input" data-i18n-ph="foot_news_ph" placeholder="tu@email.com">
       <button class="newsletter-btn">→</button>
     </div>
     <ul style="margin-top:20px"><li><a href="#">Instagram</a></li><li><a href="#">WhatsApp</a></li></ul>
   </div>
   <div class="foot-bottom">
-    <span class="foot-copy">© 2026 Wildliving · wildliving.life · Todos los derechos reservados</span>
+    <span class="foot-copy" data-i18n="foot_copy">© 2026 Wildliving · wildliving.life · Todos los derechos reservados</span>
     <div class="foot-dot"></div>
-    <span class="foot-copy">Turismo sustentable · Slow travel · Vivienda consciente</span>
+    <span class="foot-copy" data-i18n="foot_keywords">Turismo sustentable · Slow travel · Vivienda consciente</span>
   </div>
 </footer>
 
+<script src="/js/i18n.js"></script>
 <script>
 function toggleMobileMenu(open){
   document.getElementById('mobile-overlay').classList.toggle('open', open);
 }
+
+var es = {
+  meta_title: "Finca Adalgisa Wine Hotel — Chacras de Coria, Mendoza | Wildliving Selected",
+  meta_description: "Wine hotel familiar en Chacras de Coria, viñedos centenarios. Gastronomía de finca, no cocina propia. Reconocido en la Guía Michelin.",
+  ficha_back: "← Volver a Wildliving Selected",
+  ficha_img_alt: "Finca Adalgisa Wine Hotel",
+  ficha_eyebrow: "Wildliving Selected",
+  ficha_bedrooms: "11 dormitorios",
+  tag_ritmo_lento: "Ritmo lento",
+  tag_claridad_mental: "Claridad mental",
+  ficha_desc: "En Chacras de Coria, Finca Adalgisa administra sus propios viñedos centenarios y su huerta desde hace generaciones de la misma familia — no es una bodega que además tiene habitaciones, es una finca que decidió recibir gente. Reconocida en la Guía Michelin, con once habitaciones que miran al viñedo y toda la propuesta gastronómica resuelta en el restaurante de la finca — no hay cocina propia por habitación, la experiencia es de finca con comida servida, no de autogestión. La elegimos por esa relación real entre quien cultiva la tierra y quien recibe al huésped.",
+  ficha_cta_label: "Esta propiedad se reserva directo en la plataforma de origen — nosotros la seleccionamos, no la administramos.",
+  ficha_cta_btn: "Verificá disponibilidad →",
+  ficha_cta_note: "Wildliving Selected: propiedades de partners que cumplen nuestro criterio editorial.",
+  explore_eyebrow: "Seguí explorando",
+  explore_title: "Otras propiedades en Mendoza.",
+  explore_desc_saucina: "Casa de campo en Tunuyán, Valle de Uco. Patio, parrilla, jardín, cocinero gourmet a pedido.",
+  explore_desc_garciarena: "Posada de cuatro habitaciones en Agrelo, viñedo propio. Gastronomía a cargo del chef Alfredo Morales, sin cocina propia.",
+  explore_cta: "Ver propiedad →"
+};
+
+var en = {
+  meta_title: "Finca Adalgisa Wine Hotel — Chacras de Coria, Mendoza | Wildliving Selected",
+  meta_description: "Family wine hotel in Chacras de Coria, century-old vineyards. Finca dining, no in-room kitchen. Recognized by the Michelin Guide.",
+  ficha_back: "← Back to Wildliving Selected",
+  ficha_img_alt: "Finca Adalgisa Wine Hotel",
+  ficha_eyebrow: "Wildliving Selected",
+  ficha_bedrooms: "11 bedrooms",
+  tag_ritmo_lento: "Slow rhythm",
+  tag_claridad_mental: "Mental clarity",
+  ficha_desc: "In Chacras de Coria, Finca Adalgisa has tended its own century-old vineyards and vegetable garden across generations of the same family — this isn't a winery that also happens to have rooms, it's a finca that decided to host people. Recognized in the Michelin Guide, with eleven rooms overlooking the vineyard and all dining handled by the finca's own restaurant — there's no in-room kitchen, this is a finca experience with meals served, not self-catering. We chose it for that real relationship between the people who work the land and the ones who welcome guests.",
+  ficha_cta_label: "This property is booked directly on the original platform — we curate it, we don't manage it.",
+  ficha_cta_btn: "Check availability →",
+  ficha_cta_note: "Wildliving Selected: partner properties that meet our editorial criteria.",
+  explore_eyebrow: "Keep exploring",
+  explore_title: "Other properties in Mendoza.",
+  explore_desc_saucina: "Country house in Tunuyán, Valle de Uco. Patio, grill, garden, gourmet cook on request.",
+  explore_desc_garciarena: "Four-room posada in Agrelo, own vineyard. Dining by chef Alfredo Morales, no in-room kitchen.",
+  explore_cta: "View property →"
+};
+
+wlInitI18n(es, en);
 </script>
 </body>
 </html>

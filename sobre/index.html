@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sobre Wildliving — Find your next home in nature</title>
+<meta name="description" content="Wildliving no lista propiedades. Las elige donde el entorno, el diseño y la calma ya están dados. Conocé nuestra visión.">
+<meta property="og:title" content="Sobre Wildliving — Find your next home in nature">
+<meta property="og:description" content="Wildliving no lista propiedades. Las elige donde el entorno, el diseño y la calma ya están dados. Conocé nuestra visión.">
+<meta name="twitter:title" content="Sobre Wildliving — Find your next home in nature">
+<meta name="twitter:description" content="Wildliving no lista propiedades. Las elige donde el entorno, el diseño y la calma ya están dados. Conocé nuestra visión.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
@@ -107,121 +112,208 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
 <nav id="nav">
   <a href="/" class="nav-logo" id="nav-logo">Wild<span>·</span>living</a>
   <ul class="nav-links" id="nav-links">
-    <li><a href="/wildstays/patagonia/">Wildstays</a></li>
-    <li><a href="/wildhomes/">Wildhomes</a></li>
-    <li><a href="/sobre/">Sobre</a></li>
-    <li><a href="/contacto/">Contacto</a></li>
+    <li><a href="/wildstays/patagonia/" data-i18n="nav_wildstays">Wildstays</a></li>
+    <li><a href="/wildhomes/" data-i18n="nav_wildhomes">Wildhomes</a></li>
+    <li><a href="/sobre/" data-i18n="nav_sobre">Sobre</a></li>
+    <li><a href="/contacto/" data-i18n="nav_contacto">Contacto</a></li>
     <li class="lang-selector">
-      <button class="lang-btn active" data-lang="es">ES</button>
+      <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
       <span class="lang-sep">·</span>
-      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
     </li>
   </ul>
-  <button class="hamburger-btn" id="hamburger-btn" onclick="toggleMobileMenu(true)" aria-label="Abrir menú">☰</button>
+  <button class="hamburger-btn" id="hamburger-btn" onclick="toggleMobileMenu(true)" aria-label="Abrir menú" data-i18n-aria="aria_open_menu">☰</button>
 </nav>
 
 <div class="mobile-overlay" id="mobile-overlay">
-  <button class="mobile-overlay-close" onclick="toggleMobileMenu(false)" aria-label="Cerrar menú">✕</button>
-  <a href="/wildstays/patagonia/">Wildstays</a>
-  <a href="/wildhomes/">Wildhomes</a>
-  <a href="/sobre/">Sobre</a>
-  <a href="/contacto/">Contacto</a>
+  <button class="mobile-overlay-close" onclick="toggleMobileMenu(false)" aria-label="Cerrar menú" data-i18n-aria="aria_close_menu">✕</button>
+  <a href="/wildstays/patagonia/" data-i18n="nav_wildstays">Wildstays</a>
+  <a href="/wildhomes/" data-i18n="nav_wildhomes">Wildhomes</a>
+  <a href="/sobre/" data-i18n="nav_sobre">Sobre</a>
+  <a href="/contacto/" data-i18n="nav_contacto">Contacto</a>
 </div>
 
 <section class="sobre-hero">
-  <span class="eyebrow">Sobre Wildliving</span>
-  <h1 class="sobre-h1">Una plataforma para encontrar espacios donde el paisaje es protagonista.</h1>
+  <span class="eyebrow" data-i18n="sobre_eyebrow">Sobre Wildliving</span>
+  <h1 class="sobre-h1" data-i18n="sobre_h1">Una plataforma para encontrar espacios donde el paisaje es protagonista.</h1>
 </section>
 
 <section class="manifesto">
-  <p class="manifesto-quote" style="font-style:normal">Wildliving no lista propiedades. Las elige donde el entorno, el diseño y la calma ya están dados, para vivir la naturaleza con el cuerpo, no solo con la vista.</p>
-  <p class="manifesto-body" style="margin-top:22px">El real estate que nos interesa no es transaccional. Es emocional, experiencial, editorial y conectado con cómo las personas quieren vivir. Validamos cada propiedad combinando tecnología y trayectoria personal, buscando los espacios que ofrecen mejores condiciones para que cada persona construya la vida que quiere.</p>
-  <a href="/wildstays/patagonia/" class="manifesto-footnote">→ Ver propiedades disponibles</a>
+  <p class="manifesto-quote" style="font-style:normal" data-i18n="sobre_manifesto_quote">Wildliving no lista propiedades. Las elige donde el entorno, el diseño y la calma ya están dados, para vivir la naturaleza con el cuerpo, no solo con la vista.</p>
+  <p class="manifesto-body" style="margin-top:22px" data-i18n="sobre_manifesto_body">El real estate que nos interesa no es transaccional. Es emocional, experiencial, editorial y conectado con cómo las personas quieren vivir. Validamos cada propiedad combinando tecnología y trayectoria personal, buscando los espacios que ofrecen mejores condiciones para que cada persona construya la vida que quiere.</p>
+  <a href="/wildstays/patagonia/" class="manifesto-footnote" data-i18n="sobre_ver_propiedades">→ Ver propiedades disponibles</a>
 </section>
 
 <section class="manifesto">
-  <span class="eyebrow">Visión de la fundadora</span>
-  <p class="manifesto-body" style="max-width:680px;margin-bottom:22px">"Creo que el espacio que habitamos es la base desde donde se construye todo lo demás, donde nos reconectamos, vivimos lo íntimo, soñamos, aprendemos a convivir con otros.</p>
-  <p class="manifesto-body" style="max-width:680px;margin-bottom:22px">La casa no es un contenedor de la vida. Es la estructura que la sostiene. Y ese hogar no depende de cuánto tiempo te quedes, ni de si el lugar es tuyo o prestado por unos días. Es algo que se construye, y que después viaja con vos.</p>
-  <p class="manifesto-body" style="max-width:680px;margin-bottom:22px">Wildliving nació el día que empecé a alquilar mi casa, la que había diseñado con mucho amor, pensando en cada detalle. Abrirle la puerta a otras personas me enseñó algo que no esperaba: cada huésped la habitaba a su manera, la hacía suya, sin que dejara de sentirse un hogar. Ahí entendí que lo que había construido no era un objeto fijo, era algo que se podía compartir, y que cada persona seguía completando a su modo.</p>
-  <p class="manifesto-body" style="max-width:680px;margin-bottom:22px">Cuando el espacio que habitamos está cerca de un bosque, un lago, una montaña o el mar, algo cambia. El cuerpo encuentra una calma que no elige conscientemente. La mente encuentra silencio donde antes había ruido. Y la vida, sin proponérselo, se vuelve más simple: un café que se toma despacio, un día que no necesita ocupar cada hora para sentirse pleno. En mi caso, dejé una gran ciudad para comprobarlo personalmente. Y lo que encontré del otro lado no fue solo paisaje, fue otro ritmo.</p>
-  <p class="manifesto-body" style="max-width:680px;margin-bottom:22px">Esa convicción es la base de todo lo que hacemos hoy. Mi propósito es ayudar a cada persona a encontrar el espacio exacto que necesita para sentirse en casa, sea por una noche, una temporada, o para toda una vida."</p>
-  <span class="signature-line">— Leila Fonzo, Founder de Wildliving</span>
-  <a href="/wildstays/patagonia/" class="manifesto-footnote" style="margin-top:22px">→ Conocé nuestro criterio</a>
+  <span class="eyebrow" data-i18n="sobre_founder_eyebrow">Visión de la fundadora</span>
+  <p class="manifesto-body" style="max-width:680px;margin-bottom:22px" data-i18n="sobre_founder_p1">"Creo que el espacio que habitamos es la base desde donde se construye todo lo demás, donde nos reconectamos, vivimos lo íntimo, soñamos, aprendemos a convivir con otros.</p>
+  <p class="manifesto-body" style="max-width:680px;margin-bottom:22px" data-i18n="sobre_founder_p2">La casa no es un contenedor de la vida. Es la estructura que la sostiene. Y ese hogar no depende de cuánto tiempo te quedes, ni de si el lugar es tuyo o prestado por unos días. Es algo que se construye, y que después viaja con vos.</p>
+  <p class="manifesto-body" style="max-width:680px;margin-bottom:22px" data-i18n="sobre_founder_p3">Wildliving nació el día que empecé a alquilar mi casa, la que había diseñado con mucho amor, pensando en cada detalle. Abrirle la puerta a otras personas me enseñó algo que no esperaba: cada huésped la habitaba a su manera, la hacía suya, sin que dejara de sentirse un hogar. Ahí entendí que lo que había construido no era un objeto fijo, era algo que se podía compartir, y que cada persona seguía completando a su modo.</p>
+  <p class="manifesto-body" style="max-width:680px;margin-bottom:22px" data-i18n="sobre_founder_p4">Cuando el espacio que habitamos está cerca de un bosque, un lago, una montaña o el mar, algo cambia. El cuerpo encuentra una calma que no elige conscientemente. La mente encuentra silencio donde antes había ruido. Y la vida, sin proponérselo, se vuelve más simple: un café que se toma despacio, un día que no necesita ocupar cada hora para sentirse pleno. En mi caso, dejé una gran ciudad para comprobarlo personalmente. Y lo que encontré del otro lado no fue solo paisaje, fue otro ritmo.</p>
+  <p class="manifesto-body" style="max-width:680px;margin-bottom:22px" data-i18n="sobre_founder_p5">Esa convicción es la base de todo lo que hacemos hoy. Mi propósito es ayudar a cada persona a encontrar el espacio exacto que necesita para sentirse en casa, sea por una noche, una temporada, o para toda una vida."</p>
+  <span class="signature-line" data-i18n="sobre_founder_sign">— Leila Fonzo, Founder de Wildliving</span>
+  <a href="/wildstays/patagonia/" class="manifesto-footnote" style="margin-top:22px" data-i18n="sobre_conocer_criterio">→ Conocé nuestro criterio</a>
 </section>
 
 <section class="values">
   <div class="values-grid">
     <div class="value-col">
-      <div class="value-title">Curaduría editorial</div>
-      <p class="value-body">Cada propiedad en Wildliving pasó por el mismo criterio: naturaleza, diseño y hospitalidad genuina. No es un listado. Es una selección.</p>
+      <div class="value-title" data-i18n="sobre_value1_title">Curaduría editorial</div>
+      <p class="value-body" data-i18n="sobre_value1_body">Cada propiedad en Wildliving pasó por el mismo criterio: naturaleza, diseño y hospitalidad genuina. No es un listado. Es una selección.</p>
     </div>
     <div class="value-col">
-      <div class="value-title">Experiencia antes que decisión</div>
-      <p class="value-body">La secuencia natural es Wildstays → Wildhomes. Primero vivís el lugar. Después decidís si querés quedarte.</p>
+      <div class="value-title" data-i18n="sobre_value2_title">Experiencia antes que decisión</div>
+      <p class="value-body" data-i18n="sobre_value2_body">La secuencia natural es Wildstays → Wildhomes. Primero vivís el lugar. Después decidís si querés quedarte.</p>
     </div>
     <div class="value-col">
-      <div class="value-title">Comunidad de confianza</div>
-      <p class="value-body">Wildclub no es una lista de usuarios. Es el círculo de quienes ya eligieron vivir de otra manera y comparten lo que encontraron.</p>
+      <div class="value-title" data-i18n="sobre_value3_title">Comunidad de confianza</div>
+      <p class="value-body" data-i18n="sobre_value3_body">Wildclub no es una lista de usuarios. Es el círculo de quienes ya eligieron vivir de otra manera y comparten lo que encontraron.</p>
     </div>
   </div>
-  <a href="/propietarios/" class="manifesto-footnote">→ Conocer el programa para propietarios</a>
+  <a href="/propietarios/" class="manifesto-footnote" data-i18n="sobre_conocer_programa">→ Conocer el programa para propietarios</a>
 </section>
 
 <div class="destinos-strip">
-  <div class="destino-item"><span class="destino-nombre">Patagonia</span><span class="destino-sub">Argentina</span></div>
-  <div class="destino-item"><span class="destino-nombre">España</span><span class="destino-sub">Atlántico</span></div>
-  <div class="destino-item"><span class="destino-nombre">Grecia</span><span class="destino-sub">Islas</span></div>
+  <div class="destino-item"><span class="destino-nombre">Patagonia</span><span class="destino-sub" data-i18n="strip_patagonia_nombre">Argentina</span></div>
+  <div class="destino-item"><span class="destino-nombre" data-i18n="strip_espana_nombre">España</span><span class="destino-sub" data-i18n="sobre_strip_espana_sub">Atlántico</span></div>
+  <div class="destino-item"><span class="destino-nombre" data-i18n="strip_grecia_nombre">Grecia</span><span class="destino-sub" data-i18n="sobre_strip_grecia_sub">Islas</span></div>
 </div>
 
 <section class="sobre-cta">
-  <h2 class="sobre-cta-title">El entorno correcto ya existe.</h2>
-  <p class="sobre-cta-sub">Encontralo en Wildliving.</p>
+  <h2 class="sobre-cta-title" data-i18n="sobre_cta_title">El entorno correcto ya existe.</h2>
+  <p class="sobre-cta-sub" data-i18n="sobre_cta_sub">Encontralo en Wildliving.</p>
   <div class="sobre-cta-buttons">
-    <a href="/wildstays/patagonia/" class="btn-moss-fill">Explorar propiedades</a>
-    <a href="/propietarios/" class="btn-night-outline">Conocer el programa</a>
+    <a href="/wildstays/patagonia/" class="btn-moss-fill" data-i18n="sobre_cta_explorar">Explorar propiedades</a>
+    <a href="/propietarios/" class="btn-night-outline" data-i18n="sobre_cta_programa">Conocer el programa</a>
   </div>
 </section>
 
 <footer>
   <div class="foot-logo-col">
     <a href="/" class="foot-logo">Wild<span>·</span>living</a>
-    <p class="foot-tagline"><span>Find your next home in nature.</span><br><span>Patagonia · España · Grecia</span></p>
-    <p class="foot-sust">"Wildliving cree en el turismo como forma de vida, no como consumo."</p>
+    <p class="foot-tagline"><span data-i18n="foot_tagline">Find your next home in nature.</span><br><span data-i18n="foot_destinos">Argentina · España · Grecia</span></p>
+    <p class="foot-sust" data-i18n="foot_sust">"Wildliving cree en el turismo como forma de vida, no como consumo."</p>
   </div>
   <div class="foot-col">
-    <h4>Plataforma</h4>
+    <h4 data-i18n="foot_h_plataforma">Plataforma</h4>
     <ul>
-      <li><a href="/wildstays/patagonia/">Wildstays</a></li>
-      <li><a href="/wildhomes/">Wildhomes</a></li>
-      <li><a href="/sobre/">Sobre Wildliving</a></li>
-      <li><a href="/contacto/">Contacto</a></li>
+      <li><a href="/wildstays/patagonia/" data-i18n="nav_wildstays">Wildstays</a></li>
+      <li><a href="/wildhomes/" data-i18n="nav_wildhomes">Wildhomes</a></li>
+      <li><a href="/sobre/" data-i18n="foot_sobre">Sobre Wildliving</a></li>
+      <li><a href="/contacto/" data-i18n="foot_contacto">Contacto</a></li>
     </ul>
   </div>
   <div class="foot-col">
-    <h4>Propietarios</h4>
+    <h4 data-i18n="foot_h_propiet">Propietarios</h4>
     <ul>
-      <li><a href="/propietarios/">Wildliving Selected</a></li>
-      <li><a href="/propietarios/">Acuerdo de colaboración</a></li>
-      <li><a href="/wildstays/patagonia/">Ver Collection</a></li>
+      <li><a href="/propietarios/" data-i18n="foot_selected">Wildliving Selected</a></li>
+      <li><a href="/propietarios/" data-i18n="foot_acuerdo">Acuerdo de colaboración</a></li>
+      <li><a href="/wildstays/patagonia/" data-i18n="foot_ver_coll">Ver Collection</a></li>
     </ul>
   </div>
   <div class="foot-col">
-    <h4>Newsletter</h4>
+    <h4 data-i18n="foot_h_news">Newsletter</h4>
     <div class="newsletter-form">
-      <input type="email" class="newsletter-input" placeholder="tu@email.com">
+      <input type="email" class="newsletter-input" data-i18n-ph="foot_news_ph" placeholder="tu@email.com">
       <button class="newsletter-btn">→</button>
     </div>
     <ul style="margin-top:20px"><li><a href="#">Instagram</a></li><li><a href="#">WhatsApp</a></li></ul>
   </div>
   <div class="foot-bottom">
-    <span class="foot-copy">© 2026 Wildliving · wildliving.life · Todos los derechos reservados</span>
+    <span class="foot-copy" data-i18n="foot_copy">© 2026 Wildliving · wildliving.life · Todos los derechos reservados</span>
     <div class="foot-dot"></div>
-    <span class="foot-copy">Turismo sustentable · Slow travel · Vivienda consciente</span>
+    <span class="foot-copy" data-i18n="foot_keywords">Turismo sustentable · Slow travel · Vivienda consciente</span>
   </div>
 </footer>
 
+<script src="/js/i18n.js"></script>
 <script>
+
+const es = {
+  meta_title:       "Sobre Wildliving — Find your next home in nature",
+  meta_description: "Wildliving no lista propiedades. Las elige donde el entorno, el diseño y la calma ya están dados. Conocé nuestra visión.",
+
+  sobre_eyebrow: "Sobre Wildliving",
+  sobre_h1:      "Una plataforma para encontrar espacios donde el paisaje es protagonista.",
+
+  sobre_manifesto_quote: "Wildliving no lista propiedades. Las elige donde el entorno, el diseño y la calma ya están dados, para vivir la naturaleza con el cuerpo, no solo con la vista.",
+  sobre_manifesto_body:  "El real estate que nos interesa no es transaccional. Es emocional, experiencial, editorial y conectado con cómo las personas quieren vivir. Validamos cada propiedad combinando tecnología y trayectoria personal, buscando los espacios que ofrecen mejores condiciones para que cada persona construya la vida que quiere.",
+  sobre_ver_propiedades: "→ Ver propiedades disponibles",
+
+  sobre_founder_eyebrow: "Visión de la fundadora",
+  sobre_founder_p1: "\"Creo que el espacio que habitamos es la base desde donde se construye todo lo demás, donde nos reconectamos, vivimos lo íntimo, soñamos, aprendemos a convivir con otros.",
+  sobre_founder_p2: "La casa no es un contenedor de la vida. Es la estructura que la sostiene. Y ese hogar no depende de cuánto tiempo te quedes, ni de si el lugar es tuyo o prestado por unos días. Es algo que se construye, y que después viaja con vos.",
+  sobre_founder_p3: "Wildliving nació el día que empecé a alquilar mi casa, la que había diseñado con mucho amor, pensando en cada detalle. Abrirle la puerta a otras personas me enseñó algo que no esperaba: cada huésped la habitaba a su manera, la hacía suya, sin que dejara de sentirse un hogar. Ahí entendí que lo que había construido no era un objeto fijo, era algo que se podía compartir, y que cada persona seguía completando a su modo.",
+  sobre_founder_p4: "Cuando el espacio que habitamos está cerca de un bosque, un lago, una montaña o el mar, algo cambia. El cuerpo encuentra una calma que no elige conscientemente. La mente encuentra silencio donde antes había ruido. Y la vida, sin proponérselo, se vuelve más simple: un café que se toma despacio, un día que no necesita ocupar cada hora para sentirse pleno. En mi caso, dejé una gran ciudad para comprobarlo personalmente. Y lo que encontré del otro lado no fue solo paisaje, fue otro ritmo.",
+  sobre_founder_p5: "Esa convicción es la base de todo lo que hacemos hoy. Mi propósito es ayudar a cada persona a encontrar el espacio exacto que necesita para sentirse en casa, sea por una noche, una temporada, o para toda una vida.\"",
+  sobre_founder_sign: "— Leila Fonzo, Founder de Wildliving",
+  sobre_conocer_criterio: "→ Conocé nuestro criterio",
+
+  sobre_value1_title: "Curaduría editorial",
+  sobre_value1_body:  "Cada propiedad en Wildliving pasó por el mismo criterio: naturaleza, diseño y hospitalidad genuina. No es un listado. Es una selección.",
+  sobre_value2_title: "Experiencia antes que decisión",
+  sobre_value2_body:  "La secuencia natural es Wildstays → Wildhomes. Primero vivís el lugar. Después decidís si querés quedarte.",
+  sobre_value3_title: "Comunidad de confianza",
+  sobre_value3_body:  "Wildclub no es una lista de usuarios. Es el círculo de quienes ya eligieron vivir de otra manera y comparten lo que encontraron.",
+  sobre_conocer_programa: "→ Conocer el programa para propietarios",
+
+  strip_patagonia_nombre: "Argentina",
+  strip_espana_nombre:    "España",
+  strip_grecia_nombre:    "Grecia",
+  sobre_strip_espana_sub: "Atlántico",
+  sobre_strip_grecia_sub: "Islas",
+
+  sobre_cta_title:    "El entorno correcto ya existe.",
+  sobre_cta_sub:      "Encontralo en Wildliving.",
+  sobre_cta_explorar: "Explorar propiedades",
+  sobre_cta_programa: "Conocer el programa",
+};
+
+
+const en = {
+  meta_title:       "About Wildliving — Find your next home in nature",
+  meta_description: "Wildliving doesn't list properties. We choose places where setting, design, and calm are already there. Discover our vision.",
+
+  sobre_eyebrow: "About Wildliving",
+  sobre_h1:      "A platform for finding spaces where the landscape takes the lead.",
+
+  sobre_manifesto_quote: "Wildliving doesn't list properties. We choose them where the setting, the design, and the calm are already there — to live nature with the body, not only with the eyes.",
+  sobre_manifesto_body:  "The real estate we care about isn't transactional. It's emotional, experiential, editorial, and connected to how people want to live. We validate every property by combining technology and personal experience, looking for the spaces that offer the best conditions for each person to build the life they want.",
+  sobre_ver_propiedades: "→ View available properties",
+
+  sobre_founder_eyebrow: "The founder's vision",
+  sobre_founder_p1: "\"I believe the space we inhabit is the foundation everything else is built on — where we reconnect, live our most intimate moments, dream, learn to live alongside others.",
+  sobre_founder_p2: "A house isn't a container for life. It's the structure that holds it up. And that home doesn't depend on how long you stay, or whether the place is yours or borrowed for a few days. It's something you build, and that later travels with you.",
+  sobre_founder_p3: "Wildliving was born the day I started renting out my house — the one I had designed with so much love, thinking through every detail. Opening the door to other people taught me something I didn't expect: every guest inhabited it in their own way, made it theirs, without it ever stopping to feel like home. That's when I understood that what I had built wasn't a fixed object — it was something that could be shared, and that each person kept completing in their own way.",
+  sobre_founder_p4: "When the space we inhabit is close to a forest, a lake, a mountain, or the sea, something changes. The body finds a calm it doesn't consciously choose. The mind finds silence where there used to be noise. And life, without meaning to, becomes simpler: a coffee taken slowly, a day that doesn't need to fill every hour to feel complete. In my case, I left a big city to find out for myself. And what I found on the other side wasn't just scenery — it was a different pace.",
+  sobre_founder_p5: "That conviction is the foundation of everything we do today. My purpose is to help every person find the exact space they need to feel at home — whether for a night, a season, or a lifetime.\"",
+  sobre_founder_sign: "— Leila Fonzo, Founder of Wildliving",
+  sobre_conocer_criterio: "→ Discover our criteria",
+
+  sobre_value1_title: "Editorial curation",
+  sobre_value1_body:  "Every property at Wildliving goes through the same criteria: nature, design, and genuine hospitality. It's not a listing. It's a selection.",
+  sobre_value2_title: "Experience before decision",
+  sobre_value2_body:  "The natural sequence is Wildstays → Wildhomes. First you live the place. Then you decide if you want to stay.",
+  sobre_value3_title: "A community of trust",
+  sobre_value3_body:  "Wildclub isn't a list of users. It's the circle of those who already chose to live differently, and who share what they found.",
+  sobre_conocer_programa: "→ Learn about the programme for property owners",
+
+  strip_patagonia_nombre: "Argentina",
+  strip_espana_nombre:    "Spain",
+  strip_grecia_nombre:    "Greece",
+  sobre_strip_espana_sub: "Atlantic",
+  sobre_strip_grecia_sub: "Islands",
+
+  sobre_cta_title:    "The right environment already exists.",
+  sobre_cta_sub:      "Find it at Wildliving.",
+  sobre_cta_explorar: "Explore properties",
+  sobre_cta_programa: "Learn about the programme",
+};
+
+wlInitI18n(es, en, {
+  onReady: function () {}
+});
+
 function toggleMobileMenu(open){
   document.getElementById('mobile-overlay').classList.toggle('open', open);
 }

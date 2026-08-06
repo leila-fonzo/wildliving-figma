@@ -120,29 +120,34 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
 <nav id="nav">
   <a href="/" class="nav-logo" id="nav-logo">Wild<span>·</span>living</a>
   <ul class="nav-links" id="nav-links">
-    <li><a href="/wildstays/patagonia/">Wildstays</a></li>
-    <li><a href="/wildhomes/">Wildhomes</a></li>
-    <li><a href="/sobre/">Sobre</a></li>
-    <li><a href="/contacto/">Contacto</a></li>
+    <li><a href="/wildstays/patagonia/" data-i18n="nav_wildstays">Wildstays</a></li>
+    <li><a href="/wildhomes/" data-i18n="nav_wildhomes">Wildhomes</a></li>
+    <li><a href="/sobre/" data-i18n="nav_sobre">Sobre</a></li>
+    <li><a href="/contacto/" data-i18n="nav_contacto">Contacto</a></li>
     <li class="lang-selector">
-      <button class="lang-btn active" data-lang="es">ES</button>
+      <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
       <span class="lang-sep">·</span>
-      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
     </li>
   </ul>
-  <button class="hamburger-btn" id="hamburger-btn" onclick="toggleMobileMenu(true)" aria-label="Abrir menú">☰</button>
+  <button class="hamburger-btn" id="hamburger-btn" onclick="toggleMobileMenu(true)" aria-label="Abrir menú" data-i18n-aria="aria_open_menu">☰</button>
 </nav>
 
 <div class="mobile-overlay" id="mobile-overlay">
-  <button class="mobile-overlay-close" onclick="toggleMobileMenu(false)" aria-label="Cerrar menú">✕</button>
-  <a href="/wildstays/patagonia/">Wildstays</a>
-  <a href="/wildhomes/">Wildhomes</a>
-  <a href="/sobre/">Sobre</a>
-  <a href="/contacto/">Contacto</a>
+  <button class="mobile-overlay-close" onclick="toggleMobileMenu(false)" aria-label="Cerrar menú" data-i18n-aria="aria_close_menu">✕</button>
+  <a href="/wildstays/patagonia/" data-i18n="nav_wildstays">Wildstays</a>
+  <a href="/wildhomes/" data-i18n="nav_wildhomes">Wildhomes</a>
+  <a href="/sobre/" data-i18n="nav_sobre">Sobre</a>
+  <a href="/contacto/" data-i18n="nav_contacto">Contacto</a>
+  <div class="mobile-overlay-lang">
+    <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
+    <span class="lang-sep">·</span>
+    <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+  </div>
 </div>
 
 <div class="ficha-back">
-  <a href="/selected/">← Volver a Wildliving Selected</a>
+  <a href="/selected/" data-i18n="ficha_back">← Volver a Wildliving Selected</a>
 </div>
 
 <div class="ficha-hero">
@@ -151,56 +156,56 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
 
 <div class="ficha-body">
   <div>
-    <span class="ficha-eyebrow">Wildliving Selected</span>
+    <span class="ficha-eyebrow" data-i18n="ficha_eyebrow">Wildliving Selected</span>
     <h1 class="ficha-h1">Modo Villa - Cabaña</h1>
     <div class="ficha-loc">Villa La Angostura</div>
     <span class="ficha-province">Neuquén</span>
-    <div class="ficha-practical"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--moss)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v7"/><path d="M3 13h18"/><path d="M7 9V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/><path d="M3 18v2"/><path d="M21 18v2"/></svg><span>2 dormitorios</span></div>
+    <div class="ficha-practical"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--moss)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v7"/><path d="M3 13h18"/><path d="M7 9V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/><path d="M3 18v2"/><path d="M21 18v2"/></svg><span data-i18n="practical_2">2 dormitorios</span></div>
     <div class="ficha-tags">
-      <span class="tag">Descanso profundo</span>
-          <span class="tag">Reconexión en pareja</span>
+      <span class="tag" data-i18n="tag_descanso">Descanso profundo</span>
+          <span class="tag" data-i18n="tag_reconexion">Reconexión en pareja</span>
     </div>
-    <p class="ficha-desc">En Villa La Angostura, esta cabaña de dos dormitorios forma parte de un conjunto chico donde los dueños están presentes, no delegados en una recepción. Es la escala que buscamos en Selected: ni tan grande como para volverse complejo turístico, ni tan genérica como para perder personalidad. Cálida, cómoda, con la clase de amabilidad que se nota en el trato, no en el marketing.</p>
+    <p class="ficha-desc" data-i18n="ficha_desc">En Villa La Angostura, esta cabaña de dos dormitorios forma parte de un conjunto chico donde los dueños están presentes, no delegados en una recepción. Es la escala que buscamos en Selected: ni tan grande como para volverse complejo turístico, ni tan genérica como para perder personalidad. Cálida, cómoda, con la clase de amabilidad que se nota en el trato, no en el marketing.</p>
   </div>
   <div class="ficha-cta-box">
-    <p class="ficha-cta-label">Esta propiedad se reserva directo en la plataforma de origen — nosotros la seleccionamos, no la administramos.</p>
-    <a href="https://www.tkqlhce.com/click-101809986-17293137?sid=patagonia-Modo-Villa-cabana&amp;url=https%3A%2F%2Fwww.booking.com%2Fhotel%2Far%2Fmodo-villa-villa-la-angostura1.en-gb.html" class="btn-cta" target="_blank" rel="noopener">Verificá disponibilidad →</a>
-    <p class="ficha-cta-note">Wildliving Selected: propiedades de partners que cumplen nuestro criterio editorial.</p>
+    <p class="ficha-cta-label" data-i18n="cta_label">Esta propiedad se reserva directo en la plataforma de origen — nosotros la seleccionamos, no la administramos.</p>
+    <a href="https://www.tkqlhce.com/click-101809986-17293137?sid=patagonia-Modo-Villa-cabana&amp;url=https%3A%2F%2Fwww.booking.com%2Fhotel%2Far%2Fmodo-villa-villa-la-angostura1.en-gb.html" class="btn-cta" target="_blank" rel="noopener" data-i18n="cta_btn">Verificá disponibilidad →</a>
+    <p class="ficha-cta-note" data-i18n="cta_note">Wildliving Selected: propiedades de partners que cumplen nuestro criterio editorial.</p>
   </div>
 </div>
 
 <section class="explore-section">
-  <span class="explore-eyebrow">Seguí explorando</span>
-  <h2 class="explore-title">Otras propiedades en Patagonia.</h2>
+  <span class="explore-eyebrow" data-i18n="explore_eyebrow">Seguí explorando</span>
+  <h2 class="explore-title" data-i18n="explore_title">Otras propiedades en Patagonia.</h2>
   <div class="explore-cards">
   <a href="/selected/patagonia-casa-gallareta/" class="explore-card">
     <div class="explore-img"><img src="https://lh3.googleusercontent.com/d/1PZWAzKjvP94EEAKueJcDEN3XBK2gKp0n" alt="Casa Gallareta"></div>
     <div class="explore-content">
-      <span class="explore-badge">Selected</span>
+      <span class="explore-badge" data-i18n="explore_badge">Selected</span>
       <h3 class="explore-name"><em>Casa Gallareta</em></h3>
       <div class="explore-location">Villa La Angostura, Lago Correntoso</div>
-      <p class="explore-desc">Cabañas de madera quemada junto al Lago Correntoso, diseño de autor nacido como encargo familiar, no como desarrollo comercial.</p>
-      <span class="explore-cta">Ver propiedad →</span>
+      <p class="explore-desc" data-i18n="explore_desc_gallareta">Cabañas de madera quemada junto al Lago Correntoso, diseño de autor nacido como encargo familiar, no como desarrollo comercial.</p>
+      <span class="explore-cta" data-i18n="explore_cta">Ver propiedad →</span>
     </div>
   </a>
   <a href="/selected/patagonia-ventanas-al-lago/" class="explore-card">
     <div class="explore-img"><img src="https://lh3.googleusercontent.com/d/19CFyF69PU2fCgTjqBe58lGu7uC6RIhN4" alt="Ventanas Al Lago"></div>
     <div class="explore-content">
-      <span class="explore-badge">Selected</span>
+      <span class="explore-badge" data-i18n="explore_badge">Selected</span>
       <h3 class="explore-name"><em>Ventanas Al Lago</em></h3>
       <div class="explore-location">Circuito Chico, Bariloche</div>
-      <p class="explore-desc">Casa completa en Circuito Chico, vista al lago desde todos los ambientes. Jardín, parrilla propia, hasta 6 personas.</p>
-      <span class="explore-cta">Ver propiedad →</span>
+      <p class="explore-desc" data-i18n="explore_desc_ventanas">Casa completa en Circuito Chico, vista al lago desde todos los ambientes. Jardín, parrilla propia, hasta 6 personas.</p>
+      <span class="explore-cta" data-i18n="explore_cta">Ver propiedad →</span>
     </div>
   </a>
   <a href="/selected/patagonia-casa-de-montana-con-vista-al-lago/" class="explore-card">
     <div class="explore-img"><img src="https://lh3.googleusercontent.com/d/1kDCE_hansakMODtusdoIZLjnf3YBmDJL" alt="Casa de Montaña con Vista al Lago"></div>
     <div class="explore-content">
-      <span class="explore-badge">Selected</span>
+      <span class="explore-badge" data-i18n="explore_badge">Selected</span>
       <h3 class="explore-name"><em>Casa de Montaña con Vista al Lago</em></h3>
       <div class="explore-location">Bariloche</div>
-      <p class="explore-desc">Casa en Bariloche con vista a lago y montaña, jacuzzi, tres dormitorios. Hasta 6 personas, sin lógica de hotel.</p>
-      <span class="explore-cta">Ver propiedad →</span>
+      <p class="explore-desc" data-i18n="explore_desc_montana">Casa en Bariloche con vista a lago y montaña, jacuzzi, tres dormitorios. Hasta 6 personas, sin lógica de hotel.</p>
+      <span class="explore-cta" data-i18n="explore_cta">Ver propiedad →</span>
     </div>
   </a>
   </div>
@@ -209,45 +214,90 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
 <footer>
   <div class="foot-logo-col">
     <a href="/" class="foot-logo">Wild<span>·</span>living</a>
-    <p class="foot-tagline"><span>Find your next home in nature.</span><br><span>Patagonia · España · Grecia</span></p>
-    <p class="foot-sust">"Wildliving cree en el turismo como forma de vida, no como consumo."</p>
+    <p class="foot-tagline"><span data-i18n="foot_tagline">Find your next home in nature.</span><br><span data-i18n="foot_destinos">Patagonia · España · Grecia</span></p>
+    <p class="foot-sust" data-i18n="foot_sust">"Wildliving cree en el turismo como forma de vida, no como consumo."</p>
   </div>
   <div class="foot-col">
-    <h4>Plataforma</h4>
+    <h4 data-i18n="foot_h_plataforma">Plataforma</h4>
     <ul>
-      <li><a href="/wildstays/patagonia/">Wildstays</a></li>
-      <li><a href="/wildhomes/">Wildhomes</a></li>
-      <li><a href="/sobre/">Sobre Wildliving</a></li>
-      <li><a href="/contacto/">Contacto</a></li>
+      <li><a href="/wildstays/patagonia/" data-i18n="nav_wildstays">Wildstays</a></li>
+      <li><a href="/wildhomes/" data-i18n="nav_wildhomes">Wildhomes</a></li>
+      <li><a href="/sobre/" data-i18n="foot_sobre">Sobre Wildliving</a></li>
+      <li><a href="/contacto/" data-i18n="foot_contacto">Contacto</a></li>
     </ul>
   </div>
   <div class="foot-col">
-    <h4>Propietarios</h4>
+    <h4 data-i18n="foot_h_propiet">Propietarios</h4>
     <ul>
-      <li><a href="/propietarios/">Wildliving Selected</a></li>
-      <li><a href="/propietarios/">Acuerdo de colaboración</a></li>
-      <li><a href="/wildstays/patagonia/">Ver Collection</a></li>
+      <li><a href="/propietarios/" data-i18n="foot_selected">Wildliving Selected</a></li>
+      <li><a href="/propietarios/" data-i18n="foot_acuerdo">Acuerdo de colaboración</a></li>
+      <li><a href="/wildstays/patagonia/" data-i18n="foot_ver_coll">Ver Collection</a></li>
     </ul>
   </div>
   <div class="foot-col">
-    <h4>Newsletter</h4>
+    <h4 data-i18n="foot_h_news">Newsletter</h4>
     <div class="newsletter-form">
-      <input type="email" class="newsletter-input" placeholder="tu@email.com">
+      <input type="email" class="newsletter-input" data-i18n-ph="foot_news_ph" placeholder="tu@email.com">
       <button class="newsletter-btn">→</button>
     </div>
     <ul style="margin-top:20px"><li><a href="#">Instagram</a></li><li><a href="#">WhatsApp</a></li></ul>
   </div>
   <div class="foot-bottom">
-    <span class="foot-copy">© 2026 Wildliving · wildliving.life · Todos los derechos reservados</span>
+    <span class="foot-copy" data-i18n="foot_copy">© 2026 Wildliving · wildliving.life · Todos los derechos reservados</span>
     <div class="foot-dot"></div>
-    <span class="foot-copy">Turismo sustentable · Slow travel · Vivienda consciente</span>
+    <span class="foot-copy" data-i18n="foot_keywords">Turismo sustentable · Slow travel · Vivienda consciente</span>
   </div>
 </footer>
 
+<script src="/js/i18n.js"></script>
 <script>
 function toggleMobileMenu(open){
   document.getElementById('mobile-overlay').classList.toggle('open', open);
 }
+
+var es = {
+  meta_title: "Modo Villa - Cabaña — Villa La Angostura, Neuquén | Wildliving Selected",
+  meta_description: "Cabaña de dos dormitorios en Villa La Angostura, con anfitriones presentes. Escala chica, trato directo.",
+  ficha_back: "← Volver a Wildliving Selected",
+  ficha_eyebrow: "Wildliving Selected",
+  practical_2: "2 dormitorios",
+  tag_descanso: "Descanso profundo",
+  tag_reconexion: "Reconexión en pareja",
+  ficha_desc: "En Villa La Angostura, esta cabaña de dos dormitorios forma parte de un conjunto chico donde los dueños están presentes, no delegados en una recepción. Es la escala que buscamos en Selected: ni tan grande como para volverse complejo turístico, ni tan genérica como para perder personalidad. Cálida, cómoda, con la clase de amabilidad que se nota en el trato, no en el marketing.",
+  cta_label: "Esta propiedad se reserva directo en la plataforma de origen — nosotros la seleccionamos, no la administramos.",
+  cta_btn: "Verificá disponibilidad →",
+  cta_note: "Wildliving Selected: propiedades de partners que cumplen nuestro criterio editorial.",
+  explore_eyebrow: "Seguí explorando",
+  explore_title: "Otras propiedades en Patagonia.",
+  explore_badge: "Selected",
+  explore_cta: "Ver propiedad →",
+  explore_desc_gallareta: "Cabañas de madera quemada junto al Lago Correntoso, diseño de autor nacido como encargo familiar, no como desarrollo comercial.",
+  explore_desc_ventanas: "Casa completa en Circuito Chico, vista al lago desde todos los ambientes. Jardín, parrilla propia, hasta 6 personas.",
+  explore_desc_montana: "Casa en Bariloche con vista a lago y montaña, jacuzzi, tres dormitorios. Hasta 6 personas, sin lógica de hotel."
+};
+
+var en = {
+  meta_title: "Modo Villa - Cabin — Villa La Angostura, Neuquén | Wildliving Selected",
+  meta_description: "Two-bedroom cabin in Villa La Angostura, with present hosts. Small scale, direct treatment.",
+  ficha_back: "← Back to Wildliving Selected",
+  ficha_eyebrow: "Wildliving Selected",
+  practical_2: "2 bedrooms",
+  tag_descanso: "Deep rest",
+  tag_reconexion: "Reconnecting as a couple",
+  ficha_desc: "In Villa La Angostura, this two-bedroom cabin is part of a small group where the owners are present, not delegated to a front desk. It's the scale we look for in Selected: not so large it becomes a resort, not so generic it loses personality. Warm, comfortable, with the kind of kindness that shows in the treatment, not in the marketing.",
+  cta_label: "This property is booked directly on the original platform — we select it, but we don't manage it.",
+  cta_btn: "Check availability →",
+  cta_note: "Wildliving Selected: partner properties that meet our editorial criteria.",
+  explore_eyebrow: "Keep exploring",
+  explore_title: "Other properties in Patagonia.",
+  explore_badge: "Selected",
+  explore_cta: "View property →",
+  explore_desc_gallareta: "Burnt-wood cabins on Lago Correntoso, author-designed and born as a family commission, not a commercial development.",
+  explore_desc_ventanas: "Entire house in Circuito Chico, lake views from every room. Garden, private grill, up to 6 guests.",
+  explore_desc_montana: "House in Bariloche with lake and mountain views, jacuzzi, three bedrooms. Up to 6 guests, no hotel logic."
+};
+
+wlInitI18n(es, en);
 </script>
 </body>
 </html>

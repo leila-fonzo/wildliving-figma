@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Patagonia — Wildliving</title>
+<meta name="description" content="Dos propiedades, dos ritmos, un mismo lago. Casa Calma y Casa Paz, frente a Bariloche, Patagonia.">
+<meta property="og:title" content="Patagonia — Wildliving">
+<meta property="og:description" content="Dos propiedades, dos ritmos, un mismo lago. Casa Calma y Casa Paz, frente a Bariloche, Patagonia.">
+<meta name="twitter:title" content="Patagonia — Wildliving">
+<meta name="twitter:description" content="Dos propiedades, dos ritmos, un mismo lago. Casa Calma y Casa Paz, frente a Bariloche, Patagonia.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
@@ -29,12 +34,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .lang-btn{font-family:var(--sans);font-size:10px;font-weight:300;letter-spacing:.18em;text-transform:uppercase;background:none;border:none;cursor:pointer;padding:4px 6px;opacity:.45;color:var(--night)}
 .lang-btn.active{opacity:1;border-bottom:1px solid currentColor}
 .lang-sep{font-size:9px;opacity:.25;color:var(--night)}
-.hamburger-btn{display:none;background:none;border:none;cursor:pointer;font-size:24px;line-height:1;color:var(--night);padding:0}
+.hamburger-btn{display:none;background:none;border:none;cursor:pointer;font-size:24px;line-height:1;color:var(--night);padding:0;min-width:44px;min-height:44px;align-items:center;justify-content:center}
 .mobile-overlay{position:fixed;inset:0;background:var(--night);z-index:10000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:32px;opacity:0;visibility:hidden;transition:opacity .3s var(--ease)}
 .mobile-overlay.open{opacity:1;visibility:visible}
-.mobile-overlay a{font-family:var(--sans);font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,250,247,.7);text-decoration:none}
+.mobile-overlay a{font-family:var(--sans);font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,250,247,.7);text-decoration:none;min-height:44px;display:flex;align-items:center}
 .mobile-overlay a:hover{color:var(--white)}
-.mobile-overlay-close{position:absolute;top:24px;right:24px;background:none;border:none;font-size:26px;color:var(--white);cursor:pointer}
+.mobile-overlay-close{position:absolute;top:24px;right:24px;background:none;border:none;font-size:26px;color:var(--white);cursor:pointer;min-width:44px;min-height:44px}
+.mobile-overlay-lang{display:flex;align-items:center;gap:10px;margin-top:8px}
+.mobile-overlay-lang .lang-btn{padding:12px 14px;font-size:14px;min-height:44px}
+.mobile-overlay-lang .lang-sep{color:rgba(250,250,247,.25);font-size:11px}
 
 footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;border-top:1px solid rgba(200,196,188,.06)}
 .foot-logo{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-weight:500;font-size:18px;color:var(--white);text-decoration:none}
@@ -95,38 +103,43 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
 <nav id="nav">
   <a href="/" class="nav-logo" id="nav-logo">Wild<span>·</span>living</a>
   <ul class="nav-links" id="nav-links">
-    <li><a href="/wildstays/patagonia/">Wildstays</a></li>
-    <li><a href="/wildhomes/">Wildhomes</a></li>
-    <li><a href="/sobre/">Sobre</a></li>
-    <li><a href="/contacto/">Contacto</a></li>
+    <li><a href="/wildstays/patagonia/" data-i18n="nav_wildstays">Wildstays</a></li>
+    <li><a href="/wildhomes/" data-i18n="nav_wildhomes">Wildhomes</a></li>
+    <li><a href="/sobre/" data-i18n="nav_sobre">Sobre</a></li>
+    <li><a href="/contacto/" data-i18n="nav_contacto">Contacto</a></li>
     <li class="lang-selector">
-      <button class="lang-btn active" data-lang="es">ES</button>
+      <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
       <span class="lang-sep">·</span>
-      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
     </li>
   </ul>
-  <button class="hamburger-btn" id="hamburger-btn" onclick="toggleMobileMenu(true)" aria-label="Abrir menú">☰</button>
+  <button class="hamburger-btn" id="hamburger-btn" onclick="toggleMobileMenu(true)" aria-label="Abrir menú" data-i18n-aria="aria_open_menu">☰</button>
 </nav>
 
 <div class="mobile-overlay" id="mobile-overlay">
-  <button class="mobile-overlay-close" onclick="toggleMobileMenu(false)" aria-label="Cerrar menú">✕</button>
-  <a href="/wildstays/patagonia/">Wildstays</a>
-  <a href="/wildhomes/">Wildhomes</a>
-  <a href="/sobre/">Sobre</a>
-  <a href="/contacto/">Contacto</a>
+  <button class="mobile-overlay-close" onclick="toggleMobileMenu(false)" aria-label="Cerrar menú" data-i18n-aria="aria_close_menu">✕</button>
+  <a href="/wildstays/patagonia/" data-i18n="nav_wildstays">Wildstays</a>
+  <a href="/wildhomes/" data-i18n="nav_wildhomes">Wildhomes</a>
+  <a href="/sobre/" data-i18n="nav_sobre">Sobre</a>
+  <a href="/contacto/" data-i18n="nav_contacto">Contacto</a>
+  <div class="mobile-overlay-lang">
+    <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
+    <span class="lang-sep">·</span>
+    <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+  </div>
 </div>
 
 <section class="dest-hero">
-  <span class="dest-eyebrow">Patagonia · Argentina</span>
-  <h1 class="dest-h1">Dos propiedades. Dos ritmos. <em>Un mismo lago.</em></h1>
-  <p class="dest-sub">Casa Calma para quien busca bosque y silencio. Casa Paz para quien quiere centro y jardín. Las dos, frente a Bariloche.</p>
+  <span class="dest-eyebrow" data-i18n="pat_eyebrow">Patagonia · Argentina</span>
+  <h1 class="dest-h1"><span data-i18n="pat_h1">Dos propiedades. Dos ritmos. </span><em data-i18n="pat_h1_em">Un mismo lago.</em></h1>
+  <p class="dest-sub" data-i18n="pat_sub">Casa Calma para quien busca bosque y silencio. Casa Paz para quien quiere centro y jardín. Las dos, frente a Bariloche.</p>
 </section>
 
 <div class="sticky-filter">
   <select id="dest-select">
     <option>Bariloche, Patagonia</option>
   </select>
-  <input type="number" id="guest-input" placeholder="Huéspedes" min="1">
+  <input type="number" id="guest-input" data-i18n-ph="pat_filter_guests_ph" placeholder="Huéspedes" min="1">
 </div>
 
 <div id="filter-bar-container"></div>
@@ -135,41 +148,42 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
 <footer>
   <div class="foot-logo-col">
     <a href="/" class="foot-logo">Wild<span>·</span>living</a>
-    <p class="foot-tagline"><span>Find your next home in nature.</span><br><span>Patagonia · España · Grecia</span></p>
-    <p class="foot-sust">"Wildliving cree en el turismo como forma de vida, no como consumo."</p>
+    <p class="foot-tagline"><span data-i18n="foot_tagline">Find your next home in nature.</span><br><span data-i18n="foot_destinos">Argentina · España · Grecia</span></p>
+    <p class="foot-sust" data-i18n="foot_sust">"Wildliving cree en el turismo como forma de vida, no como consumo."</p>
   </div>
   <div class="foot-col">
-    <h4>Plataforma</h4>
+    <h4 data-i18n="foot_h_plataforma">Plataforma</h4>
     <ul>
-      <li><a href="/wildstays/patagonia/">Wildstays</a></li>
-      <li><a href="/wildhomes/">Wildhomes</a></li>
-      <li><a href="/sobre/">Sobre Wildliving</a></li>
-      <li><a href="/contacto/">Contacto</a></li>
+      <li><a href="/wildstays/patagonia/" data-i18n="nav_wildstays">Wildstays</a></li>
+      <li><a href="/wildhomes/" data-i18n="nav_wildhomes">Wildhomes</a></li>
+      <li><a href="/sobre/" data-i18n="foot_sobre">Sobre Wildliving</a></li>
+      <li><a href="/contacto/" data-i18n="foot_contacto">Contacto</a></li>
     </ul>
   </div>
   <div class="foot-col">
-    <h4>Propietarios</h4>
+    <h4 data-i18n="foot_h_propiet">Propietarios</h4>
     <ul>
-      <li><a href="/propietarios/">Wildliving Selected</a></li>
-      <li><a href="/propietarios/">Acuerdo de colaboración</a></li>
-      <li><a href="/wildstays/patagonia/">Ver Collection</a></li>
+      <li><a href="/propietarios/" data-i18n="foot_selected">Wildliving Selected</a></li>
+      <li><a href="/propietarios/" data-i18n="foot_acuerdo">Acuerdo de colaboración</a></li>
+      <li><a href="/wildstays/patagonia/" data-i18n="foot_ver_coll">Ver Collection</a></li>
     </ul>
   </div>
   <div class="foot-col">
-    <h4>Newsletter</h4>
+    <h4 data-i18n="foot_h_news">Newsletter</h4>
     <div class="newsletter-form">
-      <input type="email" class="newsletter-input" placeholder="tu@email.com">
+      <input type="email" class="newsletter-input" data-i18n-ph="foot_news_ph" placeholder="tu@email.com">
       <button class="newsletter-btn">→</button>
     </div>
     <ul style="margin-top:20px"><li><a href="#">Instagram</a></li><li><a href="#">WhatsApp</a></li></ul>
   </div>
   <div class="foot-bottom">
-    <span class="foot-copy">© 2026 Wildliving · wildliving.life · Todos los derechos reservados</span>
+    <span class="foot-copy" data-i18n="foot_copy">© 2026 Wildliving · wildliving.life · Todos los derechos reservados</span>
     <div class="foot-dot"></div>
-    <span class="foot-copy">Turismo sustentable · Slow travel · Vivienda consciente</span>
+    <span class="foot-copy" data-i18n="foot_keywords">Turismo sustentable · Slow travel · Vivienda consciente</span>
   </div>
 </footer>
 
+<script src="/js/i18n.js"></script>
 <script>
 function toggleMobileMenu(open){
   document.getElementById('mobile-overlay').classList.toggle('open', open);
@@ -179,43 +193,104 @@ const params = new URLSearchParams(window.location.search);
 const checkin = params.get('checkin');
 const checkout = params.get('checkout');
 const guests = params.get('guests');
-if (checkin || checkout || guests) {
-  const bar = document.createElement('div');
+
+var PATAGONIA_DATA = [];
+
+function renderFilterBar(){
+  var container = document.getElementById('filter-bar-container');
+  container.innerHTML = '';
+  if (!(checkin || checkout || guests)) return;
+  var bar = document.createElement('div');
   bar.className = 'filter-bar';
   bar.style.margin = '0 80px 32px';
-  let parts = [];
-  if (checkin) parts.push('Llegada: ' + checkin);
-  if (checkout) parts.push('Salida: ' + checkout);
-  if (guests) parts.push('Huéspedes: ' + guests);
+  var parts = [];
+  if (checkin) parts.push(t('pat_filter_checkin') + ': ' + checkin);
+  if (checkout) parts.push(t('pat_filter_checkout') + ': ' + checkout);
+  if (guests) parts.push(t('pat_filter_guests') + ': ' + guests);
   bar.textContent = parts.join(' · ');
-  document.getElementById('filter-bar-container').appendChild(bar);
+  container.appendChild(bar);
 }
 
-fetch('/data/patagonia.json')
-  .then(res => res.json())
-  .then(properties => {
-    const grid = document.getElementById('property-grid');
-    properties.forEach(p => {
-      const badgeClass = p.type === 'collection' ? 'badge-collection' : 'badge-selected';
-      const badgeLabel = p.type === 'collection' ? 'COLLECTION' : 'SELECTED';
-      const card = document.createElement('div');
-      card.className = 'card';
-      card.innerHTML = `
-        <div class="card-img-wrap">
-          <img src="${p.image_main}" alt="${p.name}">
-          <span class="card-badge ${badgeClass}">${badgeLabel}</span>
-        </div>
-        <div class="card-info">
-          <div class="card-name">${p.name}</div>
-          <div class="card-location">${p.location}</div>
-          <div class="card-price">desde $${p.price_from} / noche</div>
-          <a href="/stay/${p.slug}/" class="avail-link">Verificá disponibilidad →</a>
-          <div style="margin-top:14px"><a href="/stay/${p.slug}/" class="card-cta">Ver fechas y precio →</a></div>
-        </div>
-      `;
-      grid.appendChild(card);
-    });
+function renderPatagoniaGrid(){
+  var grid = document.getElementById('property-grid');
+  if (!grid) return;
+  var lang = window.__wl_lang || 'es';
+  grid.innerHTML = '';
+  PATAGONIA_DATA.forEach(function(p){
+    var badgeClass = p.type === 'collection' ? 'badge-collection' : 'badge-selected';
+    var badgeLabel = p.type === 'collection' ? t('pat_badge_collection') : t('pat_badge_selected');
+    var card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML =
+      '<div class="card-img-wrap">'
+        + '<img src="' + p.image_main + '" alt="' + p.name + '">'
+        + '<span class="card-badge ' + badgeClass + '">' + badgeLabel + '</span>'
+      + '</div>'
+      + '<div class="card-info">'
+        + '<div class="card-name">' + p.name + '</div>'
+        + '<div class="card-location">' + p.location + '</div>'
+        + '<div class="card-price">' + t('pat_price_from') + ' $' + p.price_from + ' ' + t('pat_price_night') + '</div>'
+        + '<a href="/stay/' + p.slug + '/" class="avail-link">' + t('pat_avail_link') + '</a>'
+        + '<div style="margin-top:14px"><a href="/stay/' + p.slug + '/" class="card-cta">' + t('pat_card_cta') + '</a></div>'
+      + '</div>';
+    grid.appendChild(card);
   });
+}
+
+window.onLangApply = function(){
+  renderFilterBar();
+  renderPatagoniaGrid();
+};
+
+const es = {
+  meta_title: "Patagonia — Wildliving",
+  meta_description: "Dos propiedades, dos ritmos, un mismo lago. Casa Calma y Casa Paz, frente a Bariloche, Patagonia.",
+  pat_eyebrow: "Patagonia · Argentina",
+  pat_h1: "Dos propiedades. Dos ritmos. ",
+  pat_h1_em: "Un mismo lago.",
+  pat_sub: "Casa Calma para quien busca bosque y silencio. Casa Paz para quien quiere centro y jardín. Las dos, frente a Bariloche.",
+  pat_filter_guests_ph: "Huéspedes",
+  pat_filter_checkin: "Llegada",
+  pat_filter_checkout: "Salida",
+  pat_filter_guests: "Huéspedes",
+  pat_badge_collection: "COLLECTION",
+  pat_badge_selected: "SELECTED",
+  pat_price_from: "desde",
+  pat_price_night: "/ noche",
+  pat_avail_link: "Verificá disponibilidad →",
+  pat_card_cta: "Ver fechas y precio →"
+};
+
+const en = {
+  meta_title: "Patagonia — Wildliving",
+  meta_description: "Two properties, two rhythms, one lake. Casa Calma and Casa Paz, facing Bariloche, Patagonia.",
+  pat_eyebrow: "Patagonia · Argentina",
+  pat_h1: "Two properties. Two rhythms. ",
+  pat_h1_em: "One lake.",
+  pat_sub: "Casa Calma for those seeking forest and silence. Casa Paz for those who want a garden close to town. Both facing Bariloche.",
+  pat_filter_guests_ph: "Guests",
+  pat_filter_checkin: "Check-in",
+  pat_filter_checkout: "Check-out",
+  pat_filter_guests: "Guests",
+  pat_badge_collection: "COLLECTION",
+  pat_badge_selected: "SELECTED",
+  pat_price_from: "from",
+  pat_price_night: "/ night",
+  pat_avail_link: "Check availability →",
+  pat_card_cta: "View dates & price →"
+};
+
+wlInitI18n(es, en, {
+  onReady: function(){
+    fetch('/data/patagonia.json')
+      .then(function(res){ return res.json(); })
+      .then(function(properties){
+        PATAGONIA_DATA = properties || [];
+        renderFilterBar();
+        renderPatagoniaGrid();
+      });
+  }
+});
 </script>
 </body>
 </html>

@@ -14,6 +14,8 @@
 <meta property="og:url" content="https://wildliving.life/wildclub/">
 <meta property="og:site_name" content="Wildliving">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="WildClub. The referral club for nature lovers.">
+<meta name="twitter:description" content="Good places are meant to be shared. Invite your friends to WildLiving—they'll get 10% off their first booking, and you'll earn 10% credit toward your next escape.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
@@ -53,12 +55,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .lang-btn{font-family:var(--body);font-size:10px;font-weight:300;letter-spacing:.18em;text-transform:uppercase;background:none;border:none;cursor:pointer;padding:4px 6px;opacity:.45;color:var(--noche)}
 .lang-btn.active{opacity:1;border-bottom:1px solid currentColor}
 .lang-sep{font-size:9px;opacity:.25;color:var(--noche)}
-.hamburger-btn{display:none;background:none;border:none;cursor:pointer;font-size:24px;line-height:1;color:var(--noche);padding:0}
+.hamburger-btn{display:none;background:none;border:none;cursor:pointer;font-size:24px;line-height:1;color:var(--noche);padding:0;min-width:44px;min-height:44px;align-items:center;justify-content:center}
 .mobile-overlay{position:fixed;inset:0;background:var(--noche);z-index:10000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:32px;opacity:0;visibility:hidden;transition:opacity .3s var(--ease)}
 .mobile-overlay.open{opacity:1;visibility:visible}
-.mobile-overlay a{font-family:var(--body);font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,250,247,.7);text-decoration:none}
+.mobile-overlay a{font-family:var(--body);font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,250,247,.7);text-decoration:none;min-height:44px;display:flex;align-items:center}
 .mobile-overlay a:hover{color:var(--white)}
-.mobile-overlay-close{position:absolute;top:24px;right:24px;background:none;border:none;font-size:26px;color:var(--white);cursor:pointer}
+.mobile-overlay-close{position:absolute;top:24px;right:24px;background:none;border:none;font-size:26px;color:var(--white);cursor:pointer;min-width:44px;min-height:44px}
+.mobile-overlay-lang{display:flex;align-items:center;gap:10px;margin-top:8px}
+.mobile-overlay-lang .lang-btn{padding:12px 14px;font-size:14px;min-height:44px}
+.mobile-overlay-lang .lang-sep{color:rgba(250,250,247,.25);font-size:11px}
 
 /* FOOTER (shared site chrome) */
 footer{background:var(--noche);padding:72px 80px 48px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;border-top:1px solid rgba(200,196,188,.06)}
@@ -79,12 +84,6 @@ footer{background:var(--noche);padding:72px 80px 48px;display:grid;grid-template
 .newsletter-input::placeholder{color:rgba(250,250,247,.25)}
 .newsletter-btn{background:var(--musgo);border:none;padding:10px 16px;color:var(--white);font-family:var(--body);font-size:9px;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;min-height:44px}
 .newsletter-btn:hover{background:var(--musgo-d)}
-
-.en{display:none;}
-body.lang-en .es{display:none;}
-body.lang-en .en{display:inline;}
-body.lang-en .en.block{display:block;}
-.es.block{display:block;}
 
 .hero{padding:150px 0 48px;}
 .club-tag{
@@ -222,130 +221,112 @@ h2 em{font-style:italic;font-weight:400;color:var(--musgo);}
 <body>
 
 <nav id="nav">
-  <a href="/" class="nav-logo">Wild<span>·</span>living</a>
+  <a href="/" class="nav-logo" id="nav-logo">Wild<span>·</span>living</a>
   <ul class="nav-links" id="nav-links">
-    <li><a href="/wildstays/patagonia/">Wildstays</a></li>
-    <li><a href="/wildhomes/">Wildhomes</a></li>
-    <li><a href="/sobre/">Sobre</a></li>
-    <li><a href="/contacto/">Contacto</a></li>
+    <li><a href="/wildstays/patagonia/" data-i18n="nav_wildstays">Wildstays</a></li>
+    <li><a href="/wildhomes/" data-i18n="nav_wildhomes">Wildhomes</a></li>
+    <li><a href="/sobre/" data-i18n="nav_sobre">Sobre</a></li>
+    <li><a href="/contacto/" data-i18n="nav_contacto">Contacto</a></li>
     <li class="lang-selector">
       <button type="button" class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
       <span class="lang-sep">·</span>
       <button type="button" class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
     </li>
   </ul>
-  <button class="hamburger-btn" id="hamburger-btn" onclick="toggleMobileMenu(true)" aria-label="Abrir menú">☰</button>
+  <button class="hamburger-btn" id="hamburger-btn" onclick="toggleMobileMenu(true)" aria-label="Abrir menú" data-i18n-aria="aria_open_menu">☰</button>
 </nav>
 
 <div class="mobile-overlay" id="mobile-overlay">
-  <button class="mobile-overlay-close" onclick="toggleMobileMenu(false)" aria-label="Cerrar menú">✕</button>
-  <a href="/wildstays/patagonia/">Wildstays</a>
-  <a href="/wildhomes/">Wildhomes</a>
-  <a href="/sobre/">Sobre</a>
-  <a href="/contacto/">Contacto</a>
+  <button class="mobile-overlay-close" onclick="toggleMobileMenu(false)" aria-label="Cerrar menú" data-i18n-aria="aria_close_menu">✕</button>
+  <a href="/wildstays/patagonia/" data-i18n="nav_wildstays">Wildstays</a>
+  <a href="/wildhomes/" data-i18n="nav_wildhomes">Wildhomes</a>
+  <a href="/sobre/" data-i18n="nav_sobre">Sobre</a>
+  <a href="/contacto/" data-i18n="nav_contacto">Contacto</a>
+  <div class="mobile-overlay-lang">
+    <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
+    <span class="lang-sep">·</span>
+    <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+  </div>
 </div>
 
 <div class="wrap">
 
   <div class="hero">
     <span class="club-tag">Wildclub</span>
-    <div class="eyebrow">
-      <span class="es">Para quienes ya lo vivieron</span><span class="en">For those who've already stayed</span>
-    </div>
-    <h1>
-      <span class="es">Los mejores huéspedes llegan <em>recomendados.</em></span>
-      <span class="en">The best guests arrive <em>recommended.</em></span>
-    </h1>
-    <p>
-      <span class="es">Wildclub es simple: si viviste una de nuestras casas y conocés a alguien que la amaría, te damos un código con tu nombre. <strong>Tu recomendado ahorra un 10%. Vos sumás un 10% para tu próxima estadía.</strong></span>
-      <span class="en">Wildclub is simple: if you've stayed in one of our houses and know someone who'd love it, we give you a code with your name on it. <strong>Your friend saves 10%. You earn 10% toward your next stay.</strong></span>
-    </p>
+    <div class="eyebrow" data-i18n="club_eyebrow">Para quienes ya lo vivieron</div>
+    <h1><span data-i18n="club_h1">Los mejores huéspedes llegan </span><em data-i18n="club_h1_em">recomendados.</em></h1>
+    <p data-i18n-html="club_hero_p">Wildclub es simple: si viviste una de nuestras casas y conocés a alguien que la amaría, te damos un código con tu nombre. <strong>Tu recomendado ahorra un 10%. Vos sumás un 10% para tu próxima estadía.</strong></p>
     <div class="code-tag">
-      <span class="label"><span class="es">Tu código personal</span><span class="en">Your personal code</span></span>
+      <span class="label" data-i18n="club_code_label">Tu código personal</span>
       <span class="code">WILD-<span>SOFI</span></span>
     </div>
-    <span class="code-note">
-      <span class="es">Así se ve, con tu nombre (no un número). Se pide por WhatsApp.</span>
-      <span class="en">This is what it looks like, with your name (not a number). Requested over WhatsApp.</span>
-    </span>
+    <span class="code-note" data-i18n="club_code_note">Así se ve, con tu nombre (no un número). Se pide por WhatsApp.</span>
 
     <div class="strip">
-      <div><div class="v big">10%</div><div class="k"><span class="es">para tu recomendado</span><span class="en">for your friend</span></div></div>
-      <div><div class="v big">10%</div><div class="k"><span class="es">para vos</span><span class="en">for you</span></div></div>
-      <div><div class="v">0</div><div class="k"><span class="es">registros ni apps</span><span class="en">sign-ups or apps</span></div></div>
+      <div><div class="v big">10%</div><div class="k" data-i18n="club_strip1_k">para tu recomendado</div></div>
+      <div><div class="v big">10%</div><div class="k" data-i18n="club_strip2_k">para vos</div></div>
+      <div><div class="v">0</div><div class="k" data-i18n="club_strip3_k">registros ni apps</div></div>
     </div>
   </div>
 
   <section>
-    <h2><span class="es">Cómo funciona</span><span class="en">How it works</span></h2>
+    <h2 data-i18n="club_how_h2">Cómo funciona</h2>
     <div class="step">
       <div class="step-n">i.</div>
       <div>
-        <h3><span class="es">Pedís tu código</span><span class="en">Request your code</span></h3>
-        <p>
-          <span class="es">Nos escribís por WhatsApp y te llega tu código personal en el día. Sin registro, sin app, sin contraseña.</span>
-          <span class="en">Message us on WhatsApp and your personal code arrives the same day. No sign-up, no app, no password.</span>
-        </p>
+        <h3 data-i18n="club_step1_title">Pedís tu código</h3>
+        <p data-i18n="club_step1_p">Nos escribís por WhatsApp y te llega tu código personal en el día. Sin registro, sin app, sin contraseña.</p>
       </div>
     </div>
     <div class="step">
       <div class="step-n">ii.</div>
       <div>
-        <h3><span class="es">Lo compartís con criterio</span><span class="en">Share it with someone in mind</span></h3>
-        <p>
-          <span class="es">A esa persona que sabés que va a cuidar la casa como vos. Tu recomendado reserva directo en nuestra web con <b>10% de descuento</b>, aplicado en el momento.</span>
-          <span class="en">Someone you know will take care of the house the way you did. Your friend books directly on our site with <b>10% off</b>, applied right away.</span>
-        </p>
+        <h3 data-i18n="club_step2_title">Lo compartís con criterio</h3>
+        <p data-i18n-html="club_step2_p">A esa persona que sabés que va a cuidar la casa como vos. Tu recomendado reserva directo en nuestra web con <b>10% de descuento</b>, aplicado en el momento.</p>
       </div>
     </div>
     <div class="step">
       <div class="step-n">iii.</div>
       <div>
-        <h3><span class="es">Tu próxima estadía se paga sola</span><span class="en">Your next stay pays for itself</span></h3>
-        <p>
-          <span class="es">Cuando tu recomendado completa su estadía, se acredita a tu nombre un <b>10% del valor de esa reserva</b> como crédito para tu próxima visita. Y si no podés volver, lo regalás.</span>
-          <span class="en">Once your friend completes their stay, <b>10% of that booking's value</b> is credited to your name for your next visit. And if you can't make it back, you can give it away.</span>
-        </p>
+        <h3 data-i18n="club_step3_title">Tu próxima estadía se paga sola</h3>
+        <p data-i18n-html="club_step3_p">Cuando tu recomendado completa su estadía, se acredita a tu nombre un <b>10% del valor de esa reserva</b> como crédito para tu próxima visita. Y si no podés volver, lo regalás.</p>
       </div>
     </div>
-    <div class="terms-note">
-      <span class="es">Tu crédito <b>se acumula sin límite</b> y tiene vigencia de <b>12 meses</b> desde que se genera.</span>
-      <span class="en">Your credit <b>accumulates without limit</b> and is valid for <b>12 months</b> from the day it's generated.</span>
-    </div>
+    <div class="terms-note" data-i18n-html="club_terms_note">Tu crédito <b>se acumula sin límite</b> y tiene vigencia de <b>12 meses</b> desde que se genera.</div>
   </section>
 
   <section>
     <div class="detail">
-      <h2><span class="es">El detalle, <em>sin letra chica</em></span><span class="en">The details, <em>no fine print</em></span></h2>
+      <h2><span data-i18n="club_detail_h2">El detalle, </span><em data-i18n="club_detail_h2_em">sin letra chica</em></h2>
       <div class="d-row">
-        <div class="q"><span class="es">¿Cuándo se acredita?</span><span class="en">When is it credited?</span></div>
-        <div class="a"><span class="es">Al completarse la estadía de tu recomendado (no al reservar). Si cancela, tu código sigue activo.</span><span class="en">Once your friend's stay is completed (not when they book). If they cancel, your code stays active.</span></div>
+        <div class="q" data-i18n="club_d1_q">¿Cuándo se acredita?</div>
+        <div class="a" data-i18n="club_d1_a">Al completarse la estadía de tu recomendado (no al reservar). Si cancela, tu código sigue activo.</div>
       </div>
       <div class="d-row">
-        <div class="q"><span class="es">¿Cómo lo uso?</span><span class="en">How do I use it?</span></div>
-        <div class="a"><span class="es">Nos escribís al reservar tu próxima estadía y lo descontamos del total.</span><span class="en">Message us when booking your next stay and we'll deduct it from the total.</span></div>
+        <div class="q" data-i18n="club_d2_q">¿Cómo lo uso?</div>
+        <div class="a" data-i18n="club_d2_a">Nos escribís al reservar tu próxima estadía y lo descontamos del total.</div>
       </div>
       <div class="d-row">
-        <div class="q"><span class="es">¿Y si no puedo volver?</span><span class="en">What if I can't come back?</span></div>
-        <div class="a"><span class="es"><b>Tu crédito se regala.</b> Se lo pasás a quien quieras (familia, amigos, otro viajero) y lo usa a tu nombre.</span><span class="en"><b>Your credit can be gifted.</b> Pass it on to anyone you like (family, friends, another traveler) and they use it under your name.</span></div>
+        <div class="q" data-i18n="club_d3_q">¿Y si no puedo volver?</div>
+        <div class="a" data-i18n-html="club_d3_a"><b>Tu crédito se regala.</b> Se lo pasás a quien quieras (familia, amigos, otro viajero) y lo usa a tu nombre.</div>
       </div>
       <div class="d-row">
-        <div class="q"><span class="es">¿Qué vigencia tiene?</span><span class="en">How long is it valid?</span></div>
-        <div class="a"><span class="es">12 meses desde que se acredita.</span><span class="en">12 months from the day it's credited.</span></div>
+        <div class="q" data-i18n="club_d4_q">¿Qué vigencia tiene?</div>
+        <div class="a" data-i18n="club_d4_a">12 meses desde que se acredita.</div>
       </div>
       <div class="d-row">
-        <div class="q"><span class="es">¿Hay límite?</span><span class="en">Is there a limit?</span></div>
-        <div class="a"><span class="es">No. Cada recomendado que completa su estadía suma, y los créditos se acumulan.</span><span class="en">No. Every friend who completes a stay adds up, and credits accumulate.</span></div>
+        <div class="q" data-i18n="club_d5_q">¿Hay límite?</div>
+        <div class="a" data-i18n="club_d5_a">No. Cada recomendado que completa su estadía suma, y los créditos se acumulan.</div>
       </div>
       <div class="d-row">
-        <div class="q"><span class="es">¿Quién puede usar mi código?</span><span class="en">Who can use my code?</span></div>
-        <div class="a"><span class="es">Cualquier persona que reserve por primera vez con nosotros, en reserva directa.</span><span class="en">Anyone booking with us for the first time, through direct booking.</span></div>
+        <div class="q" data-i18n="club_d6_q">¿Quién puede usar mi código?</div>
+        <div class="a" data-i18n="club_d6_a">Cualquier persona que reserve por primera vez con nosotros, en reserva directa.</div>
       </div>
     </div>
   </section>
 
   <section>
-    <h2><span class="es">Las casas que podés recomendar</span><span class="en">The houses you can recommend</span></h2>
+    <h2 data-i18n="club_props_h2">Las casas que podés recomendar</h2>
     <div class="props">
 
       <div class="prop">
@@ -354,14 +335,11 @@ h2 em{font-style:italic;font-weight:400;color:var(--musgo);}
           <div class="prop-ph-overlay"><div class="prop-name">Casa Calma</div></div>
         </div>
         <div class="prop-body">
-          <span class="badge open"><span class="es">Disponible desde septiembre</span><span class="en">Available from September</span></span>
-          <p>
-            <span class="es">La casa donde el tiempo se estira: bosque alrededor, silencio de verdad y ese ritmo lento que le da el nombre.</span>
-            <span class="en">The house where time stretches: forest all around, real quiet, and the slow rhythm that gave it its name.</span>
-          </p>
+          <span class="badge open" data-i18n="club_calma_status">Disponible desde septiembre</span>
+          <p data-i18n="club_calma_desc">La casa donde el tiempo se estira: bosque alrededor, silencio de verdad y ese ritmo lento que le da el nombre.</p>
           <div class="prop-ctas">
-            <a class="btn solid" href="https://wa.me/?text=Quiero%20recomendarte%20Casa%20Calma%2C%20la%20casa%20en%20Bariloche%20donde%20me%20hosped%C3%A9.%0AEs%20parte%20de%20Wildclub%2C%20un%20programa%20entre%20hu%C3%A9spedes%20para%20recomendarnos%20los%20lugares%20que%20ya%20vivimos.%0A%0ASi%20eleg%C3%ADs%20reservar%20ah%C3%AD%2C%20con%20mi%20c%C3%B3digo%20ten%C3%A9s%2010%25%20de%20descuento%20en%20tu%20estad%C3%ADa.%0APed%C3%ADmelo%20cuando%20est%C3%A9s%20por%20pagar.%0Awildliving.life%2Fstay%2Fargentina-casa-calma%3Fref%3Dwildclub" target="_blank"><span class="es">Recomendar</span><span class="en">Recommend</span></a>
-            <a class="btn outline" href="/stay/argentina-casa-calma/"><span class="es">Ver disponibilidad</span><span class="en">Check availability</span></a>
+            <a id="club-recommend-calma" class="btn solid" href="https://wa.me/?text=Quiero%20recomendarte%20Casa%20Calma%2C%20la%20casa%20en%20Bariloche%20donde%20me%20hosped%C3%A9.%0AEs%20parte%20de%20Wildclub%2C%20un%20programa%20entre%20hu%C3%A9spedes%20para%20recomendarnos%20los%20lugares%20que%20ya%20vivimos.%0A%0ASi%20eleg%C3%ADs%20reservar%20ah%C3%AD%2C%20con%20mi%20c%C3%B3digo%20ten%C3%A9s%2010%25%20de%20descuento%20en%20tu%20estad%C3%ADa.%0APed%C3%ADmelo%20cuando%20est%C3%A9s%20por%20pagar.%0Awildliving.life%2Fstay%2Fargentina-casa-calma%3Fref%3Dwildclub" target="_blank" data-i18n="club_btn_recommend">Recomendar</a>
+            <a class="btn outline" href="/stay/argentina-casa-calma/" data-i18n="club_btn_check_avail">Ver disponibilidad</a>
           </div>
         </div>
       </div>
@@ -372,14 +350,11 @@ h2 em{font-style:italic;font-weight:400;color:var(--musgo);}
           <div class="prop-ph-overlay"><div class="prop-name">Casa Paz</div></div>
         </div>
         <div class="prop-body">
-          <span class="badge summer"><span class="es">Disponible a partir del 6 de diciembre</span><span class="en">Available from December 6</span></span>
-          <p>
-            <span class="es">Este año se completó la agenda. Diciembre ya está abierto para reservar: <b>quien llega primero, elige primero.</b></span>
-            <span class="en">This year's calendar is fully booked. December is now open: <b>first to book, first to choose.</b></span>
-          </p>
+          <span class="badge summer" data-i18n="club_paz_status">Disponible a partir del 6 de diciembre</span>
+          <p data-i18n-html="club_paz_desc">Este año se completó la agenda. Diciembre ya está abierto para reservar: <b>quien llega primero, elige primero.</b></p>
           <div class="prop-ctas">
-            <a class="btn solid" href="https://wa.me/?text=Quiero%20recomendarte%20Casa%20Paz%2C%20un%20departamento%20con%20jard%C3%ADn%20en%20Bariloche%20que%20hizo%20que%20mi%20viaje%20fuera%20todav%C3%ADa%20m%C3%A1s%20especial.%0AEs%20parte%20de%20Wildclub%2C%20un%20programa%20entre%20hu%C3%A9spedes%20para%20recomendarnos%20los%20lugares%20que%20ya%20vivimos.%0A%0ASi%20eleg%C3%ADs%20reservar%20ah%C3%AD%2C%20con%20mi%20c%C3%B3digo%20ten%C3%A9s%2010%25%20de%20descuento%20en%20tu%20estad%C3%ADa.%0APed%C3%ADmelo%20cuando%20est%C3%A9s%20por%20pagar.%0Awildliving.life%2Fstay%2Fargentina-casa-paz%3Fref%3Dwildclub" target="_blank"><span class="es">Recomendar</span><span class="en">Recommend</span></a>
-            <a class="btn outline" href="/stay/argentina-casa-paz/"><span class="es">Ver disponibilidad</span><span class="en">Check availability</span></a>
+            <a id="club-recommend-paz" class="btn solid" href="https://wa.me/?text=Quiero%20recomendarte%20Casa%20Paz%2C%20un%20departamento%20con%20jard%C3%ADn%20en%20Bariloche%20que%20hizo%20que%20mi%20viaje%20fuera%20todav%C3%ADa%20m%C3%A1s%20especial.%0AEs%20parte%20de%20Wildclub%2C%20un%20programa%20entre%20hu%C3%A9spedes%20para%20recomendarnos%20los%20lugares%20que%20ya%20vivimos.%0A%0ASi%20eleg%C3%ADs%20reservar%20ah%C3%AD%2C%20con%20mi%20c%C3%B3digo%20ten%C3%A9s%2010%25%20de%20descuento%20en%20tu%20estad%C3%ADa.%0APed%C3%ADmelo%20cuando%20est%C3%A9s%20por%20pagar.%0Awildliving.life%2Fstay%2Fargentina-casa-paz%3Fref%3Dwildclub" target="_blank" data-i18n="club_btn_recommend">Recomendar</a>
+            <a class="btn outline" href="/stay/argentina-casa-paz/" data-i18n="club_btn_check_avail">Ver disponibilidad</a>
           </div>
         </div>
       </div>
@@ -390,22 +365,14 @@ h2 em{font-style:italic;font-weight:400;color:var(--musgo);}
   <div class="final-frame">
     <div class="final-frame-img" style="background-image:url('https://lh3.googleusercontent.com/d/1MRJuuGBGiMYDbnJS2IuOV6vVa2KJgR6Y')"></div>
     <div class="final-frame-overlay"></div>
-    <h2><span class="es">¿Fuiste huésped? Tu código <em>ya existe.</em></span><span class="en">Have you stayed with us? Your code <em>already exists.</em></span></h2>
-    <p>
-      <span class="es">Solo falta ponerle tu nombre. Escribinos y en el día lo tenés listo para compartir.</span>
-      <span class="en">It just needs your name on it. Message us and it's ready to share the same day.</span>
-    </p>
-    <a class="btn paper" href="https://wa.me/541154605672?text=Hola!%20Quiero%20mi%20c%C3%B3digo%20Wildclub">
-      <span class="es">Pedir mi código por WhatsApp</span><span class="en">Request my code on WhatsApp</span>
-    </a>
+    <h2 data-i18n-html="club_final_h2">¿Fuiste huésped? Tu código <em>ya existe.</em></h2>
+    <p data-i18n="club_final_p">Solo falta ponerle tu nombre. Escribinos y en el día lo tenés listo para compartir.</p>
+    <a id="club-request-code" class="btn paper" href="https://wa.me/541154605672?text=Hola!%20Quiero%20mi%20c%C3%B3digo%20Wildclub" data-i18n="club_final_cta">Pedir mi código por WhatsApp</a>
   </div>
 
   <div class="closing">
     <div class="rule"></div>
-    <p>
-      <span class="es">Wildclub es un programa entre amigos: nos reservamos el derecho de mantenerlo humano.</span>
-      <span class="en">Wildclub is a program between friends: we reserve the right to keep it human.</span>
-    </p>
+    <p data-i18n="club_closing_p">Wildclub es un programa entre amigos: nos reservamos el derecho de mantenerlo humano.</p>
   </div>
 
 </div>
@@ -413,51 +380,179 @@ h2 em{font-style:italic;font-weight:400;color:var(--musgo);}
 <footer>
   <div class="foot-logo-col">
     <a href="/" class="foot-logo">Wild<span>·</span>living</a>
-    <p class="foot-tagline"><span>Find your next home in nature.</span><br><span>Patagonia · España · Grecia</span></p>
-    <p class="foot-sust">"Wildliving cree en el turismo como forma de vida, no como consumo."</p>
+    <p class="foot-tagline"><span data-i18n="foot_tagline">Find your next home in nature.</span><br><span data-i18n="foot_destinos">Argentina · España · Grecia</span></p>
+    <p class="foot-sust" data-i18n="foot_sust">"Wildliving cree en el turismo como forma de vida, no como consumo."</p>
   </div>
   <div class="foot-col">
-    <h4>Plataforma</h4>
+    <h4 data-i18n="foot_h_plataforma">Plataforma</h4>
     <ul>
-      <li><a href="/wildstays/patagonia/">Wildstays</a></li>
-      <li><a href="/wildhomes/">Wildhomes</a></li>
-      <li><a href="/sobre/">Sobre Wildliving</a></li>
-      <li><a href="/contacto/">Contacto</a></li>
+      <li><a href="/wildstays/patagonia/" data-i18n="nav_wildstays">Wildstays</a></li>
+      <li><a href="/wildhomes/" data-i18n="nav_wildhomes">Wildhomes</a></li>
+      <li><a href="/sobre/" data-i18n="foot_sobre">Sobre Wildliving</a></li>
+      <li><a href="/contacto/" data-i18n="foot_contacto">Contacto</a></li>
     </ul>
   </div>
   <div class="foot-col">
-    <h4>Propietarios</h4>
+    <h4 data-i18n="foot_h_propiet">Propietarios</h4>
     <ul>
-      <li><a href="/propietarios/">Wildliving Selected</a></li>
-      <li><a href="/propietarios/">Acuerdo de colaboración</a></li>
-      <li><a href="/wildstays/patagonia/">Ver Collection</a></li>
+      <li><a href="/propietarios/" data-i18n="foot_selected">Wildliving Selected</a></li>
+      <li><a href="/propietarios/" data-i18n="foot_acuerdo">Acuerdo de colaboración</a></li>
+      <li><a href="/wildstays/patagonia/" data-i18n="foot_ver_coll">Ver Collection</a></li>
     </ul>
   </div>
   <div class="foot-col">
-    <h4>Newsletter</h4>
+    <h4 data-i18n="foot_h_news">Newsletter</h4>
     <div class="newsletter-form">
-      <input type="email" class="newsletter-input" placeholder="tu@email.com">
+      <input type="email" class="newsletter-input" data-i18n-ph="foot_news_ph" placeholder="tu@email.com">
       <button class="newsletter-btn">→</button>
     </div>
     <ul style="margin-top:20px"><li><a href="#">Instagram</a></li><li><a href="https://wa.me/541154605672">WhatsApp</a></li></ul>
   </div>
   <div class="foot-bottom">
-    <span class="foot-copy">© 2026 Wildliving · wildliving.life · Todos los derechos reservados</span>
+    <span class="foot-copy" data-i18n="foot_copy">© 2026 Wildliving · wildliving.life · Todos los derechos reservados</span>
     <div class="foot-dot"></div>
-    <span class="foot-copy">Turismo sustentable · Slow travel · Vivienda consciente</span>
+    <span class="foot-copy" data-i18n="foot_keywords">Turismo sustentable · Slow travel · Vivienda consciente</span>
   </div>
 </footer>
 
+<script src="/js/i18n.js"></script>
 <script>
 function toggleMobileMenu(open){
   document.getElementById('mobile-overlay').classList.toggle('open', open);
 }
-function setLang(lang){
-  document.body.classList.toggle('lang-en', lang === 'en');
-  document.querySelectorAll('.lang-btn').forEach(function(btn){
-    btn.classList.toggle('active', btn.dataset.lang === lang);
-  });
+
+const es = {
+  meta_title: "WildClub. El club de recomendación para amantes de la naturaleza.",
+  meta_description: "Los buenos lugares se comparten. Invitá a tus amigos a WildLiving: tienen 10% de descuento en su primera reserva y vos ganás 10% de crédito para tu próxima escapada.",
+
+  club_eyebrow: "Para quienes ya lo vivieron",
+  club_h1: "Los mejores huéspedes llegan ",
+  club_h1_em: "recomendados.",
+  club_hero_p: "Wildclub es simple: si viviste una de nuestras casas y conocés a alguien que la amaría, te damos un código con tu nombre. <strong>Tu recomendado ahorra un 10%. Vos sumás un 10% para tu próxima estadía.</strong>",
+  club_code_label: "Tu código personal",
+  club_code_note: "Así se ve, con tu nombre (no un número). Se pide por WhatsApp.",
+  club_strip1_k: "para tu recomendado",
+  club_strip2_k: "para vos",
+  club_strip3_k: "registros ni apps",
+
+  club_how_h2: "Cómo funciona",
+  club_step1_title: "Pedís tu código",
+  club_step1_p: "Nos escribís por WhatsApp y te llega tu código personal en el día. Sin registro, sin app, sin contraseña.",
+  club_step2_title: "Lo compartís con criterio",
+  club_step2_p: "A esa persona que sabés que va a cuidar la casa como vos. Tu recomendado reserva directo en nuestra web con <b>10% de descuento</b>, aplicado en el momento.",
+  club_step3_title: "Tu próxima estadía se paga sola",
+  club_step3_p: "Cuando tu recomendado completa su estadía, se acredita a tu nombre un <b>10% del valor de esa reserva</b> como crédito para tu próxima visita. Y si no podés volver, lo regalás.",
+  club_terms_note: "Tu crédito <b>se acumula sin límite</b> y tiene vigencia de <b>12 meses</b> desde que se genera.",
+
+  club_detail_h2: "El detalle, ",
+  club_detail_h2_em: "sin letra chica",
+  club_d1_q: "¿Cuándo se acredita?",
+  club_d1_a: "Al completarse la estadía de tu recomendado (no al reservar). Si cancela, tu código sigue activo.",
+  club_d2_q: "¿Cómo lo uso?",
+  club_d2_a: "Nos escribís al reservar tu próxima estadía y lo descontamos del total.",
+  club_d3_q: "¿Y si no puedo volver?",
+  club_d3_a: "<b>Tu crédito se regala.</b> Se lo pasás a quien quieras (familia, amigos, otro viajero) y lo usa a tu nombre.",
+  club_d4_q: "¿Qué vigencia tiene?",
+  club_d4_a: "12 meses desde que se acredita.",
+  club_d5_q: "¿Hay límite?",
+  club_d5_a: "No. Cada recomendado que completa su estadía suma, y los créditos se acumulan.",
+  club_d6_q: "¿Quién puede usar mi código?",
+  club_d6_a: "Cualquier persona que reserve por primera vez con nosotros, en reserva directa.",
+
+  club_props_h2: "Las casas que podés recomendar",
+  club_calma_status: "Disponible desde septiembre",
+  club_calma_desc: "La casa donde el tiempo se estira: bosque alrededor, silencio de verdad y ese ritmo lento que le da el nombre.",
+  club_paz_status: "Disponible a partir del 6 de diciembre",
+  club_paz_desc: "Este año se completó la agenda. Diciembre ya está abierto para reservar: <b>quien llega primero, elige primero.</b>",
+  club_btn_recommend: "Recomendar",
+  club_btn_check_avail: "Ver disponibilidad",
+
+  club_final_h2: "¿Fuiste huésped? Tu código <em>ya existe.</em>",
+  club_final_p: "Solo falta ponerle tu nombre. Escribinos y en el día lo tenés listo para compartir.",
+  club_final_cta: "Pedir mi código por WhatsApp",
+
+  club_closing_p: "Wildclub es un programa entre amigos: nos reservamos el derecho de mantenerlo humano."
+};
+
+const en = {
+  meta_title: "WildClub. The referral club for nature lovers.",
+  meta_description: "Good places are meant to be shared. Invite your friends to WildLiving—they'll get 10% off their first booking, and you'll earn 10% credit toward your next escape.",
+
+  club_eyebrow: "For those who've already stayed",
+  club_h1: "The best guests arrive ",
+  club_h1_em: "recommended.",
+  club_hero_p: "Wildclub is simple: if you've stayed in one of our houses and know someone who'd love it, we give you a code with your name on it. <strong>Your friend saves 10%. You earn 10% toward your next stay.</strong>",
+  club_code_label: "Your personal code",
+  club_code_note: "This is what it looks like, with your name (not a number). Requested over WhatsApp.",
+  club_strip1_k: "for your friend",
+  club_strip2_k: "for you",
+  club_strip3_k: "sign-ups or apps",
+
+  club_how_h2: "How it works",
+  club_step1_title: "Request your code",
+  club_step1_p: "Message us on WhatsApp and your personal code arrives the same day. No sign-up, no app, no password.",
+  club_step2_title: "Share it with someone in mind",
+  club_step2_p: "Someone you know will take care of the house the way you did. Your friend books directly on our site with <b>10% off</b>, applied right away.",
+  club_step3_title: "Your next stay pays for itself",
+  club_step3_p: "Once your friend completes their stay, <b>10% of that booking's value</b> is credited to your name for your next visit. And if you can't make it back, you can give it away.",
+  club_terms_note: "Your credit <b>accumulates without limit</b> and is valid for <b>12 months</b> from the day it's generated.",
+
+  club_detail_h2: "The details, ",
+  club_detail_h2_em: "no fine print",
+  club_d1_q: "When is it credited?",
+  club_d1_a: "Once your friend's stay is completed (not when they book). If they cancel, your code stays active.",
+  club_d2_q: "How do I use it?",
+  club_d2_a: "Message us when booking your next stay and we'll deduct it from the total.",
+  club_d3_q: "What if I can't come back?",
+  club_d3_a: "<b>Your credit can be gifted.</b> Pass it on to anyone you like (family, friends, another traveler) and they use it under your name.",
+  club_d4_q: "How long is it valid?",
+  club_d4_a: "12 months from the day it's credited.",
+  club_d5_q: "Is there a limit?",
+  club_d5_a: "No. Every friend who completes a stay adds up, and credits accumulate.",
+  club_d6_q: "Who can use my code?",
+  club_d6_a: "Anyone booking with us for the first time, through direct booking.",
+
+  club_props_h2: "The houses you can recommend",
+  club_calma_status: "Available from September",
+  club_calma_desc: "The house where time stretches: forest all around, real quiet, and the slow rhythm that gave it its name.",
+  club_paz_status: "Available from December 6",
+  club_paz_desc: "This year's calendar is fully booked. December is now open: <b>first to book, first to choose.</b>",
+  club_btn_recommend: "Recommend",
+  club_btn_check_avail: "Check availability",
+
+  club_final_h2: "Have you stayed with us? Your code <em>already exists.</em>",
+  club_final_p: "It just needs your name on it. Message us and it's ready to share the same day.",
+  club_final_cta: "Request my code on WhatsApp",
+
+  club_closing_p: "Wildclub is a program between friends: we reserve the right to keep it human."
+};
+
+var WA_RECOMMEND_TEXT = {
+  es: {
+    calma: "Quiero recomendarte Casa Calma, la casa en Bariloche donde me hospedé.\nEs parte de Wildclub, un programa entre huéspedes para recomendarnos los lugares que ya vivimos.\n\nSi elegís reservar ahí, con mi código tenés 10% de descuento en tu estadía.\nPedímelo cuando estés por pagar.\nwildliving.life/stay/argentina-casa-calma?ref=wildclub",
+    paz: "Quiero recomendarte Casa Paz, un departamento con jardín en Bariloche que hizo que mi viaje fuera todavía más especial.\nEs parte de Wildclub, un programa entre huéspedes para recomendarnos los lugares que ya vivimos.\n\nSi elegís reservar ahí, con mi código tenés 10% de descuento en tu estadía.\nPedímelo cuando estés por pagar.\nwildliving.life/stay/argentina-casa-paz?ref=wildclub"
+  },
+  en: {
+    calma: "I want to recommend Casa Calma, the house in Bariloche where I stayed.\nIt's part of Wildclub, a program between guests to recommend the places we've already lived.\n\nIf you book there, my code gets you 10% off your stay.\nAsk me for it when you're about to pay.\nwildliving.life/stay/argentina-casa-calma?ref=wildclub",
+    paz: "I want to recommend Casa Paz, an apartment with a garden in Bariloche that made my trip even more special.\nIt's part of Wildclub, a program between guests to recommend the places we've already lived.\n\nIf you book there, my code gets you 10% off your stay.\nAsk me for it when you're about to pay.\nwildliving.life/stay/argentina-casa-paz?ref=wildclub"
+  }
+};
+
+var WA_REQUEST_CODE_TEXT = { es: "Hola! Quiero mi código Wildclub", en: "Hi! I'd like my Wildclub code" };
+
+function updateRecommendLinks(lang) {
+  var calmaBtn = document.getElementById('club-recommend-calma');
+  var pazBtn = document.getElementById('club-recommend-paz');
+  var codeBtn = document.getElementById('club-request-code');
+  var texts = WA_RECOMMEND_TEXT[lang] || WA_RECOMMEND_TEXT.es;
+  if (calmaBtn) calmaBtn.href = 'https://wa.me/?text=' + encodeURIComponent(texts.calma);
+  if (pazBtn) pazBtn.href = 'https://wa.me/?text=' + encodeURIComponent(texts.paz);
+  if (codeBtn) codeBtn.href = 'https://wa.me/541154605672?text=' + encodeURIComponent(WA_REQUEST_CODE_TEXT[lang] || WA_REQUEST_CODE_TEXT.es);
 }
+
+window.onLangApply = function (lang) { updateRecommendLinks(lang); };
+
+wlInitI18n(es, en);
 </script>
 </body>
 </html>

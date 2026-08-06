@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Casa Paz — Wildliving</title>
+<meta name="description" content="Apartamento moderno de 38m² en Playa Bonita, jardín privado y luz natural todo el día. Cinco minutos a pie del lago Nahuel Huapi.">
 <meta property="og:title" content="Casa Paz — Wildliving">
 <meta property="og:description" content="Apartamento moderno de 38m² en Playa Bonita, jardín privado y luz natural todo el día. Cinco minutos a pie del lago Nahuel Huapi.">
 <meta property="og:image" content="https://wildliving.life/public/images/properties/casa-paz.jpg">
@@ -13,6 +14,8 @@
 <meta property="og:url" content="https://wildliving.life/stay/argentina-casa-paz/">
 <meta property="og:site_name" content="Wildliving">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Casa Paz — Wildliving">
+<meta name="twitter:description" content="Apartamento moderno de 38m² en Playa Bonita, jardín privado y luz natural todo el día. Cinco minutos a pie del lago Nahuel Huapi.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
@@ -48,6 +51,9 @@ nav.scrolled .nav-links a:hover{color:var(--night)}
 .mobile-overlay a{font-family:var(--sans);font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,250,247,.7);text-decoration:none}
 .mobile-overlay a:hover{color:var(--white)}
 .mobile-overlay-close{position:absolute;top:24px;right:24px;background:none;border:none;font-size:26px;color:var(--white);cursor:pointer}
+.mobile-overlay-lang{display:flex;align-items:center;gap:10px;margin-top:8px}
+.mobile-overlay-lang .lang-btn{padding:12px 14px;font-size:14px;min-height:44px;color:var(--white)}
+.mobile-overlay-lang .lang-sep{color:rgba(250,250,247,.25);font-size:11px}
 
 footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;border-top:1px solid rgba(200,196,188,.06)}
 .foot-logo{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-weight:500;font-size:18px;color:var(--white);text-decoration:none}
@@ -151,31 +157,36 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
 <nav id="nav">
   <a href="/" class="nav-logo" id="nav-logo">Wild<span>·</span>living</a>
   <ul class="nav-links" id="nav-links">
-    <li><a href="/wildstays/patagonia/">Wildstays</a></li>
-    <li><a href="/wildhomes/">Wildhomes</a></li>
-    <li><a href="/sobre/">Sobre</a></li>
-    <li><a href="/contacto/">Contacto</a></li>
+    <li><a href="/wildstays/patagonia/" data-i18n="nav_wildstays">Wildstays</a></li>
+    <li><a href="/wildhomes/" data-i18n="nav_wildhomes">Wildhomes</a></li>
+    <li><a href="/sobre/" data-i18n="nav_sobre">Sobre</a></li>
+    <li><a href="/contacto/" data-i18n="nav_contacto">Contacto</a></li>
     <li class="lang-selector">
-      <button class="lang-btn active" data-lang="es">ES</button>
+      <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
       <span class="lang-sep">·</span>
-      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
     </li>
   </ul>
-  <button class="hamburger-btn" id="hamburger-btn" onclick="toggleMobileMenu(true)" aria-label="Abrir menú">☰</button>
+  <button class="hamburger-btn" id="hamburger-btn" onclick="toggleMobileMenu(true)" aria-label="Abrir menú" data-i18n-aria="aria_open_menu">☰</button>
 </nav>
 
 <div class="mobile-overlay" id="mobile-overlay">
-  <button class="mobile-overlay-close" onclick="toggleMobileMenu(false)" aria-label="Cerrar menú">✕</button>
-  <a href="/wildstays/patagonia/">Wildstays</a>
-  <a href="/wildhomes/">Wildhomes</a>
-  <a href="/sobre/">Sobre</a>
-  <a href="/contacto/">Contacto</a>
+  <button class="mobile-overlay-close" onclick="toggleMobileMenu(false)" aria-label="Cerrar menú" data-i18n-aria="aria_close_menu">✕</button>
+  <a href="/wildstays/patagonia/" data-i18n="nav_wildstays">Wildstays</a>
+  <a href="/wildhomes/" data-i18n="nav_wildhomes">Wildhomes</a>
+  <a href="/sobre/" data-i18n="nav_sobre">Sobre</a>
+  <a href="/contacto/" data-i18n="nav_contacto">Contacto</a>
+  <div class="mobile-overlay-lang">
+    <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
+    <span class="lang-sep">·</span>
+    <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+  </div>
 </div>
 
 <section class="stay-hero">
   <div class="stay-hero-img"></div>
   <div class="stay-hero-overlay"></div>
-  <span class="stay-badge">COLLECTION</span>
+  <span class="stay-badge" data-i18n="badge_collection">COLLECTION</span>
   <div class="stay-hero-content">
     <h1 class="stay-h1"><em>Casa Paz</em></h1>
     <div class="stay-location">Tineo 387, Bariloche</div>
@@ -183,34 +194,34 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
 </section>
 
 <div class="key-details">
-  <div class="key-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--moss)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v7"/><path d="M3 13h18"/><path d="M7 9V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/><path d="M3 18v2"/><path d="M21 18v2"/></svg><span>1 dormitorio</span></div>
-  <div class="key-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--moss)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>Hasta 2 personas</span></div>
-  <div class="key-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--moss)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Playa Bonita · 15 min en auto al centro</span></div>
-  <div class="key-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--moss)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Reserva directa · sin comisiones</span></div>
+  <div class="key-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--moss)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v7"/><path d="M3 13h18"/><path d="M7 9V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/><path d="M3 18v2"/><path d="M21 18v2"/></svg><span data-i18n="key_beds">1 dormitorio</span></div>
+  <div class="key-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--moss)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span data-i18n="key_guests">Hasta 2 personas</span></div>
+  <div class="key-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--moss)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span data-i18n="key_area">Playa Bonita · 15 min en auto al centro</span></div>
+  <div class="key-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--moss)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="key_direct">Reserva directa · sin comisiones</span></div>
 </div>
 
 <div class="img-strip">
-  <div class="strip-item"><img src="https://lh3.googleusercontent.com/d/1ifPnwuYrizr05xSpD0XAH5QXt4m-SkrU" alt="Casa Paz — living"></div>
-  <div class="strip-item"><img src="https://lh3.googleusercontent.com/d/1wx5t5eOTegx2LuxR86gmEzCb3JArhREB" alt="Casa Paz — living con luz natural"></div>
-  <div class="strip-item"><img src="https://lh3.googleusercontent.com/d/1Ks8PnHTRX6tNGsjhyhXhz0wjwSyLqMEH" alt="Casa Paz — comedor"></div>
-  <div class="strip-item"><img src="https://lh3.googleusercontent.com/d/1hn6ILNE_ue856rEZKulFG7sWlA3WYHsb" alt="Casa Paz — jardín"></div>
+  <div class="strip-item"><img src="https://lh3.googleusercontent.com/d/1ifPnwuYrizr05xSpD0XAH5QXt4m-SkrU" alt="Casa Paz — living" data-i18n-alt="alt_strip1"></div>
+  <div class="strip-item"><img src="https://lh3.googleusercontent.com/d/1wx5t5eOTegx2LuxR86gmEzCb3JArhREB" alt="Casa Paz — living con luz natural" data-i18n-alt="alt_strip2"></div>
+  <div class="strip-item"><img src="https://lh3.googleusercontent.com/d/1Ks8PnHTRX6tNGsjhyhXhz0wjwSyLqMEH" alt="Casa Paz — comedor" data-i18n-alt="alt_strip3"></div>
+  <div class="strip-item"><img src="https://lh3.googleusercontent.com/d/1hn6ILNE_ue856rEZKulFG7sWlA3WYHsb" alt="Casa Paz — jardín" data-i18n-alt="alt_strip4"></div>
 </div>
 
 <section class="stay-content">
   <div>
-    <p class="stay-desc">Apartamento moderno de 38m² en Playa Bonita, con jardín privado y luz natural todo el día. Diseñado para trabajar bien y descansar mejor — a cinco minutos a pie del lago Nahuel Huapi, y a quince minutos en auto del centro de Bariloche.</p>
+    <p class="stay-desc" data-i18n="stay_desc">Apartamento moderno de 38m² en Playa Bonita, con jardín privado y luz natural todo el día. Diseñado para trabajar bien y descansar mejor — a cinco minutos a pie del lago Nahuel Huapi, y a quince minutos en auto del centro de Bariloche.</p>
     <div class="stay-tags">
-      <span class="tag">Diseño</span>
-      <span class="tag">Jardín propio</span>
-      <span class="tag">Descanso</span>
+      <span class="tag" data-i18n="tag1">Diseño</span>
+      <span class="tag" data-i18n="tag2">Jardín propio</span>
+      <span class="tag" data-i18n="tag3">Descanso</span>
     </div>
-    <div class="stay-price">desde $95 / noche</div>
+    <div class="stay-price"><span data-i18n="price_from">desde</span> $95 <span data-i18n="price_night">/ noche</span></div>
   </div>
   <div class="cta-box" id="cta-box">
     <div id="dates-meta"></div>
     <div class="stay-ctas">
-      <a href="#lodgify-book-now-box" class="btn-reserve">Reservar →</a>
-      <a href="https://wa.me/?text=Quiero%20recomendarte%20Casa%20Paz%2C%20un%20departamento%20con%20jard%C3%ADn%20en%20Bariloche%20que%20hizo%20que%20mi%20viaje%20fuera%20todav%C3%ADa%20m%C3%A1s%20especial.%0AEs%20parte%20de%20Wildclub%2C%20un%20programa%20entre%20hu%C3%A9spedes%20para%20recomendarnos%20los%20lugares%20que%20ya%20vivimos.%0A%0ASi%20eleg%C3%ADs%20reservar%20ah%C3%AD%2C%20con%20mi%20c%C3%B3digo%20ten%C3%A9s%2010%25%20de%20descuento%20en%20tu%20estad%C3%ADa.%0APed%C3%ADmelo%20cuando%20est%C3%A9s%20por%20pagar.%0Awildliving.life%2Fstay%2Fargentina-casa-paz%3Fref%3Dwildclub" target="_blank" class="btn-recommend">Recomendar →</a>
+      <a href="#lodgify-book-now-box" class="btn-reserve" data-i18n="cta_reserve">Reservar →</a>
+      <a id="whatsapp-recommend" href="https://wa.me/?text=Quiero%20recomendarte%20Casa%20Paz%2C%20un%20departamento%20con%20jard%C3%ADn%20en%20Bariloche%20que%20hizo%20que%20mi%20viaje%20fuera%20todav%C3%ADa%20m%C3%A1s%20especial.%0AEs%20parte%20de%20Wildclub%2C%20un%20programa%20entre%20hu%C3%A9spedes%20para%20recomendarnos%20los%20lugares%20que%20ya%20vivimos.%0A%0ASi%20eleg%C3%ADs%20reservar%20ah%C3%AD%2C%20con%20mi%20c%C3%B3digo%20ten%C3%A9s%2010%25%20de%20descuento%20en%20tu%20estad%C3%ADa.%0APed%C3%ADmelo%20cuando%20est%C3%A9s%20por%20pagar.%0Awildliving.life%2Fstay%2Fargentina-casa-paz%3Fref%3Dwildclub" target="_blank" class="btn-recommend" data-i18n="cta_recommend">Recomendar →</a>
     </div>
     <style>
       :root {
@@ -269,115 +280,163 @@ footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template
       data-pets-not-allowed-label='No permitido'
       data-done-label='Hecho'
     ></div>
+    <script>
+      (function(){
+        try{
+          var lang = localStorage.getItem('wl_lang');
+          if (lang === 'en') {
+            var box = document.getElementById('lodgify-book-now-box');
+            box.setAttribute('data-language-code', 'en');
+            box.setAttribute('data-check-in-label', 'Check-in');
+            box.setAttribute('data-check-out-label', 'Check-out');
+            box.setAttribute('data-guests-label', 'Guests');
+            box.setAttribute('data-guests-singular-label', '{{NumberOfGuests}} guest');
+            box.setAttribute('data-guests-plural-label', '{{NumberOfGuests}} guests');
+            box.setAttribute('data-location-input-label', 'Location');
+            box.setAttribute('data-total-price-label', 'Total price:');
+            box.setAttribute('data-select-dates-to-see-price-label', 'Select dates to see total price');
+            box.setAttribute('data-minimum-price-per-night-first-label', 'From');
+            box.setAttribute('data-minimum-price-per-night-second-label', 'per night');
+            box.setAttribute('data-book-button-label', 'Check availability');
+            box.setAttribute('data-guests-breakdown-label', 'Guests');
+            box.setAttribute('data-adults-label', '{"one":"adult","other":"adults"}');
+            box.setAttribute('data-adults-description', 'Ages {minAge} or above');
+            box.setAttribute('data-children-label', '{"one":"child","other":"children"}');
+            box.setAttribute('data-children-description', 'Ages {minAge} - {maxAge}');
+            box.setAttribute('data-children-not-allowed-label', 'Not suitable for children');
+            box.setAttribute('data-infants-label', '{"one":"infant","other":"infants"}');
+            box.setAttribute('data-infants-not-allowed-label', 'Not suitable for infants');
+            box.setAttribute('data-pets-label', '{"one":"pet","other":"pets"}');
+            box.setAttribute('data-pets-not-allowed-label', 'Not allowed');
+            box.setAttribute('data-done-label', 'Done');
+          }
+        }catch(e){}
+      })();
+    </script>
     <script src="https://app.lodgify.com/book-now-box/stable/renderBookNowBox.js" defer></script>
-    <p class="cta-note">Tu solicitud queda pendiente hasta que la confirmamos personalmente — normalmente en menos de 24 horas. El pago se procesa recién cuando tu estadía está confirmada.</p>
+    <p class="cta-note" data-i18n="cta_note">Tu solicitud queda pendiente hasta que la confirmamos personalmente — normalmente en menos de 24 horas. El pago se procesa recién cuando tu estadía está confirmada.</p>
   </div>
 </section>
 
 <section class="photo-gallery">
-  <h2 class="photo-gallery-title">Espacios de Casa Paz</h2>
+  <h2 class="photo-gallery-title" data-i18n="gallery_title">Espacios de Casa Paz</h2>
   <div class="photo-gallery-grid">
-    <img src="https://lh3.googleusercontent.com/d/1qQ-I55Yie4CaG6vqiyIck8K9pIRKZUzf" alt="Living">
-    <img src="https://lh3.googleusercontent.com/d/1ifPnwuYrizr05xSpD0XAH5QXt4m-SkrU" alt="Living">
-    <img src="https://lh3.googleusercontent.com/d/1il5y0qRpWLyHiE69SaWVck_WM5LVz5aH" alt="Living">
-    <img src="https://lh3.googleusercontent.com/d/1Ks8PnHTRX6tNGsjhyhXhz0wjwSyLqMEH" alt="Comedor">
-    <img src="https://lh3.googleusercontent.com/d/1zxUfMJEDoyVkvXek5NMIZa3nEwzSBV8M" alt="Comedor">
-    <img src="https://lh3.googleusercontent.com/d/1OHfJu0hM8LUkJ4ARt4WIan7-hbh1Vjzr" alt="Comedor">
-    <img src="https://lh3.googleusercontent.com/d/1l7JHZOwzVur_Xo6jamWK8Hlzwn5URnZ7" alt="Comedor">
-    <img src="https://lh3.googleusercontent.com/d/1YkNOZEnaM0XY2SizSyqnEa6E6-X6Zh3L" alt="Baño">
-    <img src="https://lh3.googleusercontent.com/d/1Bi2Sg0zyVrMXaOJNJr-NFUt8RwQ4lhSx" alt="Baño">
-    <img src="https://lh3.googleusercontent.com/d/1QLDaBB6zKpPRDfLKC_7wfvSb_rfgUJxD" alt="Baño">
-    <img src="https://lh3.googleusercontent.com/d/1_1H1PlCT6LMcsojzYbpAuEUYd9VO-Ji8" alt="Cocina">
-    <img src="https://lh3.googleusercontent.com/d/1cHzK60bEr9UZCxHK-O5AsiFssXEta_-i" alt="Cocina">
-    <img src="https://lh3.googleusercontent.com/d/1hn6ILNE_ue856rEZKulFG7sWlA3WYHsb" alt="Jardín">
-    <img src="https://lh3.googleusercontent.com/d/1f0oDqVmKsM0bDqn624XehbI8-QK-4p66" alt="Jardín">
-    <img src="https://lh3.googleusercontent.com/d/1B2tbBfuofFk9gD4aMzzVwTU9narLE0G6" alt="Jardín">
-    <img src="https://lh3.googleusercontent.com/d/1ayiqgaPECF3jDDd6DtwW9EEYal-13139" alt="Dormitorio">
-    <img src="https://lh3.googleusercontent.com/d/1wxBBrxGfkBG5Ltg-m7cMmUfmXAnV6hMF" alt="Dormitorio">
-    <img src="https://lh3.googleusercontent.com/d/1jtQLDjnVpHKZ1w217mgS1I8-Aax-pciH" alt="Dormitorio">
-    <img src="https://lh3.googleusercontent.com/d/1QJw3OFXWNy0Xu9JLf8WatKwZz1tgkka5" alt="Dormitorio">
-    <img src="https://lh3.googleusercontent.com/d/1OKlUwMlUPQjdL6V4gx-jGrX0ZFsQKEkc" alt="Dormitorio">
-    <img src="https://lh3.googleusercontent.com/d/17gVvq5OQpfaYgN88mwOebO6ozCYpYIOr" alt="Exterior">
-    <img src="https://lh3.googleusercontent.com/d/1Wfjth1cJYNnf8NOP_NDLRDKC3AbZbOvP" alt="Exterior">
+    <img src="https://lh3.googleusercontent.com/d/1qQ-I55Yie4CaG6vqiyIck8K9pIRKZUzf" alt="Living" data-i18n-alt="alt_living">
+    <img src="https://lh3.googleusercontent.com/d/1ifPnwuYrizr05xSpD0XAH5QXt4m-SkrU" alt="Living" data-i18n-alt="alt_living">
+    <img src="https://lh3.googleusercontent.com/d/1il5y0qRpWLyHiE69SaWVck_WM5LVz5aH" alt="Living" data-i18n-alt="alt_living">
+    <img src="https://lh3.googleusercontent.com/d/1Ks8PnHTRX6tNGsjhyhXhz0wjwSyLqMEH" alt="Comedor" data-i18n-alt="alt_dining">
+    <img src="https://lh3.googleusercontent.com/d/1zxUfMJEDoyVkvXek5NMIZa3nEwzSBV8M" alt="Comedor" data-i18n-alt="alt_dining">
+    <img src="https://lh3.googleusercontent.com/d/1OHfJu0hM8LUkJ4ARt4WIan7-hbh1Vjzr" alt="Comedor" data-i18n-alt="alt_dining">
+    <img src="https://lh3.googleusercontent.com/d/1l7JHZOwzVur_Xo6jamWK8Hlzwn5URnZ7" alt="Comedor" data-i18n-alt="alt_dining">
+    <img src="https://lh3.googleusercontent.com/d/1YkNOZEnaM0XY2SizSyqnEa6E6-X6Zh3L" alt="Baño" data-i18n-alt="alt_bathroom">
+    <img src="https://lh3.googleusercontent.com/d/1Bi2Sg0zyVrMXaOJNJr-NFUt8RwQ4lhSx" alt="Baño" data-i18n-alt="alt_bathroom">
+    <img src="https://lh3.googleusercontent.com/d/1QLDaBB6zKpPRDfLKC_7wfvSb_rfgUJxD" alt="Baño" data-i18n-alt="alt_bathroom">
+    <img src="https://lh3.googleusercontent.com/d/1_1H1PlCT6LMcsojzYbpAuEUYd9VO-Ji8" alt="Cocina" data-i18n-alt="alt_kitchen">
+    <img src="https://lh3.googleusercontent.com/d/1cHzK60bEr9UZCxHK-O5AsiFssXEta_-i" alt="Cocina" data-i18n-alt="alt_kitchen">
+    <img src="https://lh3.googleusercontent.com/d/1hn6ILNE_ue856rEZKulFG7sWlA3WYHsb" alt="Jardín" data-i18n-alt="alt_garden">
+    <img src="https://lh3.googleusercontent.com/d/1f0oDqVmKsM0bDqn624XehbI8-QK-4p66" alt="Jardín" data-i18n-alt="alt_garden">
+    <img src="https://lh3.googleusercontent.com/d/1B2tbBfuofFk9gD4aMzzVwTU9narLE0G6" alt="Jardín" data-i18n-alt="alt_garden">
+    <img src="https://lh3.googleusercontent.com/d/1ayiqgaPECF3jDDd6DtwW9EEYal-13139" alt="Dormitorio" data-i18n-alt="alt_bedroom">
+    <img src="https://lh3.googleusercontent.com/d/1wxBBrxGfkBG5Ltg-m7cMmUfmXAnV6hMF" alt="Dormitorio" data-i18n-alt="alt_bedroom">
+    <img src="https://lh3.googleusercontent.com/d/1jtQLDjnVpHKZ1w217mgS1I8-Aax-pciH" alt="Dormitorio" data-i18n-alt="alt_bedroom">
+    <img src="https://lh3.googleusercontent.com/d/1QJw3OFXWNy0Xu9JLf8WatKwZz1tgkka5" alt="Dormitorio" data-i18n-alt="alt_bedroom">
+    <img src="https://lh3.googleusercontent.com/d/1OKlUwMlUPQjdL6V4gx-jGrX0ZFsQKEkc" alt="Dormitorio" data-i18n-alt="alt_bedroom">
+    <img src="https://lh3.googleusercontent.com/d/17gVvq5OQpfaYgN88mwOebO6ozCYpYIOr" alt="Exterior" data-i18n-alt="alt_exterior">
+    <img src="https://lh3.googleusercontent.com/d/1Wfjth1cJYNnf8NOP_NDLRDKC3AbZbOvP" alt="Exterior" data-i18n-alt="alt_exterior">
   </div>
 </section>
 
 <section class="explore-section">
-  <span class="explore-eyebrow">Seguí explorando</span>
-  <h2 class="explore-title">Otras propiedades en Patagonia.</h2>
+  <span class="explore-eyebrow" data-i18n="explore_eyebrow">Seguí explorando</span>
+  <h2 class="explore-title" data-i18n="explore_title">Otras propiedades en Patagonia.</h2>
   <a href="/stay/argentina-casa-calma/" class="explore-card">
     <div class="explore-img"><img src="https://lh3.googleusercontent.com/d/1n43I2l9Dw5TgmsDahEcVQPAZzhCAuSCY" alt="Casa Calma"></div>
     <div class="explore-content">
-      <span class="explore-badge">Collection</span>
+      <span class="explore-badge" data-i18n="badge_collection_short">Collection</span>
       <h3 class="explore-name"><em>Casa Calma</em></h3>
       <div class="explore-location">Circuito Chico, Bariloche</div>
-      <p class="explore-desc">Casa Calma está en el área de Lago Moreno, Circuito Chico — con bosque nativo propio enmarcado en cada ventana. Chimenea real y calefacción central. Un dormitorio principal y dos sofás cama — hasta 5 personas.</p>
-      <div class="explore-price">desde $120 / noche</div>
-      <span class="explore-cta">Ver propiedad →</span>
+      <p class="explore-desc" data-i18n="explore_calma_desc">Casa Calma está en el área de Lago Moreno, Circuito Chico — con bosque nativo propio enmarcado en cada ventana. Chimenea real y calefacción central. Un dormitorio principal y dos sofás cama — hasta 5 personas.</p>
+      <div class="explore-price"><span data-i18n="price_from">desde</span> $120 <span data-i18n="price_night">/ noche</span></div>
+      <span class="explore-cta" data-i18n="explore_cta">Ver propiedad →</span>
     </div>
   </a>
 </section>
 
 <div class="sticky-bar" id="sticky-bar">
-  <div class="sticky-price">desde $95 / noche</div>
+  <div class="sticky-price"><span data-i18n="price_from">desde</span> $95 <span data-i18n="price_night">/ noche</span></div>
   <div class="sticky-actions">
-    <a href="/contacto/?prop=argentina-casa-paz" class="sticky-btn-consult">Consultar</a>
-    <a href="#lodgify-book-now-box" class="sticky-btn-reserve">Reservar →</a>
+    <a href="/contacto/?prop=argentina-casa-paz" class="sticky-btn-consult" data-i18n="sticky_consult">Consultar</a>
+    <a href="#lodgify-book-now-box" class="sticky-btn-reserve" data-i18n="cta_reserve">Reservar →</a>
   </div>
 </div>
 
 <footer>
   <div class="foot-logo-col">
     <a href="/" class="foot-logo">Wild<span>·</span>living</a>
-    <p class="foot-tagline"><span>Find your next home in nature.</span><br><span>Patagonia · España · Grecia</span></p>
-    <p class="foot-sust">"Wildliving cree en el turismo como forma de vida, no como consumo."</p>
+    <p class="foot-tagline"><span data-i18n="foot_tagline">Find your next home in nature.</span><br><span data-i18n="foot_destinos">Patagonia · España · Grecia</span></p>
+    <p class="foot-sust" data-i18n="foot_sust">"Wildliving cree en el turismo como forma de vida, no como consumo."</p>
   </div>
   <div class="foot-col">
-    <h4>Plataforma</h4>
+    <h4 data-i18n="foot_h_plataforma">Plataforma</h4>
     <ul>
-      <li><a href="/wildstays/patagonia/">Wildstays</a></li>
-      <li><a href="/wildhomes/">Wildhomes</a></li>
-      <li><a href="/sobre/">Sobre Wildliving</a></li>
-      <li><a href="/contacto/">Contacto</a></li>
+      <li><a href="/wildstays/patagonia/" data-i18n="nav_wildstays">Wildstays</a></li>
+      <li><a href="/wildhomes/" data-i18n="nav_wildhomes">Wildhomes</a></li>
+      <li><a href="/sobre/" data-i18n="foot_sobre">Sobre Wildliving</a></li>
+      <li><a href="/contacto/" data-i18n="foot_contacto">Contacto</a></li>
     </ul>
   </div>
   <div class="foot-col">
-    <h4>Propietarios</h4>
+    <h4 data-i18n="foot_h_propiet">Propietarios</h4>
     <ul>
-      <li><a href="/propietarios/">Wildliving Selected</a></li>
-      <li><a href="/propietarios/">Acuerdo de colaboración</a></li>
-      <li><a href="/wildstays/patagonia/">Ver Collection</a></li>
+      <li><a href="/propietarios/" data-i18n="foot_selected">Wildliving Selected</a></li>
+      <li><a href="/propietarios/" data-i18n="foot_acuerdo">Acuerdo de colaboración</a></li>
+      <li><a href="/wildstays/patagonia/" data-i18n="foot_ver_coll">Ver Collection</a></li>
     </ul>
   </div>
   <div class="foot-col">
-    <h4>Newsletter</h4>
+    <h4 data-i18n="foot_h_news">Newsletter</h4>
     <div class="newsletter-form">
-      <input type="email" class="newsletter-input" placeholder="tu@email.com">
+      <input type="email" class="newsletter-input" data-i18n-ph="foot_news_ph" placeholder="tu@email.com">
       <button class="newsletter-btn">→</button>
     </div>
     <ul style="margin-top:20px"><li><a href="#">Instagram</a></li><li><a href="#">WhatsApp</a></li></ul>
   </div>
   <div class="foot-bottom">
-    <span class="foot-copy">© 2026 Wildliving · wildliving.life · Todos los derechos reservados</span>
+    <span class="foot-copy" data-i18n="foot_copy">© 2026 Wildliving · wildliving.life · Todos los derechos reservados</span>
     <div class="foot-dot"></div>
-    <span class="foot-copy">Turismo sustentable · Slow travel · Vivienda consciente</span>
+    <span class="foot-copy" data-i18n="foot_keywords">Turismo sustentable · Slow travel · Vivienda consciente</span>
   </div>
 </footer>
 
+<script src="/js/i18n.js"></script>
 <script>
 function toggleMobileMenu(open){
   document.getElementById('mobile-overlay').classList.toggle('open', open);
 }
+
 const params = new URLSearchParams(window.location.search);
 const checkin = params.get('checkin');
 const checkout = params.get('checkout');
 const guests = params.get('guests');
-if (checkin && checkout) {
+
+function renderDatesMeta(){
   const meta = document.getElementById('dates-meta');
-  let html = `<p class="cta-meta">Fechas: ${checkin} → ${checkout}</p>`;
-  if (guests) html += `<p class="cta-meta">Huéspedes: ${guests}</p>`;
+  if (!checkin || !checkout) { meta.innerHTML = ''; return; }
+  let html = '<p class="cta-meta">' + t('dates_label') + ': ' + checkin + ' → ' + checkout + '</p>';
+  if (guests) html += '<p class="cta-meta">' + t('guests_label') + ': ' + guests + '</p>';
   meta.innerHTML = html;
 }
+
+function renderWhatsappRecommend(){
+  const link = document.getElementById('whatsapp-recommend');
+  if (!link) return;
+  link.href = 'https://wa.me/?text=' + encodeURIComponent(t('whatsapp_recommend_msg'));
+}
+
+window.onLangApply = function(){
+  renderDatesMeta();
+  renderWhatsappRecommend();
+};
 
 const stickyBar = document.getElementById('sticky-bar');
 const ctaBox = document.getElementById('cta-box');
@@ -387,24 +446,112 @@ let atFooter = false;
 function updateSticky(){
   stickyBar.style.display = (pastCta && !atFooter) ? 'flex' : 'none';
 }
-new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (window.innerWidth <= 900) return;
-    pastCta = entry.boundingClientRect.top < 0;
+
+var es = {
+  meta_title: "Casa Paz — Wildliving",
+  meta_description: "Apartamento moderno de 38m² en Playa Bonita, jardín privado y luz natural todo el día. Cinco minutos a pie del lago Nahuel Huapi.",
+  badge_collection: "COLLECTION",
+  badge_collection_short: "Collection",
+  key_beds: "1 dormitorio",
+  key_guests: "Hasta 2 personas",
+  key_area: "Playa Bonita · 15 min en auto al centro",
+  key_direct: "Reserva directa · sin comisiones",
+  alt_strip1: "Casa Paz — living",
+  alt_strip2: "Casa Paz — living con luz natural",
+  alt_strip3: "Casa Paz — comedor",
+  alt_strip4: "Casa Paz — jardín",
+  stay_desc: "Apartamento moderno de 38m² en Playa Bonita, con jardín privado y luz natural todo el día. Diseñado para trabajar bien y descansar mejor — a cinco minutos a pie del lago Nahuel Huapi, y a quince minutos en auto del centro de Bariloche.",
+  tag1: "Diseño",
+  tag2: "Jardín propio",
+  tag3: "Descanso",
+  price_from: "desde",
+  price_night: "/ noche",
+  cta_reserve: "Reservar →",
+  cta_recommend: "Recomendar →",
+  cta_note: "Tu solicitud queda pendiente hasta que la confirmamos personalmente — normalmente en menos de 24 horas. El pago se procesa recién cuando tu estadía está confirmada.",
+  gallery_title: "Espacios de Casa Paz",
+  alt_living: "Living",
+  alt_dining: "Comedor",
+  alt_bathroom: "Baño",
+  alt_kitchen: "Cocina",
+  alt_garden: "Jardín",
+  alt_bedroom: "Dormitorio",
+  alt_exterior: "Exterior",
+  explore_eyebrow: "Seguí explorando",
+  explore_title: "Otras propiedades en Patagonia.",
+  explore_calma_desc: "Casa Calma está en el área de Lago Moreno, Circuito Chico — con bosque nativo propio enmarcado en cada ventana. Chimenea real y calefacción central. Un dormitorio principal y dos sofás cama — hasta 5 personas.",
+  explore_cta: "Ver propiedad →",
+  sticky_consult: "Consultar",
+  dates_label: "Fechas",
+  guests_label: "Huéspedes",
+  whatsapp_recommend_msg: "Quiero recomendarte Casa Paz, un departamento con jardín en Bariloche que hizo que mi viaje fuera todavía más especial.\nEs parte de Wildclub, un programa entre huéspedes para recomendarnos los lugares que ya vivimos.\n\nSi elegís reservar ahí, con mi código tenés 10% de descuento en tu estadía.\nPedímelo cuando estés por pagar.\nwildliving.life/stay/argentina-casa-paz?ref=wildclub"
+};
+
+var en = {
+  meta_title: "Casa Paz — Wildliving",
+  meta_description: "A modern 38m² apartment in Playa Bonita, with a private garden and natural light all day. Five minutes on foot from Lake Nahuel Huapi.",
+  badge_collection: "COLLECTION",
+  badge_collection_short: "Collection",
+  key_beds: "1 bedroom",
+  key_guests: "Up to 2 guests",
+  key_area: "Playa Bonita · 15 min by car to downtown",
+  key_direct: "Direct booking · no commissions",
+  alt_strip1: "Casa Paz — living room",
+  alt_strip2: "Casa Paz — living room with natural light",
+  alt_strip3: "Casa Paz — dining area",
+  alt_strip4: "Casa Paz — garden",
+  stay_desc: "A modern 38m² apartment in Playa Bonita, with a private garden and natural light all day. Designed to work well and rest better — five minutes on foot from Lake Nahuel Huapi, and fifteen minutes by car from downtown Bariloche.",
+  tag1: "Design",
+  tag2: "Private garden",
+  tag3: "Rest",
+  price_from: "from",
+  price_night: "/ night",
+  cta_reserve: "Book now →",
+  cta_recommend: "Recommend →",
+  cta_note: "Your request stays pending until we confirm it personally — usually within 24 hours. Payment is only processed once your stay is confirmed.",
+  gallery_title: "Casa Paz's spaces",
+  alt_living: "Living room",
+  alt_dining: "Dining area",
+  alt_bathroom: "Bathroom",
+  alt_kitchen: "Kitchen",
+  alt_garden: "Garden",
+  alt_bedroom: "Bedroom",
+  alt_exterior: "Exterior",
+  explore_eyebrow: "Keep exploring",
+  explore_title: "Other properties in Patagonia.",
+  explore_calma_desc: "Casa Calma sits in the Lago Moreno area, Circuito Chico — with its own native forest framed by every window. Real fireplace and central heating. One main bedroom plus two sofa beds — up to 5 guests.",
+  explore_cta: "View property →",
+  sticky_consult: "Inquire",
+  dates_label: "Dates",
+  guests_label: "Guests",
+  whatsapp_recommend_msg: "I want to recommend Casa Paz, an apartment with a garden in Bariloche that made my trip even more special.\nIt's part of Wildclub, a program between guests to recommend the places we've already lived in.\n\nIf you choose to book there, use my code for 10% off your stay.\nJust ask me for it when you're about to pay.\nwildliving.life/stay/argentina-casa-paz?ref=wildclub"
+};
+
+wlInitI18n(es, en, {
+  onReady: function(){
+    renderDatesMeta();
+    renderWhatsappRecommend();
+
+    new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (window.innerWidth <= 900) return;
+        pastCta = entry.boundingClientRect.top < 0;
+        updateSticky();
+      });
+    }, { threshold: 0 }).observe(ctaBox);
+    new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        atFooter = entry.isIntersecting;
+        updateSticky();
+      });
+    }, { threshold: 0 }).observe(footerEl);
+    window.addEventListener('resize', () => {
+      if (window.innerWidth <= 900) pastCta = true;
+      updateSticky();
+    });
     updateSticky();
-  });
-}, { threshold: 0 }).observe(ctaBox);
-new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    atFooter = entry.isIntersecting;
-    updateSticky();
-  });
-}, { threshold: 0 }).observe(footerEl);
-window.addEventListener('resize', () => {
-  if (window.innerWidth <= 900) pastCta = true;
-  updateSticky();
+  }
 });
-updateSticky();
 </script>
 <script>
 window.addEventListener('scroll', function(){

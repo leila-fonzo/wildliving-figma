@@ -781,6 +781,7 @@ nav.scrolled .lang-btn{color:var(--night)}
   </div>
 </footer>
 
+<script src="/js/i18n.js"></script>
 <script>
 
 const es = {
@@ -789,12 +790,6 @@ const es = {
   meta_title:       "WildLiving — Find your next home in nature",
   meta_description: "WildLiving es una plataforma de lifestyle en naturaleza. Estancias curadas y propiedades en Argentina, España y Grecia. Turismo sustentable, slow travel, vivienda consciente.",
   meta_og_desc:     "Estancias curadas y propiedades en entornos naturales. Argentina · España · Grecia.",
-
-  /* ── NAV ── */
-  nav_wildstays:  "Wildstays",
-  nav_wildhomes:  "Wildhomes",
-  nav_sobre:      "Sobre",
-  nav_contacto:   "Contacto",
 
   /* ── HERO ── */
   hero_eyebrow:   "Argentina · España · Grecia · Entornos que cambian el ritmo",
@@ -819,8 +814,6 @@ const es = {
   wl_label_checkout: "Salida",
   wl_label_guests:   "Huéspedes",
   wl_search_submit:  "Buscar →",
-  aria_open_menu:    "Abrir menú",
-  aria_close_menu:   "Cerrar menú",
   hero_buy_label: "Hablemos sobre lo que buscás",
   hero_buy_ph:    "¿Qué tipo de propiedad buscás? Contanos brevemente.",
   hero_buy_cta:   "Hablar con WildLiving →",
@@ -1007,26 +1000,6 @@ const es = {
   final_title_em: "ya existe.",
   final_sub:      "Solo falta encontrarlo",
   final_cta:      "Explorar propiedades →",
-
-  /* ── FOOTER ── */
-  foot_tagline:     "Find your next home in nature.",
-  foot_destinos:    "Argentina · España · Grecia",
-  foot_sust:        "WildLiving cree en el turismo como forma de vida, no como consumo.",
-  foot_h_plataforma:"Plataforma",
-  foot_h_propiet:   "Propietarios",
-  foot_h_news:      "Newsletter",
-  foot_sobre:       "Sobre WildLiving",
-  foot_contacto:    "Contacto",
-  foot_selected:    "WildLiving Selected",
-  foot_acuerdo:     "Acuerdo de colaboración",
-  foot_ver_coll:    "Ver Collection",
-  foot_news_ph:     "tu@email.com",
-  foot_copy:        "© 2026 WildLiving · wildliving.life · Todos los derechos reservados",
-  foot_keywords:    "Turismo sustentable · Slow travel · Vivienda consciente",
-
-  /* ── LANG SELECTOR ── */
-  lang_es: "ES",
-  lang_en: "EN",
 };
 
 
@@ -1036,12 +1009,6 @@ const en = {
   meta_title:       "WildLiving. Find your next home in nature.",
   meta_description: "Discover and book unique nature stays, private villas, and soulful homes in Argentina, Spain, and Greece.",
   meta_og_desc:     "Discover and book unique nature stays, private villas, and soulful homes in Argentina, Spain, and Greece.",
-
-  /* ── NAV ── */
-  nav_wildstays:  "Wildstays",
-  nav_wildhomes:  "Wildhomes",
-  nav_sobre:      "About",
-  nav_contacto:   "Contact",
 
   /* ── HERO ── */
   hero_eyebrow:   "Argentina · Spain · Greece · Places that change your pace",
@@ -1066,8 +1033,6 @@ const en = {
   wl_label_checkout: "Check-out",
   wl_label_guests:   "Guests",
   wl_search_submit:  "Search →",
-  aria_open_menu:    "Open menu",
-  aria_close_menu:   "Close menu",
   hero_buy_label: "Tell us what you're looking for",
   hero_buy_ph:    "What kind of property are you looking for? Tell us briefly.",
   hero_buy_cta:   "Talk to WildLiving →",
@@ -1254,91 +1219,20 @@ const en = {
   final_title_em: "already exists.",
   final_sub:      "You just have to find it.",
   final_cta:      "Explore properties →",
-
-  /* ── FOOTER ── */
-  foot_tagline:     "Find your next home in nature.",
-  foot_destinos:    "Argentina · Spain · Greece",
-  foot_sust:        "WildLiving believes in tourism as a way of life, not as consumption.",
-  foot_h_plataforma:"Platform",
-  foot_h_propiet:   "Property owners",
-  foot_h_news:      "Newsletter",
-  foot_sobre:       "About WildLiving",
-  foot_contacto:    "Contact",
-  foot_selected:    "WildLiving Selected",
-  foot_acuerdo:     "Collaboration agreement",
-  foot_ver_coll:    "View Collection",
-  foot_news_ph:     "your@email.com",
-  foot_copy:        "© 2026 WildLiving · wildliving.life · All rights reserved",
-  foot_keywords:    "Sustainable tourism · Slow travel · Conscious living",
-
-  /* ── LANG SELECTOR ── */
-  lang_es: "ES",
-  lang_en: "EN",
 };
 
 
-const TRANSLATIONS = { es, en };
-const SUPPORTED = ['es', 'en'];
-const STORAGE_KEY = 'wl_lang';
+window.onLangApply = function () {
+  if (typeof setCollMode === 'function') setCollMode(wlCollMode);
+  if (typeof setSelMode === 'function') setSelMode(selectedMode);
+  else if (typeof renderSelected === 'function') renderSelected();
+};
 
-function detectLang() {
-  const stored = localStorage.getItem(STORAGE_KEY);
-  if (stored && SUPPORTED.includes(stored)) return stored;
-  const browser = (navigator.language || navigator.userLanguage || 'es').toLowerCase().slice(0, 2);
-  return SUPPORTED.includes(browser) ? browser : 'es';
-}
-
-function t(key) {
-  const lang = window.__wl_lang || 'es';
-  return (TRANSLATIONS[lang] && TRANSLATIONS[lang][key]) || TRANSLATIONS['es'][key] || key;
-}
-
-function applyTranslations(lang) {
-  window.__wl_lang = lang;
-  document.documentElement.lang = lang;
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.dataset.i18n;
-    if (TRANSLATIONS[lang] && TRANSLATIONS[lang][key] !== undefined) {
-      el.textContent = TRANSLATIONS[lang][key];
-    }
-  });
-  document.querySelectorAll('[data-i18n-ph]').forEach(el => {
-    const key = el.dataset.i18nPh;
-    if (TRANSLATIONS[lang] && TRANSLATIONS[lang][key] !== undefined) {
-      el.placeholder = TRANSLATIONS[lang][key];
-    }
-  });
-  document.querySelectorAll('[data-i18n-aria]').forEach(el => {
-    const key = el.dataset.i18nAria;
-    if (TRANSLATIONS[lang] && TRANSLATIONS[lang][key] !== undefined) {
-      el.setAttribute('aria-label', TRANSLATIONS[lang][key]);
-    }
-  });
-  document.querySelectorAll('[data-i18n-alt]').forEach(el => {
-    const key = el.dataset.i18nAlt;
-    if (TRANSLATIONS[lang] && TRANSLATIONS[lang][key] !== undefined) {
-      el.setAttribute('alt', TRANSLATIONS[lang][key]);
-    }
-  });
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.lang === lang);
-  });
-  document.title = (TRANSLATIONS[lang] && TRANSLATIONS[lang]['meta_title']) || 'WildLiving';
-  const metaDesc = document.querySelector('meta[name="description"]');
-  if (metaDesc) metaDesc.content = (TRANSLATIONS[lang] && TRANSLATIONS[lang]['meta_description']) || '';
-  if (typeof renderSelected === 'function') renderSelected();
-}
-
-function setLang(lang) {
-  if (!SUPPORTED.includes(lang)) return;
-  localStorage.setItem(STORAGE_KEY, lang);
-  applyTranslations(lang);
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  applyTranslations(detectLang());
-  setHeroMode('rent');
-  setCollMode('rent');
+wlInitI18n(es, en, {
+  onReady: function () {
+    setHeroMode('rent');
+    setCollMode('rent');
+  }
 });
 document.addEventListener('mousemove',e=>{cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px'});
 document.querySelectorAll('a,button').forEach(el=>{
@@ -1375,7 +1269,9 @@ function setHeroMode(m) {
   if(m==='rent'){r.classList.add('active');b.classList.remove('active');rent.style.display='block';buy.style.display='none';}
   else{b.classList.add('active');r.classList.remove('active');rent.style.display='none';buy.style.display='block';}
 }
+var wlCollMode = 'rent';
 function setCollMode(m) {
+  wlCollMode = m;
   var rt=document.getElementById('tab-rent'),bt=document.getElementById('tab-buy');
   var note=document.getElementById('coll-note');
   var rentCtaCalma=document.getElementById('calma-cta-rent'),buyCtaCalma=document.getElementById('calma-cta-buy');
