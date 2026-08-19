@@ -191,7 +191,21 @@ function toggleMobileMenu(open){
 }
 
 var SELECTED_DATA = [];
-var activeTab = 'all';
+var TAB_PATHS = { argentina: '/selected/argentina', espana: '/selected/espana', grecia: '/selected/grecia' };
+var PATH_TABS = { '/selected/argentina': 'argentina', '/selected/espana': 'espana', '/selected/grecia': 'grecia' };
+
+function tabFromPath(pathname) {
+  var clean = pathname.replace(/\/$/, '');
+  return PATH_TABS[clean] || 'all';
+}
+
+function syncActiveTabButton() {
+  document.querySelectorAll('.sel-tab[data-tab]').forEach(function(b){
+    b.classList.toggle('active', b.getAttribute('data-tab') === activeTab);
+  });
+}
+
+var activeTab = tabFromPath(window.location.pathname);
 
 function truncateText(str, max) {
   if (!str) return '';
@@ -224,13 +238,24 @@ function renderSelectedList() {
   }).join('');
 }
 
+syncActiveTabButton();
+
 document.querySelectorAll('.sel-tab[data-tab]').forEach(function(btn) {
   btn.addEventListener('click', function() {
     activeTab = btn.getAttribute('data-tab');
-    document.querySelectorAll('.sel-tab[data-tab]').forEach(function(b){ b.classList.remove('active'); });
-    btn.classList.add('active');
+    syncActiveTabButton();
+    var path = TAB_PATHS[activeTab] || '/selected/';
+    if (window.location.pathname !== path) {
+      history.pushState({ tab: activeTab }, '', path);
+    }
     renderSelectedList();
   });
+});
+
+window.addEventListener('popstate', function() {
+  activeTab = tabFromPath(window.location.pathname);
+  syncActiveTabButton();
+  renderSelectedList();
 });
 
 var es = {

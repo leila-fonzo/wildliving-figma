@@ -1313,8 +1313,9 @@ function renderSelected() {
   var grid = document.getElementById('selected-grid');
   if (!grid) return;
   var lang = window.__wl_lang || 'es';
-  var featured = SELECTED_DATA.filter(function(p){ return p.featured_home; });
-  var items = selectedTab === 'all' ? featured : featured.filter(function(p){ return p.tab === selectedTab; });
+  var items = selectedTab === 'all'
+    ? SELECTED_DATA.filter(function(p){ return p.featured_todas; })
+    : SELECTED_DATA.filter(function(p){ return p.featured_home && p.tab === selectedTab; });
   if (!items.length) {
     grid.innerHTML = '<div class="selected-empty"><p>' + t('sel_empty') + '</p>'
       + '<a href="/contacto/" class="link-arrow">' + t('sel_empty_cta') + '</a></div>';

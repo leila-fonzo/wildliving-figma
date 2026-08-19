@@ -14,6 +14,36 @@
   force = true
 
 [[redirects]]
+  from = "/selected/argentina"
+  to = "/selected/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/selected/argentina/"
+  to = "/selected/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/selected/espana"
+  to = "/selected/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/selected/espana/"
+  to = "/selected/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/selected/grecia"
+  to = "/selected/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/selected/grecia/"
+  to = "/selected/index.html"
+  status = 200
+
+[[redirects]]
   from = "/*"
   to = "/:splat/index.html"
   status = 200
