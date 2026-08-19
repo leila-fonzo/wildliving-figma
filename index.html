@@ -581,7 +581,7 @@ nav.scrolled .lang-btn{color:var(--night)}
     <button class="selected-tab active" onclick="setSelTab('all', this)" data-i18n="sel_tab_all">Todas</button>
     <button class="selected-tab" onclick="setSelTab('argentina', this)" data-i18n="sel_tab_ar">Argentina</button>
     <button class="selected-tab" onclick="setSelTab('espana', this)" data-i18n="sel_tab_es">España</button>
-    <button class="selected-tab ghost" aria-disabled="true" data-i18n="sel_tab_gr">Grecia · próximamente</button>
+    <button class="selected-tab" onclick="setSelTab('grecia', this)" data-i18n="sel_tab_gr">Grecia</button>
   </div>
   <div class="selected-carousel-nav">
     <button onclick="scrollSelected(-1)" aria-label="Anterior">←</button>
@@ -830,7 +830,7 @@ const es = {
   sel_tab_all:    "Todas",
   sel_tab_ar:     "Argentina",
   sel_tab_es:     "España",
-  sel_tab_gr:     "Grecia · próximamente",
+  sel_tab_gr:     "Grecia",
   sel_cta_verify:       "Verificá disponibilidad →",
   sel_cta_verify_short: "Verificar →",
   sel_empty:      "Estamos curando propiedades en este destino.",
@@ -1049,7 +1049,7 @@ const en = {
   sel_tab_all:    "All",
   sel_tab_ar:     "Argentina",
   sel_tab_es:     "Spain",
-  sel_tab_gr:     "Greece · coming soon",
+  sel_tab_gr:     "Greece",
   sel_cta_verify:       "Check availability →",
   sel_cta_verify_short: "Check →",
   sel_empty:      "We are curating properties in this destination.",

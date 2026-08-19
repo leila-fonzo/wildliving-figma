@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Naxos Boutique Suites — Filoti, Naxos, Cyclades | Wildliving Selected</title>
+<meta name="description" content="En el pueblo más alto de Naxos, a pasos del sendero al Monte Zeus. Mañanas de plaza central y cafés que abren temprano.">
+<meta property="og:title" content="Naxos Boutique Suites — Filoti, Naxos, Cyclades | Wildliving Selected">
+<meta property="og:description" content="En el pueblo más alto de Naxos, a pasos del sendero al Monte Zeus. Mañanas de plaza central y cafés que abren temprano.">
+<meta property="og:image" content="https://lh3.googleusercontent.com/d/1MRbW6XLULuL694z4Vbrz8zQZEsKpo5u9">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://wildliving.life/selected/grecia-naxos-boutique-suites/">
+<meta property="og:site_name" content="Wildliving">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://wildliving.life/selected/grecia-naxos-boutique-suites/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F2F0EB;--rock:#EDEBE6;--night:#1E1E1A;
+  --stone:#6B6B60;--sand:#C8C4BC;--moss:#7C9A6E;
+  --moss-l:#B8C9A8;--moss-d:#6B8A5E;--white:#FAFAF7;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+  --ease:cubic-bezier(0.25,0,0.1,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--night);font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.7}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:24px 48px;background:rgba(242,240,235,0.96);backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(200,196,188,.15)}
+.nav-logo{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-weight:500;font-size:18px;letter-spacing:-.01em;color:var(--night);text-decoration:none}
+.nav-logo span{color:var(--moss)}
+.nav-links{display:flex;gap:36px;list-style:none;align-items:center}
+.nav-links a{font-family:var(--sans);font-weight:300;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--night);text-decoration:none;opacity:.7;transition:opacity .2s}
+.nav-links a:hover{opacity:1}
+.lang-selector{display:flex;align-items:center;gap:4px;margin-left:24px}
+.lang-btn{font-family:var(--sans);font-size:10px;font-weight:300;letter-spacing:.18em;text-transform:uppercase;background:none;border:none;cursor:pointer;padding:4px 6px;opacity:.45;color:var(--night)}
+.lang-btn.active{opacity:1;border-bottom:1px solid currentColor}
+.lang-sep{font-size:9px;opacity:.25;color:var(--night)}
+.hamburger-btn{display:none;background:none;border:none;cursor:pointer;font-size:24px;line-height:1;color:var(--night);padding:0}
+.mobile-overlay{position:fixed;inset:0;background:var(--night);z-index:10000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:32px;opacity:0;visibility:hidden;transition:opacity .3s var(--ease)}
+.mobile-overlay.open{opacity:1;visibility:visible}
+.mobile-overlay a{font-family:var(--sans);font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,250,247,.7);text-decoration:none}
+.mobile-overlay a:hover{color:var(--white)}
+.mobile-overlay-close{position:absolute;top:24px;right:24px;background:none;border:none;font-size:26px;color:var(--white);cursor:pointer}
+.mobile-overlay-lang{display:flex;align-items:center;gap:10px;margin-top:8px}
+.mobile-overlay-lang .lang-btn{padding:12px 14px;font-size:14px;min-height:44px;color:var(--white)}
+.mobile-overlay-lang .lang-sep{color:rgba(250,250,247,.25);font-size:11px}
+
+footer{background:var(--night);padding:72px 80px 48px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;border-top:1px solid rgba(200,196,188,.06)}
+.foot-logo{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-weight:500;font-size:18px;color:var(--white);text-decoration:none}
+.foot-logo span{color:var(--moss)}
+.foot-tagline{font-family:var(--sans);font-size:13px;font-weight:300;color:rgba(250,250,247,.25);line-height:1.7;margin-top:12px;max-width:200px}
+.foot-sust{font-family:var(--sans);font-size:10px;font-weight:300;color:rgba(250,250,247,.18);margin-top:20px;line-height:1.6;font-style:normal;max-width:200px}
+.foot-col h4{font-family:var(--sans);font-size:9px;font-weight:300;letter-spacing:.26em;text-transform:uppercase;color:var(--moss);margin-bottom:18px}
+.foot-col ul{list-style:none}
+.foot-col li{margin-bottom:9px}
+.foot-col a{font-family:var(--sans);font-size:13px;font-weight:300;color:rgba(250,250,247,.35);text-decoration:none}
+.foot-col a:hover{color:var(--white)}
+.newsletter-form{display:flex;gap:0;margin-top:4px}
+.newsletter-input{flex:1;background:rgba(200,196,188,.06);border:1px solid rgba(200,196,188,.1);border-right:none;padding:10px 14px;font-family:var(--sans);font-size:11px;color:var(--white);outline:none}
+.newsletter-input::placeholder{color:rgba(250,250,247,.25)}
+.newsletter-btn{background:var(--moss);border:none;padding:10px 16px;color:var(--white);font-family:var(--sans);font-size:9px;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;min-height:44px}
+.newsletter-btn:hover{background:var(--moss-d)}
+.foot-bottom{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;padding-top:36px;border-top:1px solid rgba(200,196,188,.06);margin-top:8px}
+.foot-copy{font-family:var(--sans);font-size:10px;font-weight:300;letter-spacing:.1em;color:rgba(250,250,247,.16)}
+.foot-dot{width:4px;height:4px;background:var(--moss);border-radius:50%}
+
+/* FICHA */
+.ficha-back{padding:140px 80px 0}
+.ficha-back a{font-family:var(--sans);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);text-decoration:none}
+.ficha-back a:hover{color:var(--night)}
+.ficha-hero{padding:24px 80px 0}
+.ficha-hero-img{width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--rock)}
+.ficha-body{display:grid;grid-template-columns:1fr 320px;gap:60px;padding:40px 80px 100px}
+.ficha-eyebrow{font-family:var(--sans);font-size:9px;font-weight:300;letter-spacing:.28em;text-transform:uppercase;color:var(--moss);margin-bottom:16px;display:block}
+.ficha-h1{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-style:italic;font-weight:300;font-size:clamp(32px,4vw,48px);line-height:1.1;margin-bottom:14px}
+.ficha-loc{font-family:var(--sans);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--stone);margin-bottom:14px}
+.ficha-province{display:inline-block;font-family:var(--sans);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--moss);border:1px solid var(--moss);padding:3px 9px;margin-bottom:24px}
+.ficha-practical{display:flex;align-items:center;gap:8px;margin-bottom:20px}
+.ficha-practical span{font-family:var(--sans);font-weight:300;font-size:13px;color:var(--stone)}
+.ficha-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
+.tag{font-family:var(--sans);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--stone);border:1px solid var(--sand);padding:4px 12px}
+.ficha-desc{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-weight:300;font-size:19px;color:var(--night);line-height:1.75;border-left:1px solid var(--sand);padding-left:24px;max-width:620px}
+.ficha-cta-box{background:var(--rock);padding:36px 32px;align-self:start;position:sticky;top:120px}
+.ficha-cta-label{font-family:var(--sans);font-size:12px;color:var(--stone);margin-bottom:16px;line-height:1.6}
+.btn-cta{display:block;width:100%;text-align:center;font-family:var(--sans);font-weight:400;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--paper);background:var(--moss);padding:16px 24px;text-decoration:none;box-sizing:border-box;min-height:44px}
+.btn-cta:hover{background:var(--moss-d)}
+.ficha-cta-note{font-family:var(--sans);font-size:12px;color:var(--stone);line-height:1.6;margin-top:16px}
+
+/* EXPLORE / RELATED */
+.explore-section{background:var(--rock);padding:80px}
+.explore-eyebrow{font-family:var(--sans);font-size:9px;color:var(--moss);text-transform:uppercase;letter-spacing:.28em;margin-bottom:20px;display:block}
+.explore-title{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-weight:300;font-size:32px;color:var(--night);margin-bottom:40px}
+.explore-cards{display:flex;flex-direction:column;gap:20px}
+.explore-card{display:grid;grid-template-columns:40% 60%;background:var(--paper);text-decoration:none;color:inherit;overflow:hidden}
+.explore-img{aspect-ratio:4/3;overflow:hidden}
+.explore-img img{width:100%;height:100%;object-fit:cover}
+.explore-content{padding:36px 40px;display:flex;flex-direction:column;justify-content:center}
+.explore-badge{font-family:var(--sans);font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--moss)}
+.explore-name{font-family:var(--serif);font-feature-settings:"liga" 1,"kern" 1;font-style:italic;font-weight:300;font-size:28px;color:var(--night);margin:6px 0 4px}
+.explore-location{font-family:var(--sans);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);margin-bottom:14px}
+.explore-desc{font-family:var(--sans);font-weight:300;font-size:14px;color:var(--stone);line-height:1.7;margin-bottom:16px;max-width:420px}
+.explore-cta{font-family:var(--sans);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--moss);border-bottom:1px solid var(--moss);padding-bottom:2px;align-self:flex-start}
+
+@media(max-width:900px){
+  nav{padding:20px 24px}.nav-links{display:none}.hamburger-btn{display:flex}
+  footer{grid-template-columns:1fr 1fr;padding:60px 24px 40px}
+  .ficha-back{padding:110px 24px 0}
+  .ficha-hero{padding:20px 24px 0}
+  .ficha-body{grid-template-columns:1fr;padding:32px 24px 60px;gap:32px}
+  .ficha-cta-box{position:static}
+  .explore-section{padding:48px 24px}
+  .explore-card{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="/" class="nav-logo" id="nav-logo">Wild<span>·</span>living</a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="/wildstays/patagonia/" data-i18n="nav_wildstays">Wildstays</a></li>
+    <li><a href="/wildhomes/" data-i18n="nav_wildhomes">Wildhomes</a></li>
+    <li><a href="/sobre/" data-i18n="nav_sobre">Sobre</a></li>
+    <li><a href="/contacto/" data-i18n="nav_contacto">Contacto</a></li>
+    <li class="lang-selector">
+      <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
+      <span class="lang-sep">·</span>
+      <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+    </li>
+  </ul>
+  <button class="hamburger-btn" id="hamburger-btn" onclick="toggleMobileMenu(true)" aria-label="Abrir menú" data-i18n-aria="aria_open_menu">☰</button>
+</nav>
+
+<div class="mobile-overlay" id="mobile-overlay">
+  <button class="mobile-overlay-close" onclick="toggleMobileMenu(false)" aria-label="Cerrar menú" data-i18n-aria="aria_close_menu">✕</button>
+  <a href="/wildstays/patagonia/" data-i18n="nav_wildstays">Wildstays</a>
+  <a href="/wildhomes/" data-i18n="nav_wildhomes">Wildhomes</a>
+  <a href="/sobre/" data-i18n="nav_sobre">Sobre</a>
+  <a href="/contacto/" data-i18n="nav_contacto">Contacto</a>
+  <div class="mobile-overlay-lang">
+    <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
+    <span class="lang-sep">·</span>
+    <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+  </div>
+</div>
+
+<div class="ficha-back">
+  <a href="/selected/" data-i18n="ficha_back">← Volver a Wildliving Selected</a>
+</div>
+
+<div class="ficha-hero">
+  <img class="ficha-hero-img" src="https://lh3.googleusercontent.com/d/1MRbW6XLULuL694z4Vbrz8zQZEsKpo5u9" alt="Naxos Boutique Suites">
+</div>
+
+<div class="ficha-body">
+  <div>
+    <span class="ficha-eyebrow" data-i18n="ficha_eyebrow">Wildliving Selected</span>
+    <h1 class="ficha-h1">Naxos Boutique Suites</h1>
+    <div class="ficha-loc">Filoti, Naxos, Cyclades</div>
+    <span class="ficha-province">Cyclades</span>
+    <p class="ficha-desc" data-i18n="ficha_desc">Filoti se sostiene en la ladera del Monte Zeus, el punto más alto de las Cícladas — y esta suite está en el corazón del pueblo, no en su periferia turística. El sendero que sube a la cima del Zeus empieza a pocos metros de la puerta. Las mañanas acá tienen otro ritmo: la plaza central se despierta despacio, los cafés abren temprano y sirven a los mismos vecinos de siempre. Wifi estable para quien necesita resolver trabajo sin perder el pueblo de vista, y un colchón pensado para descansar después de caminar. La elegimos por eso — Naxos sin la versión de postal, con una montaña real esperando afuera.</p>
+  </div>
+  <div class="ficha-cta-box">
+    <p class="ficha-cta-label" data-i18n="ficha_cta_label">Esta propiedad se reserva directo en la plataforma de origen — nosotros la seleccionamos, no la administramos.</p>
+    <a href="https://www.tkqlhce.com/click-101809986-15734352?url=https%3A%2F%2Fwww.booking.com%2Fhotel%2Fgr%2Fnaxos-boutique-suites-philote-naxos.es.html" class="btn-cta" target="_blank" rel="noopener nofollow sponsored" data-i18n="ficha_cta_btn">Verificá disponibilidad →</a>
+    <p class="ficha-cta-note" data-i18n="ficha_cta_note">Wildliving Selected: propiedades de partners que cumplen nuestro criterio editorial.</p>
+  </div>
+</div>
+
+<section class="explore-section">
+  <span class="explore-eyebrow" data-i18n="explore_eyebrow">Seguí explorando</span>
+  <h2 class="explore-title" data-i18n="explore_title">Otras propiedades en Grecia.</h2>
+  <div class="explore-cards">
+  <a href="/selected/grecia-xerolithos-natural-living/" class="explore-card">
+    <div class="explore-img"><img src="https://lh3.googleusercontent.com/d/1jSrhJw07WMyKp6NcVUl3QyfagpLXuTSw" alt="Xerolithos Natural Living"></div>
+    <div class="explore-content">
+      <span class="explore-badge" data-i18n="explore_badge">Selected</span>
+      <h3 class="explore-name"><em>Xerolithos Natural Living</em></h3>
+      <div class="explore-location">Kato Sagkri, Naxos, Cyclades</div>
+      <p class="explore-desc" data-i18n="explore_desc_xerolithos_natural_living">El nombre viene de los muros de piedra sin mortero que delimitan estos campos. Andreas y Maria sirven el desayuno con lo que crece en su huerta.</p>
+      <span class="explore-cta" data-i18n="explore_cta">Ver propiedad →</span>
+    </div>
+  </a>
+  <a href="/selected/grecia-euphoria-chora-naxos/" class="explore-card">
+    <div class="explore-img"><img src="https://lh3.googleusercontent.com/d/12bw41JQq3drgPSvPtUmuacpyVr3p3f7A" alt="Euphoria Chora Naxos"></div>
+    <div class="explore-content">
+      <span class="explore-badge" data-i18n="explore_badge">Selected</span>
+      <h3 class="explore-name"><em>Euphoria Chora Naxos</em></h3>
+      <div class="explore-location">Naxos Chora, Naxos, Cyclades</div>
+      <p class="explore-desc" data-i18n="explore_desc_euphoria_chora_naxos">Arquitectura cicládica curva, casi escultórica — un huésped la comparó con Los Picapiedra. Nikolas cuida cada detalle.</p>
+      <span class="explore-cta" data-i18n="explore_cta">Ver propiedad →</span>
+    </div>
+  </a>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-logo-col">
+    <a href="/" class="foot-logo">Wild<span>·</span>living</a>
+    <p class="foot-tagline"><span data-i18n="foot_tagline">Find your next home in nature.</span><br><span data-i18n="foot_destinos">Patagonia · España · Grecia</span></p>
+    <p class="foot-sust" data-i18n="foot_sust">"Wildliving cree en el turismo como forma de vida, no como consumo."</p>
+  </div>
+  <div class="foot-col">
+    <h4 data-i18n="foot_h_plataforma">Plataforma</h4>
+    <ul>
+      <li><a href="/wildstays/patagonia/" data-i18n="nav_wildstays">Wildstays</a></li>
+      <li><a href="/wildhomes/" data-i18n="nav_wildhomes">Wildhomes</a></li>
+      <li><a href="/sobre/" data-i18n="foot_sobre">Sobre Wildliving</a></li>
+      <li><a href="/contacto/" data-i18n="foot_contacto">Contacto</a></li>
+    </ul>
+  </div>
+  <div class="foot-col">
+    <h4 data-i18n="foot_h_propiet">Propietarios</h4>
+    <ul>
+      <li><a href="/propietarios/" data-i18n="foot_selected">Wildliving Selected</a></li>
+      <li><a href="/propietarios/" data-i18n="foot_acuerdo">Acuerdo de colaboración</a></li>
+      <li><a href="/wildstays/patagonia/" data-i18n="foot_ver_coll">Ver Collection</a></li>
+    </ul>
+  </div>
+  <div class="foot-col">
+    <h4 data-i18n="foot_h_news">Newsletter</h4>
+    <div class="newsletter-form">
+      <input type="email" class="newsletter-input" data-i18n-ph="foot_news_ph" placeholder="tu@email.com">
+      <button class="newsletter-btn">→</button>
+    </div>
+    <ul style="margin-top:20px"><li><a href="#">Instagram</a></li><li><a href="#">WhatsApp</a></li></ul>
+  </div>
+  <div class="foot-bottom">
+    <span class="foot-copy" data-i18n="foot_copy">© 2026 Wildliving · wildliving.life · Todos los derechos reservados</span>
+    <div class="foot-dot"></div>
+    <span class="foot-copy" data-i18n="foot_keywords">Turismo sustentable · Slow travel · Vivienda consciente</span>
+  </div>
+</footer>
+
+<script src="/js/i18n.js"></script>
+<script>
+function toggleMobileMenu(open){
+  document.getElementById('mobile-overlay').classList.toggle('open', open);
+}
+
+var es = {
+  meta_title: "Naxos Boutique Suites — Filoti, Naxos, Cyclades | Wildliving Selected",
+  meta_description: "En el pueblo más alto de Naxos, a pasos del sendero al Monte Zeus. Mañanas de plaza central y cafés que abren temprano.",
+  ficha_back: "← Volver a Wildliving Selected",
+  ficha_eyebrow: "Wildliving Selected",
+  ficha_desc: "Filoti se sostiene en la ladera del Monte Zeus, el punto más alto de las Cícladas — y esta suite está en el corazón del pueblo, no en su periferia turística. El sendero que sube a la cima del Zeus empieza a pocos metros de la puerta. Las mañanas acá tienen otro ritmo: la plaza central se despierta despacio, los cafés abren temprano y sirven a los mismos vecinos de siempre. Wifi estable para quien necesita resolver trabajo sin perder el pueblo de vista, y un colchón pensado para descansar después de caminar. La elegimos por eso — Naxos sin la versión de postal, con una montaña real esperando afuera.",
+  ficha_cta_label: "Esta propiedad se reserva directo en la plataforma de origen — nosotros la seleccionamos, no la administramos.",
+  ficha_cta_btn: "Verificá disponibilidad →",
+  ficha_cta_note: "Wildliving Selected: propiedades de partners que cumplen nuestro criterio editorial.",
+  explore_eyebrow: "Seguí explorando",
+  explore_title: "Otras propiedades en Grecia.",
+  explore_badge: "Selected",
+  explore_cta: "Ver propiedad →",
+  explore_desc_xerolithos_natural_living: "El nombre viene de los muros de piedra sin mortero que delimitan estos campos. Andreas y Maria sirven el desayuno con lo que crece en su huerta.",
+  explore_desc_euphoria_chora_naxos: "Arquitectura cicládica curva, casi escultórica — un huésped la comparó con Los Picapiedra. Nikolas cuida cada detalle."
+};
+
+var en = {
+  meta_title: "Naxos Boutique Suites — Filoti, Naxos, Cyclades | Wildliving Selected",
+  meta_description: "In Naxos's highest village, steps from the Mount Zeus trail. Mornings by the main square, cafés opening early.",
+  ficha_back: "← Back to Wildliving Selected",
+  ficha_eyebrow: "Wildliving Selected",
+  ficha_desc: "Filoti sits on the slope of Mount Zeus, the highest point in the Cyclades — and this suite is in the village's actual center, not its tourist edge. The trail up Zeus starts a few steps from the door. Mornings here move slower: the main square wakes up gradually, cafés open early and serve the same regulars they always have. Reliable wifi for anyone who needs to get work done without losing sight of the village, and a mattress built for resting after a real hike. We chose it for that — Naxos without the postcard version, with a real mountain waiting outside.",
+  ficha_cta_label: "This property is booked directly on the original platform — we select it, but we don't manage it.",
+  ficha_cta_btn: "Check availability →",
+  ficha_cta_note: "Wildliving Selected: partner properties that meet our editorial criteria.",
+  explore_eyebrow: "Keep exploring",
+  explore_title: "Other properties in Greece.",
+  explore_badge: "Selected",
+  explore_cta: "View property →",
+  explore_desc_xerolithos_natural_living: "Named for the mortarless stone walls that border these fields. Andreas and Maria serve breakfast grown in their own garden.",
+  explore_desc_euphoria_chora_naxos: "Curved Cycladic architecture, almost sculptural — one guest compared it to The Flintstones. Nikolas minds every detail."
+};
+
+wlInitI18n(es, en);
+</script>
+</body>
+</html>
